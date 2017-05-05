@@ -293,36 +293,36 @@ body{
                                    </script>
                                    <div id="modal-content{{$animal->animal_id}}" style="display:none;">
                                      @if (Auth::guest())
-                                       <a href="{{ route('login') }}" class="btn btn-sm btn-success">Login</a>
-                                       <a href="{{ route('register') }}" class="btn btn-sm btn-warning">Register</a>
+                                       <a href="{{ route('login') }}" class="btn btn-sm btn-success">เข้าสู่ระบบ</a>
+                                       <a href="{{ route('register') }}" class="btn btn-sm btn-warning">สมัครสมาชิก</a>
                                      @else
                                      <form class="form" action="/addAdoptionAllPage" method="post">
                                        <input type="hidden" name="animal_id" value="{{$animal->animal_id}}">
                                          {{ Form::token() }}
                                          <div class="form-group">
-                                             <label for=""> <h4 style="color:blue;"> Thank you !&nbsp; {{Auth::user()->name}}</h4> </label>
+                                             <label for=""> <h4 style="color:blue;"> ขอบคุณ &nbsp; {{Auth::user()->name}}</h4> </label>
                                          </div>
                                          <div class="form-group">
-                                             <label for="">phone number can edit</label>
+                                             <label for="">หมายเลขโทรศัพท์</label>
                                              <input class="form-control" type="tel" name="tel" value="{{Auth::user()->tel}}"/>
 
                                          </div>
                                          <div class="form-group">
-                                              <label for="address">Address for pet</label>
+                                              <label for="address">กรุณาเพิ่มที่อยู่</label>
                                               <textarea class="form-control" name="address" id="address" rows="3"></textarea>
                                         </div>
 
                                          <div class="form-group">
-                                             <label for="date" class="form-label">Date & Time to receive</label>
+                                             <label for="date" class="form-label">วันและเวลาที่มารับสัตว์</label>
                                              <input type="datetime-local" class="form-control" name="date_time"  value="2011-08-19T13:45:00" />
                                          </div>
                                          <div class="form-group">
-                                             Please waiting for contact back by email or phonenumber
+                                             กรุณารอการติดต่อกลับจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
 
                                          </div>
                                         <input type='hidden' name='status' value='Recipient' />
                                          <div class="text-center">
-                                             <button class="btn btn-success" >Add Address</button>
+                                             <button class="btn btn-success" >ยืนยัน</button>
                                          </div>
                                      </form>
                                    @endif
@@ -434,36 +434,36 @@ body{
                             </script>
                             <div id="modal-content{{$animal->animal_id}}" style="display:none;">
                               @if (Auth::guest())
-                                <a href="{{ route('login') }}" class="btn btn-sm btn-success">Login</a>
-                                <a href="{{ route('register') }}" class="btn btn-sm btn-warning">Register</a>
+                                <a href="{{ route('login') }}" class="btn btn-sm btn-success">เข้าสู่ระบบ</a>
+                                <a href="{{ route('register') }}" class="btn btn-sm btn-warning">สมัครสมาชิก</a>
                               @else
                               <form class="form" action="/addAdoptionAllPage" method="post">
                                 <input type="hidden" name="animal_id" value="{{$animal->animal_id}}">
                                   {{ Form::token() }}
                                   <div class="form-group">
-                                      <label for=""> <h4 style="color:blue;"> Thank you !&nbsp; {{Auth::user()->name}}</h4> </label>
+                                      <label for=""> <h4 style="color:blue;"> ขอบคุณค่ะ !&nbsp; {{Auth::user()->name}}</h4> </label>
                                   </div>
                                   <div class="form-group">
-                                      <label for="">phone number can edit</label>
+                                      <label for="">หมายเลขโทรศัพท์</label>
                                       <input class="form-control" type="tel" name="tel" value="{{Auth::user()->tel}}"/>
 
                                   </div>
                                   <div class="form-group">
-                                       <label for="address">Address for pet</label>
+                                       <label for="address">เพิ่มที่อยู่</label>
                                        <textarea class="form-control" name="address" id="address" rows="3"></textarea>
                                  </div>
 
                                   <div class="form-group">
-                                      <label for="date" class="form-label">Date & Time to receive</label>
-                                      <input type="datetime-local" class="form-control" name="date_time"  value="2011-08-19T13:45:00"  />
+                                      <label for="date" class="form-label">วันที่และเวลาที่มารับสัตว์</label>
+                                      <input type="datetime-local" class="form-control" name="date_time"  value="2017-08-19T13:45:00"  />
                                   </div>
                                   <div class="form-group">
-                                      Please waiting for contact back by email or phonenumber
+                                     กรุณารอการติดต่อกลับจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
 
                                   </div>
                                  <input type='hidden' name='status' value='Recipient' />
                                   <div class="text-center">
-                                      <button class="btn btn-success" >Add Address</button>
+                                      <button class="btn btn-success" >ยืนยัน</button>
                                   </div>
                               </form>
 
@@ -542,7 +542,7 @@ body{
 
            </div>
                <div class="col-md-3 ro">
-                   <p class="lead">List of Donors</p>
+                   <p class="lead">รายชื่อผู้บริจาค</p>
                        <div class="list-group">
                            <p class="list-group-item"><small>2017-04-12</small>
                                <i class="fa fa-comment fa-fw">Jutatip</i>

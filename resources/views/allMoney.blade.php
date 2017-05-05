@@ -132,7 +132,7 @@ body{
                               <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
-                                  Logout
+                                  ออกจากระบบ
                               </a>
 
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -313,7 +313,7 @@ body{
 
            </div>
            <div class="col-md-3 ro">
-               <p class="lead">List of Donors</p>
+               <p class="lead">รายชื่อผู้บริจาค</p>
                    <div class="list-group">
                        <p class="list-group-item"><small>2017-04-12</small>
                            <i class="fa fa-comment fa-fw">Jutatip</i>
