@@ -91,9 +91,11 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                   <li>
-                       <a href="newsUser">ข่าว</a>
+                    @if(!(Auth::guest()))
+                   <li class="active">
+                       <a  href="newsUser">ข่าว</a>
                    </li>
+                   @endif
                </ul>
 
 <!--check login yet-->

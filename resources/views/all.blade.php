@@ -131,10 +131,11 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-
+                   @if(!(Auth::guest()))
                    <li>
-                       <a href="/newsUser">ข่าว</a>
+                       <a href="newsUser">ข่าว</a>
                    </li>
+                   @endif
 
                </ul>
                <ul class="nav navbar-nav navbar-right">
