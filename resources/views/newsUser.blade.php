@@ -13,7 +13,10 @@
 
     <!-- Custom CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+            {{Html::style('css/shop-homepage.css')}}
     <style type="text/css">
+
         .carousel-inner > .item > img {
   width:700;
   height:300px;

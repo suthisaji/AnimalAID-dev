@@ -60,7 +60,7 @@
 .ro{
   position:absolute;
 
-  right:40px;
+  right:4px;
 }
 li{
   font-size: 22px;
@@ -89,6 +89,14 @@ li{
 }
 body{
   font-size: 16px;
+}
+.col-md-10 {
+    width: 85%;
+}
+
+
+.col-md-10 {
+    width: 80%;
 }
 
     </style>
