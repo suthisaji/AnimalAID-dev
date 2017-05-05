@@ -101,6 +101,9 @@ body{
 .col-md-10 {
     width: 80%;
 }
+.col-md-3 {
+    width: 27%;
+}
 
     </style>
   </head>

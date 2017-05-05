@@ -97,6 +97,9 @@ body{
 .fl{
   font-size: 18px;
 }
+.col-md-3 {
+    width: 27%;
+}
     </style>
   </head>
   <body>
