@@ -734,6 +734,10 @@ function closeAnimal($animal_id=0){
 
 
                     function newsUser(){
+                      $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            } 
                         $animals = $this->AnimalRepository->getAllAnimal();
                         $animalsMoneys = $this->AnimalRepository->getAllMoney();
                         $animalsBloods= $this->AnimalRepository->getAllBlood();
