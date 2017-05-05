@@ -43,7 +43,7 @@
 .box1{
   position:absolute;
   bottom: 33px;
-  right:82px;
+  right:100px;
   font-size: 14px;
 }
 .box2{
@@ -70,15 +70,15 @@ li{
 }
 .rub1{
        padding: 5px 6px;
-      font-size: 13px;
+      font-size: 14px;
       position:absolute;
       bottom: 17px;
       right:88px;
       border-radius: 3px;
 }
 .rub2{
-       padding: 5px 6px;
-      font-size: 13px;
+       padding: 6px 10px;
+      font-size: 15px;
       position:absolute;
       bottom: 33px;
       right:25px;
@@ -233,18 +233,25 @@ body{
                                           </div>
                                           <div class="modal-body thumbnailjam">
                                              <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                            Donation Type: {{$animal->join_donationType->do_typeName}} <br>
-                                            Name Animal:{{$animal->animal_name}}<br>
-                                            age        :{{$animal->animal_age}}<br>
-                                            Animal Type:{{$animal->animal_type}}<br>
-                                            Color :{{$animal->animal_color}}<br>
+                                            ประเภทของการขอรับบริจาค: 
+                                              @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif<br>
+                                            ชื่อสัตว์:{{$animal->animal_name}}<br>
+                                            อายุ        :{{$animal->animal_age}}<br>
+                                            ชนิดของสัตว์ :{{$animal->animal_type}}<br>
+                                            สี :{{$animal->animal_color}}<br>
                                             @if($animal->animal_gender == 1)
-                                                Gender :Male<br>
-                                            @else
-                                                Gender :Female<br>
-                                            @endif
-                                            SymptomCase :{{$animal->symptomCase}}<br>
-                                            StatusDonation:{{$animal->statusDonation}}<br>
+                                              เพศ :เพศผู้<br>
+                                   @else
+                                       เพศ:เพศเมีย<br>
+                                   @endif
+                                            ลักษณะอาการ  :{{$animal->symptomCase}}<br>
+                                             สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
                                             @foreach($admins as $admin)
                                               @if($animal->admin_id==$admin->admin_id)
                                                    @foreach($hospitals as $hos)
@@ -257,7 +264,7 @@ body{
                                           </div>
                                           @if($animal->doType_id==3)
                                             <div class="modal-footer">
-                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                   <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 
                                    <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-danger rub1" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <script>
@@ -310,14 +317,14 @@ body{
                                  </div>
                                @elseif($animal->doType_id==2)
                                             <div class="modal-footer">
-                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
                                               <button type="button" class="btn btn-primary "><a href='db' style='color:white;'>วิธีบริจาคแสดงข้อมูล</a></button>
 
 
                                             </div>
                                           @else
                                             <div class="modal-footer">
-                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
                                               <button type="button" class="btn btn-primary bori">บริจาค</button>
                                             </div>
                                           @endif
@@ -368,7 +375,15 @@ body{
                        <div class="thumbnail">
                            <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                            <div   class="caption  ">
-                              {{$animal->join_donationType->do_typeName}}<br>
+                         
+                              @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif
+                              <br>
                               <span style="color:blue">{{$animal->animal_name}}</span>
 
                               {{$animal->animal_type}} <br>
@@ -389,7 +404,7 @@ body{
 
                           @if($animal->doType_id==3)
                             <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                              view detail
+                              ดูรายละเอียด
                             </button>
                             <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-danger rub2" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                             <script>
@@ -440,13 +455,13 @@ body{
                             </div>
                           @elseif($animal->doType_id==1)
                             <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                              view detail
+                             ดูรายละเอียด
                             </button>
-                              <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="index">Help</a></button>
+                              <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="index">ช่วยเหลือ</a></button>
 
                           @else
                             <button type="button" class="btn btn-primary btn-sm box2" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                              view detail
+                            ดูรายละเอียด
                             </button>
                           @endif
 
@@ -462,21 +477,29 @@ body{
                                 </div>
                                 <div class="modal-body thumbnailjam">
                                    <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                  Donation Type: {{$animal->join_donationType->do_typeName}} <br>
-                                  Name Animal:{{$animal->animal_name}}<br>
-                                  age        :{{$animal->animal_age}}<br>
-                                  Animal Type:{{$animal->animal_type}}<br>
+                                  ประเภทของการขอบริจาค: 
+                                   @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif
+                                  <br>
+                                  ชื่อสัตว์:{{$animal->animal_name}}<br>
+                                  อายุ        :{{$animal->animal_age}}<br>
+                                  ชนิดของสัตว์ :{{$animal->animal_type}}<br>
                                   Color :{{$animal->animal_color}}<br>
                                   @if($animal->animal_gender == 1)
-                                      Gender :Male<br>
-                                  @else
-                                      Gender :Female<br>
-                                  @endif
-                                  SymptomCase :{{$animal->symptomCase}}<br>
-                                  StatusDonation:{{$animal->statusDonation}}<br>
+                                    เพศ :เพศผู้<br>
+                                   @else
+                                       เพศ:เพศเมีย<br>
+                                   @endif
+                                  ลักษณะอาการ  :{{$animal->symptomCase}}<br>
+                                  สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
                                 </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-default bori" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
                                     <button type="button" class="btn btn-primary bori">บริจาค</button>
                                   </div>
                               </div>

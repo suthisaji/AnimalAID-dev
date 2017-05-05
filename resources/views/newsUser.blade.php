@@ -51,6 +51,12 @@
 .container{
   width:1300px;
 }
+li{
+  font-size: 22px;
+}
+body{
+  font-size: 16px;
+}
 
     </style>
   </head>

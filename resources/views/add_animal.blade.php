@@ -131,7 +131,7 @@
 
 
                                           <div class="form-group" >
-                                              <label for="symptomCase" class="form-label">ลักษณะอาการ</label>
+                                              <label for="symptomCase" class="form-label">ลักษณะอาการ&ค่ารักษา</label>
                                               <textarea class="form-control" name="symptomCase" row="2"></textarea>
                                           </div>
 

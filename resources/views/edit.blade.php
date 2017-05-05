@@ -86,10 +86,22 @@
                         <label for="doType_id" class="form-label">ประเภทของการขอรับบริจาค</label>
                         <br>
                         <select class="custom-select" style="  border: 5px solid rgba(0, 255, 0,.15);" name="doType_id" id="doType">
-                            <option value="{{$animal->join_donationType->do_typeId}}">{{$animal->join_donationType->do_typeName}} </option>
+                            <option value="{{$animal->join_donationType->do_typeId}}">  @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif</option>
                           @foreach($donationType as $dt)
                             @if($dt->do_typeId!=$animal->join_donationType->do_typeId)
-                              <option value="{{$dt->do_typeId}}">{{$dt->do_typeName}}</option>
+                              <option value="{{$dt->do_typeId}}">  @if($dt->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($dt->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif</option>
                             @endif
                           @endforeach
                         </select>
@@ -114,7 +126,7 @@
 
 
                     <div class="form-group" id="animal_color">
-                        <label for="ani_color" class="form-label"สี</label>
+                        <label for="ani_color" class="form-label">สี</label>
                         <input type="text" class="form-control" name="ani_color" value="{{ $animal->animal_color }}"/>
                     </div>
 
@@ -141,7 +153,7 @@
 
 
                     <div class="form-group">
-                        <label for="symptomCase" class="form-label">ลักษณะอาการ</label>
+                        <label for="symptomCase" class="form-label">ลักษณะอาการ&ค่ารักษา</label>
                         <textarea class="form-control"  name="symptomCase" value="{{ $animal->symptomCase }}" row="3">{{ $animal->symptomCase }}</textarea>
                     </div>
 

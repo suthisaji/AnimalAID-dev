@@ -41,7 +41,7 @@
 .box1{
   position:absolute;
   bottom: 33px;
-  right:82px;
+  right:100px;
 }
 .box2{
   position:absolute;
@@ -202,7 +202,15 @@ body{
                        <div class="thumbnail">
                            <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                            <div class="caption">
-                             {{$animal->join_donationType->do_typeName}}<br>
+                            
+                               @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif
+                             <br>
                               <span style="color:blue">{{$animal->animal_name}}</span>
 
                               {{$animal->animal_type}}<br>
@@ -220,9 +228,9 @@ body{
                                   <!-- Button trigger modal -->
                                 <div class="row text-right">
                               <button type="button" class="btn btn-primary btn-sm box1 bori" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                                view detail</a>
+                                ดูรายละเอียด</a>
                               </button>
-                              <button type="button" class="btn btn-primary btn-sm box2 bori"><a style="color: white;" href="index">Help</a></button>
+                              <button type="button" class="btn btn-primary btn-sm box2 bori"><a style="color: white;" href="index">ช่วยเหลือ</a></button>
                               <!--Modal-->
                               <div class="modal fade" id="myModal{{$animal->animal_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -233,19 +241,28 @@ body{
                                     </div>
                                     <div class="modal-body thumbnailjam">
                                        <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                      Donation Type:{{$animal->join_donationType->do_typeName}}<br>
-                                      Name Animal:{{$animal->animal_name}}<br>
-                                      age        :{{$animal->animal_age}}<br>
-                                      Animal Type:{{$animal->animal_type}}<br>
-                                      Color :{{$animal->animal_color}}<br>
+                                      ประเภทของการขอรับบริจาค:
+
+                               @if($animal->join_donationType->do_typeName=='Donation Money')
+                               ขอรับบริจาคเงิน
+                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
+                               ขอรับบริจาคเลือด
+                             @else
+                                หาบ้านให้สัตว์
+                              @endif
+                                      <br>
+                                      ชื่อสัตว์:{{$animal->animal_name}}<br>
+                                      อายุ        :{{$animal->animal_age}}<br>
+                                      ชนิดของสัตว์ :{{$animal->animal_type}}<br>
+                                      สี :{{$animal->animal_color}}<br>
                                       @if($animal->animal_gender == 1)
-                                          Gender :Male<br>
+                                          เพศ :เพศเมีย<br>
                                       @else
-                                          Gender :Female<br>
+                                          เพศ :เพศผู้<br>
                                       @endif
 
-                                      SymptomCase :{{$animal->symptomCase}}<br>
-                                      StatusDonation:{{$animal->statusDonation}}<br>
+                                      ลักษณะอาการ :{{$animal->symptomCase}}<br>
+                                       สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
                                       @foreach($admins as $admin)
                                         @if($animal->admin_id==$admin->admin_id)
                                              @foreach($hospitals as $hos)
@@ -259,7 +276,7 @@ body{
 
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
                                       <button type="button" class="btn btn-primary bori"><a style="color: white;" href="index">บริจาค</a></button>
 
                                     </div>
