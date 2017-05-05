@@ -59,6 +59,9 @@ li{
 body{
   font-size: 16px;
 }
+.fl{
+  font-size: 18px;
+}
 
     </style>
   </head>
@@ -92,7 +95,7 @@ body{
                        <a href="#">ติดตามสัตว์</a>
                    </li>
                     @if(!(Auth::guest()))
-                   <li class="active">
+                   <li >
                        <a  href="newsUser">ข่าว</a>
                    </li>
                    @endif
@@ -102,23 +105,23 @@ body{
 <ul class="nav navbar-nav navbar-right">
   @if(!empty($position))
     @if( $position== 'admin')
-      <li>
+      <li class="fl">
    <a href="admin">การจัดการ</a>
  </li>
 @endif
 @endif
     <!-- Authentication Links -->
     @if (Auth::guest())
-        <li><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
-        <li><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
+        <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+        <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
     @else
-        <li class="dropdown">
+        <li class="dropdown fl">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
             <ul class="dropdown-menu" role="menu">
-                <li>
+                <li class="fl">
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
@@ -202,13 +205,16 @@ body{
                                       </div>
                              @endif
                            @endforeach
+
+                           <marquee>
                            @foreach($newsAnis as $fastNews)
                              @if($fastNews->news_type == 1)
-                               <marquee>  "{{$fastNews->head_News}} " &nbsp;{{$fastNews->content}}</marquee>
+                              "{{$fastNews->head_News}} " &nbsp;{{$fastNews->content}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                              @endif
 
                               @endforeach
+                              </marquee>
                            </div>
                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                <span class="glyphicon glyphicon-chevron-left"></span>
