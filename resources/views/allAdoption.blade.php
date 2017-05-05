@@ -289,7 +289,7 @@ body{
                           <script>
                                 $('#take0{{$animal->animal_id}}').popover({
                                   html: true,
-                                  title: 'Please add Your address ',
+                                  title: 'กรุณาเพิ่มที่อยุ่ในการเลี้ยงสัตว์ ',
                                   content: function(){
                                       return $('#modal-content{{$animal->animal_id}}').html()
                                   }
