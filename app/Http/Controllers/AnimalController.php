@@ -25,12 +25,18 @@ class AnimalController extends Controller
     protected $UserRepository;
     function __construct(AnimalRepositoryInterface $AnimalRepository,DonationTypeRepositoryInterface $DonationTypeRepository,NewsAniRepositoryInterface $NewsAniRepository ,UserRepositoryInterface $UserRepository){
         $this->AnimalRepository = $AnimalRepository;
-        $this->DonationTypeRepository = $DonationTypeRepository;
+        $this->DonationTypeRepository = $DonationTypeRepository; 
         $this->NewsAniRepository = $NewsAniRepository;
           $this->UserRepository = $UserRepository;
     }
 //เรียกใช้  repo ที่สร้าง
     function animal(){
+
+      $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
+
         $animals = $this->AnimalRepository->getAllAnimal();
         $donationType = $this->DonationTypeRepository->getAllDonationType();
           $newsAnis = $this->NewsAniRepository->getAllNewsAni();
@@ -232,6 +238,12 @@ class AnimalController extends Controller
 
 
     function addAnimal(){
+
+            $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
+
       if(Request::isMethod('get')){
         $donationType = $this->DonationTypeRepository->getAllDonationType();
         $data = array(
@@ -277,6 +289,13 @@ class AnimalController extends Controller
       }
     }
     function editAnimal($animal_id=0){
+
+        $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
+
+
         if(Request::isMethod('post')){
           $animalId = Input::get('ani_id');
           $animalName = Input::get('ani_name');//
@@ -345,6 +364,10 @@ class AnimalController extends Controller
 
     function addNews(){
 
+        $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
 
   if(Request::isMethod('post')){
               $headNews = Input::get('head_News');
@@ -409,12 +432,21 @@ class AnimalController extends Controller
           }
 
           function newsPage(){
+
+            $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
+
+
+
               $animals = $this->AnimalRepository->getAllAnimal();
               $animalsMoneys = $this->AnimalRepository->getAllMoney();
               $animalsBloods= $this->AnimalRepository->getAllBlood();
               $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
               $newsAnis = $this->NewsAniRepository->getAllNewsAni();
               $admin = Auth::user()->id;
+
             $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
               $data = array(
                   'animals'=>$animals ,
@@ -501,6 +533,10 @@ class AnimalController extends Controller
 
 
     function checkAdoption(){
+        $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
       if(Request::isMethod('post')){
         $status = Input::get('status');
         $adoption_id = Input::get('adoption_id');

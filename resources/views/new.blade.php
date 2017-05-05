@@ -1,4 +1,4 @@
-
+<html>
 
   <head>
     <!-- Required meta tags -->
@@ -11,7 +11,7 @@
      .k{
        border-width: inherit;
      }
-     .table-inverse{
+     .table-inverse{ 
        background-color: #D8D8D8;
        color: #424242;
      }
@@ -34,7 +34,7 @@ width: 1600px;
   </head>
 
 
-
+<body>
   <div class="container ">
 
 
@@ -42,30 +42,9 @@ width: 1600px;
 
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <a class="navbar-brand t" href="/all">Animal-AID</a>
-    <a class="navbar-brand t " href="/admin"> :: Admin management :: </a>
+    <a class="navbar-brand t " href="/admin"> &nbsp;&nbsp; การจัดการ  &nbsp;&nbsp; </a>
 
-    <li class="dropdown navbar-brand  " style="alight=right " >
-        <a href="#"  class="dropdown-toggle a t " data-toggle="dropdown" role="button" aria-expanded="false">
-            {{ Auth::user()->name }}
-        </a>
-
-                <ul class="dropdown-menu t" role="menu">
-                          <li>
-                            <a  class="t" href="../adminProfile"> โปรไฟล์ &nbsp;&nbsp; </a>
-                          </li>
-                              <li>
-                                  <a class = "t" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                      Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                    </form>
-                                  </li>
-                </ul>
-    </li>
+   
 
     </nav>
 
@@ -111,3 +90,5 @@ width: 1600px;
     </div>
 </div>
 </div>
+</body>
+</html>
