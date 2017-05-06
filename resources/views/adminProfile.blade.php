@@ -3,7 +3,12 @@
   .si{
     font-size:16px;
   }
-
+li{
+  font-size: 22px;
+}
+body{
+  font-size: 16px;
+}
 
   </style>
 @section('content')
@@ -46,10 +51,7 @@
                   <span class="badge si">31 ครั้ง </span>
                   กิจกรรม
                     </li>
-                    <li class="list-group-item list-group-item-info">
-                  <span class="badge ">1,1111 ฿</span>
-                  ยอดบริจาคที่ได้รับ
-                    </li>
+                    
                       </ul>
                 </div>
                 </b>
