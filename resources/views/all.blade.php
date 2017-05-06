@@ -341,7 +341,7 @@ body{
                                           @else
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                              <button type="button" class="btn btn-primary bori">บริจาค</button>
+                                              <button type="button" class="btn btn-primary bori"><a href="index" style="color:white">บริจาค</a></button>
                                             </div>
                                           @endif
                                         </div>
