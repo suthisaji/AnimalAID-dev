@@ -77,7 +77,7 @@
 
                     <div class="form-group">
                         <label for="ani_type" class="form-label">ชนิดของสัตว์</label>
-                        <input type="text" class="form-control" name="ani_type"  placeholder="dog cat etc." />
+                        <input type="text" class="form-control" name="ani_type"  placeholder="สุนัข  แมว  ฯลฯ" />
                     </div>
                     <div class="form-group">
                         <label for="doType_id" class="form-label">ประเภทของการขอรับบริจาค</label>

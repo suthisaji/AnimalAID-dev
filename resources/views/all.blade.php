@@ -26,6 +26,7 @@
 .thumbnail img {
     width:100% !important;
     height: 200px !important;
+    
 }
 .caption{
   height: 150px;
@@ -257,7 +258,7 @@ body{
                                 หาบ้านให้สัตว์
                               @endif<br>
                                             ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                            อายุ        :{{$animal->animal_age}}<br>
+                                            อายุ        :{{$animal->animal_age}} ปี<br>
                                             ชนิดของสัตว์ :{{$animal->animal_type}}<br>
                                             สี :{{$animal->animal_color}}<br>
                                             @if($animal->animal_gender == 1)
@@ -426,7 +427,7 @@ body{
                             <script>
                                   $('#take{{$animal->animal_id}}').popover({
                                     html: true,
-                                    title: 'กรุณาเพิ่มที่อยู๋ในการเลี้ยงสัตว์  ',
+                                    title: 'กรุณาเพิ่มที่อยู่ในการเลี้ยงสัตว์  ',
                                     content: function(){
                                         return $('#modal-content{{$animal->animal_id}}').html()
                                     }
@@ -503,7 +504,7 @@ body{
                               @endif
                                   <br>
                                   ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                  อายุ        :{{$animal->animal_age}}<br>
+                                  อายุ        :{{$animal->animal_age}} ปี<br>
                                   ชนิดของสัตว์ :{{$animal->animal_type}}<br>
                                   Color :{{$animal->animal_color}}<br>
                                   @if($animal->animal_gender == 1)
@@ -558,7 +559,7 @@ body{
                        </span>
                    </p>
                    <p class="list-group-item"><small>2017-04-12</small>
-                       <i class="fa fa-comment fa-fw">Chanon</i>
+                       <i class="fa fa-comment fa-fw">Somsak</i>
                        <span class="pull-right text-muted small">
                            <em>$100  กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</em>
                        </span>

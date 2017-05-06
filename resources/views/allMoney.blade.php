@@ -263,7 +263,7 @@ body{
                               @endif
                                       <br>
                                       ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                      อายุ        :{{$animal->animal_age}}<br>
+                                      อายุ        :{{$animal->animal_age}} ปี<br>
                                       ชนิดของสัตว์ :{{$animal->animal_type}}<br>
                                       สี :{{$animal->animal_color}}<br>
                                       @if($animal->animal_gender == 1)
@@ -329,7 +329,7 @@ body{
                    </span>
                </p>
                <p class="list-group-item"><small>2017-04-12</small>
-                   <i class="fa fa-comment fa-fw">Chanon</i>
+                   <i class="fa fa-comment fa-fw">somsak</i>
                    <span class="pull-right text-muted small">
                        <em>$100  กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</em>
                    </span>

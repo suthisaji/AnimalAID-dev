@@ -314,7 +314,7 @@ body{
                                 หาบ้านให้สัตว์
                               @endif<br>
                                    ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                   อายุ        :{{$animal->animal_age}}<br>
+                                   อายุ        :{{$animal->animal_age}} ปี<br>
                                    ชนิดของสัตว์ :{{$animal->animal_type}}<br>
                                    สี :{{$animal->animal_color}}<br>
                                    @if($animal->animal_gender == 1)
