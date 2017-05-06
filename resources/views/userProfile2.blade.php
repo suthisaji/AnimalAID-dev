@@ -69,24 +69,7 @@ body{
             </a>
 
             <ul class="dropdown-menu" role="menu">
-                           @if(Auth::user()->position=='user')
-                           <li class="fl">
-                             <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
-                           </li>
-                           <li class="fl">
-                               <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                   ออกจากระบบ
-                               </a>
-
-                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                   {{ csrf_field() }}
-                               </form>
-                           </li>
-                         @else <li class="fl">
-                            <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
-                          </li>
+            
                 <li>
 
                     <a href="{{ route('logout') }}"
@@ -100,9 +83,7 @@ body{
                     </form>
                 </li>
             </ul>
-
         </li>
-        @endif
 
 </ul>
 <!--end check-->
