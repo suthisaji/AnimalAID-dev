@@ -373,7 +373,7 @@ body{
 
                                          <div class="form-group">
                                              <label for="date" class="form-label">วันที่และเวลาที่มารับสัตว์</label>
-                                             <input type="datetime-local" class="form-control" name="date_time"  value="2011-08-19T13:45:00" />
+                                             <input type="datetime-local" class="form-control" name="date_time"  value="2017-06-19T13:45:00" />
                                          </div>
                                          <div class="form-group">
                                              กรุณารอการติดต่อจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
