@@ -38,16 +38,16 @@ body{
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="all">Animals A-I-D</a>
+               <a class="navbar-brand"  style="font-size:20px;"  href="all">Animals A-I-D</a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                   <li>
+                   <li  >
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li >
-                       <a  href="db"> การบริจาคเลือด</a>
+                   <li>
+                       <a href="db">การบริจาคเลือด</a>
                    </li>
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
@@ -55,13 +55,23 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                   <li>
-                       <a href="newsUser">ข่าว</a>
+                   @if(!(Auth::guest()))
+                   <li >
+                       <a  href="newsUser">ข่าว</a>
                    </li>
+                   @endif
                </ul>
-
-<!--check login yet-->
- <!-- Authentication Links -->
+               <!--check login -->
+          <ul class="nav navbar-nav navbar-right">
+            @if(!empty($position))
+              @if( $position== 'admin')
+                <li class="fl">
+             <a href="admin">การจัดการ</a>
+           </li>
+         @endif
+       @endif
+              <!-- Authentication Links -->
+             <!-- Authentication Links -->
                    @if (Auth::guest())
                        <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                        <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
@@ -105,13 +115,7 @@ body{
                          </ul>
                      </li>
                    @endif
-<!--end check-->
-
-
-
-
-
-
+          </ul>
            </div>
            <!-- /.navbar-collapse -->
        </div>
