@@ -230,7 +230,10 @@ body{
                                 @if($animal->admin_id==$admin->admin_id)
                                      @foreach($hospitals as $hos)
                                         @if($admin->hospital_id==$hos->hospital_id)
-                                         <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp; {{$admin->join_Hospital->hospital_account}}</span>
+                                         <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp;  @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
+                                          @elseif
+                                                 {{$admin->join_Hospital->hospital_account}}
+                                         @endif</span>
                                         @endif
                                      @endforeach
                                 @endif
@@ -278,7 +281,12 @@ body{
                                         @if($animal->admin_id==$admin->admin_id)
                                              @foreach($hospitals as $hos)
                                                 @if($admin->hospital_id==$hos->hospital_id)
-                                                 <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp;{{$admin->join_Hospital->hospital_account}}</span>
+                                                 <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp; @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6 
+                                                 @elseif
+                                                 {{$admin->join_Hospital->hospital_account}}
+                                         @endif
+
+                                         </span>
                                                 @endif
                                              @endforeach
                                         @endif
