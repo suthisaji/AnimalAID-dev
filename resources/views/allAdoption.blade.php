@@ -103,7 +103,7 @@ body{
     </style>
   </head>
   <body>
-    <!-- Navigation -->
+   <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
@@ -114,71 +114,90 @@ body{
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand"  style="font-size:20px;" href="all">Animals A-I-D</a>
+               <a class="navbar-brand"  style="font-size:20px;"  href="all">Animals A-I-D</a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                   <li>
+                   <li  >
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li>
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li  class="active">
+                   <li class="active">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                     @if(!(Auth::guest()))
-                   <li>
-                       <a href="newsUser">ข่าว</a>
+                   @if(!(Auth::guest()))
+                   <li >
+                       <a  href="newsUser">ข่าว</a>
                    </li>
                    @endif
-
                </ul>
-               <!--check login-->
-               <ul class="nav navbar-nav navbar-right">
-                 @if(!empty($position))
-                   @if( $position== 'admin')
-                     <li class="fl">
-                  <a href="admin"> การจัดการ</a>
-                </li>
-              @endif
-            @endif
-                   <!-- Authentication Links -->
+               <!--check login -->
+          <ul class="nav navbar-nav navbar-right">
+            @if(!empty($position))
+              @if( $position== 'admin')
+                <li class="fl">
+             <a href="admin">การจัดการ</a>
+           </li>
+         @endif
+       @endif
+              <!-- Authentication Links -->
+             <!-- Authentication Links -->
                    @if (Auth::guest())
                        <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                        <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
                    @else
-                       <li class="dropdown fl">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                               {{ Auth::user()->name }} <span class="caret"></span>
-                           </a>
+                     <li class="dropdown fl">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                             {{ Auth::user()->name }} <span class="caret"></span>
+                         </a>
 
-                           <ul class="dropdown-menu" role="menu">
-                               <li class="fl">
-                                   <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                       ออกจากระบบ
-                                   </a>
+                         <ul class="dropdown-menu" role="menu">
+                           @if(Auth::user()->position=='user')
+                           <li class="fl">
+                             <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
+                           </li>
+                           <li class="fl">
+                               <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                   ออกจากระบบ
+                               </a>
 
-                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                       {{ csrf_field() }}
-                                   </form>
-                               </li>
-                           </ul>
-                       </li>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   {{ csrf_field() }}
+                               </form>
+                           </li>
+                         @else <li class="fl">
+                            <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
+                          </li>
+                             <li class="fl">
+                                 <a href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                     ออกจากระบบ
+                                 </a>
+
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                     {{ csrf_field() }}
+                                 </form>
+                             </li>
+                           @endif
+                         </ul>
+                     </li>
                    @endif
-               </ul>
-               <!--end-->
+          </ul>
            </div>
            <!-- /.navbar-collapse -->
        </div>
        <!-- /.container -->
    </nav>
+
 
    <!-- Page Content -->
    <div class="container">
