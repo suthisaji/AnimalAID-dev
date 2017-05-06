@@ -28,8 +28,7 @@
                                         <td> {{$your_email}}</td>
                                         <td>{{$your_position}}</td>
                                           <td>{{$your_tel}}</td>
-                                     {{--  <td><a href="/edit" class="btn btn-info btn-sm">Edit</a></td>--}}
-
+                                    
 
 
                         </tbody>
