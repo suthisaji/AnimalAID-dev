@@ -760,25 +760,4 @@ function closeAnimal($animal_id=0){
                     }
 
 
-
-
-
-                    function news2(){
-                     
-                       
-                        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-                        $userId = Auth::user()->id;
-                  
-                        $data = array(
-                         
-                            'news'=>$newsAnis,
-                            'all_users'=>$this->UserRepository->getAllUser(),
-                        'userId' =>$userId 
-                         
-                        );
-
-                       return view('news2',$data);
-                    }
-
-
 }
