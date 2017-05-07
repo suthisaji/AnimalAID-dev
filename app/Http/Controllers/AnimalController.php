@@ -760,4 +760,28 @@ function closeAnimal($animal_id=0){
                     }
 
 
+
+
+
+                    function news2(){
+                      $this->middleware('auth');
+                    if(Auth::user()==null){
+                      return redirect('login');
+                    } 
+                       
+                        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+                        $userId = Auth::user()->id;
+                  
+                        $data = array(
+                         
+                            'news'=>$newsAnis,
+                            'all_users'=>$this->UserRepository->getAllUser(),
+                        'userId' =>$userId 
+                         
+                        );
+
+                       return view('news2',$data);
+                    }
+
+
 }

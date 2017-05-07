@@ -94,11 +94,11 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                    @if(!(Auth::guest()))
+                  
                    <li class="active">
-                       <a  href="newsUser">ข่าว</a>
+                       <a  href="news2">ข่าว</a>
                    </li>
-                   @endif
+                
                </ul>
 
 <!--check login yet-->
@@ -165,7 +165,7 @@ body{
       </div>
 
 
-
+{{$userId}}
 
            @foreach($news as $new)
 
