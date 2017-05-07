@@ -276,7 +276,7 @@ function countEverAdoption($userId){
   }
 
    function countAdminAction($userId){ //มีรับแล้วทั้้งหมด
-       return Animal::where('$userId','admin_id')->count();
+       return Animal::where('admin_id',$userId)->count();
       }
 
 
