@@ -102,14 +102,7 @@ body{
                </ul>
 
 <!--check login yet-->
-<ul class="nav navbar-nav navbar-right">
-  @if(!empty($position))
-    @if( $position== 'admin')
-      <li class="fl">
-   <a href="admin">การจัดการ</a>
- </li>
-@endif
-@endif
+
     <!-- Authentication Links -->
     @if (Auth::guest())
         <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
