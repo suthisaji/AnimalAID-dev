@@ -72,8 +72,9 @@ class AdminController extends Controller
 
 
         function AdminProfile(){
-          $countAdminAction = $this->AnimalRepository->countAdminAction($userId)
+         
           $userId  =   Auth::user()->id;
+           $countAdminAction = $this->AnimalRepository->countAdminAction($userId)
           $name    =   Auth::user()->name;
           $username=   Auth::user()->username;
               $email   =   Auth::user()->email;
