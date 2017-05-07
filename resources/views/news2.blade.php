@@ -132,23 +132,6 @@ body{
       </div>
 
 
-{{$userId}}
-
-           @foreach($news as $new)
-
-       {{--{{$new->news_id}}</td>
-             <td>{{$new->admin_id}}--}}
-
-             <b style="font-size:23px;">{{$new->head_News}}</b>
-          &nbsp;   <small >{{$new->created_at}}</small><br>
-            <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
-
-             <br>   <br>   <br>
-
-           <!--  <td>{{--{{$new->updated_at}}--}}</td>-->
-
-
-           @endforeach
 
      </div>
  </div>
