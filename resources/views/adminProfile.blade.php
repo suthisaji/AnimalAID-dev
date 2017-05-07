@@ -48,7 +48,7 @@ body{
                       <ul class="list-group ">
 
                     <li class="list-group-item list-group-item-info">
-                  <span class="badge si">31 ครั้ง </span>
+                  <span class="badge si">{{$countAdminAction}} ครั้ง </span>
                   กิจกรรม
                     </li>
                     

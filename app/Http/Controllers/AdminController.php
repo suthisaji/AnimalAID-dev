@@ -25,7 +25,7 @@ class AdminController extends Controller
     	$data = array(
     		'all_users'=>$this->UserRepository->getAllUser(),
         'countRecipientEachAdmin'=>$countRecipientEachAdmin,
-        'admin'=>true
+        'admin'=>true 
     		);
 
     	return view('admin',$data);
@@ -72,6 +72,7 @@ class AdminController extends Controller
 
 
         function AdminProfile(){
+          $countAdminAction = $this->AnimalRepository->countAdminAction($userId)
           $userId  =   Auth::user()->id;
           $name    =   Auth::user()->name;
           $username=   Auth::user()->username;
@@ -95,7 +96,8 @@ class AdminController extends Controller
               'all_users'=>$this->UserRepository->getAllUser(),
               'countRecipientEachAdmin'=>$countRecipientEachAdmin,
               'admin'=>true,
-              'admins'=>$admins
+              'admins'=>$admins,
+              'countAdminAction'=>$countAdminAction
               );
 
             return view('adminProfile',$data);

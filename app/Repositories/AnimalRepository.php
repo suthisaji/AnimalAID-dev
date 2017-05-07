@@ -275,7 +275,9 @@ function countEverAdoption($userId){
       return Hospital::orderBy('created_at')->get();
   }
 
-
+   function countAdminAction($userId){ //มีรับแล้วทั้้งหมด
+       return Animal::where('$userId','admin_id')->count();
+      }
 
 
 
