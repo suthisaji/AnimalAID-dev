@@ -31,6 +31,7 @@ width: 1600px;
 
 
   </head>
+  <title>a</title>
 
   <body>
 
