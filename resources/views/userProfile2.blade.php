@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>User Profile</title>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
