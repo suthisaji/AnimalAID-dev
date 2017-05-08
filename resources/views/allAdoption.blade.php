@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Adoption</title>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

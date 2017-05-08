@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<title>Blood Donation</title>
 <html lang="en">
   <head>
     <!-- Required meta tags -->

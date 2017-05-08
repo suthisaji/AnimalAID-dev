@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<title>Omise</title>
 <head>
     <script src="https://cdn.omise.co/card.js" charset="utf-9"></script>
      <meta charset="utf-8">

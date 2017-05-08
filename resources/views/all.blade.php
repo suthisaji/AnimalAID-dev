@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>ALL Donation</title>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

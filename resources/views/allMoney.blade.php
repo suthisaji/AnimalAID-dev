@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<title> Money Donation </title>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
