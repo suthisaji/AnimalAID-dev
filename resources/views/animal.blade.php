@@ -1,4 +1,4 @@
-
+<title>Animal List</title>
 
   <head>
     <!-- Required meta tags -->

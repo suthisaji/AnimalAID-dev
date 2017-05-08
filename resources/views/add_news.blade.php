@@ -31,7 +31,7 @@ width: 1600px;
 
 
   </head>
-  <title>a</title>
+  <title>Add News</title>
 
   <body>
 

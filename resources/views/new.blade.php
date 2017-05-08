@@ -1,5 +1,5 @@
 <html>
-
+<title>All News</title>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
