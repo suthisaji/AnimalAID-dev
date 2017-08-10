@@ -27,7 +27,7 @@
 .thumbnail img {
     width:100% !important;
     height: 200px !important;
-    
+
 }
 .caption{
   height: 150px;
@@ -250,7 +250,7 @@ body{
                                           </div>
                                           <div class="modal-body thumbnailjam">
                                              <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                            ประเภทของการขอรับบริจาค: 
+                                            ประเภทของการขอรับบริจาค:
                                               @if($animal->join_donationType->do_typeName=='Donation Money')
                                ขอรับบริจาคเงิน
                              @elseif($animal->join_donationType->do_typeName=='Blood Donation')
@@ -396,7 +396,7 @@ body{
                        <div class="thumbnail">
                            <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                            <div   class="caption  ">
-                         
+
                               @if($animal->join_donationType->do_typeName=='Donation Money')
                                ขอรับบริจาคเงิน
                              @elseif($animal->join_donationType->do_typeName=='Blood Donation')
@@ -414,7 +414,7 @@ body{
                                      @foreach($hospitals as $hos)
                                         @if($admin->hospital_id==$hos->hospital_id)
                                          <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp;
-                                         @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6 
+                                         @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
                                           @else
                                                  {{$admin->join_Hospital->hospital_account}}
                                          @endif
@@ -503,7 +503,7 @@ body{
                                 </div>
                                 <div class="modal-body thumbnailjam">
                                    <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                  ประเภทของการขอบริจาค: 
+                                  ประเภทของการขอบริจาค:
                                    @if($animal->join_donationType->do_typeName=='Donation Money')
                                ขอรับบริจาคเงิน
                              @elseif($animal->join_donationType->do_typeName=='Blood Donation')
@@ -590,7 +590,7 @@ body{
        <footer>
            <div class="row ">
                <div class="text-center col-lg-12">
-                   <p>Copyright &copy; Your Website 2017</p>
+                   <p>Copyright &copy; Your Website 2017777777777777</p>
                </div>
            </div>
        </footer>
