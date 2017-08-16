@@ -36,7 +36,7 @@
     <!-- Bootstrap Core JavaScript -->
     <!--old- - -<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script>-->
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style type="text/css">
         .carousel-inner > .item > img {
   width:700;
