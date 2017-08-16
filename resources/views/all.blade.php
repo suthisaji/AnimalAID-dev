@@ -501,7 +501,7 @@ body{
                             <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                              ดูรายละเอียด
                             </button>
-                              <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="index">ช่วยเหลือ</a></button>
+                              <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="donate">ช่วยเหลือ</a></button>
 
                           @else
                             <button type="button" class="btn btn-primary btn-sm box2" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">

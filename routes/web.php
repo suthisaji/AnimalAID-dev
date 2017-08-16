@@ -122,8 +122,8 @@ Route::post('/adminProfile','AdminController@adminProfile');
 Route::get('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
 Route::post('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/donate', function () {
+    return view('donate');
 });
 
 
