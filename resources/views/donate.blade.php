@@ -220,8 +220,8 @@ body{
                               </div>
                               <div class="row">
                                 <div class="col-md-12">
-                                  <label for="">อีเมล์</label>
-                                  <input type="email" class="form-control" id="email" placeholder="อีเมล์"/>
+                                  <label for="">เบอร์โทรศัพท์ (กรอกตามความจริง)</label>
+                                  <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์"/>
                                 </div>
                               </div>
                               <div class="row">
@@ -330,14 +330,14 @@ $(document).ready(function()
     $('#submit-donate-btn').click(function(e){
       const name = $('#name').val()
       const surname = $('#sname').val()
-      const email = $('#email').val()
+      const tel = $('#tel').val()
       const amount = $('#amount').val()*100
       const bankCode = $('#bankcode').val()
       const data = {
         amount: amount,
         name: name,
         sname: surname,
-        email: email,
+        tel: tel,
         bank: bankCode
       }
       fetch("{{url('/charge')}}", {

@@ -12,7 +12,7 @@ class DonateController extends Controller
         $amount = $data['amount'];
         $name = $data['name'];
         $sname = $data['sname'];
-        $email = $data['email'];
+        $tel = $data['tel'];
         $bank = $data['bank'];
         
         define('OMISE_PUBLIC_KEY', 'pkey_test_57gpwuk3sm7mirumtsx');
@@ -22,7 +22,7 @@ class DonateController extends Controller
             'currency' => 'thb',
             'offsite' => $bank,
             'return_uri' => 'http://animal-aid.me',
-            'metadata' => ['name' => $name, 'sname' => $sname, 'email' => $email]
+            'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
         return Response::json([
             'statusCode' => 200,
@@ -31,9 +31,19 @@ class DonateController extends Controller
     }
 
     function webhook(Request $request){
-        return Response::json([
-            'statusCode' => 200,
-            'statusMessage' => 'Success'
-            ], 200);
+        $payload = $request->json()->all();
+        if($payload['key'] === 'charge.complete'){
+            if($payload['data']['paid']){ //ถ้าจ่ายสำเร็จ
+                //ส่ง SMS 
+                return Response::json([
+                    'statusCode' => 200,
+                    'statusMessage' => 'Success',
+                    'payload' => $payload['data']['paid']
+                    ], 200);
+
+            }else{ //ถ้าจ่ายไม่สำเร็จ
+
+            }
+        }
     }
 }
