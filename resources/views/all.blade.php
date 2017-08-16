@@ -34,7 +34,6 @@
     <!-- Custom Fonts -->
             <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
 
-  {{ Html::style('css/bootstrap.min.css') }}
     <!-- Bootstrap Core JavaScript -->
     <!--old- - -<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script>-->
 
