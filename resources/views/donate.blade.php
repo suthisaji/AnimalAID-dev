@@ -270,18 +270,6 @@ body{
                   </div>
                 <!-- DONATE BOX -->
               </div>
-              {{--
-                 <div class="col-lg-12" style="background-color: #EFFBFB;padding:30px 40px;">
-                    <h3><b style="font-size: 32px;">Omise </b> &nbsp;เป็น Payment Gateway<h3>
-                  <h2>บริจาคเงินผ่านทางบัตรเครดิต</h2>
-                  <h3>เราได้เลือก Omise เป็นช่องทางการในการบริจาคเงินออนไลน์</h3>
-                  <h3>ผู้ใช้จะปลอดภัยจากการปลอมแปลง หรือเก็บข้อมูลบัตรเครดิต เพราะมีเทคโนโลยีตรวจสอบข้อมูลว่า เป็นข้อมูลจริงหรือไม่</h3>
-                  <h3>ทำให้ไม่มีเรื่องการกรอกข้อมูลปลอมได้ ระบบของเราไม่จำเป็นต้องเก็บข้อมูลบัตรเครดิตของผู้ใช้ไว้</h3>
-                  <h3>เพราะ Token จะเป็นตัวแทนข้อมูลบัตรเครดิตของผู้ใช้ที่ถูกเข้ารหัสไว้แล้ว </h3> --}}
-
-
-
-    <!-- data-key="pkey_test_57gpwuk3sm7mirumtsx" -->
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 <script>
@@ -317,12 +305,10 @@ $(document).ready(function()
      $('.getBankSelected > h3').text(bankName);
      $('.getBankSelected > img').attr('src', bankLogo);
      $('.selected-bank').css('display', 'block')
-     console.log('bankLogo is ', bankLogo)
     });
 
     $('#cancel-donate-btn').click(function(e){
       e.preventDefault();
-      console.log('eeee')
       $('.selected-bank').css('display', 'none')
       $('.bank-list').css('display', 'block')
     })
