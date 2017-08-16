@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<title>Admin Profile </title>
   <style>
   .si{
     font-size:16px;
