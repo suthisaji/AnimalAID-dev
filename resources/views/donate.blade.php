@@ -270,14 +270,6 @@ body{
                   </div>
                 <!-- DONATE BOX -->
               </div>
-              <img src="/images/omise11.PNG">
-     <form>
-       {{ Form::token() }}
-        <script type="text/javascript" src="https://cdn.omise.co/omise.js" data-key="pkey_test_57gpwuk3sm7mirumtsx" data-image="http://4.bp.blogspot.com/-dkZGIJ0Psv4/Vmi4uwB92tI/AAAAAAAAAUk/4j4Nd5Qtips/s1600/%25E0%25B8%2595%25E0%25B8%2581%25E0%25B8%2584%25E0%25B9%2589%25E0%25B8%25B2%25E0%25B8%2587.jpg" data-frame-label="  Animal-AID " data-button-label="Pay now" data-submit-label="Submit" data-location="yes"
-            data-amount="320000" data-currency="thb">
-        </script>
-        <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
-    </form>
               {{--
                  <div class="col-lg-12" style="background-color: #EFFBFB;padding:30px 40px;">
                     <h3><b style="font-size: 32px;">Omise </b> &nbsp;เป็น Payment Gateway<h3>
@@ -339,26 +331,22 @@ $(document).ready(function()
       const name = $('#name').val()
       const surname = $('#sname').val()
       const email = $('#email').val()
-      const amount = $('#amount').val()
+      const amount = $('#amount').val()*100
       const bankCode = $('#bankcode').val()
       const data = {
         amount: amount,
-        currency: 'thb',
-        offsite: bankCode,
-        return_uri: 'http://animal-aid.me'
+        name: name,
+        sname: surname,
+        email: email,
+        bank: bankCode
       }
-      fetch('https://api.omise.co/charges', {
+      fetch("{{url('/charge')}}", {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Authorization': 'Basic '+btoa('skey_test_57gpwuk42fxek0ag94z:'),
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify(data)
       }).then(res => {
         return res.json();
       }).then(json => {
-        console.log(json)
+        return window.location.href = json.url
       }).catch(err => {
         console.log('error ',err)
       })
