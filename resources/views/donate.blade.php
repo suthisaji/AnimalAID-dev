@@ -99,10 +99,10 @@ body{
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                   <li>
+                   <li class="active">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li class="active">
+                   <li>
                        <a  href="db"> การบริจาคเลือด</a>
                    </li>
                    <li>
@@ -220,7 +220,7 @@ body{
                               </div>
                               <div class="row">
                                 <div class="col-md-12">
-                                  <label for="">เบอร์โทรศัพท์ (กรอกตามความจริง)</label>
+                                  <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
                                   <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์"/>
                                 </div>
                               </div>

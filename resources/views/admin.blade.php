@@ -38,7 +38,7 @@
                             </tr>
                             @endforeach
                     </tbody>--}}
-              <img src="\images\Capture.PNG" alt="Mountain View" style="width:700px;height:308px; max-width: 100%;">
+          <!--    <img src="\images\Capture.PNG" alt="Mountain View" style="width:700px;height:308px; max-width: 100%;">-->
                     </table>
 
 

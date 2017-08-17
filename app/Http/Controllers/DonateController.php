@@ -15,14 +15,16 @@ class DonateController extends Controller
         $sname = $data['sname'];
         $tel = $data['tel'];
         $bank = $data['bank'];
-        
+
         define('OMISE_PUBLIC_KEY', 'pkey_test_57gpwuk3sm7mirumtsx');
         define('OMISE_SECRET_KEY', 'skey_test_57gpwuk42fxek0ag94z');
         $charge = \OmiseCharge::create(array(
             'amount' => $amount,
             'currency' => 'thb',
             'offsite' => $bank,
-            'return_uri' => 'http://animal-aid.me',
+
+          //  'return_uri' => 'http://animal-aid.me/all',
+          'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
         return Response::json([
@@ -35,7 +37,7 @@ class DonateController extends Controller
         $payload = $request->json()->all();
         if($payload['key'] === 'charge.complete'){
             if($payload['data']['paid']){ //ถ้าจ่ายสำเร็จ
-                //ส่ง SMS 
+                //ส่ง SMS
                 $tel = $payload['data']['metadata']['tel'];
                 $tel = preg_replace('/^0/', '66', $tel);
                 $name = $payload['data']['metadata']['name'];
@@ -44,7 +46,7 @@ class DonateController extends Controller
                 $amount = substr($amount, 0, strlen($amount)-2).'.'.substr($amount, -2);
                 Nexmo::message()->send([
                     'to' => $tel,
-                    'from' => 'ANIMAL-AID',
+                    'from' => 'NEXMO',
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
                 ]);
@@ -55,7 +57,7 @@ class DonateController extends Controller
                     ], 200);
 
             }else{ //ถ้าจ่ายไม่สำเร็จ
-                
+
             }
         }
     }

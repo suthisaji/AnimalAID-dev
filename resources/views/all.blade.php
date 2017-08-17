@@ -157,11 +157,11 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                   @if(!(Auth::guest()))
+                  
                    <li>
                        <a href="newsUser">ข่าว</a>
                    </li>
-                   @endif
+
 
                </ul>
                <ul class="nav navbar-nav navbar-right">
@@ -363,7 +363,7 @@ body{
                                           @else
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                              <button type="button" class="btn btn-primary bori"><a href="index" style="color:white">บริจาค</a></button>
+                                              <button type="button" class="btn btn-primary bori"><a href="donate" style="color:white">บริจาค</a></button>
                                             </div>
                                           @endif
                                         </div>
@@ -608,7 +608,7 @@ body{
        <footer>
            <div class="row ">
                <div class="text-center col-lg-12">
-                   <p>Copyright &copy; Your Website 20171111</p>
+                   <p>Copyright &copy; Your Website 2017</p>
                </div>
            </div>
        </footer>
@@ -616,5 +616,5 @@ body{
    </div>
    <!-- /.container -->
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </html>
