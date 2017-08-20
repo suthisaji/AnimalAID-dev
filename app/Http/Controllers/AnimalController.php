@@ -25,7 +25,7 @@ class AnimalController extends Controller
     protected $UserRepository;
     function __construct(AnimalRepositoryInterface $AnimalRepository,DonationTypeRepositoryInterface $DonationTypeRepository,NewsAniRepositoryInterface $NewsAniRepository ,UserRepositoryInterface $UserRepository){
         $this->AnimalRepository = $AnimalRepository;
-        $this->DonationTypeRepository = $DonationTypeRepository; 
+        $this->DonationTypeRepository = $DonationTypeRepository;
         $this->NewsAniRepository = $NewsAniRepository;
           $this->UserRepository = $UserRepository;
     }
@@ -737,7 +737,7 @@ function closeAnimal($animal_id=0){
                       $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
-            } 
+            }
                         $animals = $this->AnimalRepository->getAllAnimal();
                         $animalsMoneys = $this->AnimalRepository->getAllMoney();
                         $animalsBloods= $this->AnimalRepository->getAllBlood();

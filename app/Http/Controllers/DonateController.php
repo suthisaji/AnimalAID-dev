@@ -22,9 +22,9 @@ class DonateController extends Controller
             'amount' => $amount,
             'currency' => 'thb',
             'offsite' => $bank,
-
+      
           //  'return_uri' => 'http://animal-aid.me/all',
-          'return_uri' => 'http://localhost:8000/all',
+              'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
         return Response::json([

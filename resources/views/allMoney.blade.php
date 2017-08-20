@@ -115,10 +115,8 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li>
-                       <a href="#">ติดตามสัตว์</a>
-                   </li>
-          
+
+
                    <li >
                        <a  href="newsUser">ข่าว</a>
                    </li>
