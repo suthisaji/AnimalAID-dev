@@ -733,7 +733,7 @@ function closeAnimal($animal_id=0){
 
 
 
-                    function newsUser(){
+                    function newsAdmin(){
                       $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
@@ -756,7 +756,15 @@ function closeAnimal($animal_id=0){
                             'admin'=>true
                         );
 
-                       return view('newsUser',$data);
+                       return view('newsAdmin',$data);
+                    }
+
+                    function newsAll(){
+                        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+                          $data = array(
+                             'news'=>$newsAnis
+                           );
+                           return view('newsAll',$data);
                     }
 
 

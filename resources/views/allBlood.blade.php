@@ -108,11 +108,7 @@ body{
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
 
-                   @if(!(Auth::guest()))
-                   <li >
-                       <a  href="newsUser">ข่าว</a>
-                   </li>
-                   @endif
+                
                </ul>
                <!--check login -->
           <ul class="nav navbar-nav navbar-right">

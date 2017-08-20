@@ -156,9 +156,7 @@ body{
                    </li>
 
 
-                   <li>
-                       <a href="newsUser">ข่าว</a>
-                   </li>
+                  
 
 
                </ul>

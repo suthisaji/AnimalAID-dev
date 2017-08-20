@@ -117,10 +117,7 @@ body{
                    </li>
 
 
-                   <li >
-                       <a  href="newsUser">ข่าว</a>
-                   </li>
-
+                
                </ul>
                <!--check login -->
           <ul class="nav navbar-nav navbar-right">

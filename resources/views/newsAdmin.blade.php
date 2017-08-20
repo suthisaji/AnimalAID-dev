@@ -107,11 +107,7 @@ body{
                    <li>
                        <a href="#">ติดตามสัตว์</a>
                    </li>
-                    @if(!(Auth::guest()))
-                   <li class="active">
-                       <a  href="newsUser">ข่าว</a>
-                   </li>
-                   @endif
+                  
                </ul>
 
 <!--check login yet-->
@@ -124,7 +120,7 @@ body{
 @endif
 @endif
     <!-- Authentication Links -->
-    @if (Auth::guest())
+  @if (Auth::guest())
         <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
         <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
     @else
@@ -150,7 +146,6 @@ body{
     @endif
 </ul>
 <!--end check-->
-
 
 
 

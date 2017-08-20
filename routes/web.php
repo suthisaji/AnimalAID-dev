@@ -144,6 +144,11 @@ Route::get('/gridtest', function () {
 Route::get('/newsUser','AnimalController@newsUser');
 Route::post('/newsUser','AnimalController@newsUser');
 
+Route::get('/newsAll','AnimalController@newsAll');
+Route::post('/newsAll','AnimalController@newsAll');
+
+
+
 
 Route::get('/news2','AnimalController@news2');
 Route::post('/news2','AnimalController@news2');
