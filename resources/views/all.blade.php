@@ -161,12 +161,7 @@ body{
                        <a href="newsAll">ข่าวห้ามลบ</a>
                    </li>
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 7fc26244a9292e74b95c422b03dbab53ead86ee7
                </ul>
                <ul class="nav navbar-nav navbar-right">
                  @if(!empty($position))
