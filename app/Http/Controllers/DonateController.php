@@ -22,7 +22,7 @@ class DonateController extends Controller
             'amount' => $amount,
             'currency' => 'thb',
             'offsite' => $bank,
-      
+
           //  'return_uri' => 'http://animal-aid.me/all',
               'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
@@ -61,4 +61,31 @@ class DonateController extends Controller
             }
         }
     }
+
+    function donorName(){
+      $name = $payload['data']['metadata']['name'];
+      $sname = $payload['data']['metadata']['sname'];
+        $amount = $payload['data']['amount'];
+
+      $data = array(
+          'amount'=>$amount,
+          'sname'=>$sname,
+        'name'=>$name,
+  );
+
+
+
+     return view('all',$data);
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
