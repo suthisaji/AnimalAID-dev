@@ -151,6 +151,9 @@ body{
                    <li class="active">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
+                   <li>
+                       <a href="newsAll">ข่าวห้ามลบ</a>
+                   </li>
 
 
                </ul>

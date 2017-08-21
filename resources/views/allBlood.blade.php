@@ -107,8 +107,11 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
+                   <li>
+                       <a href="newsAll">ข่าวห้ามลบ</a>
+                   </li>
 
-                
+
                </ul>
                <!--check login -->
           <ul class="nav navbar-nav navbar-right">
