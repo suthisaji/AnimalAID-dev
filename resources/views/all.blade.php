@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>ALL Donation</title>
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ALL Donation</title>
 
     <!--bootstrap link-->
 
@@ -35,7 +40,7 @@
 {{Html::style('css/shop-homepage.css')}}
     <!-- Bootstrap Core JavaScript -->
     <!--old- - -<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script>-->
-
+    --
 
     <style type="text/css">
         .carousel-inner > .item > img {
@@ -79,7 +84,6 @@
 }
 .ro{
   position:absolute;
-
   right:4px;
 }
 li{
@@ -154,9 +158,13 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
+                   <li>
+                       <a href="#">ติดตามสัตว์</a>
+                   </li>
 
-
-                  
+                   <li>
+                       <a href="newsUser">ข่าว</a>
+                   </li>
 
 
                </ul>
