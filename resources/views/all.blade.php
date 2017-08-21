@@ -4,7 +4,10 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!--bootstrap link-->
 
@@ -154,14 +157,6 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li>
-                       <a href="#">ติดตามสัตว์</a>
-                   </li>
-
-                   <li>
-                       <a href="newsUser">ข่าว</a>
-                   </li>
-
 
                </ul>
                <ul class="nav navbar-nav navbar-right">
@@ -233,7 +228,7 @@ body{
 
        <div class="row">
 
-           <div class="col-md-10">
+           <div class="col-md-9">
 
                <div class="row carousel-holder">
 
@@ -256,8 +251,8 @@ body{
                                     @else
                                       <div class="item"  data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                                           <img class="slide-image" src="{{url('/images/'.$animal->animal_picture)}}" alt="">
-
                                       </div>
+
                                     @endif
                                     <div class="modal fade" id="myModal{{$animal->animal_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                       <div class="modal-dialog" role="document">
