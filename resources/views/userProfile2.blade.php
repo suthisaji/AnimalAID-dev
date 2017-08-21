@@ -69,7 +69,7 @@ body{
                        <a href="#">ติดตามสัตว์</a>
                    </li>
                    <li>
-                       <a href="newsUser">ข่าว</a>
+                       <a href="newsAll">ข่าว</a>
                    </li>
                </ul>
 
