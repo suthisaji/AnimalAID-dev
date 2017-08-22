@@ -599,16 +599,16 @@ body{
    </div>
    <!-- /.container -->
 
-
-   กิจกรรม
-   <h3>
-     @foreach($newsAnis as $ac)
-       @if($ac->news_type == 3)
-          "{{$ac->head_News}} " &nbsp;{{$ac->content}}
-       @endif
-  @endforeach
-        </h3>
-
+                    <div class="container">
+                    <h1>  กิจกรรม</h1>
+                       <h3>
+                       @foreach($newsAnis as $ac)
+                             @if($ac->news_type == 3)
+                           "{{$ac->head_News}} " &nbsp;{{$ac->content}}
+                             @endif
+                           @endforeach
+                         </h3>
+                    </div>
 
 
    <div class="container">
