@@ -180,21 +180,11 @@ body{
                    <div class="col-lg-12">
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
-                           <object width='425' height='355'>
-                             <param name='movie' value='http://www.youtube.com/v/azTXEmnkBDY'></param>
-                             <param name='wmode' value='transparent'></param>
-                               <embed src='http://www.youtube.com/v/azTXEmnkBDY' type='application/x-shockwave-flash' wmode='transparent' width='425' height='355'>
-                         </embed>
-                     </object>
+                        <iframe width="500" height="500"
 
+                 src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1">
 
-
-
-<iframe width="500" height="500"
-
-src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1">
-
-</iframe>
+                    </iframe>
 
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
