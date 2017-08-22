@@ -179,6 +179,14 @@ body{
                <div class="row">
                    <div class="col-lg-12">
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
+            
+                           <object width='425' height='355'>
+                             <param name='movie' value='http://www.youtube.com/v/azTXEmnkBDY'></param>
+                             <param name='wmode' value='transparent'></param>
+                               <embed src='http://www.youtube.com/v/azTXEmnkBDY' type='application/x-shockwave-flash' wmode='transparent' width='425' height='355'>
+                         </embed>
+                     </object>
+
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
                            <small>เป็นสถานที่จัดเก็บ และสำรองเลือดในรูปแบบผลิตภัณฑ์เลือดชนิดต่างๆ เช่น</small>
@@ -384,6 +392,11 @@ body{
        </div>
 
    </div>
+
+
+
+
+
    <!-- /.container -->
    <div class="container">
    <h1>  กิจกรรม</h1>
@@ -396,7 +409,7 @@ body{
         </h3>
    </div>
 
-   
+
    <div class="container">
 
        <hr>
