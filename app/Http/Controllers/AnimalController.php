@@ -761,8 +761,10 @@ function closeAnimal($animal_id=0){
 
                     function newsAll(){
                         $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+                            $position =  Auth::user()->position;
                           $data = array(
-                             'news'=>$newsAnis
+                             'news'=>$newsAnis,
+                           'position'=>$position
                            );
                            return view('newsAll',$data);
                     }
@@ -770,6 +772,6 @@ function closeAnimal($animal_id=0){
 
 
 
-                  
+
 
 }

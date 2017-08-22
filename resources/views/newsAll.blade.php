@@ -139,13 +139,12 @@ body{
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a  style="font-size:20px;" class="navbar-brand" href="all">Animals A-I-D</a>
+               <a class="navbar-brand"  style="font-size:20px;"  href="all">Animals A-I-D</a>
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-
-                   <li>
+                   <li >
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li>
@@ -154,27 +153,24 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li class="active">
-                       <a href="newsAll">ข่าวห้ามลบ</a>
+                   <li  class="active" >
+                       <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
 
 
 
-
                </ul>
-               <ul class="nav navbar-nav navbar-right">
-                 @if(!empty($position))
-                   @if( $position== 'admin')
-                     <li class="fl">
-                       <a href="admin">การจัดการ</a>
-                    </li>
-
-
-
-                   @endif
-                 @endif
-
-                   <!-- Authentication Links -->
+               <!--check login -->
+          <ul class="nav navbar-nav navbar-right">
+            @if(!empty($position))
+              @if( $position== 'admin')
+                <li class="fl">
+             <a href="admin">การจัดการ</a>
+           </li>
+         @endif
+       @endif
+              <!-- Authentication Links -->
+             <!-- Authentication Links -->
                    @if (Auth::guest())
                        <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                        <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
@@ -218,7 +214,7 @@ body{
                          </ul>
                      </li>
                    @endif
-               </ul>
+          </ul>
            </div>
            <!-- /.navbar-collapse -->
        </div>
@@ -241,7 +237,7 @@ body{
 
 
               @foreach($news as $new)
-
+                 @if($new->news_type==2||$new->news_type==1)
           {{--{{$new->news_id}}</td>
                 <td>{{$new->admin_id}}--}}
 
@@ -250,11 +246,22 @@ body{
                <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
                 <br>   <br>   <br>
-
+     <hr>
               <!--  <td>{{--{{$new->updated_at}}--}}</td>-->
+   @elseif($new->news_type==3)
+     <div class="row">
+         <div class="col-lg-12">
+            <h1 class="page-header">กิจกรรม</h1>
+         </div>
+     </div>
 
+     <b style="font-size:23px;">{{$new->head_News}}</b>
+     &nbsp;   <small >{{$new->created_at}}</small><br>
+    <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
-              @endforeach
+     <br>   <br>   <br>
+    @endif
+@endforeach
 
         </div>
 

@@ -158,7 +158,7 @@ body{
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
                    <li>
-                       <a href="newsAll">ข่าวห้ามลบ</a>
+                       <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
 
 
@@ -599,9 +599,24 @@ body{
    </div>
    <!-- /.container -->
 
+
+   กิจกรรม
+   <h3>
+     @foreach($newsAnis as $ac)
+       @if($ac->news_type == 3)
+          "{{$ac->head_News}} " &nbsp;{{$ac->content}}
+       @endif
+  @endforeach
+        </h3>
+
+
+
    <div class="container">
 
        <hr>
+
+
+
 
        <!-- Footer -->
        <footer>

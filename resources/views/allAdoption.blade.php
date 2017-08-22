@@ -152,7 +152,7 @@ body{
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
                    <li>
-                       <a href="newsAll">ข่าวห้ามลบ</a>
+                       <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
 
 
