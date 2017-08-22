@@ -154,7 +154,7 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li class"active">
+                   <li class="active">
                        <a href="newsAll">ข่าวห้ามลบ</a>
                    </li>
 

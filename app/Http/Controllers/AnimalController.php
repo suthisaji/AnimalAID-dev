@@ -768,4 +768,8 @@ function closeAnimal($animal_id=0){
                     }
 
 
+
+
+                  
+
 }

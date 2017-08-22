@@ -71,35 +71,36 @@ width: 1600px;
 
         <div class="row">
             <div class="col-md-6 offset-md-3 con">
-                <h1 class="display-4" style="text-align:center; color:#424242; ">เพิ่มข่าว</h1>
+                <h1 class="display-4" style="text-align:center; color:#424242; ">เพิ่มข่าว/กิจกรรม</h1>
                 <form action="/addNews" class="form" method="post" enctype="multipart/form-data">
                     {{ Form::token() }}
 
                     <div class="form-group">
-                        <label for="head_News" class="form-label h4">หัวข่าว</label>
+                        <label for="head_News" class="form-label h4">หัวข่าว/กิจกรรม</label>
                         <input type="text" class="form-control" name="head_News"/>
                     </div>
 
 
 
                     <div class="radio form-group" id="news_type">
-                      <label for="news_type" class="form-label h3">ประเภทข่าว</label><br>
+                      <label for="news_type" class="form-label h3">ประเภท</label><br>
 
                         &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input  type="radio" value="1" name="news_type">ข่าวด่วน</label>  &nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input type="radio" value="2" name="news_type" required >ข่าวปกติ</label>
+                    &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input type="radio" value="3" name="news_type" >กิจกรรม</label>
                     </div>
 
 
 
                     <div class="form-group">
-                         <label for="content" class=" h4">เนื้อหาข่าว</label>
+                         <label for="content" class=" h4">เนื้อหาข่าว/กิจกรรม</label>
                          <textarea class="form-control" name="content" id="content" rows="2"></textarea>
                    </div>
 
 
 
                     <div class="text-center">
-                        <button class="btn btn-success">เพิ่มข่าว</button>
+                        <button class="btn btn-success">เพิ่มข่าว/กิจกรรม</button>
                     </div>
 
                 </form>
@@ -132,8 +133,10 @@ width: 1600px;
 
                  @if($new->news_type==1)
                    <td style="font-size:18px;">ข่าวด่วน</td>
-                 @else
+                 @elseif($new->news_type==2)
                    <td style="font-size:18px;">ข่าวปกติ</td>
+                 @else
+                   <td style="font-size:18px;">กิจกรรม</td>
                  @endif
                     <td style="font-size:18px;">{{$new->created_at}}</td>
 
