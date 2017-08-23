@@ -529,24 +529,30 @@
                        </span>
                    </p>
                </div>
+         <br>
+
+
+               <p class="lead">ขอเชิญร่วมกิจกรรม</p>
+                    <div class="list-group">
+                        <p class="list-group-item">
+
+                          @foreach($newsAnis as $ac)
+                                     @if($ac->news_type == 3)
+                                       <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
+                                          &nbsp;{{$ac->content}}<br>
+                                       @endif
+                                     @endforeach
+
+                                  </div>
+                        </p>
+                    </p>
            </div>
 
 
-       </div>
 
    </div>
    <!-- /.container -->
 
-                    <div class="container">
-                    <h1>  กิจกรรม</h1>
-                       <h3>
-                       @foreach($newsAnis as $ac)
-                             @if($ac->news_type == 3)
-                           "{{$ac->head_News}} " &nbsp;{{$ac->content}}
-                             @endif
-                           @endforeach
-                         </h3>
-                    </div>
 
 
    <div class="container">
