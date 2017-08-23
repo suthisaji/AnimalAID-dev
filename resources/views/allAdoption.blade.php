@@ -1,129 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Adoption</title>
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Adoption</title>
 
     <!-- Bootstrap Core CSS -->
-    <!-- old link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/bootstrap.min.css" rel="stylesheet" -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+        <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Custom CSS -->
-    <!-- old link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet" -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <!-- Bootstrap Core JavaScript -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
     <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <!--bootstrap link-->
 
     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- Optional theme -->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <!--bootstrap link end-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
+    {{Html::style('css/shop-homepage.css')}}
 
-
-
-
-
-            <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
-            {{Html::style('css/shop-homepage.css')}}
     <style type="text/css">
         .carousel-inner > .item > img {
-  width:700;
-  height:300px;
-}
+          width:100%;
+          height:300px;
+        }
 
-.thumbnail img {
-    width:100% !important;
-    height: 200px !important;
-}
-    .caption{
-      height: 150px;
+        .thumbnail img {
+          width:100% !important;
+          height: 200px !important;
+        }
 
-    }
-    .thumbnailjam img {
-        width:100% !important;
-        height: 300px !important;
-            text-align: left;
-    }
-    .modal-title {
+        body{
+          font-size: 16px;
+        }
 
-        text-align: left;
-    }
-    .modal-body {
-
-        text-align: left;
-    }
-
-.popover{
-  max-width: none;
-  width: 300px;
-}
-.box1{
-  position:absolute;
-  bottom: 33px;
-  right:88px;
-  font-size: 14px;
-}
-.box2{
-  position:absolute;
-  bottom: 33px;
-  right:30px;
-}
-.ro{
-  position:absolute;
-
-  right:40px;
-}
-.rub{
-       padding: 6px 6px;
-      font-size: 15px;
-      position:absolute;
-      bottom: 33px;
-      right:25px;
-      border-radius: 3px;
-}
-
-.rub1{
-       padding: 5px 6px;
-      font-size: 15px;
-      position:absolute;
-      bottom: 17px;
-      right:88px;
-      border-radius: 3px;
-}
-.container{
-  width:1300px;
-}
-li{
-  font-size: 22px;
-}
-body{
-  font-size: 16px;
-}
-.bori{
-  font-size: 17px;
-}
-.fl{
-  font-size: 18px;
-}
-.col-md-3 {
-    width: 27%;
-}
     </style>
+
   </head>
   <body>
    <!-- Navigation -->
@@ -238,7 +177,7 @@ body{
                            <div class="carousel-inner">
                              @php($i=0)
                               @foreach($animals as $animal)
-                               @if(empty($animal->join_Adoption->animal_id) && $animal->doType_id == 3)
+                               @if(empty($animal->join_Adoption->animal_id) && $animal->doType_id == 3 &&$animal->statusDonation=='-' )
                                  @php($i=$i+1)
                                     @if($i==1)
                                       <div class="item active"  data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
@@ -454,20 +393,20 @@ body{
                        <p class="list-group-item"><small>2017-04-12</small>
                            <i class="fa fa-comment fa-fw">Jutatip</i>
                            <span class="pull-right text-muted small">
-                               <em>$100  กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</em>
+                               <em>$100  </em>
                            </span>
                </p>
 
                <p class="list-group-item"><small>2017-04-12</small>
                    <i class="fa fa-comment fa-fw">Suthisa</i>
                    <span class="pull-right text-muted small">
-                       <em>$100  กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</em>
+                       <em>$100  </em>
                    </span>
                </p>
                <p class="list-group-item"><small>2017-04-12</small>
-                   <i class="fa fa-comment fa-fw">Chanon</i>
+                   <i class="fa fa-comment fa-fw">Somsak</i>
                    <span class="pull-right text-muted small">
-                       <em>$100  กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</em>
+                       <em>$100  </em>
                    </span>
                </p>
            </div>

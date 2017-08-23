@@ -1,85 +1,68 @@
 <!DOCTYPE html>
-<title>Blood Donation</title>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blood Donation</title>
 
     <!-- Bootstrap Core CSS -->
-    <!-- old link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/bootstrap.min.css" rel="stylesheet" -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+        <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Custom CSS -->
-    <!-- old link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet" -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--bootstrap link-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-    <!--bootstrap link end-->
-
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
     {{Html::style('css/shop-homepage.css')}}
+
     <style type="text/css">
         .carousel-inner > .item > img {
-  width:700;
-  height:300px;
-}
-.thumbnail img {
-    width:100% !important;
-    height: 200px !important;
-}
-.caption{
-  height: 150px;
+          width:100%;
+          height:300px;
+        }
 
-}
-.thumbnailjam img {
-    width:100% !important;
-    height: 300px !important;
-}
-.modal-title {
+        .thumbnail img {
+          width:100% !important;
+          height: 200px !important;
+        }
 
-    text-align: left;
-}
-.modal-body {
-
-    text-align: left;
-}
-.box1{
-  position:absolute;
-  bottom: 33px;
-  right:82px;
-}
-.box2{
-  position:absolute;
-  bottom: 33px;
-  right:30px;
-  font-size:15px;
-}
-.container{
-  width:1300px;
-}
-li{
-  font-size: 22px;
-}
-body{
-  font-size: 16px;
-}
-.fl{
-  font-size: 18px;
-}
+        body{
+          font-size: 16px;
+        }
 
     </style>
+
   </head>
   <body >
   <!-- Navigation -->
@@ -185,6 +168,8 @@ body{
                  src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1">
 
                     </iframe>
+
+
 
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
