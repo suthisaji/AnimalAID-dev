@@ -58,9 +58,7 @@ position:absolute;
       padding: 1.25rem;
     width: 15%;
 }
-.container {
-    width: 1600px;
-}
+
 .col-xs-9 {
     width: 100%;
 }
@@ -101,7 +99,9 @@ position:absolute;
 
     </style>
   </head>
+
   <body style="padding-top:0px;">
+
         <div class="container header   ">
     <div class=" header " style="background-color:#F2F2F2;">
       <nav class="navbar navbar-toggleable-md navbar-light bg-faded">

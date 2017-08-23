@@ -101,6 +101,7 @@ li{
       bottom: 17px;
       right:88px;
       border-radius: 3px;
+    
 }
 .rub2{
        padding: 6px 10px;

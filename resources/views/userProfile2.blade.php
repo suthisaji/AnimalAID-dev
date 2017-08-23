@@ -65,7 +65,7 @@ body{
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   
+
                    <li>
                        <a href="newsAll">ข่าว</a>
                    </li>
@@ -121,8 +121,7 @@ body{
               </div>
             <div class="row">
               <div class="col-md-4 text-center">
-                <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
-              display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+                <img src="\images\user.png" alt="Mountain View" style="width:180px;height:230px; max-width: 100%;">
               </div>
                <b>
               <div class="col-md-8">

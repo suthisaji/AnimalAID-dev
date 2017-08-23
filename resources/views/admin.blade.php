@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">แอดมินตอบปัญหา</div>
 
                 <div class="panel-body">
 
@@ -38,7 +38,7 @@
                             </tr>
                             @endforeach
                     </tbody>--}}
-          <!--    <img src="\images\Capture.PNG" alt="Mountain View" style="width:700px;height:308px; max-width: 100%;">-->
+      <hr>  <hr>  <hr>    <hr>  <hr>  <hr>    <hr>  <hr>  <hr>
                     </table>
 
 

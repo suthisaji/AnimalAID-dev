@@ -180,7 +180,7 @@ body{
                    <div class="col-lg-12">
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
-                        <iframe width="500" height="500"
+                        <iframe width="700" height="500"
 
                  src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1">
 

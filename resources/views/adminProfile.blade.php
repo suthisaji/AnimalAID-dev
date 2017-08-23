@@ -24,8 +24,7 @@ body{
               </div>
             <div class="row">
               <div class="col-md-4 text-center">
-                <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
-              display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+            <img src="\images\Admin Icon - 01.png" alt="Mountain View" style="width:700px;height:278px; max-width: 100%;">
               </div>
                <b>
               <div class="col-md-8">
@@ -52,7 +51,7 @@ body{
                   <span class="badge si">{{$countAdminAction}} ครั้ง </span>
                   กิจกรรม
                     </li>
-                    
+
                       </ul>
                 </div>
                 </b>
