@@ -506,7 +506,16 @@
                </div>
 
            </div>
+
                <div class="col-md-3 ro">
+
+
+              <a  href="donate">   <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="230" height="160"></a>
+
+
+
+
+
                    <p class="lead">รายชื่อผู้บริจาค</p>
                        <div class="list-group">
                            <p class="list-group-item"><small>2017-04-12</small>
@@ -576,3 +585,14 @@
     </body>
 
 </html>
+<script>
+function bigImg(x) {
+    x.style.height = "170px";
+    x.style.width = "270px";
+}
+
+function normalImg(x) {
+    x.style.height = "160px";
+    x.style.width = "230px";
+}
+</script>
