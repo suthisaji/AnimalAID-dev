@@ -1,131 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>ALL Donation</title>
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ALL Donation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+        <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <!--bootstrap link-->
 
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!--bootstrap link end-->
-
-
-
-    <!-- Bootstrap Core CSS -->
-    <!-- -old- old <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/bootstrap.min.css" rel="stylesheet">-->
-
-
-    <!-- Custom CSS -->
-    <!--old - - - <link href="https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <!-- Custom Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
-{{Html::style('css/shop-homepage.css')}}
-    <!-- Bootstrap Core JavaScript -->
-    <!--old- - -<script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script>-->
 
+    {{Html::style('css/shop-homepage.css')}}
 
     <style type="text/css">
         .carousel-inner > .item > img {
-  width:700;
-  height:300px;
-}
-.thumbnail img {
-    width:100% !important;
-    height: 200px !important;
+          width:100%;
+          height:300px;
+        }
 
-}
-.caption{
-  height: 150px;
-}
-.thumbnailjam img {
-    width:100% !important;
-    height: 300px !important;
-}
-.modal-title {
-    text-align: left;
-}
-.modal-body {
-    text-align: left;
-}
-.box1{
-  position:absolute;
-  bottom: 33px;
-  right:100px;
-  font-size: 14px;
-}
-.box2{
-  position:absolute;
-  bottom: 33px;
-  right:30px;
-  font-size: 14px;
+        .thumbnail img {
+          width:100% !important;
+          height: 200px !important;
+        }
 
-}
-.popover{
-  max-width: none;
-  width: 300px;
-}
-.ro{
-  position:absolute;
-
-  right:4px;
-}
-li{
-  font-size: 22px;
-}
-.bori{
-  font-size: 17px;
-}
-.fl{
-  font-size: 18px;
-}
-.rub1{
-       padding: 5px 6px;
-      font-size: 14px;
-      position:absolute;
-      bottom: 17px;
-      right:88px;
-      border-radius: 3px;
-}
-.rub2{
-       padding: 6px 10px;
-      font-size: 15px;
-      position:absolute;
-      bottom: 33px;
-      right:25px;
-      border-radius: 3px;
-}
-.container{
-  width:1200px;
-}
-body{
-  font-size: 16px;
-}
-.col-md-10 {
-    width: 85%;
-}
-
-
-.col-md-10 {
-    width: 80%;
-}
-.col-md-3 {
-    width: 27%;
-}
+        body{
+          font-size: 16px;
+        }
 
     </style>
+
   </head>
   <body>
     <!-- Navigation -->

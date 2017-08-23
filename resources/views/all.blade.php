@@ -237,7 +237,7 @@
                                             <div class="modal-footer">
                                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 
-                                   <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-danger rub1" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                                   <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub1" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <script>
                                          $('#takemodal{{$animal->animal_id}}').popover({
                                            html: true,
@@ -383,7 +383,7 @@
                             <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                               ดูรายละเอียด
                             </button>
-                            <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-danger rub2" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                            <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub2" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                             <script>
                                   $('#take{{$animal->animal_id}}').popover({
                                     html: true,
