@@ -60,6 +60,21 @@
         body{
           font-size: 16px;
         }
+        .video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper object,
+.video-wrapper embed,
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
     </style>
 
@@ -163,12 +178,12 @@
                    <div class="col-lg-12">
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
-                        <iframe width="700" height="500"
 
-                 src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1">
 
-                    </iframe>
 
+<div class="video-wrapper">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
@@ -411,8 +426,17 @@
    <!-- /.container -->
 
 
-
-
+<script type="text/javascript">
+   $(docment).ready(function() {
+   	// เปลี่ยน .entry-content เป็น class ที่คุณต้องการใช้
+   	var embed = ('.entry-content').find('embed, iframe');
+   	if (embed.length > 0) {
+   		embed.each(function() {
+   			$(this).wrap('<div class="video-wrapper"></div>');
+   		})
+   	}
+   });
+   </script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
