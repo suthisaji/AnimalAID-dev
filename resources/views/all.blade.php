@@ -60,9 +60,10 @@
         body{
           font-size: 16px;
         }
-        box1{
+        .box1{
            text-align: left;
         }
+        
 
     </style>
 
