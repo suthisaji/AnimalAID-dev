@@ -61,9 +61,48 @@
           font-size: 16px;
         }
         .box1{
-           text-align: left;
+          margin: 1px;
+          font-size: 12px;
+          width: 70px;
+          height: 30px;
+          padding: 5px 6px;
+          position: absolute;
+          bottom: 28px;
+          right: 25px;
+          border-radius: 3px;
         }
-
+        /*รับเลี้ยง*/
+        .rub{
+          font-size: 12px;
+          width: 70px;
+          height: 30px;
+          padding: 5px 6px;
+          position: absolute;
+          bottom: 28px;
+          right: 25px;
+          border-radius: 3px;
+        }
+        /*ดูรายละเอียด*/
+        .box{
+          padding: 6px 10px;
+          font-size: 12px;
+          position:absolute;
+          bottom: 28px;
+          right:100px;
+          border-radius: 3px;
+        }
+        /*บริจาค, ช่วยเหลือ*/
+        .box2{
+          margin: 1px;
+          font-size: 12px;
+          width: 70px;
+          height: 30px;
+          padding: 5px 6px;
+          position: absolute;
+          bottom: 28px;
+          right: 25px;
+          border-radius: 3px;
+        }
 
     </style>
 
@@ -241,7 +280,7 @@
                                             <div class="modal-footer">
                                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
 
-                                   <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub1" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                                   <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <script>
                                          $('#takemodal{{$animal->animal_id}}').popover({
                                            html: true,
@@ -300,7 +339,7 @@
                                           @else
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                              <button type="button" class="btn btn-primary bori"><a href="donate" style="color:white">บริจาค</a></button>
+                                              <button type="button" class="btn btn-primary bori box2 "><a href="donate" style="color:white">บริจาค</a></button>
                                             </div>
                                           @endif
                                         </div>
@@ -352,42 +391,42 @@
                            <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                            <div   class="caption  ">
 
-                              @if($animal->join_donationType->do_typeName=='Donation Money')
-                               ขอรับบริจาคเงิน
-                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
-                               ขอรับบริจาคเลือด
-                             @else
-                                หาบ้านให้สัตว์
-                              @endif
-                              <br>
-                              <span style="color:blue">{{$animal->animal_name}}</span>
+                             <h5>
+                               @if($animal->join_donationType->do_typeName=='Donation Money') ขอรับบริจาคเงิน
+                               @elseif($animal->join_donationType->do_typeName=='Blood Donation') ขอรับบริจาคเลือด
+                               @else หาบ้านให้สัตว์
+                               @endif
+                               <span style="color:blue">{{$animal->animal_name}}</span> &nbsp;&nbsp; {{$animal->animal_type}}
+                             </h5>
 
-                              {{$animal->animal_type}} <br>
-                              {{$animal->symptomCase}}<br>
-                              @foreach($admins as $admin)
-                                @if($animal->admin_id==$admin->admin_id)
-                                     @foreach($hospitals as $hos)
-                                        @if($admin->hospital_id==$hos->hospital_id)
-                                         <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp;
-                                         @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
-                                          @else
-                                                 {{$admin->join_Hospital->hospital_account}}
-                                         @endif
-                                         </span>
-                                        @endif
-                                     @endforeach
-                                @endif
-                              @endforeach
+                             <!-- <h6>{{$animal->animal_type}}</h6> -->
+                             <h5>{{$animal->symptomCase}}</h5>
+
+                             @foreach($admins as $admin)
+                               @if($animal->admin_id==$admin->admin_id)
+                                    @foreach($hospitals as $hos)
+                                       @if($admin->hospital_id==$hos->hospital_id)
+                                        <!-- <h6><span style="color:#8000FF">
+                                          {{$admin->join_Hospital->hospital_name}}&nbsp;
+                                          @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
+                                          @else{{$admin->join_Hospital->hospital_account}}
+                                          @endif
+                                        </span></h6> -->
+                                       @endif
+                                    @endforeach
+                               @endif
+                             @endforeach
 
 
                               <!-- Button trigger modal -->
                             <div class="row text-right">
 
                           @if($animal->doType_id==3)
-                            <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
+                            <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                               ดูรายละเอียด
                             </button>
-                            <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub2" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+
+                            <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                             <script>
                                   $('#take{{$animal->animal_id}}').popover({
                                     html: true,
@@ -435,7 +474,7 @@
                             @endif
                             </div>
                           @elseif($animal->doType_id==1)
-                            <button type="button" class="btn btn-primary btn-sm box1" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
+                            <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                              ดูรายละเอียด
                             </button>
                               <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="donate">ช่วยเหลือ</a></button>
