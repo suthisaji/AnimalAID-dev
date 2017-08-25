@@ -182,8 +182,8 @@
              &nbsp;   <small >{{$new->created_at}}</small><br>
                <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
-                <br>   <br>   <br>
-     <hr>
+                <br>
+
               <!--  <td>{{--{{$new->updated_at}}--}}</td>-->
    @elseif($new->news_type==3)
      <div class="row">
@@ -196,7 +196,7 @@
      &nbsp;   <small >{{$new->created_at}}</small><br>
     <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
-     <br>   <br>   <br>
+     <br>  
     @endif
 @endforeach
 
