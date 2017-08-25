@@ -75,7 +75,7 @@
         .rub{
           font-size: 12px;
           width: 70px;
-          height: 30px;
+          height: 32px;
           padding: 5px 6px;
           position: absolute;
           bottom: 28px;
@@ -86,9 +86,9 @@
         .box{
           padding: 6px 10px;
           font-size: 12px;
-          position:absolute;
+          position: absolute;
           bottom: 28px;
-          right:100px;
+          right: 100px;
           border-radius: 3px;
         }
         /*บริจาค, ช่วยเหลือ*/
@@ -548,7 +548,7 @@
 
                <div class="col-md-3 ro">
 
-              <a  href="donate">   <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+                 <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
                    <p class="lead">รายชื่อผู้บริจาค</p>
                        <div class="list-group">

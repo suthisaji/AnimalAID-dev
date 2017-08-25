@@ -103,6 +103,9 @@
           right: 25px;
           border-radius: 3px;
         }
+        .box3{
+          text-align: left;
+        }
 
     </style>
 
@@ -293,9 +296,13 @@
                              @endforeach
 
                                   <!-- Button trigger modal -->
-                                <div class="row text-right">
-                              <div><button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">ดูรายละเอียด</button>
-                              <button type="button" class="btn btn-primary btn-sm box2"><a style="color: white;" href="donate">ช่วยเหลือ</a></button></div>
+                            <div class="row text-right">
+                              <div>
+                                <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">ดูรายละเอียด</button>
+                                <button type="button" class="btn btn-primary btn-sm box2">
+                                  <a style="color: white;" href="donate">ช่วยเหลือ</a></button>
+                              </div>
+
                               <!--Modal-->
                               <div class="modal fade" id="myModal{{$animal->animal_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -304,7 +311,7 @@
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                       <h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
                                     </div>
-                                    <div class="modal-body thumbnailjam box1">
+                                    <div class="modal-body thumbnailjam box3">
                                        <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
                                       ประเภทของการขอรับบริจาค:
 
@@ -347,7 +354,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                      <button type="button" class="btn btn-primary bori box2"><a style="color: white;" href="donate">บริจาค</a></button>
+                                      <button type="button" class="btn btn-primary bori"><a style="color: white;" href="donate">บริจาค</a></button>
 
                                     </div>
                                   </div>
