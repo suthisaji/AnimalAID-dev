@@ -52,7 +52,7 @@ position:absolute;
 }
 .po{
   position:relative;
-  right:650px;
+  right:30px;
 }
 .col-lg-3 {
       padding: 1.25rem;
@@ -262,6 +262,7 @@ position:absolute;
                   <input type='hidden' name='user_id' value=' {{$rec->join_User->id}}' />
                   <input type='hidden' name='status' value='Wait' />
                   <input type='hidden' name='auth' value='{{$adminId}}'/>
+                  <br>
                     <button class="btn btn-success po" >ยืนยันการขอรับเลี้ยง</button>
                         <a href="/deleteAdoptionTable/{{ $rec->animal_id }}" class="btn btn-warning po " onclick="return confirm('Please confirm again !!!')">ยกเลิก</a>
                 </div>
