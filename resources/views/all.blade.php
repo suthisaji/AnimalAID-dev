@@ -104,6 +104,10 @@
           border-radius: 3px;
         }
 
+        .box3{
+          text-align: left;
+        }
+
     </style>
 
   </head>
@@ -530,7 +534,7 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                   <h4 class="modal-title" id="myModalLabel" > {{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
                                 </div>
-                                <div class="modal-body thumbnail">
+                                <div class="modal-body thumbnail box3">
                                    <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
                                   ประเภทของการขอบริจาค:
                                    @if($animal->join_donationType->do_typeName=='Donation Money')
