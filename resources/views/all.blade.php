@@ -106,6 +106,7 @@
 
         .box3{
           text-align: left;
+          padding: 15px;
         }
 
     </style>
@@ -461,11 +462,13 @@
                             <div class="row text-right">
 
                           @if($animal->doType_id==3)
-                            <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
+                            <div>
+                              <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
                               ดูรายละเอียด
                             </button>
 
                             <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                          </div>
                             <script>
                                   $('#take{{$animal->animal_id}}').popover({
                                     html: true,
@@ -475,6 +478,7 @@
                                     }
                                   })
                             </script>
+
                             <div id="modal-content{{$animal->animal_id}}" style="display:none;">
                               @if (Auth::guest())
                                 <a href="{{ route('login') }}" class="btn btn-sm btn-success">เข้าสู่ระบบ</a>
@@ -558,8 +562,15 @@
                                   สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
                                 </div>
                                   <div class="modal-footer">
+                                    @if($animal->join_donationType->do_typeName=='Blood Donation')
                                     <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                    <button type="button" class="btn btn-primary bori">บริจาค</button>
+                                    @elseif($animal->join_donationType->do_typeName=='Donation Money')
+                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+                                    <button type="button" class="btn btn-primary bori" ><a href="donate" style="color:white">บริจาค</a></button>
+                                    @else
+                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+
+                                    @endif
                                   </div>
                               </div>
                             </div>
