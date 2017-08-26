@@ -40,13 +40,13 @@
 
  <style type="text/css">
  li{
-  font-size: 22px;
+  font-size: 16px;
 }
 body{
   font-size: 16px;
 }
 .fl{
-  font-size: 18px;
+  font-size: 16px;
 }
 .donate-box-header{
   font-weight: bold;
@@ -122,14 +122,14 @@ body{
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li>
-                       <a  href="db"> การบริจาคเลือด</a>
+                       <a  href="db">การบริจาคเลือด</a>
                    </li>
                    <li>
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
 
                    <li>
-                       <a href="newsAll">ข่าว</a>
+                       <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
 
                </ul>
