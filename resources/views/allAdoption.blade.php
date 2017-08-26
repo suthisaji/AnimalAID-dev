@@ -401,9 +401,8 @@
 
                                  </div>
                                  <div class="modal-footer">
-                                   <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-
-                                   <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                                   <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+                                   <button id="take{{$animal->animal_id}}" type="button" class="btn btn-primary bori" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <script>
                                          $('#take{{$animal->animal_id}}').popover({
                                            html: true,
