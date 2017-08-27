@@ -185,18 +185,18 @@
                 <br>
 
               <!--  <td>{{--{{$new->updated_at}}--}}</td>-->
-   @elseif($new->news_type==3)
+
      <div class="row">
          <div class="col-lg-12">
             <h1 class="page-header">กิจกรรม</h1>
          </div>
      </div>
-
+   @elseif($new->news_type==3)
      <b style="font-size:23px;">{{$new->head_News}}</b>
      &nbsp;   <small >{{$new->created_at}}</small><br>
     <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
-     <br>  
+     <br>
     @endif
 @endforeach
 
