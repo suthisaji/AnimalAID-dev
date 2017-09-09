@@ -11,7 +11,14 @@ use DB;
 class DonateController extends Controller
 {
 
-//ข้างบนจะเรียกใช้ repo ที่สร้าง
+  protected $DonationRepository;
+
+    /*function __construct(DonationRepositoryInterface $DonationRepository){
+        $this->DonationRepository = $DonationRepository;
+
+    }*/
+  //ข้างบนจะเรียกใช้ repo ที่สร้าง
+
 
     function charge(Request $request){
         $data = $request->json()->all();
