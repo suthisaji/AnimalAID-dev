@@ -44,12 +44,14 @@ class DonateController extends Controller
                 $sname = $payload['data']['metadata']['sname'];
                 $amount = $payload['data']['amount'];
                 $amount = substr($amount, 0, strlen($amount)-2).'.'.substr($amount, -2);
+                /*
                 Nexmo::message()->send([
                     'to' => $tel,
                     'from' => 'NEXMO',
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
-                ]);
+                ]);*/
+
                 return Response::json([
                     'statusCode' => 200,
                     'statusMessage' => 'Success',
@@ -65,7 +67,7 @@ class DonateController extends Controller
     function donorName(){
       $name = $payload['data']['metadata']['name'];
       $sname = $payload['data']['metadata']['sname'];
-        $amount = $payload['data']['amount'];
+      $amount = $payload['data']['amount'];
 
       $data = array(
           'amount'=>$amount,
