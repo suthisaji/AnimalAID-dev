@@ -5,11 +5,11 @@ require_once dirname(__FILE__, 3).'/omise/lib/Omise.php';
 use Illuminate\Http\Request;
 use Response;
 use Nexmo\Laravel\Facade\Nexmo;
-//use App\Donation;
-//use App\Repositories\DonationRepositoryInterface;
-//use App\User;
-//use Auth;
-//use DB;
+use App\Donation;
+use App\Repositories\DonationRepositoryInterface;
+use App\User;
+use Auth;
+use DB;
 
 class DonateController extends Controller
 {
@@ -66,13 +66,13 @@ class DonateController extends Controller
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
                 ]);*/
-              $result = $this->DonationRepository->addDonation($name,$sname,$email,$tel,$bank,$amount);
+          //    $result = $this->DonationRepository->addDonation($name,$sname,$email,$tel,$bank,$amount);
 
-                if($result){
-                    echo "success to add donationdata";
-                }else{
-                    echo "Failed to add donation";
-                }
+            //    if($result){
+            //        echo "success to add donationdata";
+              //  }else{
+              //      echo "Failed to add donation";
+              //  }
 
 
                 return Response::json([
