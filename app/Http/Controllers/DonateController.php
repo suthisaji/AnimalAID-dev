@@ -5,9 +5,14 @@ require_once dirname(__FILE__, 3).'/omise/lib/Omise.php';
 use Illuminate\Http\Request;
 use Response;
 use Nexmo\Laravel\Facade\Nexmo;
-
+use App\Repositories\DonationRepositoryInterface;
+use App\Donation;
+use DB;
 class DonateController extends Controller
 {
+
+//ข้างบนจะเรียกใช้ repo ที่สร้าง
+
     function charge(Request $request){
         $data = $request->json()->all();
         $amount = $data['amount'];
@@ -23,8 +28,8 @@ class DonateController extends Controller
             'currency' => 'thb',
             'offsite' => $bank,
 
-            'return_uri' => 'http://animal-aid.me/all',
-          //  'return_uri' => 'http://localhost:8000/all',
+          //  'return_uri' => 'http://animal-aid.me/all',
+            'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
         return Response::json([
@@ -58,7 +63,7 @@ class DonateController extends Controller
                 }else{
                     echo "Failed to add donation";
                 }
-                
+
                 return Response::json([
                     'statusCode' => 200,
                     'statusMessage' => 'Success',
