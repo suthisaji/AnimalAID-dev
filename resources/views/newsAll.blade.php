@@ -163,16 +163,16 @@
 
    <div class="container">
      <!-- Page Heading -->
-         <div class="row">
-             <div class="col-lg-12">
-                 <h1 class="page-header">ข่าวสาร</h1>
 
-             </div>
+
+
+
+     <div class="row">
+         <div class="col-lg-12">
+             <h1 class="page-header">ข่าวสาร</h1>
+
          </div>
-
-
-
-
+     </div>
               @foreach($news as $new)
                  @if($new->news_type==2||$new->news_type==1)
           {{--{{$new->news_id}}</td>
@@ -185,18 +185,23 @@
                 <br>
 
               <!--  <td>{{--{{$new->updated_at}}--}}</td>-->
-   @elseif($new->news_type==3)
+
+     @endif
+
+     @endforeach
      <div class="row">
          <div class="col-lg-12">
             <h1 class="page-header">กิจกรรม</h1>
          </div>
      </div>
+         @foreach($news as $new1)
+   @if($new1->news_type==3)
 
-     <b style="font-size:23px;">{{$new->head_News}}</b>
-     &nbsp;   <small >{{$new->created_at}}</small><br>
-    <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
+     <b style="font-size:23px;">{{$new1->head_News}}</b>
+     &nbsp;   <small >{{$new1->created_at}}</small><br>
+    <p> <span style="font-size:18px;">{{$new1->content}}</span></p><br>
 
-     <br>  
+     <br>
     @endif
 @endforeach
 
