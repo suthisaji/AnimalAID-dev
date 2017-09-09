@@ -160,3 +160,9 @@ Route::post('/webhook', 'DonateController@webhook');
 
 Route::get('/add_activity','AnimalController@addActivity');
 Route::post('/add_activity','AnimalController@addActivity');
+
+
+
+
+Route::get('/summer','SummernoteController@index');
+Route::post('/insert','SummernoteController@insert');
