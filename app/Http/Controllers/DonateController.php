@@ -23,8 +23,8 @@ class DonateController extends Controller
             'currency' => 'thb',
             'offsite' => $bank,
 
-          //  'return_uri' => 'http://animal-aid.me/all',
-            'return_uri' => 'http://localhost:8000/all',
+            'return_uri' => 'http://animal-aid.me/all',
+          //  'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
         return Response::json([
@@ -51,7 +51,13 @@ class DonateController extends Controller
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
                 ]);*/
+              $result = $this->DonationRepository->addDonation($name,$sname,$email,$tel,$bank,$amount);
 
+                if($result){
+                    echo "success to add donationdata";
+                }else{
+                    echo "Failed to add donation";
+                }
                 return Response::json([
                     'statusCode' => 200,
                     'statusMessage' => 'Success',

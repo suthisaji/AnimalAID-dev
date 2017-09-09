@@ -131,7 +131,7 @@
                <ul class="nav navbar-nav">
 
                    <li>
-                       <a href="dm">การบริจาคเงินs</a>
+                       <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li>
                        <a href="db">การบริจาคเลือด</a>
