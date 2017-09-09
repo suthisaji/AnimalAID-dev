@@ -5,11 +5,11 @@ require_once dirname(__FILE__, 3).'/omise/lib/Omise.php';
 use Illuminate\Http\Request;
 use Response;
 use Nexmo\Laravel\Facade\Nexmo;
-use App\Donation;
-use App\Repositories\DonationRepositoryInterface;
-use App\User;
-use Auth;
-use DB;
+//use App\Donation;
+//use App\Repositories\DonationRepositoryInterface;
+//use App\User;
+//use Auth;
+//use DB;
 
 class DonateController extends Controller
 {
