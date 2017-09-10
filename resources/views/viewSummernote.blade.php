@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+      <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+    <title>summer Note</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="panel panel-default">
+           <div class="panel-heading">
+              <h4>Test Summer Note </h4>
+           </div>
+                 <div class="panel-body">
+                     <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach($data as $d )
+                              <tr>
+                                <td>{{$d->topic}}</td>
+                                <td>
+
+                                  <a href="{{url('readSummer',array($d->id))}}">View</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                  <a href="#">Delete</a> |
+                                  <a href="#">Edit</a>
+                                </td>
+                              </tr>
+                            @endforeach
+                          </tbody>
+
+                     </table>
+
+                 </div>
+        </div>
+    </div>
+
+
+
+
+
+  </body>
+</html>

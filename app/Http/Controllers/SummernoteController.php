@@ -23,5 +23,15 @@ class SummernoteController extends Controller
       ]);
    return back();
     }
+    public function viewSummernote(){
+      $data=DB::table('blogs')->get();
+       return view('viewSummernote',compact('data'));//compact คือ??
+    }
+
+    public function readSummerInfo($id){
+    $data=DB::table('blogs')->where('id',$id)->first();
+    return view('readSummer',compact('data'));
+    }
+
 
 }
