@@ -2,6 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
@@ -9,7 +19,8 @@
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <title>summer Note</title>
+    <title>Create question</title>
+          {{Html::style('css/shop-homepage.css')}}<!--ตรงนี้คือฟ้อนแบบไม่มีหัว-->
     <style>
     .owner{
       width: 40%;
@@ -115,7 +126,7 @@
        <!-- /.container -->
    </nav>
     <div class="container">
-    <br><br><br>
+
       <div class="panel panel-default">
         <div class="panel-heading">
           <center><h4>ตั้งกระทู้คำถาม </h4></center>
