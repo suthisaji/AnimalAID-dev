@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <!-- include libraries(jQuery, bootstrap) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
@@ -20,7 +21,9 @@
                  <div class="panel-body">
                    <h1>{{$data->topic}}</h1>
                    <hr>
-                  {{$data->content}}
+
+                     {{$data->content}}
+
 
                  </div>
         </div>

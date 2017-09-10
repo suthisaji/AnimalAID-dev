@@ -33,5 +33,22 @@ class SummernoteController extends Controller
     return view('readSummer',compact('data'));
     }
 
+    public function deleteSummer($id){
+       DB::table('blogs')->where('id',$id)->delete();
+       return back();
+    }
 
+    public function editSummer($id){
+      $data=DB::table('blogs')->where('id',$id)->first();
+      return view('editSummer',compact('data'));
+    }
+
+    public function updateSummer(Request $request){
+    DB::table('blogs')->where('id',$request['id'])->update([
+      'name'=>$request['name'],
+      'topic'=>$request['topic'],
+      'content'=>$request['summernote']
+    ]);
+    return back();
+    }
 }

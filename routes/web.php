@@ -168,3 +168,6 @@ Route::get('/summer','SummernoteController@index');
 Route::post('/insert','SummernoteController@insert');
 Route::get('/viewSummernote','SummernoteController@viewSummernote');
 Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
+Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer');
+Route::get('/editSummer/{id}','SummernoteController@editSummer');
+Route::post('/updateSummer','SummernoteController@updateSummer');

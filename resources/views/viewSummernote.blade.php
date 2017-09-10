@@ -28,12 +28,14 @@
                           <tbody>
                             @foreach($data as $d )
                               <tr>
-                                <td>{{$d->topic}}</td>
+                                <td>  {{$value = str_limit($d->topic, 80)}}</td>
+
                                 <td>
 
                                   <a href="{{url('readSummer',array($d->id))}}">View</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
-                                  <a href="#">Delete</a> |
-                                  <a href="#">Edit</a>
+                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
+                                  <a href="{{url('editSummer',array($d->id))}}">Edit</a>
+
                                 </td>
                               </tr>
                             @endforeach
