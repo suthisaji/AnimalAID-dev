@@ -85,7 +85,7 @@
                          <ul class="dropdown-menu" role="menu">
                            @if(Auth::user()->position=='user')
                            <li class="fl">
-                             <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
+                             <a href="/userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                            </li>
                            <li class="fl">
                                <a href="{{ route('logout') }}"
