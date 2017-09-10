@@ -14,6 +14,7 @@
   <body>
 
     <div class="container">
+      <a href="all">กลับไปยังall</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4>Test Summer Note </h4>
@@ -47,10 +48,54 @@
           </div>
         </div>
       </div>
+
+
+
+   <!--คำถามรวม-->
+   <div class="container">
+       <div class="panel panel-default">
+          <div class="panel-heading">
+             <h4>รายการคำถามอื่นๆ </h4>
+          </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                         <thead>
+                           <tr>
+                             <th>Title</th>
+                             <th>Action</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           @foreach($data as $d )
+                             <tr>
+                               <td>  {{$value = str_limit($d->topic, 80)}}</td>
+
+                               <td>
+
+                                 <a href="{{url('readSummer',array($d->id))}}">View</a>  {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                              <!--  |<a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
+                                 <a href="{{url('editSummer',array($d->id))}}">Edit</a>-->
+
+                               </td>
+                             </tr>
+                           @endforeach
+                         </tbody>
+
+                    </table>
+
+                </div>
+       </div>
+   </div>
+<!--จบตารางคำถามรวม-->
+
+
+
+
+
     <script type="text/javascript">
          $(document).ready(function(){
            $('#summernote').summernote({
-            height:'300px',
+            height:'200px',
             placeholder:'content here ..' //placeholderเสือกไม่ขึ้น งง
           //  fontNames:['Arial','Arial Black','Khmer OS'],
           })

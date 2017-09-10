@@ -142,7 +142,9 @@
                    <li>
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
-
+                   <li>
+                       <a href="write">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
+                   </li>
 
                </ul>
                <ul class="nav navbar-nav navbar-right">

@@ -7,7 +7,9 @@ use App\Repositories\UserRepositoryInterface;
 use App\Repositories\AnimalRepositoryInterface;
 use App\Adoption;
 use Auth;
+use DB;
 class AdminController extends Controller
+
 
 {
     protected $UserRepository;
@@ -25,11 +27,17 @@ class AdminController extends Controller
     	$data = array(
     		'all_users'=>$this->UserRepository->getAllUser(),
         'countRecipientEachAdmin'=>$countRecipientEachAdmin,
-        'admin'=>true 
+        'admin'=>true ,
+        'da'=>  DB::table('blogs')->get()
     		);
 
     	return view('admin',$data);
     }
+
+
+
+
+
     function delete($id){
     	$result = $this->UserRepository->deleteUser($id);
     	if($result){
@@ -72,7 +80,7 @@ class AdminController extends Controller
 
 
         function AdminProfile(){
-         
+
           $userId  =   Auth::user()->id;
            $countAdminAction = $this->AnimalRepository->countAdminAction($userId);
           $name    =   Auth::user()->name;

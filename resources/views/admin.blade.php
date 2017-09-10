@@ -37,7 +37,30 @@
                               <td><a href="/delete/{{$user->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Please confirm again !!!') ">Delete</a></td>
                             </tr>
                             @endforeach
-                    </tbody>--}}
+                    </tbody>--}}<table class="table table-striped">
+                         <thead>
+                           <tr>
+                             <th>Title</th>
+                             <th>Action</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           @foreach($da as $d )
+                             <tr>
+                               <td>  {{$value = str_limit($d->topic, 80)}}</td>
+
+                               <td>
+
+                                 <a href="{{url('readSummer',array($d->id))}}">View</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
+                                 <a href="{{url('editSummer',array($d->id))}}">Edit</a>
+
+                               </td>
+                             </tr>
+                           @endforeach
+                         </tbody>
+
+                    </table>
       <hr>  <hr>  <hr>    <hr>  <hr>  <hr>    <hr>  <hr>  <hr>
                     </table>
 

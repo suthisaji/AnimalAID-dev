@@ -164,7 +164,8 @@ Route::post('/add_activity','AnimalController@addActivity');
 
 
 
-Route::get('/summer','SummernoteController@index');
+Route::get('/write','SummernoteController@viewSummer');
+Route::get('/summer','SummernoteController@viewSummer');
 Route::post('/insert','SummernoteController@insert');
 Route::get('/viewSummernote','SummernoteController@viewSummernote');
 Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
