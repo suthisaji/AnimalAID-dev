@@ -18,12 +18,11 @@
            <div class="panel-heading">
               <h4>Read Information </h4>
            </div>
-                 <div class="panel-body">
+                 <div class="panel-body" style="word-wrap:break-word;">
                    <h1>{{$data->topic}}</h1>
                    <hr>
 
                      {{$data->content}}
-
 
                  </div>
         </div>

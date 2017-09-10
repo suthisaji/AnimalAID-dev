@@ -155,7 +155,9 @@
                    <li>
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
-
+                   <li >
+                       <a href="allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
+                   </li>
 
                </ul>
                <!--check login -->

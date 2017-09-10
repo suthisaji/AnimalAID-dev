@@ -32,6 +32,10 @@ class SummernoteController extends Controller
       $data=DB::table('blogs')->get();
        return view('summer',compact('data'));//จะเอาไปใช้ที่หน้า summer
     }
+    public function viewAllSummer(){
+      $data=DB::table('blogs')->get();
+       return view('allQuestions',compact('data'));//จะเอาไปใช้ที่หน้า allQuestions
+    }
 
 
     public function readSummerInfo($id){

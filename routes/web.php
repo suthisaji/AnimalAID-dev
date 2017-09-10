@@ -164,6 +164,7 @@ Route::post('/add_activity','AnimalController@addActivity');
 
 
 
+Route::get('/allQuestions','SummernoteController@viewAllSummer');
 Route::get('/write','SummernoteController@viewSummer');
 Route::get('/summer','SummernoteController@viewSummer');
 Route::post('/insert','SummernoteController@insert');
@@ -172,3 +173,8 @@ Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
 Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer');
 Route::get('/editSummer/{id}','SummernoteController@editSummer');
 Route::post('/updateSummer','SummernoteController@updateSummer');
+
+
+Route::get('/testPopup', function () {
+    return view('test');
+});
