@@ -26,6 +26,9 @@
     .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
         margin-left: -29px;
     }
+    .owner{
+      width: 40%;
+    }
     </style>
   </head>
   <body>
@@ -58,7 +61,7 @@
 
 
 
-                   <a href="#"></a>
+
                </div>
 
                <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -98,19 +101,92 @@
 
     <div class="container">
         <div class="panel panel-default">
-          <div class="panel-heading">
+          <div class="panel-heading" style="background-color:#F2FBEF;border-color:#E0F8EC;">
              <h4>ตอบปัญหาจากทางบ้าน </h4>
           </div>
                  <div class="panel-body" style="word-wrap:break-word;">
-                   <h1>{{$data->topic}}</h1>
+                   <h3>Q : {{$data->topic}}</h3>
                    <hr>
 
                      {{$data->content}}
 
                  </div>
         </div>
+
+<!--แสดงคำตอบ-->
+  @if($data->answer!=null)
+<div class="panel panel-default" style="border-color:#F3E2A9;">
+  <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
+     <h4>คำตอบ </h4>
+  </div>
+         <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
+  {{$data->answer}}
+ </div>
+</div>
+@endif
+<!--แสดงคำตอบ-->
+
+
+<!--Summernote Answer-->
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color:#EFF5FB;">
+    <center><h4>ตอบกระทู้คำถาม </h4></center>
+  </div>
+  <div class="panel-body">
+  <form action="{{url('updateSummerAns')}}" method="post">
+      {{ Form::token() }}
+    <div class="form-group owner">
+        <input type="hidden" name="id" value="{{$data->id}}">
+          <input type="hidden" name="status" value="Answered">
+      <label for="topic">Answerer</label>
+
+    <input type="text" name="name" id="name"   class="form-control" value="   แอดมิน :   {{ Auth::user()->name }}" disabled>
     </div>
 
+    <div class="form-group" >
+      <textarea id="summernote" name="summernote" class="form-control"  required >
+      </textarea>
+    </div>
+
+     <input type="hidden" name="summernote2" class="form-control" value="{{$data->answer}} ,,," />
+
+
+
+
+
+    <div class="form-group">
+      <input type="submit" name="send" id="send" value="create" class="btn btn-success">
+      <input type="button" name="clear" id="clear" class="btn btn-danger pull-right" value="Clear">
+
+    </div>
+    @if (Auth::guest())
+        <input type="hidden"  name="userid" value="guest"/>
+    @else
+      <input type="hidden"  name="userid" value=" {{ Auth::user()->id }}"/>
+    @endif
+  </form>
+    </div>
+  </div>
+</div>
+
+<!--end summer-->
+
+    </div>
+    <script type="text/javascript">
+         $(document).ready(function(){
+           $('#summernote').summernote({
+            height:'200px',
+            placeholder:'content here ..' //placeholderเสือกไม่ขึ้น งง
+
+          //  fontNames:['Arial','Arial Black','Khmer OS'],
+          })
+     })
+     $('#clear').on('click',function(){
+       $('#summernote').summernote('code',null);
+
+     })
+
+    </script>
 
 
 

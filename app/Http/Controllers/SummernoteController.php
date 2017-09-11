@@ -23,6 +23,8 @@ class SummernoteController extends Controller
       ]);
    return back();
     }
+
+
     public function viewSummernote(){
       $data=DB::table('blogs')->get();
        return view('viewSummernote',compact('data'));//compact คือ??
@@ -68,4 +70,19 @@ class SummernoteController extends Controller
     ]);
     return back();
     }
+
+    public function updateSummerAns(Request $request){
+      $summer1=$request['summernote'];
+      $summer2=$request['summernote2'];
+      $sum = $summer1.'|||'.$summer2;
+
+       DB::table('blogs')->where('id',$request['id'])->update([
+      'answer'=>$sum,
+      'adminAns_Id'=>$request['userid'],
+      'status'=>$request['status']
+    ]);
+    return back();
+    }
+
+
 }

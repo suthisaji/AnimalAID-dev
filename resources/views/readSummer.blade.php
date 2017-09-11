@@ -127,16 +127,29 @@
     <div class="container">
         <div class="panel panel-default">
            <div class="panel-heading">
-              <h4>Read Information </h4>
+              <h4>Read Information   </h4>
            </div>
                  <div class="panel-body" style="word-wrap:break-word;">
+
                    <h1>{{$data->topic}}</h1>
                    <hr>
 
-                     {{$data->content}}
+                 {{$data->content}}
 
                  </div>
         </div>
+        <!--แสดงคำตอบ-->
+          @if($data->answer!=null||$data->answer!='guest')
+        <div class="panel panel-default" style="border-color:#F3E2A9;">
+          <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
+             <h4>คำตอบ </h4>
+          </div>
+                 <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
+          {{$data->answer}}
+         </div>
+        </div>
+        @endif
+        <!--แสดงคำตอบ-->
     </div>
 
 

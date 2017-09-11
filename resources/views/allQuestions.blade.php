@@ -256,6 +256,48 @@
                      </table>
 
                  </div>
+                 @if(Auth::guest())
+
+                 @else
+
+    <!--เฉพาะคำถามของ memberคนนัี้-->
+    <br>
+     <div class="panel-heading">
+        <h4><b>คำถามของคุณ</b></h4>
+     </div>
+           <div class="panel-body">
+               <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      @foreach($data as $d )
+                        <tr>
+                          @if($d->userid==(Auth::user()->id))
+                          <td>  {{$value = str_limit($d->topic, 80)}}</td>
+                      <td>
+                       <a href="{{url('readSummer',array($d->id))}}">View</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                         </td>
+                        </tr>
+                      @else
+                      @endif
+
+                      @endforeach
+                    @endif
+                    </tbody>
+
+               </table>
+
+           </div>
+
+
+
+
+
         </div>
     </div>
 

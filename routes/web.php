@@ -175,6 +175,7 @@ Route::get('/editSummer/{id}','SummernoteController@editSummer');
 Route::post('/updateSummer','SummernoteController@updateSummer');
 Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo');
 
+Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testPopup', function () {
-    return view('test2');
+    return view('test3');
 });
