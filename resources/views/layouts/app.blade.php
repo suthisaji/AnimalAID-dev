@@ -20,7 +20,9 @@
         ]) !!};
     </script>
     <style>
-
+    .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
+        margin-left: -29px;
+    }
     </style>
 
 </head>
@@ -49,16 +51,16 @@
                       <a  class="navbar-brand" href="../add">&nbsp;&nbsp;&nbsp; เพิ่มการขอรับบริจาค &nbsp;&nbsp;</a> &nbsp;
                       <a class="navbar-brand" href="../animal">  รายชื่อสัตว์&nbsp;&nbsp; </a>&nbsp;
                       <a  class="navbar-brand" href="../addNews">   เพิ่มข่าวและกิจกรรม&nbsp;&nbsp;</a>&nbsp;
-                        
-                  <!--    <a class="navbar-brand"  href="../n">   ข่าวทั้งหมด &nbsp;&nbsp;</a>&nbsp;-->
-                      <a class="navbar-brand" href="../checkAdoption"> ตรวจสอบการขอรับเลี้ยงสัตว์ :<span style="color:red"> {{$countRecipientEachAdmin}}</span><a>&nbsp;
 
+                  <!--    <a class="navbar-brand"  href="../n">   ข่าวทั้งหมด &nbsp;&nbsp;</a>&nbsp;-->
+                      <a class="navbar-brand" href="../checkAdoption"> ตรวจสอบการขอรับเลี้ยง :<span style="color:red"> {{$countRecipientEachAdmin}}</span></a>&nbsp; &nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  class="navbar-brand" href="../admin">     &nbsp;&nbsp; ตอบปัญหา&nbsp;&nbsp;</a>&nbsp;
 
 
                       @endif
                     @endif
 
-                    <a href="#"></a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

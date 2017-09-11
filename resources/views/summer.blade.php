@@ -136,14 +136,15 @@
             {{ Form::token() }}
           <div class="form-group owner">
             <label for="topic">questioner</label>
-            <input type="text" name="name" id="name" class="form-control" >
+            <input type="text" name="name" id="name"   class="form-control" required >
           </div>
           <div class="form-group to">
             <label for="topic">Title</label>
-            <input type="text" name="topic" id="topic" class="form-control">
+            <input type="text" name="topic" id="topic"  class="form-control" required >
           </div>
-          <div class="form-group">
-            <textarea id="summernote" name="summernote" class="form-control">
+          <div class="form-group" >
+            <textarea id="summernote" name="summernote" class="form-control"  required >
+
             </textarea>
           </div>
           <div class="form-group">
@@ -209,12 +210,15 @@
            $('#summernote').summernote({
             height:'200px',
             placeholder:'content here ..' //placeholderเสือกไม่ขึ้น งง
+
           //  fontNames:['Arial','Arial Black','Khmer OS'],
           })
      })
      $('#clear').on('click',function(){
        $('#summernote').summernote('code',null);
+
      })
+
 </script>
   </body>
 </html>

@@ -38,10 +38,17 @@ class SummernoteController extends Controller
     }
 
 
+
     public function readSummerInfo($id){
     $data=DB::table('blogs')->where('id',$id)->first();
     return view('readSummer',compact('data'));
     }
+
+    public function adminReadSummerInfo($id){
+    $data=DB::table('blogs')->where('id',$id)->first();
+    return view('adminReadSummer',compact('data')); //จะเอาไปใช้ที่หน้า AdminreadSummer
+    }
+
 
     public function deleteSummer($id){
        DB::table('blogs')->where('id',$id)->delete();

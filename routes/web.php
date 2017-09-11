@@ -173,8 +173,8 @@ Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
 Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer');
 Route::get('/editSummer/{id}','SummernoteController@editSummer');
 Route::post('/updateSummer','SummernoteController@updateSummer');
-
+Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo');
 
 Route::get('/testPopup', function () {
-    return view('test');
+    return view('test2');
 });

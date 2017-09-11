@@ -51,7 +51,7 @@
 
                                <td>
 
-                                 <a href="{{url('readSummer',array($d->id))}}">View&Answer</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                 <a href="{{url('adminReadSummer',array($d->id))}}">View&Answer</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
                                  <a href="{{url('editSummer',array($d->id))}}">Edit</a>
 
