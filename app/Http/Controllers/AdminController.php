@@ -80,7 +80,7 @@ class AdminController extends Controller
 
 
         function AdminProfile(){
-
+            
           $userId  =   Auth::user()->id;
            $countAdminAction = $this->AnimalRepository->countAdminAction($userId);
           $name    =   Auth::user()->name;

@@ -139,7 +139,7 @@
                  </div>
         </div>
         <!--แสดงคำตอบ-->
-          @if($data->answer!=null||$data->answer!='guest')
+          @if($data->answer!=null)
         <div class="panel panel-default" style="border-color:#F3E2A9;">
           <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
              <h4>คำตอบ </h4>

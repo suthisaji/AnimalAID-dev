@@ -42,6 +42,7 @@
                            <tr>
                              <th>Title</th>
                              <th>Action</th>
+                             <th></th>
                            </tr>
                          </thead>
                          <tbody>
@@ -55,6 +56,13 @@
                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
                                  <a href="{{url('editSummer',array($d->id))}}">Edit</a>
 
+                               </td>
+                               <td>
+                                 @if($d->status=='Answered')
+                                   ตอบแล้ว
+                                 @else
+
+                               @endif
                                </td>
                              </tr>
                            @endforeach

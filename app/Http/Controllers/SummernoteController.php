@@ -83,6 +83,9 @@ class SummernoteController extends Controller
     ]);
     return back();
     }
+/*  function countAllQuestions(){ //นับคำถามที่มีทั้้งหมด เรียกใช้ไงวะลืม
+      $countAllQ =DB::table('blogs')->count();
+    }*/
 
 
 }

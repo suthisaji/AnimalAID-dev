@@ -21,7 +21,7 @@
     </script>
     <style>
     .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
-        margin-left: -29px;
+        margin-left: -34px;
     }
     </style>
 
@@ -54,7 +54,7 @@
 
                   <!--    <a class="navbar-brand"  href="../n">   ข่าวทั้งหมด &nbsp;&nbsp;</a>&nbsp;-->
                       <a class="navbar-brand" href="../checkAdoption"> ตรวจสอบการขอรับเลี้ยง :<span style="color:red"> {{$countRecipientEachAdmin}}</span></a>&nbsp; &nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  class="navbar-brand" href="../admin">     &nbsp;&nbsp; ตอบปัญหา&nbsp;&nbsp;</a>&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  class="navbar-brand" href="../admin">     &nbsp;&nbsp; ตอบปัญหา:<span style="color:red"> {{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}&nbsp;&nbsp;</a>&nbsp;
 
 
                       @endif

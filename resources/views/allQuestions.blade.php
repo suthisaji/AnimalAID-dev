@@ -271,6 +271,7 @@
                       <tr>
                         <th>Title</th>
                         <th>Action</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -281,6 +282,13 @@
                           <td>  {{$value = str_limit($d->topic, 80)}}</td>
                       <td>
                        <a href="{{url('readSummer',array($d->id))}}">View</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                         </td>
+                         <td>
+                           @if($d->status=='Answered')
+                            <img src="/images/pointg.png" style="width:2%;height:19%"> ตอบแล้ว
+                           @else
+
+                         @endif
                          </td>
                         </tr>
                       @else
