@@ -233,8 +233,8 @@
                      <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th>Title</th>
-                              <th>Action</th>
+                              <th>หัวเรื่อง</th>
+                              <th>แอคชั่น</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -269,8 +269,8 @@
                <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Title</th>
-                        <th>Action</th>
+                        <th>หัวเรื่อง</th>
+                        <th>แอคชั่น</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -281,7 +281,7 @@
                           @if($d->userid==(Auth::user()->id))
                           <td>  {{$value = str_limit($d->topic, 80)}}</td>
                       <td>
-                       <a href="{{url('readSummer',array($d->id))}}">View</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                       <a href="{{url('readSummer',array($d->id))}}">ดู</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
                          </td>
                          <td>
                            @if($d->status=='Answered')

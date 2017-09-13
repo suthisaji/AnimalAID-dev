@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blood Donation</title>
+    <title>การขอรับบริจาคเลือด</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">

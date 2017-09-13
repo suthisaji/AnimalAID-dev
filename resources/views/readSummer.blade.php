@@ -24,7 +24,7 @@
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <title>summer Note</title>
+    <title>รายการกระทู้คำถาม</title>
     {{Html::style('css/shop-homepage.css')}}<!--ตรงนี้คือฟ้อนแบบไม่มีหัว-->
   </head>
   <body>
@@ -127,7 +127,7 @@
     <div class="container">
         <div class="panel panel-default">
            <div class="panel-heading">
-              <h4>Read Information   </h4>
+              <h4>กระทู้คำถาม</h4>
            </div>
                  <div class="panel-body" style="word-wrap:break-word;">
 
@@ -142,7 +142,7 @@
           @if($data->answer!=null)
         <div class="panel panel-default" style="border-color:#F3E2A9;">
           <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
-             <h4>คำตอบ </h4>
+             <h4>คำตอบ</h4>
           </div>
                  <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
           {{$data->answer}}

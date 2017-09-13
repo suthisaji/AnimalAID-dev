@@ -192,5 +192,5 @@ Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testPopup', function () {
-    return view('test2');
+    return view('test');
 });

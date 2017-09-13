@@ -57,7 +57,7 @@ border-radius: 5px;
                                   <a class = "t" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                      Logout
+                                      ออกจากระบบ
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -96,7 +96,7 @@ border-radius: 5px;
                 <th width="30">รหัส</th>
                 <th  width="140">ชื่อ</th>
                 <th width="100" >ประเภท</th>
-                <th   >รูปภาพ</th>
+                <th>รูปภาพ</th>
                 <th >สถานะ</th>
                 <th width="150">ดำเนินการ</th>
               </tr>

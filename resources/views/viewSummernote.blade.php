@@ -15,14 +15,14 @@
     <div class="container">
         <div class="panel panel-default">
            <div class="panel-heading">
-              <h4>Test Summer Note </h4>
+              <h4>ดูกระทู้คำถาม</h4>
            </div>
                  <div class="panel-body">
                      <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th>Title</th>
-                              <th>Action</th>
+                              <th>หัวเรื่อง</th>
+                              <th>แอคชั่น</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -32,9 +32,9 @@
 
                                 <td>
 
-                                  <a href="{{url('readSummer',array($d->id))}}">View&Answer</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
-                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
-                                  <a href="{{url('editSummer',array($d->id))}}">Edit</a>
+                                  <a href="{{url('readSummer',array($d->id))}}">ดู&ตอบคำถาม</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a> |
+                                  <a href="{{url('editSummer',array($d->id))}}">แก้ไข</a>
 
 
                                 </td>

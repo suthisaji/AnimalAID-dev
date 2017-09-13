@@ -16,7 +16,7 @@
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <title>Admin Read Question</title>
+    <title>แอดมินอ่านคำถาม</title>
     <!-- Styles -->
     <link href="https://animal-aid.me/css/app.css" rel="stylesheet">
     <script>
@@ -138,7 +138,7 @@
     <div class="form-group owner">
         <input type="hidden" name="id" value="{{$data->id}}">
           <input type="hidden" name="status" value="Answered">
-      <label for="topic">Answerer</label>
+      <label for="topic">ผู้ตอบ</label>
 
     <input type="text" name="name" id="name"   class="form-control" value="   แอดมิน :   {{ Auth::user()->name }}" disabled>
     </div>

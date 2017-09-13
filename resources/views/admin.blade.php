@@ -40,8 +40,8 @@
                     </tbody>--}}<table class="table table-striped">
                          <thead>
                            <tr>
-                             <th>Title</th>
-                             <th>Action</th>
+                             <th>หัวเรื่อง</th>
+                             <th>แอคชั่น</th>
                              <th></th>
                            </tr>
                          </thead>
@@ -52,9 +52,9 @@
 
                                <td>
 
-                                 <a href="{{url('adminReadSummer',array($d->id))}}">View&Answer</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
-                                <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
-                                 <a href="{{url('editSummer',array($d->id))}}">Edit</a>
+                                 <a href="{{url('adminReadSummer',array($d->id))}}">ดู&ตอบคำถาม</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a> |
+                                 <a href="{{url('editSummer',array($d->id))}}">แก้ไขคำถาม</a>
 
                                </td>
                                <td>

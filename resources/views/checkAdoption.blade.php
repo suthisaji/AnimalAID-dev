@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Check Adoption</title>
+<title>ตรวจสอบการขอรับเลี้ยง</title>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

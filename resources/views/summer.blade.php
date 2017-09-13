@@ -245,7 +245,6 @@ right: 0px;
           </div>
           <div class="form-group" >
             <textarea id="summernote" name="summernote" class="form-control"  required >
-
             </textarea>
           </div>
           <div class="form-group">

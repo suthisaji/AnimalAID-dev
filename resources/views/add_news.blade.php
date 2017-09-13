@@ -56,7 +56,7 @@ width: 1600px;
                                     <a class = "t" href="{{ route('logout') }}"
                                       onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
-                                        Logout
+                                        ออกจากระบบ
                                       </a>
 
                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

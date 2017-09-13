@@ -94,18 +94,18 @@
     <div class="container">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4>Edit </h4>
+          <h4>แก้ไข </h4>
         </div>
         <div class="panel-body">
         <form action="{{url('updateSummer')}}" method="post">
             {{ Form::token() }}
           <div class="form-group">
-            <label for="topic">questioner</label>
+            <label for="topic">ชื่อผู้ถาม</label>
               <input type="hidden" name="id" value="{{$data->id}}">
             <input type="text" name="name" id="name" class="form-control" value="คุณ {{$data->name}}">
           </div>
           <div class="form-group">
-            <label for="topic">Title</label>
+            <label for="topic">หัวเรื่อง</label>
           <input type="text" name="topic" id="topic" class="form-control"  value="{{$data->topic}}">
           </div>
           <div class="form-group">

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ALL Donation</title>
+    <title>การขอรับบริจาคทั้งหมด</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -554,7 +554,7 @@
                                   ชื่อสัตว์:{{$animal->animal_name}}<br>
                                   อายุ        :{{$animal->animal_age}} ปี<br>
                                   ชนิดของสัตว์ :{{$animal->animal_type}}<br>
-                                  Color :{{$animal->animal_color}}<br>
+                                  สี :{{$animal->animal_color}}<br>
                                   @if($animal->animal_gender == 1)
                                     เพศ :เพศผู้<br>
                                    @else

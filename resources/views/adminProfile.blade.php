@@ -10,7 +10,7 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
          <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
            <link href="https://animal-aid.me/css/app.css" rel="stylesheet">
-         <title>Admin Profile </title>
+         <title>โปรไฟล์แอดมิน </title>
 <script>
     window.Laravel = {"csrfToken":"lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w"};
 </script>
