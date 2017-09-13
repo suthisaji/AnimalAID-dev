@@ -11,6 +11,21 @@ use App\Mail\KryptoniteFound;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/sub', function () {
+  $str =  DB::table('blogs')->select('answer')->get();
+  $_str = explode('|||', $str);
+foreach($_str as $text){
+  echo $text.'</br>';
+}
+
+return view('test2');
+
+
+
+
+});
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -177,5 +192,5 @@ Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testPopup', function () {
-    return view('test3');
+    return view('test2');
 });

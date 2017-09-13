@@ -129,7 +129,7 @@ body, html {
 <div class='bb'></div>
 <div class="form-group">
   <input type="submit" name="send" id="send" value="create" class="btn btn-success">
-  <input type="button" name="clear" id="clear" class="btn btn-danger pull-right" value="Clear">
+
 
 </div>
 <div class='message'>
@@ -161,6 +161,13 @@ $('.message').toggleClass('comein');
 $('.check').toggleClass('scaledown');
 $('#send').fadeToggle(nr);
 }
+
+
+
+
+
+
+
 </script>
   </body>
 </html>

@@ -59,7 +59,7 @@
                                </td>
                                <td>
                                  @if($d->status=='Answered')
-                                   ตอบแล้ว
+                                  <img src="/images/pointg.png" style="height:19%">    ตอบแล้ว
                                  @else
 
                                @endif

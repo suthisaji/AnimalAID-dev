@@ -23,6 +23,12 @@
 
 
 
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+
 <script type="text/javascript">
 $('#zoomimg').mouseenter(function() {
   $(this).css("cursor","pointer");
