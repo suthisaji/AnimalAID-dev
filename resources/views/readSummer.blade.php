@@ -134,7 +134,7 @@
                    <h1>{{$data->topic}}</h1>
                    <hr>
 
-                 {{$data->content}}
+                  {!! html_entity_decode($data->content) !!}
 
                  </div>
         </div>
@@ -145,7 +145,7 @@
              <h4>คำตอบ</h4>
           </div>
                  <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
-          {{$data->answer}}
+{!! html_entity_decode($data->answer) !!}
          </div>
         </div>
         @endif

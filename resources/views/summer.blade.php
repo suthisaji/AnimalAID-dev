@@ -128,6 +128,12 @@ right: 0px;
   top: 150px;
   opacity: 1;
 }
+
+label > span, #error_summernote{
+  color: red;
+  font-weight: bold;
+}
+
     /*end popup*/
     </style>
   </head>
@@ -214,7 +220,7 @@ right: 0px;
 
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      {{ csrf_field() }}
-                                  
+
                                  </form>
                              </li>
                            @endif
@@ -234,19 +240,17 @@ right: 0px;
           <center><h4>ตั้งกระทู้คำถาม </h4></center>
         </div>
         <div class="panel-body">
-        <form action="{{url('insert')}}" method="post">
-            {{ Form::token() }}
           <div class="form-group owner">
-            <label for="topic">questioner</label>
+            <label for="topic">questioner <span id="error_questioner"></span></label>
             <input type="text" name="name" id="name"   class="form-control" required >
           </div>
           <div class="form-group to">
-            <label for="topic">Title</label>
+            <label for="topic">Title <span id="error_topic"></span></label>
             <input type="text" name="topic" id="topic"  class="form-control" required >
           </div>
           <div class="form-group" >
-            <textarea id="summernote" name="summernote" class="form-control"  required >
-            </textarea>
+            <textarea id="summernote" name="summernote" class="form-control"  required></textarea>
+            <span id="error_summernote"></span>
           </div>
           <div class="form-group">
           <!--popup-->
@@ -280,7 +284,6 @@ right: 0px;
           @else
             <input type="hidden"  name="userid" value=" {{ Auth::user()->id }}"/>
           @endif
-        </form>
           </div>
         </div>
       </div>
@@ -342,7 +345,57 @@ right: 0px;
      })
 
 
-     $('#send').click(function(){send(50)});
+     $('#send').click(function(){
+        $('#error_questioner').html('')
+        $('#error_topic').html('')
+        $('#error_summernote').html('')
+        $('#error_questioner').parent().parent().removeClass('has-error')
+        $('#error_topic').parent().parent().removeClass('has-error')
+        $('div.note-editable.panel-body').css('border', 'none');
+       const name = $('#name').val()
+       const topic = $('#topic').val()
+       const summernote = $('#summernote').val()
+       console.log('name ===>',name)
+       console.log('topic ===>',topic)
+       console.log('summernote ===>',summernote.length)
+       if(name.length < 1 && topic.length < 1 && summernote.length < 12){
+         $('#error_questioner').html('this field is required')
+        $('#error_topic').html('this field is required')
+        $('#error_summernote').html('this field is required')
+        $('#error_questioner').parent().parent().addClass('has-error')
+        $('#error_topic').parent().parent().addClass('has-error')
+        $('div.note-editable.panel-body').css('border', '1px solid #a94442');
+       }else if(name.length < 1){
+         $('#error_questioner').html('this field is required')
+         $('#error_questioner').parent().parent().addClass('has-error')
+       }else if(topic.length < 1){
+         $('#error_topic').html('this field is required')
+         $('#error_topic').parent().parent().addClass('has-error')
+       }else if(summernote.length < 12){
+         $('#error_summernote').html('this field is required')
+         $('div.note-editable.panel-body').css('border', '1px solid #a94442');
+       }else{
+         $.ajax({
+           type: 'POST',
+           url: "{{url('insert')}}",
+           datatype: 'json',
+           data: {
+             userid: "{{Auth::user()->id}}",
+             name: name,
+             topic: topic,
+             summernote: summernote
+           },success: function(data){
+             console.log('data ===> ',data)
+              if(data.statusCode === 200){
+                send(50)
+                $('#name').val('')
+                $('#topic').val('')
+                $('div.note-editable.panel-body').html('')
+              }
+           }
+         })
+       }
+     });
      $('#ok').click(function(){send(500)});
 
      //setTimeout(function(){go(50)},700);

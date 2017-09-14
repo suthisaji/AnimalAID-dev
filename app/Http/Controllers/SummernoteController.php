@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Response;
 
 class SummernoteController extends Controller
 {
@@ -21,12 +21,10 @@ class SummernoteController extends Controller
         'created_at' => \Carbon\Carbon::now(),
       'updated_at' => \Carbon\Carbon::now()
       ]);
-      if($result){
-      $x=true;
-      }else{
-        $x=False;
-      }
-   return back();
+      return Response::json([
+        'statusCode' => 200,
+        'statusMessage' => 'insert data success!'
+      ], 200);
     }
 
 
