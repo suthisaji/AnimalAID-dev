@@ -10,13 +10,11 @@ use App\Donation;
 
 
 
-     function addDonation($name,$sname,$email,$tel,$bank,$amount){
+     function addDonation($name,$sname,$tel,$amount){
             $data = array(
                 'name'=>$name,
                 'sname'=>$sname,
-                'email'=>$email,
                 'tel'=>  $tel,
-                'bank'=>$bank,
                 'amount'=>$amount
             );
 
