@@ -25,6 +25,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/all';//login แล้วไปไหน
+
     /**
      * Create a new controller instance.
      *
@@ -38,12 +39,22 @@ class LoginController extends Controller
         return 'username';//override มา
     }
 
-    public function logout(Request $request){
-    $this->guard()->logout();
-    $request->session()->flush();
-    $request->session()->regenerate();
+    // public function redirectTo()
+    // {
+    //   return redirect()->back();
+    // }
 
-    //return redirect()->route('all');
-    return back();
+    public function logout(Request $request){
+      $this->guard()->logout();
+      $request->session()->flush();
+      $request->session()->regenerate();
+
+  //  return redirect()->route('all');
+
+
+    return redirect()->back();
+    //return back();
+
+
     }
 }

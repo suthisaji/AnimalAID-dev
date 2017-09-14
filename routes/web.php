@@ -19,10 +19,6 @@ foreach($_str as $text){
 }
 
 return view('test2');
-
-
-
-
 });
 
 
@@ -180,15 +176,15 @@ Route::post('/add_activity','AnimalController@addActivity');
 
 
 Route::get('/allQuestions','SummernoteController@viewAllSummer');
-Route::get('/write','SummernoteController@viewSummer');
+Route::get('/write','SummernoteController@viewSummer')->middleware('auth');
 Route::get('/summer','SummernoteController@viewSummer');
 Route::post('/insert','SummernoteController@insert');
 Route::get('/viewSummernote','SummernoteController@viewSummernote');
 Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
-Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer');
-Route::get('/editSummer/{id}','SummernoteController@editSummer');
+Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer')->middleware('auth');
+Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('auth');
 Route::post('/updateSummer','SummernoteController@updateSummer');
-Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo');
+Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testPopup', function () {

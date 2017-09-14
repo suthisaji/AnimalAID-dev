@@ -13,7 +13,7 @@ class SummernoteController extends Controller
 }
 
     public function insert(Request $request){
-      DB::table('blogs')->insert([
+    $result=  DB::table('blogs')->insert([
         'userid'=>$request['userid'],  /*ชื่อตารางเท่ากับname ของ element ที่เข้ามา*/
         'name'=>$request['name'],
         'topic'=>$request['topic'],
@@ -21,6 +21,11 @@ class SummernoteController extends Controller
         'created_at' => \Carbon\Carbon::now(),
       'updated_at' => \Carbon\Carbon::now()
       ]);
+      if($result){
+      $x=true;
+      }else{
+        $x=False;
+      }
    return back();
     }
 

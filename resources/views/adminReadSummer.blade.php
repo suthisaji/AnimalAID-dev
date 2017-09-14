@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
- <meta name="csrf-token" content="lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w">
+
 
 
     <!-- include libraries(jQuery, bootstrap) -->
@@ -81,14 +81,14 @@
                                                    <a   href="../adminProfile"> ข้อมูลส่วนตัว &nbsp;&nbsp; </a>
                                                  </li>
                                                      <li>
-                                                         <a href="https://animal-aid.me/logout"
+                                                         <a href="{{route('logout')}}"
                                                            onclick="event.preventDefault();
                                                            document.getElementById('logout-form').submit();">
                                                            ออกจากระบบ
                                                            </a>
 
-                                                           <form id="logout-form" action="https://animal-aid.me/logout" method="POST" style="display: none;">
-                                                             <input type="hidden" name="_token" value="lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w">
+                                                           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                                             {{csrf_field()}}
                                                            </form>
                                                          </li>
                                        </ul>

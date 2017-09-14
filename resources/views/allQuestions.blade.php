@@ -175,6 +175,7 @@
 
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      {{ csrf_field() }}
+                                     
                                  </form>
                              </li>
                            @endif
@@ -281,7 +282,7 @@
                           @if($d->userid==(Auth::user()->id))
                           <td>  {{$value = str_limit($d->topic, 80)}}</td>
                       <td>
-                       <a href="{{url('readSummer',array($d->id))}}">ดู</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                       <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
                          </td>
                          <td>
                            @if($d->status=='Answered')

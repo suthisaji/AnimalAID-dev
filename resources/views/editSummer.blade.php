@@ -2,15 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- CSRF Token -->
-       <meta name="csrf-token" content="lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w">
+
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <title>Admin Edit Question</title>
+    <title>แอดมินแก้ไขคำถาม</title>
     <!-- Styles -->
     <link href="https://animal-aid.me/css/app.css" rel="stylesheet">
 
@@ -74,14 +73,15 @@
                                                    <a   href="../adminProfile"> ข้อมูลส่วนตัว &nbsp;&nbsp; </a>
                                                  </li>
                                                      <li>
-                                                         <a href="https://animal-aid.me/logout"
+                                                         <a href="{{route('logout')}}"
                                                            onclick="event.preventDefault();
                                                            document.getElementById('logout-form').submit();">
                                                            ออกจากระบบ
                                                            </a>
 
-                                                           <form id="logout-form" action="https://animal-aid.me/logout" method="POST" style="display: none;">
-                                                             <input type="hidden" name="_token" value="lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w">
+                                                           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                                             {{csrf_field()}}
+                                                           </form>
                                                            </form>
                                                          </li>
                                        </ul>

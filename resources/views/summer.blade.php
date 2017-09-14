@@ -214,6 +214,7 @@ right: 0px;
 
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      {{ csrf_field() }}
+                                  
                                  </form>
                              </li>
                            @endif
@@ -296,8 +297,8 @@ right: 0px;
                     <table class="table table-striped">
                          <thead>
                            <tr>
-                             <th>Title</th>
-                             <th>Action</th>
+                             <th>หัวเรื่อง</th>
+                             <th>แอคชั่น</th>
                            </tr>
                          </thead>
                          <tbody>
@@ -307,10 +308,9 @@ right: 0px;
 
                                <td>
 
-                                 <a href="{{url('readSummer',array($d->id))}}">View</a>  {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                 <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a>  {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
                               <!--  |<a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
                                  <a href="{{url('editSummer',array($d->id))}}">Edit</a>-->
-
                                </td>
                              </tr>
                            @endforeach
