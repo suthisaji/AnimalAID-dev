@@ -13,9 +13,11 @@ use App\Mail\KryptoniteFound;
 */
 Route::get('/sub', function () {
   $str =  DB::table('blogs')->select('answer')->get();
-  $_str = explode('|||', $str);
+  $str2=  json_encode($str);
+  $_str = explode('|||', $str2);
 foreach($_str as $text){
   echo $text.'</br>';
+  echo '$str= '.$str2 ;  echo '$str = '.$_str ;
 }
 
 return view('test2');

@@ -13,6 +13,7 @@ use App\Repositories\AnimalRepositoryInterface;
 use App\Repositories\DonationTypeRepositoryInterface;
 use App\Repositories\NewsAniRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
+use App\Repositories\DonationRepositoryInterface;
 use DB;
 use DateTime;
 
@@ -21,11 +22,13 @@ class AnimalController extends Controller
 {
     protected $AnimalRepository;
     protected $DonationTypeRepository;
+   protected $DonationRepository;
     protected $NewsAniRepository;
     protected $UserRepository;
-    function __construct(AnimalRepositoryInterface $AnimalRepository,DonationTypeRepositoryInterface $DonationTypeRepository,NewsAniRepositoryInterface $NewsAniRepository ,UserRepositoryInterface $UserRepository){
+    function __construct(AnimalRepositoryInterface $AnimalRepository,DonationTypeRepositoryInterface $DonationTypeRepository,NewsAniRepositoryInterface $NewsAniRepository ,UserRepositoryInterface $UserRepository,DonationRepositoryInterface $DonationRepository){
         $this->AnimalRepository = $AnimalRepository;
         $this->DonationTypeRepository = $DonationTypeRepository;
+          $this->DonationRepository = $DonationRepository;
         $this->NewsAniRepository = $NewsAniRepository;
           $this->UserRepository = $UserRepository;
     }
@@ -88,14 +91,15 @@ class AnimalController extends Controller
             $users = $this->UserRepository->getAllUser();
               $hospitals =$this->AnimalRepository->getAllHospital();
                 $admins = $this->AnimalRepository ->getAllAdmin();
+              $donor =$this->DonationRepository ->getAllDonation();
             $data = array(
                 'animals'=>$animals,   //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
                 'donationType'=>$donationType,
                   'newsAnis'=>$newsAnis,
                   'users'=>$users,
                     'hospitals'=>$hospitals,
-                    'admins' =>$admins
-
+                    'admins' =>$admins,
+                      'donor'=>$donor
 
             );
       }else{
@@ -106,6 +110,7 @@ class AnimalController extends Controller
             $position =  Auth::user()->position;
               $hospitals =$this->AnimalRepository->getAllHospital();
               $admins = $this->AnimalRepository ->getAllAdmin();
+              $donor =$this->DonationRepository -> getAllDonation();
         $data = array(
             'animals'=>$animals,   //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
             'donationType'=>$donationType,
@@ -113,7 +118,8 @@ class AnimalController extends Controller
               'users'=>$users,
               'position'=>$position,
                 'hospitals'=>$hospitals,
-                'admins' =>$admins
+                'admins' =>$admins,
+                'donor'=>$donor
 
         );
 

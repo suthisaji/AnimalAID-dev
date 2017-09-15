@@ -28,7 +28,7 @@ class AdminController extends Controller
     		'all_users'=>$this->UserRepository->getAllUser(),
         'countRecipientEachAdmin'=>$countRecipientEachAdmin,
         'admin'=>true ,
-        'da'=>  DB::table('blogs')->get()
+        'da'=>  DB::table('blogs')->orderBy('created_at','DESC')->get()
     		);
 
     	return view('admin',$data);

@@ -5,7 +5,7 @@ use App\Donation;
 
 
     function getAllDonation(){
-      return NewsAni::orderBy('created_at')->get();
+      return Donation::orderBy('created_at','DESC')->get();
   }
 
 

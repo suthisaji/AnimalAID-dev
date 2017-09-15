@@ -34,11 +34,11 @@ class SummernoteController extends Controller
     }
 
     public function viewSummer(){
-      $data=DB::table('blogs')->get();
+      $data=DB::table('blogs')->orderBy('created_at','DESC')->get();
        return view('summer',compact('data'));//จะเอาไปใช้ที่หน้า summer
     }
     public function viewAllSummer(){
-      $data=DB::table('blogs')->get();
+      $data=DB::table('blogs')->orderBy('created_at','DESC')->get();
        return view('allQuestions',compact('data'));//จะเอาไปใช้ที่หน้า allQuestions
     }
 

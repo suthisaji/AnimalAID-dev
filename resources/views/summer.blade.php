@@ -242,7 +242,7 @@ label > span, #error_summernote{
         <div class="panel-body">
           <div class="form-group owner">
             <label for="topic">questioner <span id="error_questioner"></span></label>
-            <input type="text" name="name" id="name"   class="form-control" required >
+            <input type="text" name="name" id="name"   class="form-control" required value="{{Auth::user()->username}}" >
           </div>
           <div class="form-group to">
             <label for="topic">Title <span id="error_topic"></span></label>
@@ -323,11 +323,61 @@ label > span, #error_summernote{
 
                 </div>
        </div>
+
    </div>
 <!--จบตารางคำถามรวม-->
 
 
+    <div class="container">
+    <div class="panel panel-default">
+      @if(Auth::guest())  @else
 
+<!--เฉพาะคำถามของ memberคนนัี้-->
+<br>
+<div class="panel-heading">
+<h4><b>คำถามของคุณ</b></h4>
+</div>
+<div class="panel-body">
+    <table class="table table-striped">
+         <thead>
+           <tr>
+             <th>หัวเรื่อง</th>
+             <th>แอคชั่น</th>
+             <th></th>
+           </tr>
+         </thead>
+         <tbody>
+
+           @foreach($data as $d )
+             <tr>
+               @if($d->userid==(Auth::user()->id))
+               <td>  {{$value = str_limit($d->topic, 80)}}</td>
+           <td>
+            <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+              |  <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a> |
+                 <a href="{{url('editSummer',array($d->id))}}">แก้ไขคำถาม</a>
+              </td>
+              <td>
+                @if($d->status=='Answered')
+                 <img src="/images/pointg.png" style="width:2%;height:19%"> ตอบแล้ว
+                @else
+
+              @endif
+              </td>
+             </tr>
+           @else
+           @endif
+
+           @endforeach
+         @endif
+         </tbody>
+
+    </table>
+
+</div>
+
+</div>
+</div>
 
 
     <script type="text/javascript">
