@@ -57,21 +57,21 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">หน้าหลัก
+                <a class="nav-link" href="/ADEFhome">หน้าหลัก
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">เกี่ยวกับมูลนิธิ</a>
+                <a class="nav-link" href="/ADEFfoundation">เกี่ยวกับมูลนิธิ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">การบริจาค</a>
+                <a class="nav-link" href="/ADEFdonation">การบริจาค</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ข่าวสารและกิจกรรม</a>
+                <a class="nav-link" href="ADEFnews">ข่าวสารและกิจกรรม</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ของที่ระลึก</a>
+                <a class="nav-link" href="/ADEFproduct">ของที่ระลึก</a>
               </li>
             </ul>
 
