@@ -13,8 +13,10 @@
 
         <!-- Bootstrap Core CSS -->
         <!--link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
-        <link href="css/newbootstrap.css" rel="stylesheet">
-
+    
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" link href="{{url('css/newbootstrap.css')}}">
+        <link rel="stylesheet" link href="{{url('css/newbootstrap.min.css')}}">
         <!-- Custom CSS -->
         <link href="css/newshop-homepage.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
