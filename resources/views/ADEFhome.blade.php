@@ -17,7 +17,7 @@
 
         <!-- Custom CSS -->
         <link href="css/newshop-homepage.css" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
 
