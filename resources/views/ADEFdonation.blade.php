@@ -187,7 +187,7 @@
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
-                    <img src="images\Picture2.png" alt="">
+                    <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images\Picture2.png" alt="donateIcon" width="240" height="160" style=""><a>
                   </div>
                 </div>
 
