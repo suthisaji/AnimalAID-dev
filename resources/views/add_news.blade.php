@@ -80,7 +80,10 @@ width: 1600px;
                         <input type="text" class="form-control" name="head_News"/>
                     </div>
 
-
+                    <div class="form-group" id="animal_pic">
+                        <label for="ani_picture" class="form-label">รูปภาพ</label><br>
+                        <input type="file"  name="ani_picture" required / >
+                    </div>
 
                     <div class="radio form-group" id="news_type">
                       <label for="news_type" class="form-label h3">ประเภท</label><br>
@@ -116,6 +119,7 @@ width: 1600px;
                     <th style="font-size:18px;background-color:#999999; color:white;">รหัส</th>
                     <th style="font-size:18px;background-color: #8c8c8c; color:white;">หัวข่าว</th>
                     <th style="font-size:18px;background-color:#808080; color:white;">เนื้อหาข่าว</th>
+                    <th style="font-size:17px;background-color:#666666;color:white;">ภาพข่าว</th>
                     <th style="font-size:18px;background-color:#737373 ;color:white;">ประเภท</th>
                     <th style="font-size:17px;background-color:#666666;color:white;">สร้างเมื่อ</th>
                     <th style="font-size:18px;background-color:#595959;color:white;">ลบ</th>
@@ -130,6 +134,10 @@ width: 1600px;
 
                     <td style="font-size:18px;">{{$new->head_News}}</td>
                     <td style="font-size:18px;">{{$new->content}}</td>
+                    @if($new->act_pic!=null)
+                    <td style="font-size:18px;"><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="50%" height="50%"></td>
+                    @else
+                    @endif
 
                  @if($new->news_type==1)
                    <td style="font-size:18px;">ข่าวด่วน</td>
