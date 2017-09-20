@@ -28,9 +28,9 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 <style media="screen">
-.container {
+/*.container {
   width: 1300px;
-}
+}*/
 </style>
     </head>
 
