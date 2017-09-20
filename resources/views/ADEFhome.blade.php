@@ -13,13 +13,11 @@
 
         <!-- Bootstrap Core CSS -->
         <!--link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
-    
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" link href="{{url('css/newbootstrap.css')}}">
-        <link rel="stylesheet" link href="{{url('css/newbootstrap.min.css')}}">
+        <link href="css/newbootstrap.css" rel="stylesheet">
+
         <!-- Custom CSS -->
         <link href="css/newshop-homepage.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
 
@@ -273,7 +271,7 @@
               <div class="ol-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
                   <!-- <img src="images\Picture2.png" alt=""> -->
-                  <a  href="donate"><img src="images\Picture2.png" alt="donateIcon" width="240" height="160" style="height: 160px; width: 240px;"><a>
+                  <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images\Picture2.png" alt="donateIcon" width="240" height="160" style="height: 160px; width: 240px;"><a>
                 </div>
               </div>
 
