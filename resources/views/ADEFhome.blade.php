@@ -268,12 +268,7 @@
                     </ul></h4>
               </div>
 
-              <div class="ol-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                  <!-- <img src="images\Picture2.png" alt=""> -->
-                ก
-                </div>
-              </div>
+              
 
             </div>
           </div>
