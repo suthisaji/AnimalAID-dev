@@ -49,7 +49,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" href="https://animal-aid.me/all">
+                <a class="navbar-brand" href="https://animal-aid.me/ADEF/home">
                 <img class="navbar-brand" src ="images\S__1261612.jpg"></a>
           </div>
 
