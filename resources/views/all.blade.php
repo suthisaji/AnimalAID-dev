@@ -108,6 +108,9 @@
           text-align: left;
           padding: 15px;
         }
+        .small, small {
+    font-size: 75%;
+}
 
     </style>
 
@@ -612,7 +615,7 @@
                        <div class="list-group">
                            <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
-                               <i class="fa fa-comment fa-fw">{{$donor->name}}</i>
+                               <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
                                <span class="pull-right text-muted small">
                                    <em>{{$donor->amount}}฿</em>
                                </span>

@@ -135,12 +135,14 @@ class AnimalController extends Controller
           $newsAnis = $this->NewsAniRepository->getAllNewsAni();
             $hospitals =$this->AnimalRepository->getAllHospital();
               $admins = $this->AnimalRepository ->getAllAdmin();
+                $donor =$this->DonationRepository ->getAllDonation();
           $data = array(
               'animals'=>$animals ,
               'animalsMoneys'=>$animalsMoneys,
             'newsAnis'=>$newsAnis,
             'hospitals'=>$hospitals,
-              'admins' =>$admins
+              'admins' =>$admins,
+                'donor'=>$donor
 
     );
       }else {
@@ -150,13 +152,15 @@ class AnimalController extends Controller
             $hospitals =$this->AnimalRepository->getAllHospital();
               $admins = $this->AnimalRepository ->getAllAdmin();
           $position =  Auth::user()->position;
+          $donor =$this->DonationRepository ->getAllDonation();
         $data = array(
             'animals'=>$animals ,
             'animalsMoneys'=>$animalsMoneys,
           'newsAnis'=>$newsAnis,
           'position'=>$position,
           'hospitals'=>$hospitals,
-            'admins' =>$admins
+            'admins' =>$admins,
+                'donor'=>$donor
 
   );
 
