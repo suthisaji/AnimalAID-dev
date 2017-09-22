@@ -189,7 +189,7 @@
 
         <!-- Related Projects Row -->
           <div class="col-md-12">
-            <h3 class="my-4">Product</h3>
+            <h3 class="my-4">สื่อการเรียนรู้ เกมต่างๆ</h3>
 
             <div class="row">
 
