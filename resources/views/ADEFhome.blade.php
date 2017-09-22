@@ -223,19 +223,19 @@
 
                 <div class="col-sm-4 col-lg-4 col-md-4">  //plate&screw
                   <div class="thumbnail">
-                    <img src="images\test.jpg" alt="">
+                    <img src="images\test.JPG" alt="">
                   </div>
                 </div>
 
                 <div class="col-sm-4 col-lg-4 col-md-4"> //เสื้อ
                   <div class="thumbnail">
-                    <img src="images\1.jpg" alt="">
+                    <img src="images\1.JPG" alt="">
                   </div>
                 </div>
 
                 <div class="col-sm-4 col-lg-4 col-md-4"> //ที่นั่ง
                   <div class="thumbnail">
-                    <img src="images\fghj.jpg" alt="">
+                    <img src="images\fghj.JPG" alt="">
                   </div>
                 </div>
 
@@ -268,7 +268,7 @@
                     </ul></h4>
               </div>
 
-              
+
 
             </div>
           </div>
