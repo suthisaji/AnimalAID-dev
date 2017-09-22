@@ -182,6 +182,7 @@
 
                 <b style="font-size:23px;">{{$new->head_News}}</b>
              &nbsp;   <small >{{$new->created_at}}</small><br>
+             <img src="{{url('/images/'.$new->act_pic)}}" alt="" width="100%" height="100%">
                <p> <span style="font-size:18px;">{{$new->content}}</span></p><br>
 
                 <br>
@@ -200,6 +201,7 @@
    @if($new1->news_type==3)
 
      <b style="font-size:23px;">{{$new1->head_News}}</b>
+     <img src="{{url('/images/'.$new1->act_pic)}}" alt="" width="100%" height="100%">
      &nbsp;   <small >{{$new1->created_at}}</small><br>
     <p> <span style="font-size:18px;">{{$new1->content}}</span></p><br>
 

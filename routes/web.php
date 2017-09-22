@@ -192,3 +192,26 @@ Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testPopup', function () {
     return view('test');
 });
+
+
+
+
+Route::get('/ADEFhome', function () {
+    return view('ADEFhome');
+});
+
+Route::get('/ADEFfoundation', function () {
+    return view('ADEFfoundation');
+});
+
+Route::get('/ADEFdonation', function () {
+    return view('ADEFdonation');
+});
+
+Route::get('/ADEFnews', function () {
+    return view('ADEFnews');
+});
+
+Route::get('/ADEFproduct', function () {
+    return view('ADEFproduct');
+});
