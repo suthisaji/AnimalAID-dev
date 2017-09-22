@@ -76,7 +76,7 @@
                 <a class="nav-link" href="/ADEFnews">ข่าวสารและกิจกรรม</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/ADEFproduct">ของที่ระลึก</a>
+                <a class="nav-link" href="/ADEFproduct">สื่อการเรียนรู้</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/all">animal-aid</a>
