@@ -195,19 +195,19 @@
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
+                                            <img class="slide-image" src="images\21919357_2129891327037195_45983170_n.jpg" alt="">
                   </div>
                 </div>
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
+                      <img class="slide-image" src="images\21905578_2129891183703876_852973393_n.jpg" alt="">
                   </div>
                 </div>
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
+                                                  <img class="slide-image" src="images\21979303_2129891137037214_879806185_n.jpg" alt="">
                   </div>
                 </div>
 

@@ -191,9 +191,33 @@
           <div class="col-md-12">
             <h3 class="my-4">Product</h3>
 
-              <div class="row">
+            <div class="row">
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images\War-1.PNG" alt="" width="500" height="300">
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images\Whisperer-1.PNG" alt="" width="500" height="300">
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images\Shelter-1.PNG" alt="" width="500" height="300">
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                  <div class="thumbnail">
+                    <img src="images\Preven-2.PNG" alt="" width="500" height="300">
+                  </div>
+                </div>
+
+                <!-- <div class="col-sm-4 col-lg-4 col-md-4">
                   <div class="thumbnail">
                     <img src="http://placehold.it/500x300" alt="">
                   </div>
@@ -203,36 +227,11 @@
                   <div class="thumbnail">
                     <img src="http://placehold.it/500x300" alt="">
                   </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div>
-
-
+                </div> -->
 
                   <br>
               </div>
+
           </div>
         <!-- /.row -->
 
