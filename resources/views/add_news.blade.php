@@ -82,7 +82,7 @@ width: 1600px;
 
                     <div class="form-group" id="animal_pic">
                         <label for="ani_picture" class="form-label">รูปภาพ</label><br>
-                        <input type="file"  name="ani_picture" required / >
+                        <input type="file"  name="ani_picture"  / >
                     </div>
 
                     <div class="radio form-group" id="news_type">
@@ -116,11 +116,11 @@ width: 1600px;
               <table class="table">
                 <thead class="table-inverse">
                   <tr>
+                    <th style="font-size:18px;background-color:#737373 ;color:white;">ประเภท</th>
                     <th style="font-size:18px;background-color:#999999; color:white;">รหัส</th>
                     <th style="font-size:18px;background-color: #8c8c8c; color:white;">หัวข่าว</th>
                     <th style="font-size:18px;background-color:#808080; color:white;">เนื้อหาข่าว</th>
-                    <th style="font-size:17px;background-color:#666666;color:white;">ภาพข่าว</th>
-                    <th style="font-size:18px;background-color:#737373 ;color:white;">ประเภท</th>
+                    <th style="font-size:17px;background-color:#666666;color:white;">ภาพ</th>
                     <th style="font-size:17px;background-color:#666666;color:white;">สร้างเมื่อ</th>
                     <th style="font-size:18px;background-color:#595959;color:white;">ลบ</th>
                   </tr>
@@ -130,22 +130,24 @@ width: 1600px;
 
                       @if( $new->admin_id == $adminId)
                   <tr>
-                    <td style="font-size:18px;">{{$new->news_id}}</td>
-
-                    <td style="font-size:18px;">{{$new->head_News}}</td>
-                    <td style="font-size:18px;">{{$new->content}}</td>
-                    @if($new->act_pic!=null)
-                    <td style="font-size:18px;"><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="50%" height="50%"></td>
+                    @if($new->news_type==1)
+                      <td style="font-size:14px;">ข่าวด่วน</td>
+                    @elseif($new->news_type==2)
+                      <td style="font-size:14px;">ข่าวปกติ</td>
                     @else
+                      <td style="font-size:14px;">กิจกรรม</td>
+                    @endif
+                    <td style="font-size:14px;">{{$new->news_id}}</td>
+
+                    <td style="font-size:14px;">{{$new->head_News}}</td>
+                    <td style="font-size:14px;">{{$new->content}}</td>
+                    @if($new->act_pic!=null)
+                    <td style="font-size:14px;"><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="50%" height="50%"></td>
+                    @else
+                      <td></td>
                     @endif
 
-                 @if($new->news_type==1)
-                   <td style="font-size:18px;">ข่าวด่วน</td>
-                 @elseif($new->news_type==2)
-                   <td style="font-size:18px;">ข่าวปกติ</td>
-                 @else
-                   <td style="font-size:18px;">กิจกรรม</td>
-                 @endif
+
                     <td style="font-size:18px;">{{$new->created_at}}</td>
 
                     <td > <a style="font-size:18px;" href="/deleteNews/{{$new->news_id}}" class="btn btn-danger btn-sm" onclick="return confirm('Please confirm again !!!') ">ลบ </a></td>
