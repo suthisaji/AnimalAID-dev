@@ -13,6 +13,13 @@
 
         <!-- Bootstrap Core CSS -->
         <!--link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
         <link href="css/newbootstrap.css" rel="stylesheet">
 
         <!-- Custom CSS -->
@@ -258,11 +265,6 @@
           </div>
         <!-- /.container -->
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
 
     </body>
 

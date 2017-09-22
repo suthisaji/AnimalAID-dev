@@ -10,6 +10,11 @@
         <meta name="author" content="">
 
         <title>ADEF ::DONATION::</title>
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <!-- Bootstrap Core CSS -->
         <!--link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
