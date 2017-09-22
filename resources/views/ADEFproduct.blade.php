@@ -78,6 +78,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/ADEFproduct">ของที่ระลึก</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/all">animal-aid</a>
+              </li>
             </ul>
 
         <!-- Login -->
@@ -287,11 +290,6 @@
           </div>
         <!-- /.container -->
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
 
     </body>
 

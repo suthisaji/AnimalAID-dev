@@ -73,6 +73,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/ADEFproduct">ของที่ระลึก</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/all">animal-aid</a>
+              </li>
             </ul>
 
         <!-- Login -->
