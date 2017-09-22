@@ -380,12 +380,14 @@ class AnimalController extends Controller
               $content= Input::get('content');
               $newstype= Input::get('news_type');
               $adminId = Auth::user()->id;//จะได้ค่า id ของคนที่ login อยู่
-              if(Input::get('ani_picture')!=null){
+              if(Request::file('ani_picture')){
+
               $temp = Request::file('ani_picture')->getPathName(); //เอาข้อมูลรูปเช้ามา
               $imageName = Request::file('ani_picture')->getClientOriginalName();
               $path = base_path().'/public/images/';
               $newImageName = 'animal_'.str_random(5).$imageName;
               Request::file('ani_picture')->move($path, $newImageName);
+
               $result = $this->NewsAniRepository->addNewsAni($headNews,$adminId,$newImageName,$content,$newstype);
              }else {
                $result = $this->NewsAniRepository->addNewsAni($headNews,$adminId,'noPic',$content,$newstype);

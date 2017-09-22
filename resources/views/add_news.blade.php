@@ -141,10 +141,11 @@ width: 1600px;
 
                     <td style="font-size:14px;">{{$new->head_News}}</td>
                     <td style="font-size:14px;">{{$new->content}}</td>
-                    @if($new->act_pic!=null)
-                    <td style="font-size:14px;"><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="50%" height="50%"></td>
-                    @else
-                      <td></td>
+
+                    @if($new->act_pic!='noPic')
+                    <td ><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="60px" height="60px"></td>
+                  @elseif($new->act_pic=='noPic')
+                                  <td >noPic</td>
                     @endif
 
 
