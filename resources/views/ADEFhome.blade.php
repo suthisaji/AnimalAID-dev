@@ -267,7 +267,11 @@
                       <li>ธนาคารกรุงเทพ สาขามหาวิทาลัยเกษตรศาสตร์ เลขที่บัญชี 043-7-12167-6</li>
                     </ul></h4>
               </div>
-
+              <div class="ol-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                  <a  href="donate"><img  src="images\Picture2.png" alt="donateIcon" width="240" height="160" style="height: 160px; width: 240px;"><a>
+                </div>
+              </div>
 
 
             </div>
