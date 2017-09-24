@@ -44,17 +44,17 @@ class LoginController extends Controller
     //   return redirect()->back();
     // }
 
-    public function logout(Request $request){
-      $this->guard()->logout();
-      $request->session()->flush();
-      $request->session()->regenerate();
+  //  public function logout(Request $request){
+    //  $this->guard()->logout();
+    //  $request->session()->flush();
+    //  $request->session()->regenerate();
 
   //  return redirect()->route('all');
 
 
-    return redirect()->back();
+  //  return redirect()->back();
     //return back();
 
 
-    }
-}
+//    }
+     }
