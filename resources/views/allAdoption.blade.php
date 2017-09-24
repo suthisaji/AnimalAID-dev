@@ -106,7 +106,9 @@
         .box3{
           text-align: left;
         }
-
+        .small, small {
+    font-size: 75%;
+}
     </style>
 
   </head>
