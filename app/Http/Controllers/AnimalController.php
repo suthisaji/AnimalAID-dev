@@ -216,12 +216,14 @@ class AnimalController extends Controller
           $animals = $this->AnimalRepository->getAllAnimal();
             $hospitals =$this->AnimalRepository->getAllHospital();
                 $admins = $this->AnimalRepository ->getAllAdmin();
+                  $donor =$this->DonationRepository ->getAllDonation();
           $data = array(
             'animalsAdoptions'=>$animalsAdoptions,
             'newsAnis'=>$newsAnis,
               'animals'=>$animals,
               'hospitals'=>$hospitals,
-                'admins' =>$admins
+                'admins' =>$admins,
+                  'donor'=>$donor
           );
         }
           else{
@@ -231,6 +233,7 @@ class AnimalController extends Controller
           $animals = $this->AnimalRepository->getAllAnimal();
             $hospitals =$this->AnimalRepository->getAllHospital();
                 $admins = $this->AnimalRepository ->getAllAdmin();
+                  $donor =$this->DonationRepository ->getAllDonation();
 
 
               $data = array(
@@ -239,7 +242,8 @@ class AnimalController extends Controller
                   'position'=>$position,
                   'animals'=>$animals,
                   'hospitals'=>$hospitals,
-                    'admins' =>$admins
+                    'admins' =>$admins,
+                      'donor'=>$donor
 
     );
       }

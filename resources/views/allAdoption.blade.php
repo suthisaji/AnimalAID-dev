@@ -475,27 +475,25 @@
            </div>
            <div class="col-md-3 ro">
                <p class="lead">รายชื่อผู้บริจาค</p>
-                   <div class="list-group">
-                       <p class="list-group-item"><small>2017-04-12</small>
-                           <i class="fa fa-comment fa-fw">Jutatip</i>
-                           <span class="pull-right text-muted small">
-                               <em>$100  </em>
-                           </span>
-               </p>
+               @php($i=0)
+              @if($i<11)
+              @foreach($donor as $donor)
+                  <div class="list-group">
+                      <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
-               <p class="list-group-item"><small>2017-04-12</small>
-                   <i class="fa fa-comment fa-fw">Suthisa</i>
-                   <span class="pull-right text-muted small">
-                       <em>$100  </em>
-                   </span>
-               </p>
-               <p class="list-group-item"><small>2017-04-12</small>
-                   <i class="fa fa-comment fa-fw">Somsak</i>
-                   <span class="pull-right text-muted small">
-                       <em>$100  </em>
-                   </span>
-               </p>
-           </div>
+                          <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
+                          <span class="pull-right text-muted small">
+                              <em>{{$donor->amount}}฿</em>
+                          </span>
+              </p>
+             @php($i++)
+
+            @endforeach
+          @else
+          @endif
+
+
+          </div>
            <br>
            <p class="lead">ขอเชิญร่วมกิจกรรม</p>
                 <div class="list-group">
