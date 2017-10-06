@@ -244,7 +244,7 @@ body{
                               <div class="row">
                                 <div class="col-md-12">
                                   <label for="">จำนวนเงิน</label>
-                                  <input type="email" class="form-control" id="amount" placeholder="จำนวนเงิน"/>
+                                  <input type="email" class="form-control" id="amount" placeholder="จำนวนเงินต้องมากกว่า 20 บาท"/>
                                 </div>
                               </div>
                               <div class="row">

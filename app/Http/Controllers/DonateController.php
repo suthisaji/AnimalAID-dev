@@ -93,13 +93,11 @@ class DonateController extends Controller
   }
 
 
-
-
-
-
-
-
-
-
-
+  function listOfDonor(){
+      $donor =$this->DonationRepository ->getAllDonation();
+      $data = array(
+        'donor'=>$donor
+          ) ;
+    return view('listOfDonor',$data);
+}
 }

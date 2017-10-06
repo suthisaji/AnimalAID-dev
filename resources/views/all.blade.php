@@ -608,7 +608,7 @@
 
                  <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
-                   <p class="lead">รายชื่อผู้บริจาค</p>
+                   <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
                     @php($i=0)
                    @if($i<11)
                    @foreach($donor as $donor)

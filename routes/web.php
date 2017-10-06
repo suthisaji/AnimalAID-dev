@@ -217,3 +217,6 @@ Route::get('/ADEFnews', function () {
 Route::get('/ADEFproduct', function () {
     return view('ADEFproduct');
 });
+
+
+Route::get('/listOfDonor','DonateController@listOfDonor');

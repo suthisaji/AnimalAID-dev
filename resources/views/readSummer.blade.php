@@ -150,7 +150,7 @@
         </div>
         @endif
         <!--แสดงคำตอบ-->
-        ผู้ตอบ {{$data->adminAns_Id}}
+      
     </div>
 
 
