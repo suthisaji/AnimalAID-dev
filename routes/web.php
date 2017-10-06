@@ -185,7 +185,9 @@ Route::get('/viewSummernote','SummernoteController@viewSummernote');
 Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
 Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer')->middleware('auth');
 Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('auth');
-Route::post('/updateSummer','SummernoteController@updateSummer');
+Route::get('/editSummerByMember/{id}','SummernoteController@editSummerByMember');
+Route::post('/updateSummer','SummernoteController@updateSummer')->middleware('auth');
+Route::post('/updateSummer2','SummernoteController@updateSummer2');
 Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');

@@ -175,7 +175,7 @@
 
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      {{ csrf_field() }}
-                                     
+
                                  </form>
                              </li>
                            @endif
@@ -283,6 +283,8 @@
                           <td>  {{$value = str_limit($d->topic, 80)}}</td>
                       <td>
                        <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                              | <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a>
+                              |  <a href="{{url('editSummerByMember',array($d->id))}}">แก้ไขคำถาม</a>
                          </td>
                          <td>
                            @if($d->status=='Answered')

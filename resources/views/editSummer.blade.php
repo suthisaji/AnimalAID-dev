@@ -101,8 +101,8 @@
             {{ Form::token() }}
           <div class="form-group">
             <label for="topic">ชื่อผู้ถาม</label>
-              <input type="hidden" name="id" value="{{$data->id}}">
-            <input type="text" name="name" id="name" class="form-control" value="คุณ {{$data->name}}">
+              <input type="hidden" name="id" value="{{$data->id}}"> คุณ: 
+            <input type="text" name="name" id="name" class="form-control" value=" {{$data->name}}">
           </div>
           <div class="form-group">
             <label for="topic">หัวเรื่อง</label>

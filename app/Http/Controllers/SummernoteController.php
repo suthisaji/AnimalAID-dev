@@ -64,8 +64,20 @@ class SummernoteController extends Controller
       $data=DB::table('blogs')->where('id',$id)->first();
       return view('editSummer',compact('data'));
     }
+    public function editSummerByMember($id){
+      $data=DB::table('blogs')->where('id',$id)->first();
+      return view('editSummerByMember',compact('data'));
+    }
 
     public function updateSummer(Request $request){
+    DB::table('blogs')->where('id',$request['id'])->update([
+      'name'=>$request['name'],
+      'topic'=>$request['topic'],
+      'content'=>$request['summernote']
+    ]);
+    return back();
+    }
+    public function updateSummer2(Request $request){
     DB::table('blogs')->where('id',$request['id'])->update([
       'name'=>$request['name'],
       'topic'=>$request['topic'],
@@ -77,7 +89,7 @@ class SummernoteController extends Controller
     public function updateSummerAns(Request $request){
       $summer1=$request['summernote'];
       $summer2=$request['summernote2'];
-      $sum = $summer1.'|||'.$summer2;
+      $sum = $summer1.'     |       '.$summer2;
 
        DB::table('blogs')->where('id',$request['id'])->update([
       'answer'=>$sum,
