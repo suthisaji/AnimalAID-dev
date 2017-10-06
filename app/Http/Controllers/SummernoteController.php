@@ -89,7 +89,7 @@ class SummernoteController extends Controller
     public function updateSummerAns(Request $request){
       $summer1=$request['summernote'];
       $summer2=$request['summernote2'];
-      $sum = $summer1.'     |       '.$summer2;
+      $sum = $summer1.'     ,<br>       '.$summer2;
 
        DB::table('blogs')->where('id',$request['id'])->update([
       'answer'=>$sum,
