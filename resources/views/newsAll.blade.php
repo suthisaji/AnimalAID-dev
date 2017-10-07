@@ -176,8 +176,8 @@
                <td>{{$new->admin_id}}--}}
 
                <b style="font-size:23px;">{{$new->head_News}}</b>
-            &nbsp;   <small >{{$new->created_at}}</small>
-            <img src="{{url('/images/'.$new->act_pic)}}" alt="" width="50%" height="50%"><br><br>
+            &nbsp;   <small >{{$new->created_at}}</small><br>
+            <center><img src="{{url('/images/'.$new->act_pic)}}" alt="" width="55%" height="55%"><br><br></center>
               <p> <span style="font-size:18px;">{{$new->content}}</span></p>
 
                <hr><br>
@@ -197,8 +197,8 @@
       @if($new1->news_type==3)
 
         <b style="font-size:23px;">{{$new1->head_News}}</b>
-        &nbsp;   <small >{{$new1->created_at}}</small>
-        <img src="{{url('/images/'.$new1->act_pic)}}" alt="" width="50%" height="50%"><br><br>
+        &nbsp;   <small >{{$new1->created_at}}</small><br>
+        <center><img src="{{url('/images/'.$new1->act_pic)}}" alt="" width="55%" height="55%"><br><br></center>
        <p> <span style="font-size:18px;">{{$new1->content}}</span></p>
 
         <hr><br>
