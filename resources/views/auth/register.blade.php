@@ -1,10 +1,20 @@
 @extends('layouts.app')
-
+<style>
+body{
+  background-image:url(images/go.PNG);
+}
+.tran {
+color: #000000;
+background-color: #ffffff;
+opacity: 0.92;
+filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+</style>
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default tran ">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
@@ -103,5 +113,6 @@
             </div>
         </div>
     </div>
+
 </div>
 @endsection
