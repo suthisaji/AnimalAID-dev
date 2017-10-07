@@ -224,17 +224,17 @@
    <!-- Page Content -->
            <div class="container">
                <div class="row">
-                   <div class="col-lg-12">
+                   <!-- <div class="col-lg-12"> -->
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
+                       <div class="video-wrapper">
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed/azTXEmnkBDY" frameborder="0" allowfullscreen></iframe>
+                       </div>
 
+                       <br>
 
-
-<div class="video-wrapper">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/azTXEmnkBDY?autoplay=1" frameborder="0" allowfullscreen></iframe>
-</div>
-
-
+                       <div class="col-sm-8">
+                         <div class="list-group-item">
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
                            <small>เป็นสถานที่จัดเก็บ และสำรองเลือดในรูปแบบผลิตภัณฑ์เลือดชนิดต่างๆ เช่น</small>
@@ -252,117 +252,11 @@
                        <h4>7. ในกรณีที่ทำวัคซีนประจำปี ควรเว้นระยะเวลาอย่างต่ำ 3 สัปดาห์ก่อนนำสัตว์เลี้ยงมาบริจาค</h5>
                        <h4>8. ไม่มีเห็บหมัด หรือโรคผิวหนัง</h4>
                        <h4>9. สุขภาพฟันดี ไม่มีคราบหินปูน</h4>
-                   </div>
-               </div>
-
-               <hr>
-
-   <!-- Page Content -->
-   <!-- <div class="container">
+                   </div></div>
 
 
-       <div class="row">
-
-           <div class="col-md-9">
-
-               <div class="row carousel-holder">
-
-                   <div class="col-md-12">
-                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                           <ol class="carousel-indicators">
-                               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                           </ol>
-                           <div class="carousel-inner">
-                             @foreach($animalsBloods as $pic)
-                                    @if($loop->first)
-                                      <div class="item active" data-toggle="modal" data-target="#myModal{{$pic->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$pic->animal_picture)}}" alt="">
-                                      </div>
-                                    @else
-                                      <div class="item" data-toggle="modal" data-target="#myModal{{$pic->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$pic->animal_picture)}}" alt="">
-
-                                      </div>
-                             @endif
-                           @endforeach
-
-                           <marquee>
-                           @foreach($newsAnis as $fastNews)
-                             @if($fastNews->news_type == 1)
-                              "{{$fastNews->head_News}} " &nbsp;{{$fastNews->content}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                             @endif
-
-                              @endforeach
-                              </marquee>
-                           </div>
-                           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                               <span class="glyphicon glyphicon-chevron-left"></span>
-                           </a>
-                           <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                               <span class="glyphicon glyphicon-chevron-right"></span>
-                           </a>
-                       </div>
-                   </div>
-
-               </div> -->
-
-
-               <div class="container">
-
-                   <div class="row">
-
-                       <div class="col-md-9">
-
-                           <div class="row carousel-holder">
-
-                               <div class="col-md-12">
-                                   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                       <ol class="carousel-indicators">
-                                           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                       </ol>
-                                       <div class="carousel-inner">
-                                           <div class="item active">
-                                               <img class="slide-image" src="\images\animal.png" alt="">
-                                           </div>
-                                           <div class="item">
-                                               <img class="slide-image" src="\images\S__1261615.jpg" alt="">
-                                           </div>
-                                           <div class="item">
-                                               <img class="slide-image" src="\images\puppy.jpg" alt="">
-                                           </div>
-                                       </div>
-                                       <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                           <span class="glyphicon glyphicon-chevron-left"></span>
-                                       </a>
-                                       <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                           <span class="glyphicon glyphicon-chevron-right"></span>
-                                       </a>
-                                   </div>
-                               </div>
-
-                           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               <div class="row">
-
+                   <div class="col-sm-12">
+                      <br><br>
                   @foreach($animalsBloods as $animal)
                     @if($animal->statusDonation=='open')
                    <div class="col-sm-4 col-lg-4 col-md-4">
@@ -462,22 +356,8 @@
                      </div>
                    @endif
                 @endforeach
-
-
-
-
-
-
-
-
-
+              </div>
                </div>
-
-           </div>
-
-
-
-       </div>
 
    </div>
 
