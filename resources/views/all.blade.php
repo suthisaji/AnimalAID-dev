@@ -121,14 +121,14 @@ height:68.4%;
 }
 
 .after2{
-  position:absolute;top:580px;left:0px;
+  position:absolute;top:610px;left:0px;
 width:100%;
-height:100%;
+height:76%;
 }
 .after3{
-  position:absolute;top:1600px;left:0px;
+  position:absolute;top:1870px;left:0px;
 width:100%;
-height:56.4%;
+height:50%;
 }
 
 .tw{
@@ -444,17 +444,19 @@ transform: skew(-135deg) translateX(0%);
 
 
 <br>
-
+<br>
 
 <div class="row">
 
   <!-- Related Projects Row -->
     <div class="col-md-12">
       <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
+
 <br><br><br><br><br><br><br>
         <div class="row">
 
           @foreach($newsAnis as $ac)
+
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4">
 
@@ -470,6 +472,7 @@ transform: skew(-135deg) translateX(0%);
 </a>
           </div>
 
+
         @endif
       @endforeach
 
@@ -479,13 +482,13 @@ transform: skew(-135deg) translateX(0%);
   <!-- /.row -->
 
 </div>
-<hr class="light" />
+
                <div class="row">
 
                  <!-- Related Projects Row -->
                    <div class="col-md-12">
-                     <h3 class="my-4">Product</h3>
-
+                     <h2 class="my-4">Product</h2>
+            <hr class="light" />
                        <div class="row">
 
 
@@ -552,12 +555,6 @@ transform: skew(-135deg) translateX(0%);
 
 
             </div>
-
-
-
-
-
-
 
 
         </div>

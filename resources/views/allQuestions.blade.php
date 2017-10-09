@@ -256,7 +256,7 @@
        <!-- /.container -->
    </nav>
 
-<br>
+<br><br><br>
    <!-- Page Content -->
     <div class="container">
         <div class="panel panel-default">
