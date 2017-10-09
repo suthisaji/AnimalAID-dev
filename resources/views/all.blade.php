@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
 
-    <!--css of picture content-->
-    <link rel="stylesheet" link href="{{url('css/style.css')}}">
+    <!--css of picture content
+    <link rel="stylesheet" link href="{{url('css/stylep.css')}}">-->
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
@@ -117,13 +117,18 @@
 .after{
   position:absolute;top:0px;left:0px;
 width:100%;
-height:63.4%;
+height:68.4%;
 }
 
 .after2{
   position:absolute;top:580px;left:0px;
 width:100%;
 height:100%;
+}
+.after3{
+  position:absolute;top:1600px;left:0px;
+width:100%;
+height:56.4%;
 }
 
 .tw{
@@ -133,7 +138,7 @@ height:100%;
   font-size: 16px;
 
 }
-
+/*nav*/
 .navbar-inverse {
 
     background-color: #fffdfd;
@@ -187,15 +192,109 @@ height:100%;
 hr.light {
     width:100%;
     margin:0 auto;
-    border:0px none white;
-    border-top:2px solid lightgray;
+
+    border-top:5px solid lightgray;
+}
+/*เอาใหม่จังไร*/
+.it{
+  margin:0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.boxp{
+  width:250px;
+  height:250px;
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+}
+.boxp figure{
+  height:100%;
+  margin:0;
+  padding: 0;
+
+}
+.boxp figure img{
+  width:100%;
+}
+.boxp figcaption
+{
+  margin:0;
+padding: 0;
+color: #fff;
+text-align: center;
+  position :absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding: 3px 2px;
+  z-index: 100;
+  opacity: 0;
+  transition-delay: .3s;
+  transition:.5s ease;
+  font-size: 20px;
+}
+.boxp:hover figcaption
+{
+  opacity: 1;
+}
+.boxp figure:before,
+.boxp figure:after{
+  content:'';
+  position:absolute;
+  transition: .5s ease-in-out;
+  height: 200%;
+  width:200%;
+  background: #000;
+}
+.boxp figure:before
+{
+right: 0;
+bottom: 0;
+background: #E77471;
+transform:skew(45deg) translateX(100%);
+
+}
+.boxp figure:after{
+left:0;
+top: 0;
+background: #FF8C00;
+transform: skew(-120deg) translateX(-74.6%);
+}
+.boxp:hover figure:before{
+transform: skew(45deg) translateX(0%);
+}
+.boxp:hover figure:after{
+transform: skew(-135deg) translateX(0%);
+}
+/*จบจังไร*/
+.follow{
+  position:fixed;
+  top:16%;
+  left:-1%;
 }
 
+
+
+  .lig:hover
+	{
+		-moz-box-shadow: 0 0 28px #ccc;
+		-webkit-box-shadow: 0 0 28px #ccc;
+		box-shadow: 5 0 28px #ccc;
+  border-radius: 20px;
+
+}
     </style>
 
   </head>
   <body>
      <img class="after2" src="images\wg.PNG" alt="">
+      <img class="after3" src="images\wg.PNG" alt="">
     <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
@@ -346,34 +445,35 @@ hr.light {
 
 <br>
 
+
 <div class="row">
 
   <!-- Related Projects Row -->
     <div class="col-md-12">
       <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
-
+<br><br><br><br><br><br><br>
         <div class="row">
 
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 3)
-          <div class="col-sm-4 col-lg-4 col-md-4"> <br>
-            <div class="thumbnail">
-              <i class="fa fa-comment fa-fw "> "{{$ac->head_News}} "</i><br>
-                <div class="imgBx">
-                  <img src="{{$ac->act_pic}}" alt=""><br><br>
-              </div>
-              <div class="details">
-                  <h2>What is Lorem Ipsum?</h2>
-                  <p>Lo text ever since.</p>
-              </div>
-            </div>
+          <div class="col-sm-4 col-lg-4 col-md-4">
+
+
+            <a href="newsAll">    <div class="boxp">
+                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
+                   <figure>
+                   <img src="{{url('/images/'.$ac->act_pic)}}" >
+                   <figcaption>{{str_limit($ac->content,80,"..อ่านต่อ")}}
+                   </figcaption>
+                 </figure>
+               </div>
+</a>
           </div>
+
         @endif
       @endforeach
 
 
-
-            <br>
         </div>
     </div>
   <!-- /.row -->
@@ -429,7 +529,7 @@ hr.light {
             <div class="col-md-3 ro">
               <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
 
-              <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+              <a  href="donate"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
                 <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
                  @php($i=0)
@@ -465,19 +565,100 @@ hr.light {
 
 
 </div>
+<br><br>
 <!-- /.container -->
+<!-- Related Projects Row -->
+  <div class="col-md-12">
+    <h3 class="my-4">ประเภทการบริจาค</h3>
 
+      <div class="row">
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div >
+            <a  href="donate"><img  class="lig" src="images\Picture2.png" alt="donateIcon" width="260" height="170" style=""><a>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div >
+              <a  href="db"><img class="lig" src="images\Picture3.png" alt=""width="260" height="170"></a>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div  >
+            <a  href="da">  <img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></a>
+          </div>
+        </div>
+
+
+
+          <br>
+      </div>
+  </div>
+<!-- /.row -->
 </div>
 
-
+<br><br>
    <div class="container">
 
-       <hr>
+     <!-- Related Projects Row -->
+       <div class="col-md-12">
+         <h2 class="my-4">เกี่ยวกับมูลนิธิ</h2>
+             <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัย และเหตุฉุกเฉิน (สปฉ.) <br/>
+             ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br/></h3>
+             <h4>สำนักงานใหญ่ของมูลนิธิ ตั้งอยู่ที่ ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4>
+             <h3>วัตถุประสงค์ของมูลนิธิ</h3>
+             <h4>4.1 เพื่อส่งเสริมสร้างขีดความสามารถของกลุ่มคนที่สนใจเกี่ยวกับการป้องกัน รักษา ฟื้นฟู สัตว์ที่ประสบภัยและเหตุฉุกเฉิน <br/>
+            4.2 เพื่อส่งเสริม สนับสนุน การศึกษา ค้นคว้า อบรม วิจัย พัฒนาและเผยแพร่สู่สากล <br/>
+            4.3	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉินสามารถเข้าถึงระบบบริการได้อย่างทั่วถึง และทันท่วงที <br/>
+            4.4	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉิน ให้สามารถดำรงชีวิตต่อไปได้อย่างเหมาะสม <br/>
+             4.5 เพื่อประกาศเกียรติคุณและให้รางวัลแก่ผู้ปฏิบัติหน้าที่โดยสุจริต เสียสละ ในภาครัฐและภาคเอกชนที่เป็นประโยชน์ต่อส่วนรวมและประเทศชาติ <br/>
+             4.6 ดำเนินการหรือร่วมมือกับองค์กรการกุศลเพื่อการกุศล และองค์กรสาธารณประโยชน์ เพื่อสาธารณประโยชน์ <br/>
+            4.7	ไม่ดำเนินการเกี่ยวข้องกับการเมืองแต่ประการใด</h4><br/>
+
+
+
+
+       </div>
+     <div class="col-md-12">
+       <div class="row">
+ <br>
+         <div class="ol-sm-4 col-lg-4 col-md-4">
+
+           <h3 class="my-4">ติดต่อมูลนิธิ</h3>
+             <ul>
+               <h4><li>ถนนงามวงค์วาน</li>
+               <li>แขวงลาดยาว</li>
+               <li>เขตจตุจักร</li>
+               <li>กรุงเทพมหานคร 10900</li>
+               <li>โทรศัพท์ 02-797-1900</li></h4>
+             </ul>
+         </div>
+
+         <div class="col-sm-4 col-lg-4 col-md-4">
+           <h3 class="my-4">ร่วมโอนเงินบริจาค</h3>
+           <h4><p>ชื่อบัญชีกองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</p>
+             <ul>
+               <li>ธนาคารกรุงเทพ สาขามหาวิทาลัยเกษตรศาสตร์ เลขที่บัญชี 043-7-12167-6</li>
+             </ul></h4>
+         </div>
+
+         <!-- <div class="ol-sm-4 col-lg-4 col-md-4">
+           <div class="thumbnail">
+             <img src="C:\Users\JUTATIPPP\Desktop\ADEF Bootstrap\img\icondonate.png" alt="">
+           </div>
+         </div> -->
+
+       </div>
+     </div>
+
 
        <!-- Footer -->
        <footer>
            <div class="row ">
                <div class="text-center col-lg-12">
+                 <hr>
                    <p>Copyright &copy; Your Website 2017</p>
                </div>
            </div>
@@ -486,17 +667,29 @@ hr.light {
    </div>
    <!-- /.container -->
 
+   <div class="follow">
+    <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
+   </div>
 
     </body>
 
 </html>
 <script>
 function bigImg(x) {
+    x.style.height = "100px";
+    x.style.width = "260px";
+}
+
+function normalImg(x) {
+    x.style.height = "60px";
+    x.style.width = "200px";
+}
+function bigImg1(x) {
     x.style.height = "170px";
     x.style.width = "270px";
 }
 
-function normalImg(x) {
+function normalImg1(x) {
     x.style.height = "160px";
     x.style.width = "240px";
 }
