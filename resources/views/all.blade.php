@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
 
-    <!--css of picture content-->
-    <link rel="stylesheet" link href="{{url('css/style.css')}}">
+    <!--css of picture content
+    <link rel="stylesheet" link href="{{url('css/stylep.css')}}">-->
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
@@ -190,6 +190,83 @@ hr.light {
     border:0px none white;
     border-top:2px solid lightgray;
 }
+/*เอาใหม่จังไร*/
+.it{
+  margin:0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.boxp{
+  width:250px;
+  height:250px;
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+}
+.boxp figure{
+  height:100%;
+  margin:0;
+  padding: 0;
+
+}
+.boxp figure img{
+  width:100%;
+}
+.boxp figcaption
+{
+  margin:0;
+padding: 0;
+color: #fff;
+text-align: center;
+  position :absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  z-index: 100;
+  opacity: 0;
+  transition-delay: .3s;
+  transition:.5s ease;
+}
+.boxp:hover figcaption
+{
+  opacity: 1;
+}
+.boxp figure:before,
+.boxp figure:after{
+  content:'';
+  position:absolute;
+  transition: .5s ease-in-out;
+  height: 200%;
+  width:200%;
+  background: #000;
+}
+.boxp figure:before
+{
+right: 0;
+bottom: 0;
+background: rgba(255, 0, 0, .8);
+transform:skew(45deg) translateX(100%);
+
+}
+.boxp figure:after{
+left:0;
+top: 0;
+background: #FF8C00;
+transform: skew(-120deg) translateX(-74.6%);
+}
+.boxp:hover figure:before{
+transform: skew(45deg) translateX(0%);
+}
+.boxp:hover figure:after{
+transform: skew(-135deg) translateX(0%);
+}
+/*จบจังไร*/
 
     </style>
 
@@ -346,34 +423,37 @@ hr.light {
 
 <br>
 
+
 <div class="row">
 
   <!-- Related Projects Row -->
     <div class="col-md-12">
       <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
-
+<br><br><br><br><br><br><br>
         <div class="row">
 
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 3)
-          <div class="col-sm-4 col-lg-4 col-md-4"> <br>
-            <div class="thumbnail">
-              <i class="fa fa-comment fa-fw "> "{{$ac->head_News}} "</i><br>
-                <div class="imgBx">
-                  <img src="{{$ac->act_pic}}" alt=""><br><br>
-              </div>
-              <div class="details">
-                  <h2>What is Lorem Ipsum?</h2>
-                  <p>Lo text ever since.</p>
-              </div>
-            </div>
+          <div class="col-sm-4 col-lg-4 col-md-4">
+
+
+                <div class="boxp">
+                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
+                   <figure>
+                   <img src="{{url('/images/'.$ac->act_pic)}}" >
+                   <figcaption>{{$ac->content}}
+                   </figcaption>
+                 </figure>
+               </div>
+
           </div>
+
         @endif
       @endforeach
 
 
 
-            <br>
+
         </div>
     </div>
   <!-- /.row -->
