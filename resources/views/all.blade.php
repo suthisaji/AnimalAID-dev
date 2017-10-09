@@ -138,7 +138,7 @@ height:56.4%;
   font-size: 16px;
 
 }
-
+/*nav*/
 .navbar-inverse {
 
     background-color: #fffdfd;
@@ -193,7 +193,7 @@ hr.light {
     width:100%;
     margin:0 auto;
 
-    border-top:2px solid lightgray;
+    border-top:5px solid lightgray;
 }
 /*เอาใหม่จังไร*/
 .it{
@@ -474,8 +474,6 @@ transform: skew(-135deg) translateX(0%);
       @endforeach
 
 
-
-
         </div>
     </div>
   <!-- /.row -->
@@ -625,7 +623,7 @@ transform: skew(-135deg) translateX(0%);
        </div>
      <div class="col-md-12">
        <div class="row">
- <br><br><br>
+ <br>
          <div class="ol-sm-4 col-lg-4 col-md-4">
 
            <h3 class="my-4">ติดต่อมูลนิธิ</h3>
