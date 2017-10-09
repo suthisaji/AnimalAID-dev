@@ -49,7 +49,7 @@
     <style type="text/css">
         .carousel-inner > .item > img {
           width:100%;
-          height:350px;
+          height:360px;
         }
 
         .thumbnail img {
@@ -114,7 +114,13 @@
 .after{
   position:absolute;top:0px;left:0px;
 width:100%;
-height:65%;
+height:63.4%;
+}
+
+.after2{
+  position:absolute;top:580px;left:0px;
+width:100%;
+height:100%;
 }
 
 .tw{
@@ -171,10 +177,22 @@ height:65%;
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #fdce9a;
 }
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+hr.light {
+    width:100%;
+    margin:0 auto;
+    border:0px none white;
+    border-top:2px solid lightgray;
+}
+
     </style>
 
   </head>
   <body>
+     <img class="after2" src="images\wg.PNG" alt="">
     <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
@@ -228,6 +246,7 @@ height:65%;
 
                    <!-- Authentication Links -->
                    @if (Auth::guest())
+
                        <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
                        <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
@@ -277,171 +296,7 @@ height:65%;
        <!-- /.container -->
    </nav>
 
-   <!-- Page Content -->
 
-   <!-- <div class="container">
-
-       <div class="row">
-
-           <div class="col-md-9">
-
-               <div class="row carousel-holder">
-
-                   <div class="col-md-12">
-                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                           <ol class="carousel-indicators">
-                               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                           </ol>
-                           <div class="carousel-inner">
-                             @php($x=0)
-                             @foreach($animals as $animal)
-                                  @if($animal->statusDonation=='open' ||$animal->statusDonation=='-' && empty($animal->join_Adoption->animal_id))
-                                    @php($x++)
-                                    @if($x == 1)
-                                      <div class="item active"  data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="566" height="390">
-                                      </div>
-                                    @else
-                                      <div class="item"  data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$animal->animal_picture)}}" alt=""  width="566" height="390">
-                                      </div>
-
-                                    @endif
-                                    <div class="modal fade" id="myModal{{$animal->animal_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel" > {{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
-                                          </div>
-                                          <div class="modal-body thumbnail  ">
-                                             <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="566" height="390">
-                                            ประเภทของการขอรับบริจาค:
-                                              @if($animal->join_donationType->do_typeName=='Donation Money')
-                               ขอรับบริจาคเงิน
-                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
-                               ขอรับบริจาคเลือด
-                             @else
-                                หาบ้านให้สัตว์
-                              @endif<br>
-                                            ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                            อายุ        :{{$animal->animal_age}} ปี<br>
-                                            ชนิดของสัตว์ :{{$animal->animal_type}}<br>
-                                            สี :{{$animal->animal_color}}<br>
-                                            @if($animal->animal_gender == 1)
-                                              เพศ :เพศผู้<br>
-                                   @else
-                                       เพศ:เพศเมีย<br>
-                                   @endif
-                                            ลักษณะอาการ  :{{$animal->symptomCase}}<br>
-                                             สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
-                                            @foreach($admins as $admin)
-                                              @if($animal->admin_id==$admin->admin_id)
-                                                   @foreach($hospitals as $hos)
-                                                      @if($admin->hospital_id==$hos->hospital_id)
-                                                       <span style="color:#8000FF">    {{$admin->join_Hospital->hospital_name}}&nbsp; @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
-                                                        @else
-                                                 {{$admin->join_Hospital->hospital_account}}
-                                         @endif</span>
-                                                      @endif
-                                                   @endforeach
-                                              @endif
-                                            @endforeach
-                                          </div>
-                                          @if($animal->doType_id==3)
-                                            <div class="modal-footer">
-                                   <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-
-                                   <button id="takemodal{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
-                                   <script>
-                                         $('#takemodal{{$animal->animal_id}}').popover({
-                                           html: true,
-                                           title: 'กรุณาเพิ่มที่อยู๋ในการเลี้ยงสัตว์ ',
-                                           content: function(){
-                                               return $('#modal-content{{$animal->animal_id}}').html()
-                                           }
-                                         })
-                                   </script>
-                                   <div id="modal-content{{$animal->animal_id}}" style="display:none;">
-                                     @if (Auth::guest())
-                                       <a href="{{ route('login') }}" class="btn btn-sm btn-success">เข้าสู่ระบบ</a>
-                                       <a href="{{ route('register') }}" class="btn btn-sm btn-warning">สมัครสมาชิก</a>
-                                     @else
-                                     <form class="form" action="/addAdoptionAllPage" method="post">
-                                       <input type="hidden" name="animal_id" value="{{$animal->animal_id}}">
-                                         {{ Form::token() }}
-                                         <div class="form-group">
-                                             <label for=""> <h4 style="color:blue;"> ขอบคุณ &nbsp; {{Auth::user()->name}}</h4> </label>
-                                         </div>
-                                         <div class="form-group">
-                                             <label for="">หมายเลขโทรศัพท์</label>
-                                             <input class="form-control" type="tel" name="tel" value="{{Auth::user()->tel}}"/>
-
-                                         </div>
-                                         <div class="form-group">
-                                              <label for="address">กรุณาเพิ่มที่อยู่</label>
-                                              <textarea class="form-control" name="address" id="address" rows="3"></textarea>
-                                        </div>
-
-                                         <div class="form-group">
-                                             <label for="date" class="form-label">วันและเวลาที่มารับสัตว์</label>
-                                             <input type="datetime-local" class="form-control" name="date_time"  value="2011-08-19T13:45:00" />
-                                         </div>
-                                         <div class="form-group">
-                                             กรุณารอการติดต่อกลับจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
-
-                                         </div>
-                                        <input type='hidden' name='status' value='Recipient' />
-                                         <div class="text-center">
-                                             <button class="btn btn-success" >ยืนยัน</button>
-                                         </div>
-                                     </form>
-                                   @endif
-                                 </div>
-
-
-                                 </div>
-                               @elseif($animal->doType_id==2)
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                              <button type="button" class="btn btn-primary "><a href='db' style='color:white;'>วิธีบริจาคแสดงข้อมูล</a></button>
-
-
-                                            </div>
-                                          @else
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                              <button type="button" class="btn btn-primary bori box2 "><a href="donate" style="color:white">บริจาค</a></button>
-                                            </div>
-                                          @endif
-                                        </div>
-                                      </div>
-                                    </div>
-                                  @endif
-                           @endforeach
-
-                            <marquee>
-                            @foreach($newsAnis as $fastNews)
-                              @if($fastNews->news_type == 1)
-                                 "{{$fastNews->head_News}} " &nbsp;{{$fastNews->content}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                              @endif
-
-                               @endforeach
-                                </marquee>
-                           </div>
-                           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                               <span class="glyphicon glyphicon-chevron-left"></span>
-                           </a>
-                           <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                               <span class="glyphicon glyphicon-chevron-right"></span>
-                           </a>
-                       </div>
-                   </div>
-
-               </div> -->
 
                <div class="container">
 
@@ -488,247 +343,127 @@ height:65%;
 
 <br>
 
+<div class="row">
+
+  <!-- Related Projects Row -->
+    <div class="col-md-12">
+      <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
+
+        <div class="row">
+
+          @foreach($newsAnis as $ac)
+                     @if($ac->news_type == 3)
+          <div class="col-sm-4 col-lg-4 col-md-4"> <br>
+            <div class="thumbnail">
+              <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
+                 &nbsp;{{$ac->content}}<br><br>
+            </div>
+          </div>
+        @endif
+      @endforeach
 
 
 
+            <br>
+        </div>
+    </div>
+  <!-- /.row -->
+
+</div>
+<hr class="light" />
                <div class="row">
 
+                 <!-- Related Projects Row -->
+                   <div class="col-md-12">
+                     <h3 class="my-4">Product</h3>
 
-                  @foreach($animals as $animal)
-
-                    @if($animal->statusDonation=='open' ||$animal->statusDonation=='-' && empty($animal->join_Adoption->animal_id))
-                   <div class="col-sm-4 col-lg-4 col-md-4">
-                       <small>{{$animal->created_at}}</small>
-                       <div class="thumbnail">
-                           <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
-                           <div   class="caption  ">
-
-                             <h5>
-                               @if($animal->join_donationType->do_typeName=='Donation Money') ขอรับบริจาคเงิน
-                               @elseif($animal->join_donationType->do_typeName=='Blood Donation') ขอรับบริจาคเลือด
-                               @else หาบ้านให้สัตว์
-                               @endif
-                               <span style="color:blue">{{$animal->animal_name}}</span> &nbsp;&nbsp; {{$animal->animal_type}}
-                             </h5>
-
-                             <!-- <h6>{{$animal->animal_type}}</h6> -->
-                             <h5>{{$animal->symptomCase}}</h5>
-
-                             @foreach($admins as $admin)
-                               @if($animal->admin_id==$admin->admin_id)
-                                    @foreach($hospitals as $hos)
-                                       @if($admin->hospital_id==$hos->hospital_id)
-                                        <!-- <h6><span style="color:#8000FF">
-                                          {{$admin->join_Hospital->hospital_name}}&nbsp;
-                                          @if($admin->join_Hospital->hospital_account=='043-7-12167-6 กองทุนรักษาพยาบาลสัตว์ป่วยอนาถา') 043-7-12167-6
-                                          @else{{$admin->join_Hospital->hospital_account}}
-                                          @endif
-                                        </span></h6> -->
-                                       @endif
-                                    @endforeach
-                               @endif
-                             @endforeach
+                       <div class="row">
 
 
-                              <!-- Button trigger modal -->
-                            <div class="row text-right">
-
-                          @if($animal->doType_id==3)
-                            <div>
-                              <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                              ดูรายละเอียด
-                            </button>
-
-                            <button id="take{{$animal->animal_id}}" type="button" class="btn btn-lg btn-success rub" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
-                          </div>
-                            <script>
-                                  $('#take{{$animal->animal_id}}').popover({
-                                    html: true,
-                                    title: 'กรุณาเพิ่มที่อยู่ในการเลี้ยงสัตว์  ',
-                                    content: function(){
-                                        return $('#modal-content{{$animal->animal_id}}').html()
-                                    }
-                                  })
-                            </script>
-
-                            <div id="modal-content{{$animal->animal_id}}" style="display:none;">
-                              @if (Auth::guest())
-                                <a href="{{ route('login') }}" class="btn btn-sm btn-success">เข้าสู่ระบบ</a>
-                                <a href="{{ route('register') }}" class="btn btn-sm btn-warning">สมัครสมาชิก</a>
-                              @else
-                              <form class="form" action="/addAdoptionAllPage" method="post">
-                                <input type="hidden" name="animal_id" value="{{$animal->animal_id}}">
-                                  {{ Form::token() }}
-                                  <div class="form-group">
-                                      <label for=""> <h4 style="color:blue;"> ขอบคุณค่ะ !&nbsp; {{Auth::user()->name}}</h4> </label>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">หมายเลขโทรศัพท์</label>
-                                      <input class="form-control" type="tel" name="tel" value="{{Auth::user()->tel}}"/>
-
-                                  </div>
-                                  <div class="form-group">
-                                       <label for="address">เพิ่มที่อยู่</label>
-                                       <textarea class="form-control" name="address" id="address" rows="3"></textarea>
-                                 </div>
-
-                                  <div class="form-group">
-                                      <label for="date" class="form-label">วันที่และเวลาที่มารับสัตว์</label>
-                                      <input type="datetime-local" class="form-control" name="date_time"  value="2017-08-19T13:45:00"  />
-                                  </div>
-                                  <div class="form-group">
-                                     กรุณารอการติดต่อกลับจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
-
-                                  </div>
-                                 <input type='hidden' name='status' value='Recipient' />
-                                  <div class="text-center">
-                                      <button class="btn btn-success" >ยืนยัน</button>
-                                  </div>
-                              </form>
-
-                            @endif
-                            </div>
-                          @elseif($animal->doType_id==1)
-                            <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                             ดูรายละเอียด
-                            </button>
-                              <button type="button" class="btn btn-primary btn-sm box2" ><a style="color: white;" href="donate">ช่วยเหลือ</a></button>
-
-                          @else
-                            <button type="button" class="btn btn-primary btn-sm box2" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">
-                            ดูรายละเอียด
-                            </button>
-                          @endif
-
-
-
-                          <!--Modal-->
-                          <div class="modal fade" id="myModal{{$animal->animal_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                  <h4 class="modal-title" id="myModalLabel" > {{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
-                                </div>
-                                <div class="modal-body thumbnail box3">
-                                   <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
-                                  ประเภทของการขอบริจาค:
-                                   @if($animal->join_donationType->do_typeName=='Donation Money')
-                               ขอรับบริจาคเงิน
-                             @elseif($animal->join_donationType->do_typeName=='Blood Donation')
-                               ขอรับบริจาคเลือด
-                             @else
-                                หาบ้านให้สัตว์
-                              @endif
-                                  <br>
-                                  ชื่อสัตว์:{{$animal->animal_name}}<br>
-                                  อายุ        :{{$animal->animal_age}} ปี<br>
-                                  ชนิดของสัตว์ :{{$animal->animal_type}}<br>
-                                  สี :{{$animal->animal_color}}<br>
-                                  @if($animal->animal_gender == 1)
-                                    เพศ :เพศผู้<br>
-                                   @else
-                                       เพศ:เพศเมีย<br>
-                                   @endif
-                                  ลักษณะอาการ  :{{$animal->symptomCase}}<br>
-                                  สถานะการเปิดขอรับ :{{$animal->statusDonation}}<br>
-                                </div>
-                                  <div class="modal-footer">
-                                    @if($animal->join_donationType->do_typeName=='Blood Donation')
-                                    <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                    @elseif($animal->join_donationType->do_typeName=='Donation Money')
-                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                    <button type="button" class="btn btn-primary bori" ><a href="donate" style="color:white">บริจาค</a></button>
-                                    @else
-                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-
-                                    @endif
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                         <div class="col-sm-4 col-lg-4 col-md-4">  plate&screw
+                           <div class="thumbnail">
+                             <img src="images\test.JPG" alt="">
                            </div>
+                         </div>
+
+                         <div class="col-sm-4 col-lg-4 col-md-4"> เสื้อ
+                           <div class="thumbnail">
+                             <img src="images\1.JPG" alt="">
+                           </div>
+                         </div>
+
+                         <div class="col-sm-4 col-lg-4 col-md-4"> ที่นั่ง
+                           <div class="thumbnail">
+                             <img src="images\fghj.JPG" alt="">
+                           </div>
+                         </div>
+
+                           <br>
                        </div>
-                     </div>
-                   @endif
+                   </div>
+                 <!-- /.row -->
+
+               </div>
+
+
+
+
+
+
+
+
+           </div>
+
+
+
+
+            <div class="col-md-3 ro">
+              <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
+
+              <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+
+                <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
+                 @php($i=0)
+                   <div class="list-group">
+                @if($i<11)
+                @foreach($donor as $donor)
+
+                        <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
+
+                            <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
+                            <span class="pull-right text-muted small">
+                                <em>{{$donor->amount}}฿</em>
+                            </span>
+                </p>
+               @php($i++)
+
               @endforeach
+            @else
+            @endif
+
+
+            </div>
 
 
 
-                <!-- Modal -->
 
 
 
 
 
-
-
-               </div>
-
-           </div>
+        </div>
 
 
 
-               <div class="col-md-3 ro">
-                 <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
+</div>
+<!-- /.container -->
 
-                 <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
-
-                   <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
-                    @php($i=0)
-                   @if($i<11)
-                   @foreach($donor as $donor)
-                       <div class="list-group">
-                           <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
-
-                               <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
-                               <span class="pull-right text-muted small">
-                                   <em>{{$donor->amount}}฿</em>
-                               </span>
-                   </p>
-                  @php($i++)
-
-                 @endforeach
-               @else
-               @endif
-
-
-               </div>
-         <br>
-
-
-               <p class="lead">ขอเชิญร่วมกิจกรรม</p>
-                    <div class="list-group">
-                        <p class="list-group-item">
-
-                          @foreach($newsAnis as $ac)
-                                     @if($ac->news_type == 3)
-                                       <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
-                                          &nbsp;{{$ac->content}}<br><br>
-                                       @endif
-                                     @endforeach
-
-
-                                  </div>
-
-                        </p>
-                    </p>
-           </div>
-
-
-
-   </div>
-   <!-- /.container -->
-
+</div>
 
 
    <div class="container">
 
        <hr>
-
-
-
 
        <!-- Footer -->
        <footer>
@@ -741,6 +476,8 @@ height:65%;
 
    </div>
    <!-- /.container -->
+
+
     </body>
 
 </html>
