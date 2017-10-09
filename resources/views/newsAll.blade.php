@@ -251,34 +251,29 @@
              @endif
 
              @endforeach
-           </div>
+             </div>
            <br>
          </div>
 
          <div class="col-sm-6" style="background-color:#FFF9CE;">
             <h1 class="page-header">กิจกรรม</h1>
             <div class="list-group-item">
-            @foreach($news as $new1)
-      @if($new1->news_type==3)
+              @foreach($news as $new1)
+              @if($new1->news_type==3)
 
-        <b style="font-size:23px;">{{$new1->head_News}}</b>
-        &nbsp;   <small >{{$new1->created_at}}</small><br>
-        <center><img src="{{url('/images/'.$new1->act_pic)}}" alt="" width="55%" height="55%"><br><br></center>
-       <p> <span style="font-size:18px;">{{$new1->content}}</span></p>
+              <b style="font-size:23px;">{{$new1->head_News}}</b>
+              &nbsp;   <small >{{$new1->created_at}}</small><br>
+              <center><img src="{{url('/images/'.$new1->act_pic)}}" alt="" width="55%" height="55%"><br><br></center>
+              <p> <span style="font-size:18px;">{{$new1->content}}</span></p>
 
-        <hr><br>
-       @endif
-   @endforeach
- </div>
- <br>
+              <hr><br>
+              @endif
+              @endforeach
+            </div>
+              <br>
          </div>
      </div>
-
-        </div>
-
-
-
-
+   </div>
 
        <hr>
 

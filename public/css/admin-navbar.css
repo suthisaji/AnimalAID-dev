@@ -1,0 +1,60 @@
+body, html{
+ 	font-family: 'Athiti', sans-serif;
+}
+
+.navbar-inverse {
+
+    background-color: #fffdfd;
+    border-color: #fdf9f9;
+
+    background-image: -webkit-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+    background-image: -o-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFFF),to(#FFFFFF));
+    background-image: linear-gradient(to bottom,#FFFFFF 0,#FFFFFF 100%);
+}
+.navbar-inverse .navbar-nav >li>a:hover {
+    color: #fb841b;
+    background-color: rgba(234, 243, 150, 0);
+}
+.navbar-inverse .navbar-nav >li>a:hover>span {
+    color: #2ECCFA;
+    background-color: rgba(234, 243, 150, 0);
+}
+.navbar-inverse .navbar-nav >li>a:hover>span>span {
+    color: #01DF01;
+    background-color: rgba(234, 243, 150, 0);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #0c0c0c;
+}
+.navbar {
+    min-height: 88px;
+  }
+  .navbar-brand>img {
+    position: absolute;
+    left: 5%;
+  }
+  .navmain {
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #ec9619;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #d29f24;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fdce9a;
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+hr.light {
+    width:100%;
+    margin:0 auto;
+    border:0px none white;
+    border-top:2px solid lightgray;
+}
