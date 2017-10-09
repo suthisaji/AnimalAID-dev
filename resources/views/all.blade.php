@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
     <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
+
+    <!--css of picture content-->
+    <link rel="stylesheet" link href="{{url('css/style.css')}}">
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
@@ -355,8 +358,14 @@ hr.light {
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4"> <br>
             <div class="thumbnail">
-              <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
-                 &nbsp;{{$ac->content}}<br><br>
+              <i class="fa fa-comment fa-fw "> "{{$ac->head_News}} "</i><br>
+                <div class="imgBx">
+                  <img src="{{$ac->act_pic}}" alt=""><br><br>
+              </div>
+              <div class="details">
+                  <h2>What is Lorem Ipsum?</h2>
+                  <p>Lo text ever since.</p>
+              </div>
             </div>
           </div>
         @endif

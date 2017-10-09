@@ -191,8 +191,8 @@ Route::post('/updateSummer2','SummernoteController@updateSummer2');
 Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
-Route::get('/testPopup', function () {
-    return view('test');
+Route::get('/testP', function () {
+    return view('testP');
 });
 
 
