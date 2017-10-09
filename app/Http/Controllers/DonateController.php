@@ -27,8 +27,8 @@ class DonateController extends Controller
         $tel = $data['tel'];
         $bank = $data['bank'];
 
-        define('OMISE_PUBLIC_KEY', 'pkey_test_57gpwuk3sm7mirumtsx');
-        define('OMISE_SECRET_KEY', 'skey_test_57gpwuk42fxek0ag94z');
+        define('OMISE_PUBLIC_KEY', 'pkey_test_59kkgr01aqag49cvp7w');
+        define('OMISE_SECRET_KEY', 'skey_test_59kkgr01tlrivk16c1v');
         $charge = \OmiseCharge::create(array(
             'amount' => $amount,
             'currency' => 'thb',
