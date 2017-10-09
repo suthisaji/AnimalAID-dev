@@ -232,6 +232,7 @@ text-align: center;
   opacity: 0;
   transition-delay: .3s;
   transition:.5s ease;
+  font-size: 20px;
 }
 .boxp:hover figcaption
 {
@@ -441,7 +442,7 @@ transform: skew(-135deg) translateX(0%);
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
-                   <figcaption>{{$ac->content}}
+                   <figcaption>{{str_limit($ac->content,80,"..อ่านต่อ")}}
                    </figcaption>
                  </figure>
                </div>
