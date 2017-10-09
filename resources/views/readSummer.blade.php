@@ -26,6 +26,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
     <title>รายการกระทู้คำถาม</title>
     {{Html::style('css/shop-homepage.css')}}<!--ตรงนี้คือฟ้อนแบบไม่มีหัว-->
+
+    <style type="text/css">
+    body{
+      font-size: 16px;
+    }
+    </style>
+
   </head>
   <body>
     <!-- Navigation -->
@@ -150,7 +157,7 @@
         </div>
         @endif
         <!--แสดงคำตอบ-->
-      
+
     </div>
 
 
