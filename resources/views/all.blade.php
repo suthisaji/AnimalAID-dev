@@ -537,9 +537,9 @@ transform: skew(-135deg) translateX(0%);
                 <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
                  @php($i=0)
                    <div class="list-group">
-                @if($i<11)
-                @foreach($donor as $donor)
 
+                @foreach($donor as $donor)
+          @if($i<20)
                         <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
                             <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
@@ -548,11 +548,11 @@ transform: skew(-135deg) translateX(0%);
                             </span>
                 </p>
                @php($i++)
+             @else
 
-              @endforeach
-            @else
-            @endif
+          @endif
 
+@endforeach
 
             </div>
 
