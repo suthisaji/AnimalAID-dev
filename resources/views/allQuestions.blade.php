@@ -180,10 +180,10 @@
                    <li class="navmain ">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li class="navmain active">
+                   <li class="navmain ">
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
-                   <li class="navmain ">
+                   <li class="navmain active">
                        <a href="allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
                    </li>
 
