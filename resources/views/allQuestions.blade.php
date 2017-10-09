@@ -80,6 +80,10 @@
           animation: fadeIn 1s;
       }
 
+      body{
+        font-size: 16px;
+      }
+
       /* Add animation (fade in the popup) */
       @-webkit-keyframes fadeIn {
           from {opacity: 0;}
