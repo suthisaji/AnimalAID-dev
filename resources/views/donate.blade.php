@@ -98,12 +98,68 @@ body{
 .selected-bank > img{
   width: 7rem;
 }
+
+/*nav*/
+.navbar-inverse {
+
+    background-color: #fffdfd;
+    border-color: #fdf9f9;
+
+    background-image: -webkit-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+    background-image: -o-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFFF),to(#FFFFFF));
+    background-image: linear-gradient(to bottom,#FFFFFF 0,#FFFFFF 100%);
+}
+.navbar-inverse .navbar-nav >li>a:hover {
+    color: #fb841b;
+    background-color: rgba(234, 243, 150, 0);
+}
+.navbar-inverse .navbar-nav >li>a:hover>span {
+    color: #2ECCFA;
+    background-color: rgba(234, 243, 150, 0);
+}
+.navbar-inverse .navbar-nav >li>a:hover>span>span {
+    color: #01DF01;
+    background-color: rgba(234, 243, 150, 0);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #0c0c0c;
+}
+.navbar {
+    min-height: 88px;
+  }
+  .navbar-brand>img {
+    position: absolute;
+    left: 5%;
+  }
+  .navmain {
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #ec9619;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #d29f24;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fdce9a;
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+  background-image: linear-gradient(to bottom,	#E5E4E2 0,	#B6B6B4 100%);
+}
+
  </style>
 </head>
 
 <body>
   <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
@@ -113,23 +169,27 @@ body{
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand"  style="font-size:20px;" href="all">Animals A-I-D </a>
+
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                   <li class="active">
+
+                   <li class="navmain active">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li>
+                   <li class="navmain ">
                        <a  href="db">การบริจาคเลือด</a>
                    </li>
-                   <li>
+                   <li class="navmain ">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
 
-                   <li>
+                   <li class="navmain ">
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
+                   </li>
+                   <li class="navmain">
+                       <a href="allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
                    </li>
 
                </ul>

@@ -337,7 +337,7 @@
    <!-- Page Content -->
            <div class="container">
                <div class="row">
-                   <!-- <div class="col-lg-12"> -->
+                   <div class="col-lg-12">
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
                        <div class="video-wrapper">
