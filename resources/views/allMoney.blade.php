@@ -53,7 +53,7 @@
         }
 
         .thumbnail img {
-          width:100% !important;
+          /*width:100% !important;*/
           height: 200px !important;
         }
 
@@ -458,7 +458,7 @@
                   @foreach($animalsMoneys as $animal)
                    <div class="col-sm-4 col-lg-4 col-md-4">
                        <small>{{$animal->created_at}}</small>
-                       <div class="thumbnail ">
+                       <div class="thumbnail">
                            <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                            <div class="caption">
 
@@ -504,8 +504,8 @@
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                       <center><h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4></center>
                                     </div>
-                                    <div class="modal-body thumbnailjam box3">
-                                       <img class="img-responsive" src="{{url('/images/'.$animal->animal_picture)}}" alt="">
+                                    <div class="modal-body box3">
+                                       <img src="{{url('/images/'.$animal->animal_picture)}}" alt="">
                                        <br>
                                       ประเภทของการขอรับบริจาค:
 
