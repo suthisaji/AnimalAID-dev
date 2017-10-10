@@ -112,13 +112,13 @@
 
               <div class="col-xs-6">
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-xs-12">
                     <center><h2 class="only-bottom-margin">แอดมิน: {{$name}}<br></h2></center>
                   </div>
                 </div>
 
                 <div class="row si">
-                  <div class="col-md-6">
+                  <div class="col-xs-6">
 
                     <span class="text-muted">รหัสแอดมิน: <span> {{ $userId}} <br>
                     <span class="text-muted">username:</span> {{$username}} <br>
