@@ -473,7 +473,7 @@
                                    <!-- <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button> -->
                                    <button id="take{{$animal->animal_id}}" type="button" class="btn btn-primary bori" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-                                   
+
                                    <script>
                                          $('#take{{$animal->animal_id}}').popover({
                                            html: true,
@@ -543,41 +543,29 @@
 
            </div>
            <div class="col-md-3 ro">
-               <p class="lead">รายชื่อผู้บริจาค</p>
-               @php($i=0)
-              @if($i<11)
-              @foreach($donor as $donor)
+
+             <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+
+               <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
+                @php($i=0)
                   <div class="list-group">
-                      <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
-                          <i class="fa fa-comment fa-fw">{{$donor->name}}&nbsp;{{$donor->sname}}</i>
-                          <span class="pull-right text-muted small">
-                              <em>{{$donor->amount}}฿</em>
-                          </span>
-              </p>
-             @php($i++)
+               @foreach($donor as $donor)
+         @if($i<20)
+                       <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
-            @endforeach
-          @else
-          @endif
+                           <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
+                           <span class="pull-right text-muted small">
+                               <em>{{$donor->amount}}฿</em>
+                           </span>
+               </p>
+              @php($i++)
+            @else
 
+         @endif
 
-          </div>
-           <br>
-           <p class="lead">ขอเชิญร่วมกิจกรรม</p>
-                <div class="list-group">
-                    <p class="list-group-item">
-
-                      @foreach($newsAnis as $ac)
-                                 @if($ac->news_type == 3)
-                                   <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
-                                      &nbsp;{{$ac->content}}<br>
-                                   @endif
-                                 @endforeach
-
-                              </div>
-                    </p>
-                </p>
+@endforeach
+           </div>
        </div>
 
 
