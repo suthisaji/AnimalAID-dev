@@ -135,57 +135,122 @@ label > span, #error_summernote{
 }
 
     /*end popup*/
+
+
+    /*nav*/
+    .navbar-inverse {
+
+        background-color: #fffdfd;
+        border-color: #fdf9f9;
+
+        background-image: -webkit-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+        background-image: -o-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFFF),to(#FFFFFF));
+        background-image: linear-gradient(to bottom,#FFFFFF 0,#FFFFFF 100%);
+    }
+    .navbar-inverse .navbar-nav >li>a:hover {
+        color: #fb841b;
+        background-color: rgba(234, 243, 150, 0);
+    }
+    .navbar-inverse .navbar-nav >li>a:hover>span {
+        color: #2ECCFA;
+        background-color: rgba(234, 243, 150, 0);
+    }
+    .navbar-inverse .navbar-nav >li>a:hover>span>span {
+        color: #01DF01;
+        background-color: rgba(234, 243, 150, 0);
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+        color: #0c0c0c;
+    }
+    .navbar {
+        min-height: 88px;
+      }
+      .navbar-brand>img {
+        position: absolute;
+        left: 5%;
+      }
+      .navmain {
+        padding-top: 18px;
+        padding-bottom: 15px;
+    }
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #ec9619;
+    }
+    .navbar-inverse .navbar-toggle {
+        border-color: #d29f24;
+    }
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: #fdce9a;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 9px;
+    }
+    .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+      background-image: linear-gradient(to bottom,	#E5E4E2 0,	#B6B6B4 100%);
+    }
+    /*จบเนป*/
     </style>
   </head>
   <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+
        <div class="container">
+
            <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                   <span class="sr-only">Toggle navigation</span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand"  style="font-size:20px;"  href="all">Animals A-I-D</a>
+           <div class="navbar-header ">
+
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                               <span class="sr-only">Toggle navigation</span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                           </button>
+
+
+
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <ul class="nav navbar-nav">
-                   <li >
+           <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav ">
+
+                   <li class="navmain ">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li>
+                   <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li>
+                   <li class="navmain ">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li  >
+                   <li class="navmain ">
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
-                   <li class="active" >
+                   <li class="navmain active ">
                        <a href="allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
                    </li>
 
-
                </ul>
-               <!--check login -->
-          <ul class="nav navbar-nav navbar-right">
-            @if(!empty($position))
-              @if( $position== 'admin')
-                <li class="fl">
-             <a href="admin">การจัดการ</a>
-           </li>
-         @endif
-       @endif
-              <!-- Authentication Links -->
-             <!-- Authentication Links -->
+               <ul class="nav navbar-nav navbar-right">
+                 @if(!empty($position))
+                   @if( $position== 'admin')
+                     <li class="fl tw16">
+                       <a href="admin">การจัดการ</a>
+                    </li>
+
+
+
+                   @endif
+                 @endif
+
+                   <!-- Authentication Links -->
                    @if (Auth::guest())
-                       <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
-                       <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
+
+                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
                      <li class="dropdown fl">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -194,7 +259,7 @@ label > span, #error_summernote{
 
                          <ul class="dropdown-menu" role="menu">
                            @if(Auth::user()->position=='user')
-                           <li class="fl">
+                           <li class="fl tw16">
                              <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                            </li>
                            <li class="fl">
@@ -208,7 +273,7 @@ label > span, #error_summernote{
                                    {{ csrf_field() }}
                                </form>
                            </li>
-                         @else <li class="fl">
+                         @else <li class="fl tw16">
                             <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
                           </li>
                              <li class="fl">
@@ -220,21 +285,21 @@ label > span, #error_summernote{
 
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                      {{ csrf_field() }}
-
                                  </form>
                              </li>
                            @endif
                          </ul>
                      </li>
                    @endif
-          </ul>
+               </ul>
            </div>
            <!-- /.navbar-collapse -->
        </div>
        <!-- /.container -->
    </nav>
-    <div class="container">
 
+    <div class="container">
+  <br>
       <div class="panel panel-default">
         <div class="panel-heading">
           <center><h4>ตั้งกระทู้คำถาม </h4></center>
@@ -355,7 +420,7 @@ label > span, #error_summernote{
            <td>
             <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
               |  <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a>
-      
+
                 |  <a href="{{url('editSummerByMember',array($d->id))}}">แก้ไขคำถาม</a>
               </td>
               <td>

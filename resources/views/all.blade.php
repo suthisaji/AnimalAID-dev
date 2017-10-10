@@ -485,7 +485,7 @@ transform: skew(-135deg) translateX(0%);
                  <!-- Related Projects Row -->
                    <div class="col-md-12">
                      <h2 class="my-4">Product</h2>
-            <hr class="light" />
+
                        <div class="row">
 
 
@@ -514,12 +514,7 @@ transform: skew(-135deg) translateX(0%);
 
                </div>
 
-
-
-
-
-
-
+  <hr class="light" />
 
            </div>
 
@@ -529,7 +524,7 @@ transform: skew(-135deg) translateX(0%);
             <div class="col-md-3 ro">
               <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
 
-              <a  href="donate"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+              <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
                 <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
                  @php($i=0)
