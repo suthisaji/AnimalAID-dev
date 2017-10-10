@@ -133,7 +133,7 @@
                  @if(!empty($position))
                    @if( $position== 'admin')
                      <li class="fl tw16">
-                       <a href="admin">การจัดการ</a>
+                       <a href="../admin">การจัดการ</a>
                     </li>
 
 
@@ -155,7 +155,7 @@
                          <ul class="dropdown-menu" role="menu">
                            @if(Auth::user()->position=='user')
                            <li class="fl tw16">
-                             <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
+                             <a href="../userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                            </li>
                            <li class="fl">
                                <a href="{{ route('logout') }}"
