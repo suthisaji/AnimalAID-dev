@@ -436,7 +436,7 @@
                                    <center><h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}} </h4></center>
                                  </div>
                                  <div class="modal-body thumbnailjam box3">
-                                    <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
+                                    <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500"><br>
                                    ประเภทของการขอรับบริจาค:
                                @if($animal->join_donationType->do_typeName=='Donation Money')
                                ขอรับบริจาคเงิน
@@ -473,7 +473,7 @@
                                    <!-- <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button> -->
                                    <button id="take{{$animal->animal_id}}" type="button" class="btn btn-primary bori" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
                                    <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
-
+                                   
                                    <script>
                                          $('#take{{$animal->animal_id}}').popover({
                                            html: true,
@@ -574,19 +574,21 @@
                                       &nbsp;{{$ac->content}}<br>
                                    @endif
                                  @endforeach
-                               </div>
+
+                              </div>
                     </p>
                 </p>
        </div>
 
 
        </div>
-     </div>
 
-
+   </div>
    <!-- /.container -->
 
-       <!-- <hr> -->
+   <!-- <div class="container">
+
+       <hr> -->
 
        <!-- Footer -->
        <!-- <footer>
@@ -596,8 +598,8 @@
                </div>
            </div>
        </footer>
-     </div> -->
 
+   </div> -->
    <!-- /.container -->
 
 

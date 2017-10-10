@@ -626,12 +626,16 @@
 
            </div>
            <div class="col-md-3 ro">
+             <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
 
+             <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
+               <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
                 @php($i=0)
-               @if($i<11)
+                  <div class="list-group">
+
                @foreach($donor as $donor)
-                   <div class="list-group">
+         @if($i<20)
                        <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
 
                            <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
@@ -640,30 +644,20 @@
                            </span>
                </p>
               @php($i++)
+            @else
 
-             @endforeach
-           @else
-           @endif
+         @endif
 
+       @endforeach
 
            </div>
+       </div>
 
 
-<br>
-           <p class="lead">ขอเชิญร่วมกิจกรรม</p>
-                <div class="list-group">
-                    <p class="list-group-item">
 
-                      @foreach($newsAnis as $ac)
-                                 @if($ac->news_type == 3)
-                                   <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i><br>
-                                      &nbsp;{{$ac->content}}<br>
-                                   @endif
-                                 @endforeach
 
-                              </div>
-                    </p>
-                </p>
+
+
        </div>
 
 

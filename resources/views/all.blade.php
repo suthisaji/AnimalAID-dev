@@ -126,7 +126,7 @@ width:100%;
 height:76%;
 }
 .after3{
-  position:absolute;top:1870px;left:0px;
+  position:absolute;top:2150px;left:0px;
 width:100%;
 height:50%;
 }
@@ -515,6 +515,40 @@ transform: skew(-135deg) translateX(0%);
                </div>
 
   <hr class="light" />
+  <div class="row">
+
+    <!-- Related Projects Row -->
+      <div class="col-md-12">
+        <h2 class="my-4">Media</h2>
+
+          <div class="row">
+
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div >
+                <img src="images\War-1.PNG" alt="" width="270" height="200">
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div >
+                <img src="images\Whisperer-1.PNG" alt="" width="270" height="200">
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div >
+                <img src="images\Shelter-1.PNG" alt="" width="270" height="200">
+              </div>
+            </div>
+
+              <br>
+          </div>
+      </div>
+    <!-- /.row -->
+
+  </div>
+
 
            </div>
 
@@ -554,6 +588,7 @@ transform: skew(-135deg) translateX(0%);
 
 
 </div>
+
 <br><br>
 <!-- /.container -->
 <!-- Related Projects Row -->
