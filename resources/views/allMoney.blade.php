@@ -553,10 +553,11 @@
                                   <div class="modal-content">
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
+                                      <center><h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4></center>
                                     </div>
                                     <div class="modal-body thumbnailjam box3">
-                                       <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
+                                       <img class="img-responsive" src="{{url('/images/'.$animal->animal_picture)}}" alt="">
+                                       <br>
                                       ประเภทของการขอรับบริจาค:
 
                                @if($animal->join_donationType->do_typeName=='Donation Money')
@@ -597,8 +598,9 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+                                      <!-- <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button> -->
                                       <button type="button" class="btn btn-primary bori"><a style="color: white;" href="donate">บริจาค</a></button>
+                                      <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
 
                                     </div>
                                   </div>
@@ -672,12 +674,12 @@
    <!-- /.container -->
 
 
-   <div class="container">
+   <!-- <div class="container">
 
-       <hr>
+       <hr> -->
 
        <!-- Footer -->
-       <footer>
+       <!-- <footer>
            <div class="row">
                <div class="text-center col-lg-12">
                    <p>Copyright &copy; Your Website 2017</p>
@@ -685,7 +687,7 @@
            </div>
        </footer>
 
-   </div>
+   </div> -->
    <!-- /.container -->
 
 

@@ -433,7 +433,7 @@
                                <div class="modal-content">
                                  <div class="modal-header">
                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                   <h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}} </h4>
+                                   <center><h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}} </h4></center>
                                  </div>
                                  <div class="modal-body thumbnailjam box3">
                                     <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
@@ -470,8 +470,10 @@
 
                                  </div>
                                  <div class="modal-footer">
-                                   <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+                                   <!-- <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button> -->
                                    <button id="take{{$animal->animal_id}}" type="button" class="btn btn-primary bori" data-toggle="popover" data-placement="top">รับเลี้ยง</button>
+                                   <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
+
                                    <script>
                                          $('#take{{$animal->animal_id}}').popover({
                                            html: true,
@@ -572,32 +574,30 @@
                                       &nbsp;{{$ac->content}}<br>
                                    @endif
                                  @endforeach
-
-                              </div>
+                               </div>
                     </p>
                 </p>
        </div>
 
 
        </div>
+     </div>
 
-   </div>
+
    <!-- /.container -->
 
-   <div class="container">
-
-       <hr>
+       <!-- <hr> -->
 
        <!-- Footer -->
-       <footer>
+       <!-- <footer>
            <div class="row">
                <div class="text-center col-lg-12">
                    <p>Copyright &copy; Your Website 2017</p>
                </div>
            </div>
        </footer>
+     </div> -->
 
-   </div>
    <!-- /.container -->
 
 

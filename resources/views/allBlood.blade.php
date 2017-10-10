@@ -341,7 +341,7 @@
                        <h1 class="page-header">การบริจาคเลือดให้สัตว์</h1>
 
                        <div class="video-wrapper">
-                         <iframe width="560" height="315" src="https://www.youtube.com/embed/azTXEmnkBDY" frameborder="0" allowfullscreen></iframe>
+                         <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/azTXEmnkBDY" frameborder="0" allowfullscreen></iframe>
                        </div>
 
                        <br>
@@ -418,7 +418,7 @@
                                <div class="modal-content">
                                  <div class="modal-header">
                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                   <h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4>
+                                   <center><h4 class="modal-title" id="myModalLabel" >{{$animal->join_donationType->do_typeName}} to  {{$animal->animal_type}}</h4></center>
                                  </div>
                                  <div class="modal-body thumbnailjam box3">
                                     <img src="{{url('/images/'.$animal->animal_picture)}}" alt="" width="200" height="500">
