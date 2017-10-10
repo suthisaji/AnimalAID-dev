@@ -217,17 +217,7 @@
                   </div>
                 </div>
 
-                <!-- <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div>
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                  <div class="thumbnail">
-                    <img src="http://placehold.it/500x300" alt="">
-                  </div>
-                </div> -->
 
                   <br>
               </div>

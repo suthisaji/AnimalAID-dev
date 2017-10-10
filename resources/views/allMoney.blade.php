@@ -326,58 +326,7 @@
    </nav>
 
    <!-- Page Content -->
-   <!-- <div class="container">
 
-       <div class="row">
-
-           <div class="col-md-9">
-
-               <div class="row carousel-holder">
-
-                   <div class="col-md-12">
-                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                           <ol class="carousel-indicators">
-                               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                           </ol>
-                           <div class="carousel-inner">
-                             @foreach($animalsMoneys as $pic)
-
-                                    @if($loop->first)
-                                      <div class="item active" data-toggle="modal" data-target="#myModal{{$pic->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$pic->animal_picture)}}" alt="">
-                                      </div>
-                                    @else
-                                      <div class="item" data-toggle="modal" data-target="#myModal{{$pic->animal_id}}">
-                                          <img class="slide-image" src="{{url('/images/'.$pic->animal_picture)}}" alt="">
-
-                                      </div>
-                             @endif
-
-                           @endforeach
-                              <marquee>
-                           @foreach($newsAnis as $fastNews)
-                             @if($fastNews->news_type == 1)
-                                "{{$fastNews->head_News}} " &nbsp;{{$fastNews->content}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                             @endif
-
-                              @endforeach
-
-                              </marquee>
-
-                           </div>
-                           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                               <span class="glyphicon glyphicon-chevron-left"></span>
-                           </a>
-                           <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                               <span class="glyphicon glyphicon-chevron-right"></span>
-                           </a>
-                       </div>
-                   </div>
-
-               </div> -->
 
                <div class="container">
                  <!-- Page Heading -->
@@ -626,7 +575,7 @@
 
            </div>
            <div class="col-md-3 ro">
-             <a  href="/ADEFhome">Animal in Disaster and Emergency Foundation (ADEF)</a>
+        
 
              <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
