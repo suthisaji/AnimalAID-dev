@@ -454,13 +454,11 @@ transform: skew(-135deg) translateX(0%);
 
 <br><br><br><br><br><br><br>
         <div class="row">
-          @php($va=0)
-          @foreach($newsAnis as $ac)
 
+          @foreach($newsAnis as $ac)
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4">
 
-       @if($va<5)
             <a href="newsAll">    <div class="boxp">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
                    <figure>
@@ -472,12 +470,7 @@ transform: skew(-135deg) translateX(0%);
 </a>
           </div>
 
-@php($va++)
-@else
-@endif
-
-        @endif
-
+      @endif
       @endforeach
 
 
