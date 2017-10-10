@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title>Admin</title>
+    <title>Ask</title>
     @section('content')
 
     <!-- Bootstrap Core CSS -->
@@ -74,11 +74,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="../add">เพิ่มการขอรับบริจาค</a></li>
+            <li><a href="../add">เพิ่มการขอรับบริจาค</a></li>
             <li><a  href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> 0 </span></a></li>
-            <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
+            <li class="active"><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
