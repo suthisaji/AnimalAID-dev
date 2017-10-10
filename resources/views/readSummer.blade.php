@@ -169,7 +169,7 @@
                                </form>
                            </li>
                          @else <li class="fl tw16">
-                            <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
+                            <a href="../adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
                           </li>
                              <li class="fl">
                                  <a href="{{ route('logout') }}"
