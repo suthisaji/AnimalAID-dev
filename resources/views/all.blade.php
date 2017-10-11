@@ -337,7 +337,7 @@ transform: skew(-135deg) translateX(0%);
                <ul class="nav navbar-nav navbar-right">
                  @if(!empty($position))
                    @if( $position== 'admin')
-                     <li class="fl tw16">
+                     <li class="navmain">
                        <a href="admin">การจัดการ</a>
                     </li>
 
@@ -352,7 +352,7 @@ transform: skew(-135deg) translateX(0%);
                        <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
                        <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
-                     <li class="dropdown fl">
+                     <li class="navmain">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              {{ Auth::user()->name }} <span class="caret"></span>
                          </a>
