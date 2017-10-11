@@ -294,7 +294,7 @@ transform: skew(-135deg) translateX(0%);
   </head>
   <body>
      <img class="after2" src="images\wg.PNG" alt="">
-      <img class="after3" src="images\wg.PNG" alt="">
+     <img class="after3" src="images\wg.PNG" alt="">
     <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
@@ -349,8 +349,8 @@ transform: skew(-135deg) translateX(0%);
                    <!-- Authentication Links -->
                    @if (Auth::guest())
 
-                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
-                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
+                       <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
                      <li class="dropdown fl">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

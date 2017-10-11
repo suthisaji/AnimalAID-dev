@@ -285,8 +285,8 @@
               <!-- Authentication Links -->
              <!-- Authentication Links -->
                    @if (Auth::guest())
-                       <li class="fl"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
-                       <li class="fl"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
+                       <li class="navmain"><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                       <li class="navmain"><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
                    @else
                      <li class="dropdown fl">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
