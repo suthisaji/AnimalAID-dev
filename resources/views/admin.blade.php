@@ -39,7 +39,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
+    <!--start datatable-->
+     <script src="  https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" ></script>
+     <script src="  https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+     <script>
+     $(document).ready(function() {
+         $('#example').DataTable();
+     } );
+     </script>
+     <!--end datatable-->
     {{Html::style('css/shop-homepage.css')}}
 
     <style type="text/css">
@@ -131,7 +139,7 @@
                               <td><a href="/delete/{{$user->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Please confirm again !!!') ">Delete</a></td>
                             </tr>
                             @endforeach
-                    </tbody>--}}<table class="table table-striped">
+                    </tbody>--}}<table class="table table-striped display" id="example">
                          <thead>
                            <tr>
                              <th>หัวเรื่อง</th>

@@ -32,7 +32,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <!-- <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script> -->
-    
+
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
@@ -40,6 +40,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!--start datatable-->
 
     {{Html::style('css/shop-homepage.css')}}
 
@@ -143,7 +144,7 @@
               @endforeach
     </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover ">
       <thead class="table-inverse t">
         <tr>
           <th width="30">รหัส</th>

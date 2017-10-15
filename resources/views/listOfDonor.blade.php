@@ -43,7 +43,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
+    <!--start datatable-->
+     <script src="  https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" ></script>
+     <script src="  https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+     <script>
+     $(document).ready(function() {
+         $('#example').DataTable();
+     } );
+     </script>
+     <!--end datatable-->
     {{Html::style('css/shop-homepage.css')}}
 
     <style type="text/css">
@@ -151,7 +159,7 @@
                    <li class="navmain ">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
-                   <li class="navmain active">
+                   <li class="navmain ">
                        <a href="newsAll">ข่าวสารและกิจกรรม</a>
                    </li>
                    <li class="navmain ">
@@ -237,7 +245,7 @@
      <p class="lead">รายชื่อผู้บริจาค</p>
         </div>
               <div class="panel-body">
-                  <table class="table table-striped">
+                  <table class="table table-striped display" id="example">
                        <thead>
                          <tr>
                            <th>วันเวลาที่บริจาค</th>
