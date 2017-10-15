@@ -117,7 +117,7 @@
 .after{
   position:absolute;top:0px;left:0px;
 width:100%;
-height:68.4%;
+height:500px;
 }
 
 .after2{
@@ -126,9 +126,9 @@ width:100%;
 height:76%;
 }
 .after3{
-  position:absolute;top:2150px;left:0px;
+  position:absolute;top:2400px;left:0px;
 width:100%;
-height:50%;
+
 }
 
 .tw{
@@ -541,7 +541,15 @@ transform: skew(-135deg) translateX(0%);
                 <img src="images\Shelter-1.PNG" alt="" width="270" height="200">
               </div>
             </div>
-
+          <center>  Rabies Hunting<br>
+ร่วมสนุกเล่นเกมกับ 10 ภารกิจพิชิตปริศนาสุดท้าทาย
+ที่จะช่วยเพิ่มความรู้ความเข้าใจ<br>เกี่ยวกับปัญหาการแพร่ระบาดของโรคพิษสุนัขบ้า<br> โดยโครงการสัตว์ปลอดโรค คนปลอดภัยจากโรคพิษสุนัขบ้า
+        <div >
+            <a target ="_blank" href="https://itunes.apple.com/us/app/rabies-hunting/id1281934153?l=th&ls=1&mt=8">  <img src="images\load.png" alt="" width="250" height="80"></a>
+            </div>
+            <div >
+            <a target ="_blank" href="https://play.google.com/store/apps/details?id=th.co.progaming.rabieshunting" > <img src="images\load2.png" alt=""width="250" height="80" ></a>
+            </div>  </center>
               <br>
           </div>
       </div>
