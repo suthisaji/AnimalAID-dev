@@ -25,6 +25,7 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
     <title>summer Note</title>
 
       {{Html::style('css/shop-homepage.css')}}<!--ตรงนี้คือฟ้อนแบบไม่มีหัว-->
@@ -298,7 +299,7 @@
               <h4><b>คำถามทั้งหมด </b></h4>
            </div>
                  <div class="panel-body">
-                     <table class="table table-striped">
+                     <table class="table table-striped ">
                           <thead>
                             <tr>
                               <th>หัวเรื่อง</th>

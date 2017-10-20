@@ -40,7 +40,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  
+
     {{Html::style('css/shop-homepage.css')}}
 
     <style type="text/css">
@@ -165,7 +165,7 @@
         <br>
         <div class="row ">
             <div class="col-md-12 offset-0">
-              <table class="table " >
+              <table class="table">
                 <thead class="table-inverse">
                   <tr>
                     <th style="font-size:18px; background-color:#737373; color:white;">ประเภท</th>

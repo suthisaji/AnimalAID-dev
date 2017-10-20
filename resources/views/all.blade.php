@@ -126,8 +126,10 @@ width:100%;
 height:76%;
 }
 .after3{
-  position:absolute;top:2400px;left:0px;
+  position:absolute;left:0px;
 width:100%;
+  z-index:-100;
+
 
 }
 
@@ -294,7 +296,7 @@ transform: skew(-135deg) translateX(0%);
   </head>
   <body>
      <img class="after2" src="images\wg.PNG" alt="">
-     <img class="after3" src="images\wg.PNG" alt="">
+
     <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
@@ -447,7 +449,7 @@ transform: skew(-135deg) translateX(0%);
 <br>
 
 <div class="row">
-
+@php($b=0)
   <!-- Related Projects Row -->
     <div class="col-md-12">
       <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
@@ -458,7 +460,7 @@ transform: skew(-135deg) translateX(0%);
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4">
-
+@if($b<6)
             <a href="newsAll">    <div class="boxp">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
                    <figure>
@@ -469,7 +471,9 @@ transform: skew(-135deg) translateX(0%);
                </div>
 </a>
           </div>
-
+@php($b++)
+@else
+@endif
       @endif
       @endforeach
 
@@ -628,6 +632,7 @@ transform: skew(-135deg) translateX(0%);
 </div>
 
 <br><br>
+ <img class="after3" src="images\wg.PNG" alt="">
    <div class="container">
 
      <!-- Related Projects Row -->
