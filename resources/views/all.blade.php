@@ -598,7 +598,7 @@ transform: skew(-135deg) translateX(0%);
       </div>
   </div>
 <!-- /.row -->
-</div>
+<!-- </div> -->
 
 <br><br>
  <img class="after3" src="images\wg.PNG" alt="">
@@ -654,6 +654,7 @@ transform: skew(-135deg) translateX(0%);
        </div>
      </div>
 </div>
+
 
 
      <div class="col-md-3 ro">
