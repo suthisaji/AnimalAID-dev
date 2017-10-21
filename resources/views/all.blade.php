@@ -460,7 +460,7 @@ transform: skew(-135deg) translateX(0%);
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4">
-@if($b<6)
+@if($b<=6)
             <a href="newsAll">    <div class="boxp">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
                    <figure>

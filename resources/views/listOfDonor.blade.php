@@ -47,9 +47,11 @@
      <script src="  https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" ></script>
      <script src="  https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
      <script>
-     $(document).ready(function() {
-         $('#example').DataTable();
-     } );
+   $(document).ready(function() {
+       $('#example').dataTable( {
+
+      } );
+  } );
      </script>
      <!--end datatable-->
     {{Html::style('css/shop-homepage.css')}}
@@ -239,8 +241,9 @@
 
 
 
+<br>
+       <br><br>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง  จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท
 
-       <br><br>
         <div class="panel-heading">
      <p class="lead">รายชื่อผู้บริจาค</p>
         </div>

@@ -298,7 +298,7 @@ body{
                               <div class="row">
                                 <div class="col-md-12">
                                   <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
-                                  <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์"/>
+                                  <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์" pattern="[0-9]{10}" required/>
                                 </div>
                               </div>
                               <div class="row">

@@ -34,7 +34,7 @@ class DonateController extends Controller
             'currency' => 'thb',
             'offsite' => $bank,
 
-            'return_uri' => 'http://animal-aid.me/all',
+            'return_uri' => 'http://animal-aid.me/dm',
           //  'return_uri' => 'http://localhost:8000/all',
             'metadata' => ['name' => $name, 'sname' => $sname, 'tel' => $tel]
           ));
@@ -56,12 +56,12 @@ class DonateController extends Controller
                 $amount = $payload['data']['amount'];
                 $amount = substr($amount, 0, strlen($amount)-2).'.'.substr($amount, -2);
 
-                Nexmo::message()->send([
+              /*  Nexmo::message()->send([
                     'to' => $tel,
                     'from' => 'NEXMO',
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
-                ]);
+                ]);*/
               $result = $this->DonationRepository->addDonation($name,$sname,$tel,$amount);
 
                 return Response::json([
@@ -95,8 +95,14 @@ class DonateController extends Controller
 
   function listOfDonor(){
       $donor =$this->DonationRepository ->getAllDonation();
+    $numOfList =  $this->DonationRepository-> countListOfDonor();
+    $sumOfAmount =  $this->DonationRepository->  sumAmount();
+
       $data = array(
-        'donor'=>$donor
+        'donor'=>$donor,
+        'numOfList'=>$numOfList,
+        'sumOfAmount'=>$sumOfAmount,
+
           ) ;
     return view('listOfDonor',$data);
 }

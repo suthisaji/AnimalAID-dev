@@ -11,3 +11,5 @@ use App\DonationType;
           return DonationType::where('do_typeId',$type_id)->first(); //beacuse the only first one for search
         }
       }
+
+    

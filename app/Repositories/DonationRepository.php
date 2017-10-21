@@ -26,6 +26,13 @@ use App\Donation;
             }
         }
 
+        function countListOfDonor(){ //มีรับแล้วทั้้งหมด
+            return Donation::count();
+           }
 
+        
+      function sumAmount(){
+      return Donation::sum('amount');
 
+ }
         }
