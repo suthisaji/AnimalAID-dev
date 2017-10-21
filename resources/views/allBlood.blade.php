@@ -59,7 +59,7 @@
 
         body{
           font-size: 16px;
-          background-image: url("images/glu.png");
+          background-image: url("images/glu.PNG");
           background-size: 100% 100%;
          background-repeat: no-repeat;
         }
