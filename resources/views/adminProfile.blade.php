@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AdminProfile</title>
+    <title>Admin Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -99,18 +99,18 @@
       <div class="col-xs-12">
         <div class="box box-success">
           <div class="panel-body box-header">
-              <div class="col-md-12">
+              <div class="col-md-12 lead si">
                 <center><h1>ข้อมูลส่วนตัวแอดมิน</h1></center>
                 <hr>
               </div>
 
             <div class="row">
-              <div class="col-xs-6 text-center">
-                  <img src="\images\Admin Icon - 01.png" alt="Mountain View" style="">
+              <div class="col-xs-5 text-center">
+                  <img src="\images\Admin Icon - 01.png" alt="Mountain View" style="width:80%; height:80%; max-width: 100%;">
               </div>
                 <b>
 
-              <div class="col-xs-6">
+              <div class="col-xs-7">
                 <div class="row">
                   <div class="col-xs-12">
                     <center><h2 class="only-bottom-margin">แอดมิน: {{$name}}<br></h2></center>
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="row si">
-                  <div class="col-xs-6">
+                  <div class="col-xs-8">
 
                     <span class="text-muted">รหัสแอดมิน: <span> {{ $userId}} <br>
                     <span class="text-muted">username:</span> {{$username}} <br>

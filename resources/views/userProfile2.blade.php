@@ -1,118 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>User Profile</title>
-  <head>
+<html>
+<head>
     <!-- Required meta tags -->
+    <script src="https://cdn.omise.co/card.js" charset="utf-9"></script>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User Profile</title>
 
     <!-- Bootstrap Core CSS -->
-
-
-    <!-- Custom Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
-
-    <!-- Custom CSS -->
-
-
-    <!--bootstrap link-->
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
-  <style>
-  .si{
-    font-size:16px;
-  }
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-li{
-  font-size: 17px;
-}
-body{
-  font-size: 16px;
-}
-/*nav*/
-.navbar-inverse {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    background-color: #fffdfd;
-    border-color: #fdf9f9;
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script> -->
 
-    background-image: -webkit-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
-    background-image: -o-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFFF),to(#FFFFFF));
-    background-image: linear-gradient(to bottom,#FFFFFF 0,#FFFFFF 100%);
-}
-.navbar-inverse .navbar-nav >li>a:hover {
-    color: #fb841b;
-    background-color: rgba(234, 243, 150, 0);
-}
-.navbar-inverse .navbar-nav >li>a:hover>span {
-    color: #2ECCFA;
-    background-color: rgba(234, 243, 150, 0);
-}
-.navbar-inverse .navbar-nav >li>a:hover>span>span {
-    color: #01DF01;
-    background-color: rgba(234, 243, 150, 0);
-}
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
-.navbar-inverse .navbar-nav>li>a {
-    color: #0c0c0c;
-}
-.navbar {
-    min-height: 88px;
-  }
-  .navbar-brand>img {
-    position: absolute;
-    left: 5%;
-  }
-  .navmain {
-    padding-top: 18px;
-    padding-bottom: 15px;
-}
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #ec9619;
-}
-.navbar-inverse .navbar-toggle {
-    border-color: #d29f24;
-}
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #fdce9a;
-}
-.navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 9px;
-}
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
-  background-image: linear-gradient(to bottom,	#E5E4E2 0,	#B6B6B4 100%);
-}
-/*จบเนป*/
-  </style>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+    {{Html::style('css/shop-homepage.css')}}
+
+    <style type="text/css">
+      li{
+        font-size: 15px;
+      }
+
+      body{
+        font-size: 16px;
+      }
+
+      .fl{
+        font-size: 16px;
+      }
+    </style>
 </head>
   <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
        <div class="container">
 
            <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header ">
-
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                               <span class="sr-only">Toggle navigation</span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                           </button>
-
-
-
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand"  style="font-size:20px;" href="all">Animals A-I-D </a>
            </div>
+
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav ">
@@ -200,31 +158,32 @@ body{
 
   <div class="container">
 
-      <div class="col-md-9">
+      <div class="col-xs-12">
         <div class="box box-success">
           <div class="panel-body box-header">
-              <div class="col-md-12 lead si">ข้อมูลส่วนผู้ใช้
+              <div class="col-md-12 lead si">
+                <center><h1>ข้อมูลส่วนผู้ใช้</h1></center>
                 <hr>
               </div>
             <div class="row">
-              <div class="col-md-4 text-center">
-                <img src="\images\user.png" alt="Mountain View" style="width:180px;height:230px; max-width: 100%;">
+              <div class="col-md-5 text-center">
+                <img src="\images\user.png" alt="Mountain View" style="width:80%; height:80%; max-width: 100%;">
               </div>
                <b>
-              <div class="col-md-8">
+              <div class="col-md-7">
                 <div class="row">
                   <div class="col-md-12">
-                    <h2 class="only-bottom-margin">ผู้ใช้  : {{$name}}<br></h2>
+                    <center><h2 class="only-bottom-margin">ผู้ใช้ : {{$name}}<br></h2></center>
                   </div>
                 </div>
                 <div class="row si">
-                  <div class="col-md-6">
+                  <div class="col-md-8">
 
-                    <span class="text-muted ">รหัสผู้ใช้ <span> :{{ $userId}} <br>
-                    <span class="text-muted">username :</span> {{$username}} <br>
-                    <span class="text-muted">Email : </span>  {{$email}}<br><br>
-                    <span class="text-muted">เบอรติดต่อ :</span>  {{$tel}}<br>
-                    <span class="text-muted">สมัครเมื่อ :</span> {{$created}} <br>
+                    <span class="text-muted ">รหัสผู้ใช้: <span> {{ $userId}} <br>
+                    <span class="text-muted">username: </span> {{$username}} <br>
+                    <span class="text-muted">Email: </span>  {{$email}}<br><br>
+                    <span class="text-muted">เบอรติดต่อ: </span>  {{$tel}}<br>
+                    <span class="text-muted">สมัครเมื่อ: </span> {{$created}} <br>
 
                     <br>
 
