@@ -204,6 +204,7 @@ hr.light {
   color: #fff;
   text-align: center;
 }
+
 .boxp{
   width:250px;
   height:250px;
@@ -274,6 +275,77 @@ transform: skew(45deg) translateX(0%);
 .boxp:hover figure:after{
 transform: skew(-135deg) translateX(0%);
 }
+
+
+.boxnews{
+  width:250px;
+  height:250px;
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+}
+.boxnews figure{
+  height:100%;
+  margin:0;
+  padding: 0;
+
+}
+.boxnews figure img{
+  width:100%;
+}
+.boxnews figcaption
+{
+  margin:0;
+  padding: 0;
+  color: #fffff;
+  text-align: center;
+  position :absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding: 3px 2px;
+  z-index: 100;
+  opacity: 0;
+  transition-delay: .3s;
+  transition:.5s ease;
+  font-size: 20px;
+}
+.boxnews:hover figcaption
+{
+  opacity: 1;
+}
+.boxnews figure:before,
+.boxnews figure:after{
+  content:'';
+  position:absolute;
+  transition: .5s ease-in-out;
+  height: 200%;
+  width:200%;
+  background: #000;
+}
+.boxnews figure:before{
+  right: 0;
+  bottom: 0;
+  background: #ff7f50;
+  transform:skew(45deg) translateX(100%);
+}
+.boxnews figure:after{
+  left:0;
+  top: 0;
+  background: #ffd700;
+  transform: skew(-120deg) translateX(-74.6%);
+}
+.boxnews:hover figure:before{
+  transform: skew(45deg) translateX(0%);
+}
+.boxnews:hover figure:after{
+  transform: skew(-135deg) translateX(0%);
+}
+
 /*จบจังไร*/
 .follow{
   position:fixed;
@@ -461,7 +533,8 @@ transform: skew(-135deg) translateX(0%);
                      @if($ac->news_type == 3)
           <div class="col-sm-4 col-lg-4 col-md-4">
 @if($b<=6)
-            <a href="newsAll">    <div class="boxp">
+            <a href="newsAll">
+              <div class="boxp">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
@@ -480,9 +553,45 @@ transform: skew(-135deg) translateX(0%);
 
         </div>
     </div>
-  <!-- /.row -->
-
 </div>
+
+
+<div class="row">
+@php($b=0)
+  <!-- Related Projects Row -->
+    <div class="col-md-12">
+      <h3 class="my-4">ข่าวสารใหม่</h3>
+
+<br><br><br><br><br><br><br>
+        <div class="row">
+
+          @foreach($newsAnis as $ac)
+                     @if($ac->news_type == 2)
+          <div class="col-sm-4 col-lg-4 col-md-4">
+@if($b<=6)
+            <a href="newsAll">
+              <div class="boxnews">
+                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
+                   <figure>
+                   <img src="{{url('/images/'.$ac->act_pic)}}" >
+                   <figcaption>{{str_limit($ac->content,80,"..อ่านต่อ")}}
+                   </figcaption>
+                 </figure>
+               </div>
+</a>
+          </div>
+@php($b++)
+@else
+@endif
+      @endif
+      @endforeach
+
+
+        </div>
+    </div>
+</div>
+
+
 
                <div class="row">
 
@@ -625,7 +734,7 @@ transform: skew(-135deg) translateX(0%);
      <div class="col-md-12">
        <div class="row">
  <br>
-         <div class="ol-sm-4 col-lg-4 col-md-4">
+         <div class="col-sm-4">
 
            <h3 class="my-4">ติดต่อมูลนิธิ</h3>
              <ul>
@@ -637,11 +746,12 @@ transform: skew(-135deg) translateX(0%);
              </ul>
          </div>
 
-         <div class="col-sm-4 col-lg-4 col-md-4">
+         <div class="col-sm-8">
            <h3 class="my-4">ร่วมโอนเงินบริจาค</h3>
            <h4><p>ชื่อบัญชีกองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</p>
              <ul>
-               <li>ธนาคารกรุงเทพ สาขามหาวิทาลัยเกษตรศาสตร์ เลขที่บัญชี 043-7-12167-6</li>
+               <li>ธนาคารกรุงเทพ สาขามหาวิทาลัยเกษตรศาสตร์</li>
+               <li>เลขที่บัญชี 043-7-12167-6</li>
              </ul></h4>
          </div>
 
