@@ -17,7 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
@@ -59,7 +59,9 @@
 
         body{
           font-size: 16px;
-          background-image: url("images/thumb_blooddonation.jpg")
+          background-image: url("images/glu.png");
+          background-size: 100% 100%;
+         background-repeat: no-repeat;
         }
         .video-wrapper {
 	         position: relative;
@@ -513,9 +515,8 @@
    });
    </script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-shop-homepage/js/bootstrap.min.js"></script>
+
     </body>
 </html>
