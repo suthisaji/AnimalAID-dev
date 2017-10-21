@@ -560,42 +560,11 @@ transform: skew(-135deg) translateX(0%);
     <!-- /.row -->
 
   </div>
-
-
-           </div>
-
+ <!-- </div> -->
 
 
 
-            <div class="col-md-3 ro">
-
-              <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
-
-                <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
-                 @php($i=0)
-                   <div class="list-group">
-
-                @foreach($donor as $donor)
-          @if($i<20)
-                        <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
-
-                            <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
-                            <span class="pull-right text-muted small">
-                                <em>{{$donor->amount}}฿</em>
-                            </span>
-                </p>
-               @php($i++)
-             @else
-
-          @endif
-
-@endforeach
-            </div>
-        </div>
-
-
-
-</div>
+<!-- </div> -->
 
 <br><br>
 <!-- /.container -->
@@ -629,11 +598,10 @@ transform: skew(-135deg) translateX(0%);
       </div>
   </div>
 <!-- /.row -->
-</div>
+<!-- </div> -->
 
 <br><br>
  <img class="after3" src="images\wg.PNG" alt="">
-   <div class="container">
 
      <!-- Related Projects Row -->
        <div class="col-md-12">
@@ -685,6 +653,37 @@ transform: skew(-135deg) translateX(0%);
 
        </div>
      </div>
+</div>
+
+
+
+     <div class="col-md-3 ro">
+
+       <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+
+         <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
+          @php($i=0)
+            <div class="list-group">
+
+         @foreach($donor as $donor)
+     @if($i<20)
+                 <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
+
+                     <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
+                     <span class="pull-right text-muted small">
+                         <em>{{$donor->amount}}฿</em>
+                     </span>
+         </p>
+        @php($i++)
+      @else
+
+     @endif
+
+     @endforeach
+     </div>
+     </div>
+   </div>
+
 
 
        <!-- Footer -->
