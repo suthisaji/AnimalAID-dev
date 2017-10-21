@@ -535,7 +535,7 @@ transform: skew(-135deg) translateX(0%);
 @if($b<=6)
             <a href="newsAll">
               <div class="boxp">
-                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
+                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
                    <figcaption>{{str_limit($ac->content,80,"..อ่านต่อ")}}
@@ -571,7 +571,7 @@ transform: skew(-135deg) translateX(0%);
 @if($b<=6)
             <a href="newsAll">
               <div class="boxnews">
-                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}} "</i>
+                    <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
                    <figcaption>{{str_limit($ac->content,80,"..อ่านต่อ")}}
@@ -590,9 +590,37 @@ transform: skew(-135deg) translateX(0%);
         </div>
     </div>
 </div>
+</div>
 
 
+<div class="col-md-3 ro">
 
+  <a  href="dm"><center><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></center></a>
+
+    <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
+     @php($i=0)
+       <div class="list-group">
+
+    @foreach($donor as $donor)
+@if($i<20)
+            <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
+
+                <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
+                <span class="pull-right text-muted small">
+                    <em>{{$donor->amount}}฿</em>
+                </span>
+    </p>
+   @php($i++)
+ @else
+
+@endif
+
+@endforeach
+</div>
+</div>
+
+
+          <div class="col-md-12">
                <div class="row">
 
                  <!-- Related Projects Row  -->
@@ -626,8 +654,9 @@ transform: skew(-135deg) translateX(0%);
                  <!-- /.row -->
 
                </div>
-
-  <hr class="light" />
+               <br>
+  <hr class="light">
+  <br><br>
   <div class="row">
 
     <!-- Related Projects Row -->
@@ -684,7 +713,7 @@ transform: skew(-135deg) translateX(0%);
 <!-- Related Projects Row -->
   <div class="col-md-12">
     <h3 class="my-4">ประเภทการบริจาค</h3>
-
+    <br>
       <div class="row">
 
         <div class="col-sm-4">
@@ -715,42 +744,34 @@ transform: skew(-135deg) translateX(0%);
        <div class="col-md-12">
          <img class="after3" src="images\wg.PNG" alt="">
          <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
-             <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัย และเหตุฉุกเฉิน (สปฉ.) <br/>
-             ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br/></h3>
-             <!-- <h4>สำนักงานใหญ่ของมูลนิธิ ตั้งอยู่ที่ ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4> -->
+             <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) <br>
+             ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br></h3>
+             <h4>สำนักงานใหญ่ของมูลนิธิ ตั้งอยู่ที่ เลขที่ 10/5 ถนนอู่ทอง ตำบลหอรัตนไชย อำเภอพระนครศรีอยุธยา จังหวัดพระนครศรีอยุธยา</h4>
              <h3>วัตถุประสงค์ของมูลนิธิ</h3>
-             <h4>4.1 เพื่อส่งเสริมสร้างขีดความสามารถของกลุ่มคนที่สนใจเกี่ยวกับการป้องกัน รักษา ฟื้นฟู สัตว์ที่ประสบภัยและเหตุฉุกเฉิน <br/>
-            4.2 เพื่อส่งเสริม สนับสนุน การศึกษา ค้นคว้า อบรม วิจัย พัฒนาและเผยแพร่สู่สากล <br/>
-            4.3	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉินสามารถเข้าถึงระบบบริการได้อย่างทั่วถึง และทันท่วงที <br/>
-            4.4	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉิน ให้สามารถดำรงชีวิตต่อไปได้อย่างเหมาะสม <br/>
-             4.5 เพื่อประกาศเกียรติคุณและให้รางวัลแก่ผู้ปฏิบัติหน้าที่โดยสุจริต เสียสละ ในภาครัฐและภาคเอกชนที่เป็นประโยชน์ต่อส่วนรวมและประเทศชาติ <br/>
-             4.6 ดำเนินการหรือร่วมมือกับองค์กรการกุศลเพื่อการกุศล และองค์กรสาธารณประโยชน์ เพื่อสาธารณประโยชน์ <br/>
-            4.7	ไม่ดำเนินการเกี่ยวข้องกับการเมืองแต่ประการใด</h4><br/>
+             <h4>1. เพื่อส่งเสริมสร้างขีดความสามารถของกลุ่มคนที่สนใจเกี่ยวกับการป้องกัน รักษา ฟื้นฟู สัตว์ที่ประสบภัยและเหตุฉุกเฉิน <br>
+                 2. เพื่อส่งเสริม สนับสนุน การศึกษา ค้นคว้า อบรม วิจัย พัฒนาและเผยแพร่สู่สากล <br>
+                 3.	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉินสามารถเข้าถึงระบบบริการได้อย่างทั่วถึง และทันท่วงที <br>
+                 4.	เพื่อดำเนินการให้สัตว์ที่ประสบภัยและเหตุฉุกเฉิน ให้สามารถดำรงชีวิตต่อไปได้อย่างเหมาะสม <br>
+                 5. เพื่อประกาศเกียรติคุณและให้รางวัลแก่ผู้ปฏิบัติหน้าที่โดยสุจริต เสียสละ ในภาครัฐและภาคเอกชนที่เป็นประโยชน์ต่อส่วนรวมและประเทศชาติ <br>
+                 6. ดำเนินการหรือร่วมมือกับองค์กรการกุศลเพื่อการกุศล และองค์กรสาธารณประโยชน์ เพื่อสาธารณประโยชน์ <br>
+                 7. ดำเนินการหรือร่วมมือกับองค์กรเอกชนที่มีกิจกรรม หรือโครงการเพื่อการกุศล หรือสาธารณประโยชน์
+                 8.	ไม่ดำเนินการเกี่ยวข้องกับการเมืองแต่ประการใด <br>
+                 9. สนับสนุนกิจกรรมตามนโยบายของรัฐบาลที่เกี่ยวข้องกับสัตว์ และการให้ความรู้ด้านการศึกษาสู่ประชาชน <br></h4>
+             <h3>ติดต่อมูลนิธิ</h3>
+             <h4>โรงพยาบาลสัตว์ มหาวิทยาลัยเกษตรศาสตร์ บางเขน</h4>
+             <h4>ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4>
+             <h4>โทรศัพท์ 02-797-1900</h4>
+
 
        </div>
      <div class="col-md-12">
        <div class="row">
  <br><br>
-         <div class="col-sm-4">
-
-           <h3 class="my-4">ติดต่อมูลนิธิ</h3>
-             <ul>
-               <h4><li>ถนนงามวงค์วาน</li>
-               <li>แขวงลาดยาว</li>
-               <li>เขตจตุจักร</li>
-               <li>กรุงเทพมหานคร 10900</li>
-               <li>โทรศัพท์ 02-797-1900</li></h4>
-             </ul>
-         </div>
-
-         <div class="col-sm-8">
-           <h3 class="my-4">ร่วมโอนเงินบริจาค</h3>
-           <h4><p>ธนาคารกรุงไทย สาขามหาวิทยาลัยเกษตรศาสตร์ บางเขน</p>
-             <ul>
-               <li>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</li>
-               <li>บัญชีเลขที่ 986-4-399968-3</li>
-             </ul>
-           </h4>
+            <center><h2 class="my-4">ร่วมช่วยเหลือสัตว์ประสบภัย</h2>
+              <h3>ขอเชิญร่วมกันบริจาคเพื่อช่วยเหลือสัตว์ที่ประสบภัยโดยการดำเนินการป้องกัน รักษา ฟื้นฟูสัตว์ป่วย
+              สัตว์ที่ประสบภัยและเหตุฉุกเฉิน ให้สามารถดำรงชีวิตต่อไปได้อย่างเหมาะสม โดยสามารถบริจาคได้ที่</h3>
+            </center>
+         <div class="col-sm-6">
            <h4><p>ธนาคารกรุงเทพ สาขาบิ๊กซี อยุธยา</p>
              <ul>
                <li>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</li>
@@ -758,37 +779,19 @@ transform: skew(-135deg) translateX(0%);
              </ul>
            </h4>
          </div>
+
+         <div class="col-sm-6">
+           <h4><p>ธนาคารกรุงไทย สาขามหาวิทยาลัยเกษตรศาสตร์ บางเขน</p>
+             <ul>
+               <li>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</li>
+               <li>บัญชีเลขที่ 986-4-399968-3</li>
+             </ul>
+           </h4>
+
+         </div>
        </div>
      </div>
 </div>
-
-
-
-     <div class="col-md-3 ro">
-
-       <a  href="dm"><center><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></center></a>
-
-         <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
-          @php($i=0)
-            <div class="list-group">
-
-         @foreach($donor as $donor)
-     @if($i<20)
-                 <p class="list-group-item"><small>   {{ str_limit($donor->created_at, $limit = 10, $end = '') }}</small>
-
-                     <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
-                     <span class="pull-right text-muted small">
-                         <em>{{$donor->amount}}฿</em>
-                     </span>
-         </p>
-        @php($i++)
-      @else
-
-     @endif
-
-     @endforeach
-     </div>
-     </div>
    </div>
 
 
