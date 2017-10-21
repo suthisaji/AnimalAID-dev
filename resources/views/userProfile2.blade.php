@@ -117,7 +117,7 @@ body{
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav ">
 
-                   <li class="navmain active">
+                   <li class="navmain ">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li class="navmain ">
@@ -232,11 +232,11 @@ body{
                       <ul class="list-group ">
 
                     <li class="list-group-item list-group-item-info">
-                  <span class="badge si">8 ครั้ง </span>
+                  <span class="badge si">{{$countUserDonate}} ครั้ง </span>
                   กิจกรรมที่เคยช่วยเหลือ
                     </li>
                     <li class="list-group-item list-group-item-info">
-                  <span class="badge ">1,1111 ฿</span>
+                  <span class="badge ">{{$sumAmountUserDonate}} ฿</span>
                   ยอดที่บริจาค
                     </li>
                       </ul>

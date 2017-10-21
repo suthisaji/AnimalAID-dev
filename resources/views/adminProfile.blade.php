@@ -127,7 +127,22 @@
                     <span class="text-muted">สมัครเมื่อ:</span> {{$created}} <br><br>
 
                     <ul class="list-group">
-                      <li class="list-group-item list-group-item-info"> <span class="badge si">{{$countAdminAction}} ครั้ง </span> กิจกรรม </li>
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{$countAdminAction}} ครั้ง </span> เพิ่มสัตว์ที่ได้รับการช่วยเหลือ </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{$countAdminCreateNews}} ครั้ง </span> เพิ่มข่าว </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{$countAdminCreateAct}} ครั้ง </span> เพิ่มกิจกรรม </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{$countAdminAnsQues}} ครั้ง </span> ตอบคำถาม </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{  $sumAmountUserDonate}} ฿ </span> เคยช่วยเหลือทั้งหมด </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{ $countUserDonate}} ฿ </span> บริจาคเงินช่วยเหลือทั้งหมด </li>
                     </ul>
                   </div>
                 </div>

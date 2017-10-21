@@ -102,7 +102,7 @@ class SummernoteController extends Controller
       $countAllQ =DB::table('blogs')->count();
     }*/
 
-
+  
 
 
 }

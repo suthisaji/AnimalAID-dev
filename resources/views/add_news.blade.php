@@ -129,7 +129,7 @@
 
                     <div class="form-group">
                         <label for="head_News" class="form-label h3">หัวข่าว/กิจกรรม</label>
-                        <input type="text" class="form-control" name="head_News"/>
+                        <input type="text" class="form-control" name="head_News" required/>
                     </div>
 
                     <div class="form-group" id="animal_pic">
@@ -149,7 +149,7 @@
 
                     <div class="form-group">
                          <label for="content" class=" h3">เนื้อหาข่าว/กิจกรรม</label>
-                         <textarea class="form-control" name="content" id="content" rows="2"></textarea>
+                         <textarea class="form-control" name="content" id="content" rows="2" required></textarea>
                    </div>
 
 

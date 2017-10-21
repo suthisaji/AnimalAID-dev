@@ -5,6 +5,9 @@ use App\Adoption;
 use App\User;
 use App\Hospital;
 use App\Admin;
+use App\NewsAni;
+use App\Blog;
+use App\Donation;
 use File;
 use DB;
   class AnimalRepository implements AnimalRepositoryInterface{
@@ -275,14 +278,27 @@ function countEverAdoption($userId){
       return Hospital::orderBy('created_at')->get();
   }
 
-   function countAdminAction($userId){ //มีรับแล้วทั้้งหมด
+   function countAdminAction($userId){ //เพิ่มสั้ตว์ไปทั้งหมด ตัว
        return Animal::where('admin_id',$userId)->count();
       }
 
+      function countAdminCreateNews($userId){ //สร้างข่าวไปทั้งหมด
+          return NewsAni::where('admin_id',$userId) ->where('news_type', '=','2')->count();
+         }
 
+         function countAdminCreateAct($userId){ //สร้างกิจกกรรมไปทั้งหมด
+             return NewsAni::where('admin_id',$userId) ->where('news_type', '=','3')->count();
+            }
+            function countAdminAnsQues($userId){ //ตอบคำถามไปแล้ว ครั้ง
+                return Blog::where('adminAns_Id',$userId) ->count();
+               }
+               function countUserDonate($tel){ //บริจาคไป ครั้ง
+                   return Donation::where('tel','=',$tel) ->count();
+                  }
 
-
-
+                  function sumAmountUserDonate($tel){ //มบริจาคไปทั้งหมด บาท
+                      return Donation::where('tel','=',$tel) ->sum('amount');
+                     }
 
 
 

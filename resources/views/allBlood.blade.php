@@ -59,9 +59,7 @@
 
         body{
           font-size: 16px;
-          background-image: url("images/glu.PNG");
-          background-size: 100% 100%;
-         background-repeat: no-repeat;
+        
         }
         .video-wrapper {
 	         position: relative;
@@ -238,7 +236,12 @@
             width: 7rem;
           }
           /*endBank*/
-
+          .tran {
+          color: #000000;
+          background-color: #ffffff;
+         opacity: 0.8;
+         filter: alpha(opacity=60); /* For IE8 and earlier */
+          }
     </style>
   </head>
 
@@ -351,7 +354,7 @@
 
                        <div class="col-sm-2"></div>
                        <div class="col-sm-8">
-                         <div class="list-group-item">
+                         <div class="list-group-item tran">
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
                            <small>เป็นสถานที่จัดเก็บ และสำรองเลือดในรูปแบบผลิตภัณฑ์เลือดชนิดต่างๆ เช่น</small>
