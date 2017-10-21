@@ -637,31 +637,36 @@ transform: skew(-135deg) translateX(0%);
           <div class="row">
 
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4">
               <div >
-                <img src="images\War-1.PNG" alt="" width="270" height="200">
+                <center><img src="images\War-1.PNG" alt="" width="270" height="200"></center>
               </div>
             </div>
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4">
               <div >
-                <img src="images\Whisperer-1.PNG" alt="" width="270" height="200">
+                <center><img src="images\Whisperer-1.PNG" alt="" width="270" height="200"></center>
               </div>
             </div>
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4">
               <div >
-                <img src="images\Shelter-1.PNG" alt="" width="270" height="200">
+                <center><img src="images\Shelter-1.PNG" alt="" width="270" height="200"></center><br><br>
               </div>
             </div>
-          <center>  Rabies Hunting<br>
-ร่วมสนุกเล่นเกมกับ 10 ภารกิจพิชิตปริศนาสุดท้าทาย
-ที่จะช่วยเพิ่มความรู้ความเข้าใจ<br>เกี่ยวกับปัญหาการแพร่ระบาดของโรคพิษสุนัขบ้า<br> โดยโครงการสัตว์ปลอดโรค คนปลอดภัยจากโรคพิษสุนัขบ้า
+            <br><br>
+            <center>
+              <h2>Rabies Hunting</h2>
+                <h4>ร่วมสนุกเล่นเกมกับ 10 ภารกิจพิชิตปริศนาสุดท้าทาย<br>
+                  ที่จะช่วยเพิ่มความรู้ความเข้าใจเกี่ยวกับปัญหาการแพร่ระบาดของโรคพิษสุนัขบ้า<br>
+                  โดยโครงการสัตว์ปลอดโรค คนปลอดภัยจากโรคพิษสุนัขบ้า</h4>
+            </center><br>
+
         <div >
-            <a target ="_blank" href="https://itunes.apple.com/us/app/rabies-hunting/id1281934153?l=th&ls=1&mt=8">  <img src="images\load.png" alt="" width="250" height="80"></a>
+            <a target ="_blank" href="https://itunes.apple.com/us/app/rabies-hunting/id1281934153?l=th&ls=1&mt=8"><center><img src="images\load.png" alt="" width="250" height="80"></center></a>
             </div>
             <div >
-            <a target ="_blank" href="https://play.google.com/store/apps/details?id=th.co.progaming.rabieshunting" > <img src="images\load2.png" alt=""width="250" height="80" ></a>
+            <a target ="_blank" href="https://play.google.com/store/apps/details?id=th.co.progaming.rabieshunting" ><center><img src="images\load2.png" alt=""width="250" height="80" ></center></a>
             </div>  </center>
               <br>
           </div>
@@ -675,7 +680,6 @@ transform: skew(-135deg) translateX(0%);
 
 <!-- </div> -->
 
-<br><br>
 <!-- /.container -->
 <!-- Related Projects Row -->
   <div class="col-md-12">
@@ -683,41 +687,37 @@ transform: skew(-135deg) translateX(0%);
 
       <div class="row">
 
-        <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-4">
           <div >
-            <a  href="donate"><img  class="lig" src="images\Picture2.png" alt="donateIcon" width="260" height="170" style=""><a>
+            <a  href="donate"><center><img  class="lig" src="images\Picture2.png" alt="donateIcon" width="260" height="170" style=""></center><a>
           </div>
         </div>
 
-        <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-4">
           <div >
-              <a  href="db"><img class="lig" src="images\Picture3.png" alt=""width="260" height="170"></a>
+              <a  href="db"><center><img class="lig" src="images\Picture3.png" alt=""width="260" height="170"></center></a>
           </div>
         </div>
 
-        <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="col-sm-4">
           <div  >
-            <a  href="da">  <img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></a>
+            <a  href="da"><center><img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></center></a>
           </div>
         </div>
-
-
-
-          <br>
       </div>
+      <br><br>
   </div>
 <!-- /.row -->
 <!-- </div> -->
-
-<br><br>
- <img class="after3" src="images\wg.PNG" alt="">
+ <!-- <img class="after3" src="images\wg.PNG" alt=""> -->
 
      <!-- Related Projects Row -->
        <div class="col-md-12">
-         <h2 class="my-4">เกี่ยวกับมูลนิธิ</h2>
+         <img class="after3" src="images\wg.PNG" alt="">
+         <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
              <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัย และเหตุฉุกเฉิน (สปฉ.) <br/>
              ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br/></h3>
-             <h4>สำนักงานใหญ่ของมูลนิธิ ตั้งอยู่ที่ ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4>
+             <!-- <h4>สำนักงานใหญ่ของมูลนิธิ ตั้งอยู่ที่ ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4> -->
              <h3>วัตถุประสงค์ของมูลนิธิ</h3>
              <h4>4.1 เพื่อส่งเสริมสร้างขีดความสามารถของกลุ่มคนที่สนใจเกี่ยวกับการป้องกัน รักษา ฟื้นฟู สัตว์ที่ประสบภัยและเหตุฉุกเฉิน <br/>
             4.2 เพื่อส่งเสริม สนับสนุน การศึกษา ค้นคว้า อบรม วิจัย พัฒนาและเผยแพร่สู่สากล <br/>
@@ -727,13 +727,10 @@ transform: skew(-135deg) translateX(0%);
              4.6 ดำเนินการหรือร่วมมือกับองค์กรการกุศลเพื่อการกุศล และองค์กรสาธารณประโยชน์ เพื่อสาธารณประโยชน์ <br/>
             4.7	ไม่ดำเนินการเกี่ยวข้องกับการเมืองแต่ประการใด</h4><br/>
 
-
-
-
        </div>
      <div class="col-md-12">
        <div class="row">
- <br>
+ <br><br>
          <div class="col-sm-4">
 
            <h3 class="my-4">ติดต่อมูลนิธิ</h3>
@@ -748,19 +745,19 @@ transform: skew(-135deg) translateX(0%);
 
          <div class="col-sm-8">
            <h3 class="my-4">ร่วมโอนเงินบริจาค</h3>
-           <h4><p>ชื่อบัญชีกองทุนรักษาพยาบาลสัตว์ป่วยอนาถา</p>
+           <h4><p>ธนาคารกรุงไทย สาขามหาวิทยาลัยเกษตรศาสตร์ บางเขน</p>
              <ul>
-               <li>ธนาคารกรุงเทพ สาขามหาวิทาลัยเกษตรศาสตร์</li>
-               <li>เลขที่บัญชี 043-7-12167-6</li>
-             </ul></h4>
+               <li>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</li>
+               <li>บัญชีเลขที่ 986-4-399968-3</li>
+             </ul>
+           </h4>
+           <h4><p>ธนาคารกรุงเทพ สาขาบิ๊กซี อยุธยา</p>
+             <ul>
+               <li>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</li>
+               <li>บัญชีเลขที่ 790-020373-3</li>
+             </ul>
+           </h4>
          </div>
-
-         <!-- <div class="ol-sm-4 col-lg-4 col-md-4">
-           <div class="thumbnail">
-             <img src="C:\Users\JUTATIPPP\Desktop\ADEF Bootstrap\img\icondonate.png" alt="">
-           </div>
-         </div> -->
-
        </div>
      </div>
 </div>
@@ -769,7 +766,7 @@ transform: skew(-135deg) translateX(0%);
 
      <div class="col-md-3 ro">
 
-       <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+       <a  href="dm"><center><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></center></a>
 
          <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
           @php($i=0)
