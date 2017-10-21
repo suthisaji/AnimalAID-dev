@@ -59,6 +59,7 @@
 
         body{
           font-size: 16px;
+          background-image: url("images/thumb_blooddonation.jpg")
         }
         .video-wrapper {
 	         position: relative;
