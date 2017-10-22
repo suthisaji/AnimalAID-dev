@@ -48,7 +48,7 @@ Route::get('test99', function(){
     }
 });
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->middleware('checkadmin');;
 
 
 
