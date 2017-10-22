@@ -517,7 +517,7 @@
                               <div>
                                 <button type="button" class="btn btn-primary btn-sm box" data-toggle="modal" data-target="#myModal{{$animal->animal_id}}">ดูรายละเอียด</button>
                                 <button type="button" class="btn btn-primary btn-sm box2">
-                                  <a style="color: white;" href="donate">ช่วยเหลือ</a></button>
+                                  <a style="color: white;" href="dm">ช่วยเหลือ</a></button>
                               </div>
 
                               <!--Modal-->
@@ -572,7 +572,7 @@
                                     </div>
                                     <div class="modal-footer">
                                       <!-- <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button> -->
-                                      <button type="button" class="btn btn-primary bori"><a style="color: white;" href="donate">บริจาค</a></button>
+                                      <button type="button" class="btn btn-primary bori"><a style="color: white;" href="dm">บริจาค</a></button>
                                       <button type="button" class="btn btn-default bori" data-dismiss="modal">ปิด</button>
 
                                     </div>
