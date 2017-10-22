@@ -286,21 +286,45 @@ body{
                             </div>
                             <div class="row">
                               <div class="row">
+                                 @if (Auth::guest())
+                                   <div class="col-md-6">
+                                   <label for="">ชื่อ</label>
+                                   <input type="text" class="form-control" id="name" placeholder="ชื่อ"/>
+                                 </div>
+
+                                 <div class="col-md-6">
+                                   <label for="">นามสกุล</label>
+                                   <input type="text" class="form-control" id="sname" placeholder="นามสกุล"/>
+                                 </div>
+                               </div>
+
+                               <div class="row">
+                                 <div class="col-md-12">
+                                   <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
+                                   <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์" pattern="[0-9]{10}" required/>
+                                 </div>
+                               </div>
+
+                                  @else
                                 <div class="col-md-6">
                                   <label for="">ชื่อ</label>
-                                  <input type="text" class="form-control" id="name" placeholder="ชื่อ"/>
+                                  <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"/>
                                 </div>
+
                                 <div class="col-md-6">
                                   <label for="">นามสกุล</label>
                                   <input type="text" class="form-control" id="sname" placeholder="นามสกุล"/>
                                 </div>
                               </div>
+
                               <div class="row">
                                 <div class="col-md-12">
                                   <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
-                                  <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์" pattern="[0-9]{10}" required/>
+                                  <input type="tel" class="form-control" id="tel" value="{{ Auth::user()->tel }}" required/>
                                 </div>
                               </div>
+
+                              @endif
                               <div class="row">
                                 <div class="col-md-12">
                                   <label for="">จำนวนเงิน</label>
