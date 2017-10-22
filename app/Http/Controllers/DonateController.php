@@ -42,7 +42,7 @@ class DonateController extends Controller
             'statusCode' => 200,
             'url' => $charge['authorize_uri']
             ], 200);
-    }
+    } 
 
     function webhook(Request $request){
         $payload = $request->json()->all();

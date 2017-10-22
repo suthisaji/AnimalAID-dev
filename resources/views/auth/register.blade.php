@@ -10,6 +10,7 @@ opacity: 0.92;
 filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 </style>
+  <title>สมัครสมาชิก</title>
 @section('content')
 <div class="container">
     <div class="row">
@@ -52,7 +53,7 @@ filter: alpha(opacity=60); /* For IE8 and earlier */
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="example@mail.com" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -66,7 +67,7 @@ filter: alpha(opacity=60); /* For IE8 and earlier */
                            <label for="tel" class="col-md-4 control-label">Tel</label>
 
                            <div class="col-md-6">
-                               <input id="tel" type="text" class="form-control" name="tel" value="{{ old('tel') }}" required >
+                               <input id="tel" type="text" class="form-control" name="tel" value="{{ old('tel') }}" placeholder="0921234567" required >
 
                                @if ($errors->has('tel'))
                                    <span class="help-block">
