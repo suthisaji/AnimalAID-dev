@@ -24,9 +24,9 @@ class CheckAdminMiddleware
     {
       $result = $this->UserRepository->isAdmin(Auth::user()->username);
       if($result){
-              return redirect('/admin');
+              return $next($request);
       }else{
-          return $next($request);
+          return redirect('/fuckyou');
       }
     }
 }
