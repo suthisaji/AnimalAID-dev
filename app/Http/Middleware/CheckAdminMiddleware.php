@@ -26,7 +26,7 @@ class CheckAdminMiddleware
       if($result){
               return $next($request);
       }else{
-          return redirect('/fuckyou');
+          return redirect('/all'); //Route ที่จะให้ไปเมื่อไม่ใช่ admin
       }
     }
 }
