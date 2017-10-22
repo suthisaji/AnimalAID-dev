@@ -259,9 +259,12 @@ class AnimalController extends Controller
             }
 
       if(Request::isMethod('get')){
+        $adminId = Auth::user()->id;
         $donationType = $this->DonationTypeRepository->getAllDonationType();
+        $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($adminId);
         $data = array(
-          'donationType'=>$donationType
+          'donationType'=>$donationType,
+          'countRecipientEachAdmin'=>$countRecipientEachAdmin
         );
         return view('add_animal',$data);
       }else if(Request::isMethod('post')){
