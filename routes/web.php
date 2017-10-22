@@ -54,12 +54,12 @@ Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware('c
 
 
 Route::get('/delete/{id}', 'AdminController@delete');
-Route::get('/add','AnimalController@addAnimal')->middleware('checkadmin');
-Route::post('/add','AnimalController@addAnimal')->middleware('checkadmin');
-Route::get('/animal', 'AnimalController@animal')->middleware('checkadmin');
-Route::post('/animal', 'AnimalController@animal')->middleware('checkadmin');
+Route::get('/add','AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
+Route::post('/add','AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
+Route::get('/animal', 'AnimalController@animal')->middleware('auth')->middleware('checkadmin');
+Route::post('/animal', 'AnimalController@animal')->middleware('auth')->middleware('checkadmin');
 Route::get('/edit/{animal_id}','AnimalController@editAnimal')->middleware('checkadmin');
-Route::post('/edit','AnimalController@editAnimal')->middleware('checkadmin');
+Route::post('/edit','AnimalController@editAnimal')->middleware('auth')->middleware('checkadmin');
 Route::get('/edit', 'AnimalController@badEditRequest');
 Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');;
 
@@ -88,8 +88,8 @@ Route::get('/testmail','EmailController@sendEmail');
 
 
 
-Route::get('/addNews','AnimalController@addNews')->middleware('checkadmin');
-Route::post('/addNews','AnimalController@addNews')->middleware('checkadmin');
+Route::get('/addNews','AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
+Route::post('/addNews','AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
 //Route::get('/new','AnimalController@NewsAniAll');
 
 Route::get('/animalhasnews','AnimalController@animalhasnews');
@@ -102,8 +102,8 @@ Route::post('/n','AnimalController@newsPage');
 
 
 
-Route::get('/deleteNews/{news_id}', 'AnimalController@deleteNews');
-Route::post('/deleteNews/{news_id}', 'AnimalController@deleteNews');
+Route::get('/deleteNews/{news_id}', 'AnimalController@deleteNews')->middleware('auth')->middleware('checkadmin');
+Route::post('/deleteNews/{news_id}', 'AnimalController@deleteNews')->middleware('auth')->middleware('checkadmin');
 
 
 
