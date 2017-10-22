@@ -114,11 +114,11 @@ Route::post('/userProfile', 'HomeController@userDetail');
 Route::get('/addAdoption', 'AnimalController@addAdoption');
 Route::post('/addAdoption', 'AnimalController@addAdoption');
 
-Route::get('/checkAdoption', 'AnimalController@checkAdoption')->middleware('checkadmin');
-Route::post('/checkAdoption', 'AnimalController@checkAdoption')->middleware('checkadmin');
+Route::get('/checkAdoption', 'AnimalController@checkAdoption')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkAdoption', 'AnimalController@checkAdoption')->middleware('auth')->middleware('checkadmin');
 
-Route::get('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('checkadmin');;
-Route::post('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('checkadmin');;
+Route::get('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('auth')->middleware('checkadmin');
 
 Route::get('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
 Route::post('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
@@ -129,8 +129,8 @@ Route::post('/closeAnimal/{animal_id}','AnimalController@closeAnimal');
 Route::get('/userProfile','AdminController@userProfile2');
 Route::post('/userProfile','AdminController@userProfile2');
 
-Route::get('/adminProfile','AdminController@adminProfile')->middleware('checkadmin'); //เรียกใช้ middleware checkAdmin ทุกเร้าที่ต้องการสิทแอดมินเลยนะ
-Route::post('/adminProfile','AdminController@adminProfile')->middleware('checkadmin');
+Route::get('/adminProfile','AdminController@adminProfile')->middleware('auth')->middleware('checkadmin'); //เรียกใช้ middleware checkAdmin ทุกเร้าที่ต้องการสิทแอดมินเลยนะ
+Route::post('/adminProfile','AdminController@adminProfile')->middleware('auth')->middleware('checkadmin');
 
 Route::get('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
 Route::post('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
