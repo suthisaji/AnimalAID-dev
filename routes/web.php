@@ -129,8 +129,8 @@ Route::post('/closeAnimal/{animal_id}','AnimalController@closeAnimal');
 Route::get('/userProfile','AdminController@userProfile2');
 Route::post('/userProfile','AdminController@userProfile2');
 
-Route::get('/adminProfile','AdminController@adminProfile');
-Route::post('/adminProfile','AdminController@adminProfile');
+Route::get('/adminProfile','AdminController@adminProfile')->middleware('checkadmin');
+Route::post('/adminProfile','AdminController@adminProfile')->middleware('checkadmin');
 
 Route::get('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
 Route::post('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
