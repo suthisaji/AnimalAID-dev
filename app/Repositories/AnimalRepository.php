@@ -293,11 +293,11 @@ function countEverAdoption($userId){
                 return Blog::where('adminAns_Id',$userId) ->count();
                }
                function countUserDonate($tel){ //บริจาคไป ครั้ง
-                   return Donation::where('tel','=',$tel) ->count();
+                   return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->count();
                   }
 
                   function sumAmountUserDonate($tel){ //มบริจาคไปทั้งหมด บาท
-                      return Donation::where('tel','=',$tel) ->sum('amount');
+                      return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->sum('amount');
                      }
 
 
