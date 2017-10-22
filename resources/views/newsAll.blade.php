@@ -15,9 +15,7 @@
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
         <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
@@ -116,6 +114,10 @@
           background-image: linear-gradient(to bottom,	#E5E4E2 0,	#B6B6B4 100%);
         }
         /*จบเนป*/
+        .list-group-item {
+
+     border: 0px solid #ddd;
+}
 
     </style>
 
