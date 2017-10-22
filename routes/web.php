@@ -54,14 +54,14 @@ Route::get('/admin', 'AdminController@index')->middleware('checkadmin');;
 
 
 Route::get('/delete/{id}', 'AdminController@delete');
-Route::get('/add','AnimalController@addAnimal');
-Route::post('/add','AnimalController@addAnimal');
-Route::get('/animal', 'AnimalController@animal');
-Route::post('/animal', 'AnimalController@animal');
-Route::get('/edit/{animal_id}','AnimalController@editAnimal');
-Route::post('/edit','AnimalController@editAnimal');
+Route::get('/add','AnimalController@addAnimal')->middleware('checkadmin');
+Route::post('/add','AnimalController@addAnimal')->middleware('checkadmin');
+Route::get('/animal', 'AnimalController@animal')->middleware('checkadmin');
+Route::post('/animal', 'AnimalController@animal')->middleware('checkadmin');
+Route::get('/edit/{animal_id}','AnimalController@editAnimal')->middleware('checkadmin');
+Route::post('/edit','AnimalController@editAnimal')->middleware('checkadmin');
 Route::get('/edit', 'AnimalController@badEditRequest');
-Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal');
+Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');;
 
 //เวลามึงเข้าแบบไม่ส่ง ไอดีเข้าไปมันจะเออเร่อ เพราะมันไม่มีเร้า
 //เราต้องบอกว่าเวลาจะแก้ไข ให้ส่ง ไอดีไปด้วย ส่งมาแบบนี้ไม่ได้
@@ -88,8 +88,8 @@ Route::get('/testmail','EmailController@sendEmail');
 
 
 
-Route::get('/addNews','AnimalController@addNews');
-Route::post('/addNews','AnimalController@addNews');
+Route::get('/addNews','AnimalController@addNews')->middleware('checkadmin');;
+Route::post('/addNews','AnimalController@addNews')->middleware('checkadmin');;
 //Route::get('/new','AnimalController@NewsAniAll');
 
 Route::get('/animalhasnews','AnimalController@animalhasnews');
@@ -114,11 +114,11 @@ Route::post('/userProfile', 'HomeController@userDetail');
 Route::get('/addAdoption', 'AnimalController@addAdoption');
 Route::post('/addAdoption', 'AnimalController@addAdoption');
 
-Route::get('/checkAdoption', 'AnimalController@checkAdoption');
-Route::post('/checkAdoption', 'AnimalController@checkAdoption');
+Route::get('/checkAdoption', 'AnimalController@checkAdoption')->middleware('checkadmin');
+Route::post('/checkAdoption', 'AnimalController@checkAdoption')->middleware('checkadmin');
 
-Route::get('/checkAdoption2', 'AnimalController@checkAdoption2');
-Route::post('/checkAdoption2', 'AnimalController@checkAdoption2');
+Route::get('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('checkadmin');;
+Route::post('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('checkadmin');;
 
 Route::get('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
 Route::post('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
@@ -188,7 +188,7 @@ Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('au
 Route::get('/editSummerByMember/{id}','SummernoteController@editSummerByMember');
 Route::post('/updateSummer','SummernoteController@updateSummer')->middleware('auth');
 Route::post('/updateSummer2','SummernoteController@updateSummer2');
-Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth');
+Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth')->middleware('checkadmin');
 
 Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
 Route::get('/testP', function () {

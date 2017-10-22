@@ -139,10 +139,10 @@
                       <li class="list-group-item list-group-item-info">   <span class="badge si">{{$countAdminAnsQues}} ครั้ง </span> ตอบคำถาม </li>
                     </ul>
                     <ul class="list-group">
-                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{  $sumAmountUserDonate}} ฿ </span> เคยช่วยเหลือทั้งหมด </li>
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{  $sumAmountUserDonate}} ฿ </span> บริจาคเงินช่วยเหลือทั้งหมด </li>
                     </ul>
                     <ul class="list-group">
-                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{ $countUserDonate}} ฿ </span> บริจาคเงินช่วยเหลือทั้งหมด </li>
+                      <li class="list-group-item list-group-item-info">   <span class="badge si">{{ $countUserDonate}} ครั้ง </span> บริจาคช่วยเหลือ </li>
                     </ul>
                   </div>
                 </div>
