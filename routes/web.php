@@ -88,8 +88,8 @@ Route::get('/testmail','EmailController@sendEmail');
 
 
 
-Route::get('/addNews','AnimalController@addNews')->middleware('checkadmin');;
-Route::post('/addNews','AnimalController@addNews')->middleware('checkadmin');;
+Route::get('/addNews','AnimalController@addNews')->middleware('checkadmin');
+Route::post('/addNews','AnimalController@addNews')->middleware('checkadmin');
 //Route::get('/new','AnimalController@NewsAniAll');
 
 Route::get('/animalhasnews','AnimalController@animalhasnews');
@@ -184,7 +184,7 @@ Route::post('/insert','SummernoteController@insert');
 Route::get('/viewSummernote','SummernoteController@viewSummernote');
 Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
 Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer')->middleware('auth');
-Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('auth');
+Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('auth')->middleware('checkadmin');
 Route::get('/editSummerByMember/{id}','SummernoteController@editSummerByMember');
 Route::post('/updateSummer','SummernoteController@updateSummer')->middleware('auth');
 Route::post('/updateSummer2','SummernoteController@updateSummer2');
