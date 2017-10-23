@@ -374,6 +374,9 @@ transform: skew(-135deg) translateX(0%);
   cursor: pointer;
 
 }
+.b{
+  background-color: #EFEEEC;
+}
 
     </style>
 
@@ -749,8 +752,8 @@ transform: skew(-135deg) translateX(0%);
  <!-- <img class="after3" src="images\wg.PNG" alt=""> -->
 
      <!-- Related Projects Row -->
-       <div class="col-md-12">
-         <img class="after3" src="images\wg.PNG" alt="">
+       <div class="col-md-12 b" >
+
          <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
              <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) <br>
              ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br></h3>
