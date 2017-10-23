@@ -17,7 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
 
     <!--css of picture content
@@ -129,8 +129,11 @@ height:76%;
   position:absolute;left:0px;
 width:100%;
   z-index:-100;
-
-
+}
+.after4{
+  position:absolute;top:1310px;left:0px;
+width:100%;
+height:55%;
 }
 
 .tw{
@@ -363,12 +366,21 @@ transform: skew(-135deg) translateX(0%);
   border-radius: 20px;
 
 }
+.srollup{
+  text-align: right;font-size:30px;
+  line-height: 50px;
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
     </style>
 
   </head>
   <body>
      <img class="after2" src="images\wg.PNG" alt="">
-
+     <img class="after4" src="images\gray.jpg" alt="">
     <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
@@ -524,7 +536,7 @@ transform: skew(-135deg) translateX(0%);
 @php($b=0)
   <!-- Related Projects Row -->
     <div class="col-md-12">
-      <h3 class="my-4">ขอเชิญร่วมกิจกรรม</h3>
+      <h3 class="my-4">ขอเชิญร่วมกิจกรรม    <a href="#top">Go to news</a> </h3>
 
 <br><br><br><br><br><br><br>
         <div class="row">
@@ -549,26 +561,25 @@ transform: skew(-135deg) translateX(0%);
 @endif
       @endif
       @endforeach
-
-
-        </div>
+    </div>
     </div>
 </div>
 
-
-<div class="row">
+<div class="row" >
 @php($b=0)
   <!-- Related Projects Row -->
-    <div class="col-md-12">
-      <h3 class="my-4">ข่าวสารใหม่</h3>
+    <div class="col-md-12" >
 
-<br><br><br><br><br><br><br>
+      <h3 class="my-4"  >ข่าวสาร</h3>
+
+<br><br>
+<br><br><br><br><br><br>
         <div class="row">
 
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 2)
           <div class="col-sm-4 col-lg-4 col-md-4">
-@if($b<=6)
+@if($b<=3)
             <a href="newsAll">
               <div class="boxnews">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
@@ -685,10 +696,7 @@ transform: skew(-135deg) translateX(0%);
             </div>
             <br><br>
             <center>
-              <h2>Rabies Hunting</h2>
-                <h4>ร่วมสนุกเล่นเกมกับ 10 ภารกิจพิชิตปริศนาสุดท้าทาย<br>
-                  ที่จะช่วยเพิ่มความรู้ความเข้าใจเกี่ยวกับปัญหาการแพร่ระบาดของโรคพิษสุนัขบ้า<br>
-                  โดยโครงการสัตว์ปลอดโรค คนปลอดภัยจากโรคพิษสุนัขบ้า</h4>
+              <img src="/images/grob.png" width="70%" height="70%">
             </center><br>
 
         <div >
@@ -801,7 +809,8 @@ transform: skew(-135deg) translateX(0%);
            <div class="row ">
                <div class="text-center col-lg-12">
                  <hr>
-                   <p>Copyright &copy; Your Website 2017</p>
+                   <p>Copyright &copy; Your Website 2017</p><div class="srollup wording"><img src="/images/gray.jpg"></div>
+
                </div>
            </div>
        </footer>
@@ -817,6 +826,7 @@ transform: skew(-135deg) translateX(0%);
 
 </html>
 <script>
+
 function bigImg(x) {
     x.style.height = "100px";
     x.style.width = "260px";
@@ -835,4 +845,13 @@ function normalImg1(x) {
     x.style.height = "160px";
     x.style.width = "240px";
 }
+
+$(".srollup").click(function(){
+  $("body,html").animate({scrollTop:0},1000);
+});
+
+
+
+
+
 </script>
