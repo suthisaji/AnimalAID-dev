@@ -99,7 +99,7 @@
 
       .ri{
         position:absolute;
-        top: 91px;
+        top: 300px;
         right:30px;
       }
 
@@ -381,9 +381,6 @@
 
 <div class ="container">
 <div  class="col-md-3 ri">
-
-
-
 
 
           @foreach($adminChecked as $wait)

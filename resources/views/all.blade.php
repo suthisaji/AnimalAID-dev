@@ -623,7 +623,7 @@ transform: skew(-135deg) translateX(0%);
 
   <a  href="dm"><center><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></center></a>
 
-    <p class="lead"><a href="listOfDonor" style="color:white;"><h2><b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รายชื่อผู้บริจาค</b></h2></a></p>
+    <p class="lead"><h2><b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="listOfDonor" style="color:white;">รายชื่อผู้บริจาค</b></h2></a></p>
      @php($i=0)
        <div class="list-group">
 
