@@ -356,7 +356,7 @@
                          </td>
                          <td>
                            @if($d->status=='Answered')
-                            <img src="/images/pointg.png" style="width:2%;height:19%"> ตอบแล้ว
+                            <img src="/images/pointg.png" style="width:4%;height:13%"> ตอบแล้ว
                            @else
 
                          @endif

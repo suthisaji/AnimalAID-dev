@@ -131,9 +131,9 @@ width:100%;
   z-index:-100;
 }
 .after4{
-  position:absolute;top:1310px;left:0px;
+  position:absolute;top:1270px;left:0px;
 width:100%;
-height:55%;
+height:90%;
 }
 
 .tw{
@@ -377,7 +377,12 @@ transform: skew(-135deg) translateX(0%);
 .b{
   background-color: #EFEEEC;
 }
+.hoverOranger:hover{
+ cursor: pointer;
+ color: orange;
+}
 
+}
     </style>
 
   </head>
@@ -539,8 +544,8 @@ transform: skew(-135deg) translateX(0%);
 @php($b=0)
   <!-- Related Projects Row -->
     <div class="col-md-12">
-      <h3 class="my-4">ขอเชิญร่วมกิจกรรม    <a href="#top">Go to news</a> </h3>
-
+      <h3 class="my-4"><b>ขอเชิญร่วมกิจกรรม   </b>    &nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;      <span id="click1" class="hoverOranger" >ข่าวสาร</span>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  <span id="click2" class="hoverOranger" >Product</span>
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<span id="click3" class="hoverOranger" >Games</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<span id="click4" class="hoverOranger" >เกี่ยวกับมูลนิธิ</span></h3>
 <br><br><br><br><br><br><br>
         <div class="row">
 
@@ -567,22 +572,23 @@ transform: skew(-135deg) translateX(0%);
     </div>
     </div>
 </div>
+<p id="div1" ></p>
 
-<div class="row" >
+<div class="row"  >
 @php($b=0)
   <!-- Related Projects Row -->
-    <div class="col-md-12" >
+    <div class="col-md-12"  >
+<br><br><br>
+      <h3 class="my-4"  ><b>ข่าวสาร</b></h3>
 
-      <h3 class="my-4"  >ข่าวสาร</h3>
 
-<br><br>
 <br><br><br><br><br><br>
         <div class="row">
 
           @foreach($newsAnis as $ac)
                      @if($ac->news_type == 2)
           <div class="col-sm-4 col-lg-4 col-md-4">
-@if($b<=3)
+@if($b<=6)
             <a href="newsAll">
               <div class="boxnews">
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
@@ -621,7 +627,7 @@ transform: skew(-135deg) translateX(0%);
 
                 <i class="fa fa-comment fa-fw">{{$donor->name}} &nbsp; {{$donor->sname}}</i>
                 <span class="pull-right text-muted small">
-                    <em>{{$donor->amount}}฿</em>
+                    <em >{{$donor->amount}}฿</em>
                 </span>
     </p>
    @php($i++)
@@ -635,17 +641,22 @@ transform: skew(-135deg) translateX(0%);
 
 
           <div class="col-md-12">
+            <p id="div2"><p>
+          <br><br><br>
+          <hr class="light">
+          <br><br>
+
                <div class="row">
 
                  <!-- Related Projects Row  -->
                    <div class="col-md-12">
-                     <h2 class="my-4">Product</h2>
+                     <h2 class="my-4" ><b>Product<b> </h2>
 
                        <div class="row">
 
 
                          <div class="col-sm-4 col-lg-4 col-md-4">  plate&screw
-                           <div class="thumbnail">
+                           <div class="thumbnail" >
                              <img src="images\test.JPG" alt="">
                            </div>
                          </div>
@@ -664,18 +675,19 @@ transform: skew(-135deg) translateX(0%);
 
                            <br>
                        </div>
+
                    </div>
                  <!-- /.row -->
 
                </div>
-               <br>
-  <hr class="light">
-  <br><br>
-  <div class="row">
+               <br><br><br>
+  <hr class="light" >
+  <br><br><br><br><br>
+  <div class="row" id="div3">
 
     <!-- Related Projects Row -->
       <div class="col-md-12">
-        <h2 class="my-4">Media</h2>
+        <h2 class="my-4">Games</h2>
 
           <div class="row">
 
@@ -741,18 +753,18 @@ transform: skew(-135deg) translateX(0%);
 
         <div class="col-sm-4">
           <div  >
-            <a  href="da"><center><img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></center></a>
+            <a  href="da"><center id="div4"><img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></center></a>
           </div>
         </div>
       </div>
-      <br><br>
+      <br ><br>
   </div>
 <!-- /.row -->
 <!-- </div> -->
  <!-- <img class="after3" src="images\wg.PNG" alt=""> -->
 
      <!-- Related Projects Row -->
-       <div class="col-md-12 b" >
+       <div class="col-md-12 b"  >
 
          <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
              <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) <br>
@@ -773,8 +785,9 @@ transform: skew(-135deg) translateX(0%);
              <h4>ถนนงามวงค์วาน แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900</h4>
              <h4>โทรศัพท์ 02-797-1900</h4>
 
-
        </div>
+
+       <div class="srollup wording"><img src="/images/arr.gif" width="1%" height="8%"><img src="/images/up.png" width="10%" height="10%"></div>
      <div class="col-md-12">
        <div class="row">
  <br><br>
@@ -812,7 +825,7 @@ transform: skew(-135deg) translateX(0%);
            <div class="row ">
                <div class="text-center col-lg-12">
                  <hr>
-                   <p>Copyright &copy; Your Website 2017</p><div class="srollup wording"><img src="/images/arr.gif" width="1%" height="8%"><img src="/images/up.png" width="10%" height="10%"></div>
+                   <p>Copyright &copy; Your Website 2017</p>
 
                </div>
            </div>
@@ -853,6 +866,26 @@ $(".srollup").click(function(){
   $("body,html").animate({scrollTop:0},1000);
 });
 
+$(document).ready(function(){
+  $('#click1').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div1').offset().top},1000);
+    })
+
+$('#click2').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div2').offset().top},1000);
+    })
+    $('#click3').click(function(){
+        $('html,body').animate({
+          scrollTop: $('#div3').offset().top},1000);
+        })
+        $('#click4').click(function(){
+            $('html,body').animate({
+              scrollTop: $('#div4').offset().top},1000);
+            })
+
+  })
 
 
 
