@@ -242,7 +242,7 @@
 
 
 <br>
-       <br><br>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง  จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท
+       <br><br><h2>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง<h2>  <h1>จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</h1>
 
         <div class="panel-heading">
      <p class="lead">รายชื่อผู้บริจาค</p>
