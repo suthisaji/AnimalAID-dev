@@ -809,7 +809,7 @@ transform: skew(-135deg) translateX(0%);
            <div class="row ">
                <div class="text-center col-lg-12">
                  <hr>
-                   <p>Copyright &copy; Your Website 2017</p><div class="srollup wording"><img src="/images/gray.jpg"></div>
+                   <p>Copyright &copy; Your Website 2017</p><div class="srollup wording"><img src="/images/arr.gif" width="1%" height="8%"><img src="/images/up.png" width="10%" height="10%"></div>
 
                </div>
            </div>
