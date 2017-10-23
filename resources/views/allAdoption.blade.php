@@ -17,7 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
@@ -502,12 +502,12 @@
                                          </div>
                                          <div class="form-group">
                                               <label for="address">เพิ่มที่อยุ่</label>
-                                              <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+                                              <textarea class="form-control" name="address" id="address" rows="3" required></textarea>
                                         </div>
 
                                          <div class="form-group">
                                              <label for="date" class="form-label">วันที่และเวลาที่มารับสัตว์</label>
-                                             <input type="datetime-local" class="form-control" name="date_time"  value="2017-06-19T13:45:00" />
+                                             <input type="datetime-local" class="form-control" name="date_time"  required />
                                          </div>
                                          <div class="form-group">
                                              กรุณารอการติดต่อจากเจ้าหน้าที่เพื่อตรวจสอบและยืนยัน
