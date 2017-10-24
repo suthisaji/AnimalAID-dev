@@ -551,7 +551,7 @@ transform: skew(-135deg) translateX(0%);
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
-                   <figcaption>{{str_limit($ac->content,150,"..อ่านต่อ")}}
+                   <figcaption>{{str_limit($ac->content,160,"..อ่านต่อ")}}
                    </figcaption>
                  </figure>
                </div>
@@ -587,7 +587,7 @@ transform: skew(-135deg) translateX(0%);
                     <i class="fa fa-comment fa-fw"> "{{$ac->head_News}}"</i>
                    <figure>
                    <img src="{{url('/images/'.$ac->act_pic)}}" >
-                   <figcaption>{{str_limit($ac->content,150,"..อ่านต่อ")}}
+                   <figcaption>{{str_limit($ac->content,160,"..อ่านต่อ")}}
                    </figcaption>
                  </figure>
                </div>
