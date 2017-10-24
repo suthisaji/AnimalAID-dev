@@ -227,13 +227,14 @@
       </div>
     </div>
     <script type="text/javascript">
-         $(document).ready(function(){
-           $('#summernote').summernote({
-            height:'300px',
-            placeholder:'content here ..' //placeholderเสือกไม่ขึ้น งง
+    $(document).ready(function(){
+      $('#summernote').summernote({
+        height:'300px',
+        placeholder:'content here ..' //placeholderเสือกไม่ขึ้น งง
           //  fontNames:['Arial','Arial Black','Khmer OS'],
-          })
-     })
+      })
+    })
+
      $('#clear').on('click',function(){
        $('#summernote').summernote('code',null);
      })

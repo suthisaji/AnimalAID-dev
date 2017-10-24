@@ -54,12 +54,10 @@
           width:100%;
           height:360px;
         }
-
         .thumbnail img {
           width:100% !important;
           height: 200px !important;
         }
-
         body{
           font-size: 16px;
         }
@@ -112,26 +110,26 @@
           padding: 15px;
         }
         .small, small {
-    font-size: 75%;
-}
+         font-size: 75%;
+        }
 .after{
-  position:absolute;top:0px;left:0px;
+position:absolute;top:0px;left:0px;
 width:100%;
 height:500px;
 }
 
 .after2{
-  position:absolute;top:610px;left:0px;
+position:absolute;top:610px;left:0px;
 width:100%;
 height:76%;
 }
 .after3{
-  position:absolute;left:0px;
+position:absolute;left:0px;
 width:100%;
-  z-index:-100;
+z-index:-100;
 }
 .after4{
-  position:absolute;top:1270px;left:0px;
+position:absolute;top:1270px;left:0px;
 width:100%;
 height:90%;
 }
@@ -278,8 +276,6 @@ transform: skew(45deg) translateX(0%);
 .boxp:hover figure:after{
 transform: skew(-135deg) translateX(0%);
 }
-
-
 .boxnews{
   width:250px;
   height:250px;
@@ -293,7 +289,6 @@ transform: skew(-135deg) translateX(0%);
   height:100%;
   margin:0;
   padding: 0;
-
 }
 .boxnews figure img{
   width:100%;
@@ -348,23 +343,18 @@ transform: skew(-135deg) translateX(0%);
 .boxnews:hover figure:after{
   transform: skew(-135deg) translateX(0%);
 }
-
 /*จบจังไร*/
 .follow{
   position:fixed;
   top:16%;
   left:-1%;
 }
-
-
-
   .lig:hover
 	{
 		-moz-box-shadow: 0 0 28px #ccc;
 		-webkit-box-shadow: 0 0 28px #ccc;
 		box-shadow: 5 0 28px #ccc;
   border-radius: 20px;
-
 }
 .srollup{
   text-align: right;font-size:30px;
@@ -390,7 +380,6 @@ transform: skew(-135deg) translateX(0%);
     font-size: 17px;
   }
     </style>
-
   </head>
   <body>
      <img class="after2" src="images\wg.PNG" alt="">
@@ -409,8 +398,6 @@ transform: skew(-135deg) translateX(0%);
                                <span class="icon-bar"></span>
                                <span class="icon-bar"></span>
                            </button>
-
-
 
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -882,16 +869,17 @@ $('#click2').click(function(){
     $('html,body').animate({
       scrollTop: $('#div2').offset().top},1000);
     })
-    $('#click3').click(function(){
-        $('html,body').animate({
-          scrollTop: $('#div3').offset().top},1000);
-        })
-        $('#click4').click(function(){
-            $('html,body').animate({
-              scrollTop: $('#div4').offset().top},1000);
-            })
 
-  })
+$('#click3').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div3').offset().top},1000);
+    })
+
+$('#click4').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div4').offset().top},1000);
+    })
+})
 
 
 

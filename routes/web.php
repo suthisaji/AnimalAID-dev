@@ -15,20 +15,18 @@ Route::get('/sub', function () {
   $str =  DB::table('blogs')->select('answer')->get();
   $str2=  json_encode($str);
   $_str = explode('|||', $str2);
-foreach($_str as $text){
+  foreach($_str as $text){
   echo $text.'</br>';
   echo '$str= '.$str2 ;  echo '$str = '.$_str ;
-}
-
-return view('test2');
+  }
+  return view('test2');
 });
-
-
 
 Route::get('/', function () {
     return view('welcome');
 });
-use App\Animal;;
+
+use App\Animal;
 Route::get('/delete99', function(){
     $result = Animal::all();
     foreach ($result as $val) {
@@ -47,6 +45,7 @@ Route::get('test99', function(){
       }
     }
 });
+
 Route::get('/home', 'HomeController@index');
 Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware('checkadmin');
 

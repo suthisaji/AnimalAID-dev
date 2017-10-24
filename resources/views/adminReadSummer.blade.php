@@ -159,9 +159,6 @@
      <input type="hidden" name="summernote2" class="form-control" value="{{$data->answer}} " />
 
 
-
-
-
     <div class="form-group">
       <input type="submit" name="send" id="send" value="create" class="btn btn-success">
       <input type="button" name="clear" id="clear" class="btn btn-danger pull-right" value="Clear">
@@ -195,8 +192,6 @@
      })
 
     </script>
-
-
 
 
   </body>

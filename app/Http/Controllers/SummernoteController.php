@@ -19,7 +19,7 @@ class SummernoteController extends Controller
         'topic'=>$request['topic'],
         'content'=>$request['summernote'],
         'created_at' => \Carbon\Carbon::now(),
-      'updated_at' => \Carbon\Carbon::now()
+        'updated_at' => \Carbon\Carbon::now()
       ]);
       return Response::json([
         'statusCode' => 200,
@@ -30,30 +30,28 @@ class SummernoteController extends Controller
 
     public function viewSummernote(){
       $data=DB::table('blogs')->get();
-       return view('viewSummernote',compact('data'));//compact คือ??
+      return view('viewSummernote',compact('data'));//compact คือ??
     }
 
     public function viewSummer(){
       $data=DB::table('blogs')->orderBy('created_at','DESC')->get();
-       return view('summer',compact('data'));//จะเอาไปใช้ที่หน้า summer
+      return view('summer',compact('data'));//จะเอาไปใช้ที่หน้า summer
     }
+
     public function viewAllSummer(){
       $data=DB::table('blogs')->orderBy('created_at','DESC')->get();
-       return view('allQuestions',compact('data'));//จะเอาไปใช้ที่หน้า allQuestions
+      return view('allQuestions',compact('data'));//จะเอาไปใช้ที่หน้า allQuestions
     }
 
-
-
     public function readSummerInfo($id){
-    $data=DB::table('blogs')->where('id',$id)->first();
-    return view('readSummer',compact('data'));
+      $data=DB::table('blogs')->where('id',$id)->first();
+      return view('readSummer',compact('data'));
     }
 
     public function adminReadSummerInfo($id){
-    $data=DB::table('blogs')->where('id',$id)->first();
-    return view('adminReadSummer',compact('data')); //จะเอาไปใช้ที่หน้า AdminreadSummer
+      $data=DB::table('blogs')->where('id',$id)->first();
+      return view('adminReadSummer',compact('data')); //จะเอาไปใช้ที่หน้า AdminreadSummer
     }
-
 
     public function deleteSummer($id){
        DB::table('blogs')->where('id',$id)->delete();
@@ -101,8 +99,5 @@ class SummernoteController extends Controller
 /*  function countAllQuestions(){ //นับคำถามที่มีทั้้งหมด เรียกใช้ไงวะลืม
       $countAllQ =DB::table('blogs')->count();
     }*/
-
-
-
 
 }

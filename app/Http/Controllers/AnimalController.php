@@ -22,30 +22,29 @@ class AnimalController extends Controller
 {
     protected $AnimalRepository;
     protected $DonationTypeRepository;
-   protected $DonationRepository;
+    protected $DonationRepository;
     protected $NewsAniRepository;
     protected $UserRepository;
     function __construct(AnimalRepositoryInterface $AnimalRepository,DonationTypeRepositoryInterface $DonationTypeRepository,NewsAniRepositoryInterface $NewsAniRepository ,UserRepositoryInterface $UserRepository,DonationRepositoryInterface $DonationRepository){
         $this->AnimalRepository = $AnimalRepository;
         $this->DonationTypeRepository = $DonationTypeRepository;
-          $this->DonationRepository = $DonationRepository;
+        $this->DonationRepository = $DonationRepository;
         $this->NewsAniRepository = $NewsAniRepository;
-          $this->UserRepository = $UserRepository;
+        $this->UserRepository = $UserRepository;
     }
 //เรียกใช้  repo ที่สร้าง
     function animal(){
-
-      $this->middleware('auth');
-            if(Auth::user()==null){
-              return redirect('login');
-            }
+        $this->middleware('auth');
+          if(Auth::user()==null){
+            return redirect('login');
+          }
 
         $animals = $this->AnimalRepository->getAllAnimal();
         $donationType = $this->DonationTypeRepository->getAllDonationType();
-          $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-          $hospitals =$this->AnimalRepository->getAllHospital();
-          $admins = $this->AnimalRepository ->getAllAdmin();
-          $admin = Auth::user()->id;
+        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+        $admin = Auth::user()->id;
         $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
 
 
@@ -54,17 +53,16 @@ class AnimalController extends Controller
         $data = array(
             'animals'=>$animals  , //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
             'donationType'=>$donationType,
-              'newsAnis'=>$newsAnis,
-              'hospitals'=>$hospitals,
-              'adminId' =>Auth::user()->id,
-              'admins' =>$admins,
-              'all_users'=>$this->UserRepository->getAllUser(),
-              'countRecipientEachAdmin'=>$countRecipientEachAdmin,
-              'admin'=>true
-
+            'newsAnis'=>$newsAnis,
+            'hospitals'=>$hospitals,
+            'adminId' =>Auth::user()->id,
+            'admins' =>$admins,
+            'all_users'=>$this->UserRepository->getAllUser(),
+            'countRecipientEachAdmin'=>$countRecipientEachAdmin,
+            'admin'=>true
         );
         //return view('animal',$data); มึงจะให้มันไปหน้าไหน
-        return view('animal',$data);
+      return view('animal',$data);
     }
 /*    function animalAll(){
         $animals = $this->AnimalRepository->getAllAnimal();
@@ -86,87 +84,80 @@ class AnimalController extends Controller
     function animalAll(){
       if(Auth::guest()){
         $animals = $this->AnimalRepository->getAllAnimal();
-          $donationType = $this->DonationTypeRepository->getAllDonationType();
-            $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-            $users = $this->UserRepository->getAllUser();
-              $hospitals =$this->AnimalRepository->getAllHospital();
-                $admins = $this->AnimalRepository ->getAllAdmin();
-              $donor =$this->DonationRepository ->getAllDonation();
-            $data = array(
-                'animals'=>$animals,   //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
-                'donationType'=>$donationType,
-                  'newsAnis'=>$newsAnis,
-                  'users'=>$users,
-                    'hospitals'=>$hospitals,
-                    'admins' =>$admins,
-                      'donor'=>$donor
-
-            );
-      }else{
-        $animals = $this->AnimalRepository->getAllAnimal();
-          $donationType = $this->DonationTypeRepository->getAllDonationType();
-            $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-            $users = $this->UserRepository->getAllUser();
-            $position =  Auth::user()->position;
-              $hospitals =$this->AnimalRepository->getAllHospital();
-              $admins = $this->AnimalRepository ->getAllAdmin();
-              $donor =$this->DonationRepository -> getAllDonation();
-        $data = array(
+        $donationType = $this->DonationTypeRepository->getAllDonationType();
+        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+        $users = $this->UserRepository->getAllUser();
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+        $donor =$this->DonationRepository ->getAllDonation();
+          $data = array(
             'animals'=>$animals,   //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
             'donationType'=>$donationType,
               'newsAnis'=>$newsAnis,
               'users'=>$users,
-              'position'=>$position,
-                'hospitals'=>$hospitals,
-                'admins' =>$admins,
-                'donor'=>$donor
-
-        );
-
+              'hospitals'=>$hospitals,
+              'admins' =>$admins,
+              'donor'=>$donor
+          );
+      }else{
+        $animals = $this->AnimalRepository->getAllAnimal();
+        $donationType = $this->DonationTypeRepository->getAllDonationType();
+        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+        $users = $this->UserRepository->getAllUser();
+        $position =  Auth::user()->position;
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+        $donor =$this->DonationRepository -> getAllDonation();
+          $data = array(
+            'animals'=>$animals,   //'animalsคีย์ที่จะส่งไปให้ view ใ้ช้'=>$animals
+            'donationType'=>$donationType,
+            'newsAnis'=>$newsAnis,
+            'users'=>$users,
+            'position'=>$position,
+            'hospitals'=>$hospitals,
+            'admins' =>$admins,
+            'donor'=>$donor
+          );
       }
           return view('all',$data);
-
     }
 
     function animalMoney(){
       if(Auth::guest()){
         $animals = $this->AnimalRepository->getAllAnimal();
         $animalsMoneys = $this->AnimalRepository->getAllMoney();
-          $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-              $admins = $this->AnimalRepository ->getAllAdmin();
-                $donor =$this->DonationRepository ->getAllDonation();
+        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+        $donor =$this->DonationRepository ->getAllDonation();
           $data = array(
               'animals'=>$animals ,
               'animalsMoneys'=>$animalsMoneys,
-            'newsAnis'=>$newsAnis,
-            'hospitals'=>$hospitals,
+              'newsAnis'=>$newsAnis,
+              'hospitals'=>$hospitals,
               'admins' =>$admins,
-                'donor'=>$donor
+              'donor'=>$donor
 
-    );
-      }else {
+         );
+      }else{
         $animals = $this->AnimalRepository->getAllAnimal();
         $animalsMoneys = $this->AnimalRepository->getAllMoney();
-          $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-              $admins = $this->AnimalRepository ->getAllAdmin();
-          $position =  Auth::user()->position;
-          $donor =$this->DonationRepository ->getAllDonation();
-        $data = array(
+        $newsAnis = $this->NewsAniRepository->getAllNewsAni();
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+        $position =  Auth::user()->position;
+        $donor =$this->DonationRepository ->getAllDonation();
+          $data = array(
             'animals'=>$animals ,
             'animalsMoneys'=>$animalsMoneys,
-          'newsAnis'=>$newsAnis,
-          'position'=>$position,
-          'hospitals'=>$hospitals,
+            'newsAnis'=>$newsAnis,
+            'position'=>$position,
+            'hospitals'=>$hospitals,
             'admins' =>$admins,
-                'donor'=>$donor
-
-  );
-
+            'donor'=>$donor
+          );
       }
-
-       return view('allMoney',$data);
+      return view('allMoney',$data);
     }
 
     function animalBlood(){
@@ -175,16 +166,15 @@ class AnimalController extends Controller
           $animalsMoneys = $this->AnimalRepository->getAllMoney();
           $animalsBloods= $this->AnimalRepository->getAllBlood();
           $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-                    $admins = $this->AnimalRepository ->getAllAdmin();
+          $hospitals =$this->AnimalRepository->getAllHospital();
+          $admins = $this->AnimalRepository ->getAllAdmin();
            $data = array(
-                'animals'=>$animals ,
-                'animalsMoneys'=>$animalsMoneys,
-                'animalsBloods'=>$animalsBloods,
-                  'newsAnis'=>$newsAnis,
-                  'hospitals'=>$hospitals,
-                  'admins' =>$admins
-
+              'animals'=>$animals ,
+              'animalsMoneys'=>$animalsMoneys,
+              'animalsBloods'=>$animalsBloods,
+              'newsAnis'=>$newsAnis,
+              'hospitals'=>$hospitals,
+              'admins' =>$admins
             );
         }else{
         $animals = $this->AnimalRepository->getAllAnimal();
@@ -192,86 +182,80 @@ class AnimalController extends Controller
         $animalsBloods= $this->AnimalRepository->getAllBlood();
         $newsAnis = $this->NewsAniRepository->getAllNewsAni();
         $position =  Auth::user()->position;
-          $hospitals =$this->AnimalRepository->getAllHospital();
-                  $admins = $this->AnimalRepository ->getAllAdmin();
-        $data = array(
+        $hospitals =$this->AnimalRepository->getAllHospital();
+        $admins = $this->AnimalRepository ->getAllAdmin();
+         $data = array(
             'animals'=>$animals ,
             'animalsMoneys'=>$animalsMoneys,
             'animalsBloods'=>$animalsBloods,
-              'newsAnis'=>$newsAnis,
-              'position'=>$position,
-              'hospitals'=>$hospitals,
-              'admins' =>$admins
-
+            'newsAnis'=>$newsAnis,
+            'position'=>$position,
+            'hospitals'=>$hospitals,
+            'admins' =>$admins
         );
-}
-       return view('allBlood',$data);
+    }
+     return view('allBlood',$data);
     }
 
 
     function animalAdoption(){
         if(Auth::guest()){
-            $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
+          $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
           $newsAnis = $this->NewsAniRepository->getAllNewsAni();
           $animals = $this->AnimalRepository->getAllAnimal();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-                $admins = $this->AnimalRepository ->getAllAdmin();
-                  $donor =$this->DonationRepository ->getAllDonation();
-          $data = array(
+          $hospitals =$this->AnimalRepository->getAllHospital();
+          $admins = $this->AnimalRepository ->getAllAdmin();
+          $donor =$this->DonationRepository ->getAllDonation();
+           $data = array(
             'animalsAdoptions'=>$animalsAdoptions,
             'newsAnis'=>$newsAnis,
-              'animals'=>$animals,
-              'hospitals'=>$hospitals,
-                'admins' =>$admins,
-                  'donor'=>$donor
-          );
-        }
-          else{
+            'animals'=>$animals,
+            'hospitals'=>$hospitals,
+            'admins' =>$admins,
+            'donor'=>$donor
+           );
+       }
+       else{
           $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
           $newsAnis = $this->NewsAniRepository->getAllNewsAni();
           $position =  Auth::user()->position;
           $animals = $this->AnimalRepository->getAllAnimal();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-                $admins = $this->AnimalRepository ->getAllAdmin();
-                  $donor =$this->DonationRepository ->getAllDonation();
-
-
+          $hospitals =$this->AnimalRepository->getAllHospital();
+          $admins = $this->AnimalRepository ->getAllAdmin();
+          $donor =$this->DonationRepository ->getAllDonation();
               $data = array(
                 'animalsAdoptions'=>$animalsAdoptions,
-                  'newsAnis'=>$newsAnis,
-                  'position'=>$position,
-                  'animals'=>$animals,
-                  'hospitals'=>$hospitals,
-                    'admins' =>$admins,
-                      'donor'=>$donor
-
-    );
+                'newsAnis'=>$newsAnis,
+                'position'=>$position,
+                'animals'=>$animals,
+                'hospitals'=>$hospitals,
+                'admins' =>$admins,
+                'donor'=>$donor
+             );
       }
-   return view('allAdoption',$data);
+     return view('allAdoption',$data);
     }
 
 
     function addAnimal(){
-
             $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
             }
-
       if(Request::isMethod('get')){
         $adminId = Auth::user()->id;
         $donationType = $this->DonationTypeRepository->getAllDonationType();
         $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($adminId);
-        $data = array(
+         $data = array(
           'donationType'=>$donationType,
           'countRecipientEachAdmin'=>$countRecipientEachAdmin
-        );
+         );
         return view('add_animal',$data);
       }else if(Request::isMethod('post')){
 
             $adminId = Auth::user()->id;
             $animalName = Input::get('ani_name');
-              $animalType= Input::get('ani_type');
+            $animalType= Input::get('ani_type');
             //$animalPicture = Input::get('ani_picture');
             //------upload image and store------
             $temp = Request::file('ani_picture')->getPathName();
@@ -284,8 +268,6 @@ class AnimalController extends Controller
             $animalGender= Input::get('ani_gender');
             $animalAge= Input::get('ani_age');
             $symptomCase= Input::get('symptomCase');
-
-
 
             $doTypeId= Input::get('doType_id');
             if($doTypeId==3){
@@ -305,18 +287,17 @@ class AnimalController extends Controller
 
       }
     }
-    function editAnimal($animal_id=0){
 
+    function editAnimal($animal_id=0){
         $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
             }
 
-
         if(Request::isMethod('post')){
           $animalId = Input::get('ani_id');
           $animalName = Input::get('ani_name');//
-            $adminId = Auth::user()->id;
+          $adminId = Auth::user()->id;
           //------upload image and store------
 
         //  $animalPicture = Input::get('ani_picture');
@@ -348,10 +329,10 @@ class AnimalController extends Controller
             $animal = $this->AnimalRepository->findById($animal_id);
             //เรียกใช้ method getalldonaationtype ละส่งค่าไปหน้าวิว
             $donationType = $this->DonationTypeRepository->getAllDonationType();//ใช่ชื่อนี้อ่อ5555
-            $data = array(
+             $data = array(
                 'animal'=>$animal,
                 'donationType'=>$donationType //เรา เอาอันนี้ไปใช้ในหน้าวิว donationType --คือ key มัน
-            );
+             );
             return view('edit', $data);
             //ในนี้บอกว่า เอาไอดีที่ส่งมาเอาไปหาใน ดีบี ละดึงค่ามาแสดง
             // $animal_id=0 ตรงนี้หมายความว่า ถ้าไม่มี anumalid ส่งมา มันจะเปน0
@@ -377,16 +358,12 @@ class AnimalController extends Controller
       return redirect('animal');
     }
 
-
-
     function addNews(){
-
         $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
             }
-
-  if(Request::isMethod('post')){
+        if(Request::isMethod('post')){
               $headNews = Input::get('head_News'); //เอาหัวข่าวเข้ามา
               $content= Input::get('content');
               $newstype= Input::get('news_type');
@@ -412,16 +389,15 @@ class AnimalController extends Controller
         }else{
           $news = $this->NewsAniRepository->getAllNewsAni();
           $admin = Auth::user()->id;
-        $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
-
-          $data = array(
-            'news'=>$news,
+          $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
+           $data = array(
+             'news'=>$news,
               'adminId' => Auth::user()->id  ,
               'all_users'=>$this->UserRepository->getAllUser(),
               'countRecipientEachAdmin'=>$countRecipientEachAdmin,
               'admin'=>true
-          );
-          return view('add_news', $data);
+           );
+        return view('add_news', $data);
         }
       }
 
@@ -446,35 +422,29 @@ class AnimalController extends Controller
               $animalsBloods= $this->AnimalRepository->getAllBlood();
               $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
               $newsAnis = $this->NewsAniRepository->getAllNewsAni();
-              $data = array(
+               $data = array(
                   'animals'=>$animals ,
                   'animalsMoneys'=>$animalsMoneys,
                   'animalsBloods'=>$animalsBloods,
                   'animalsAdoptions'=>$animalsAdoptions,
                   'newsAnis'=>$newsAnis
-              );
-
+               );
              return view('addNews',$data);
           }
 
           function newsPage(){
-
             $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
             }
-
-
-
               $animals = $this->AnimalRepository->getAllAnimal();
               $animalsMoneys = $this->AnimalRepository->getAllMoney();
               $animalsBloods= $this->AnimalRepository->getAllBlood();
               $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
               $newsAnis = $this->NewsAniRepository->getAllNewsAni();
               $admin = Auth::user()->id;
-
-            $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
-              $data = array(
+              $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
+               $data = array(
                   'animals'=>$animals ,
                   'animalsMoneys'=>$animalsMoneys,
                   'animalsBloods'=>$animalsBloods,
@@ -483,11 +453,9 @@ class AnimalController extends Controller
                   'all_users'=>$this->UserRepository->getAllUser(),
                   'countRecipientEachAdmin'=>$countRecipientEachAdmin,
                   'admin'=>true
-              );
-
+               );
              return view('new',$data);
           }
-
 
           function deleteNews($news_id){
             $result = $this->NewsAniRepository->deleteNews($news_id);
@@ -499,7 +467,6 @@ class AnimalController extends Controller
           }
 
           function addAdoption(){
-
             if(Request::isMethod('post')){
                         $address = Input::get('address');
                         $status= Input::get('status');
@@ -528,21 +495,19 @@ class AnimalController extends Controller
     }
 
     function addAdoptionAllPage(){
-
       if(Request::isMethod('post')){
-                  $address = Input::get('address');
-                  $status= Input::get('status');
-                  $date_time= Input::get('date_time');
-                  $user_id = Auth::user()->id;//จะได้ค่า id ของคนที่ login อยู่
-                  $animal_id = Input::get('animal_id');
-                  $result = $this->AnimalRepository->addAdoption($animal_id,$user_id,$address,$status,$date_time);//$animal_id
+            $address = Input::get('address');
+            $status= Input::get('status');
+            $date_time= Input::get('date_time');
+            $user_id = Auth::user()->id;//จะได้ค่า id ของคนที่ login อยู่
+            $animal_id = Input::get('animal_id');
+            $result = $this->AnimalRepository->addAdoption($animal_id,$user_id,$address,$status,$date_time);//$animal_id
 
                   if($result){
                       return redirect('/addAdoptionAllPage');
                   }else{
                       echo "Failed to add adopt";
                   }
-
             }else{
               /*$adoption = $this->AnimalRepository->getAllAdoptionTable();
               $data = array(
@@ -566,14 +531,15 @@ class AnimalController extends Controller
       if(Request::isMethod('post')){
         $status = Input::get('status');
         $adoption_id = Input::get('adoption_id');
-            $animal_id = Input::get('animal_id');
-            $date_time= Input::get('date_time');
-          $user_id = Auth::user()->id;
-          $admin = Auth::user()->id;
-            $animal_id = Input::get('animal_id');
-            $address = Input::get('address');
-            $this->AnimalRepository->countAnimalEachAdmin($admin);
+        $animal_id = Input::get('animal_id');
+        $date_time= Input::get('date_time');
+        $user_id = Auth::user()->id;
+        $admin = Auth::user()->id;
+        $animal_id = Input::get('animal_id');
+        $address = Input::get('address');
+        $this->AnimalRepository->countAnimalEachAdmin($admin);
         $result = $this->AnimalRepository->updateAdoption($adoption_id,$user_id,$address,$status,$date_time,$animal_id);
+
         if($result){
             return redirect('/checkAdoption');
         }else{
@@ -583,52 +549,45 @@ class AnimalController extends Controller
 
     }else{
           $admin = Auth::user()->id;
-        $countAnimalEachAdmin=$this->AnimalRepository->countAnimalEachAdmin($admin);
-      $adoptions = $this->AnimalRepository->getAllAdoptionTable();
-        $users = $this->UserRepository->getAllUser();
-        $countRecipient = $this->AnimalRepository->countRecipient();
-        $recipient = $this->AnimalRepository->getAllRecipient();
+          $countAnimalEachAdmin=$this->AnimalRepository->countAnimalEachAdmin($admin);
+          $adoptions = $this->AnimalRepository->getAllAdoptionTable();
+          $users = $this->UserRepository->getAllUser();
+          $countRecipient = $this->AnimalRepository->countRecipient();
+          $recipient = $this->AnimalRepository->getAllRecipient();
           $animals = $this->AnimalRepository->getAllAnimal();
-            $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
-            $adminChecked = $this->AnimalRepository->getAllAdminChecked();
+          $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
+          $adminChecked = $this->AnimalRepository->getAllAdminChecked();
           $adoptionDone = $this->AnimalRepository  ->getAllAdoptionDone();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-             $countRecipientEachAdmin =$this->AnimalRepository->countRecipientEachAdmin($admin);
-            $countDone=$this->AnimalRepository-> countDone();
-
-              $countWait =$this->AnimalRepository->countWait();
-            $countWaitEachAdmin =$this->AnimalRepository->countWaitEachAdmin($admin);
-            $countDoneEachAdmin =$this->AnimalRepository-> countDoneEachAdmin($admin);
+          $hospitals =$this->AnimalRepository->getAllHospital();
+          $countRecipientEachAdmin =$this->AnimalRepository->countRecipientEachAdmin($admin);
+          $countDone=$this->AnimalRepository-> countDone();
+          $countWait =$this->AnimalRepository->countWait();
+          $countWaitEachAdmin =$this->AnimalRepository->countWaitEachAdmin($admin);
+          $countDoneEachAdmin =$this->AnimalRepository-> countDoneEachAdmin($admin);
           $countAdoptionEachAdmin =$this->AnimalRepository->  countAdoptionEachAdmin($admin);
           $hospitals =$this->AnimalRepository->getAllHospital();
-            $admins = $this->AnimalRepository ->getAllAdmin();
-
-
-          $data = array(
+          $admins = $this->AnimalRepository ->getAllAdmin();
+           $data = array(
               'adoptions'=>$adoptions ,
-                'users'=>$users,
-                'countRecipient'=>$countRecipient,
-                'recipient'=>$recipient,
-                  'animals'=>$animals,
-                  'animalsAdoptions'=>$animalsAdoptions,
-                  'adminChecked'=>$adminChecked,
-                  'adoptionDone'=>  $adoptionDone,
-                          'hospitals'=>$hospitals,
-                          'adminId' => Auth::user()->id,
-                            'countAnimalEachAdmin'=>$countAnimalEachAdmin,
-                            'countRecipientEachAdmin' =>$countRecipientEachAdmin,
-                            'countDone'=>$countDone,
-
-                            'countWait'=> $countWait,
-                            'countWaitEachAdmin'=>  $countWaitEachAdmin,
-                            'countDoneEachAdmin'=>$countDoneEachAdmin,
-                          'countAdoptionEachAdmin'=>  $countAdoptionEachAdmin,
-                              'hospitals'=>$hospitals,
-                              'admins' =>$admins
-
-
+              'users'=>$users,
+              'countRecipient'=>$countRecipient,
+              'recipient'=>$recipient,
+              'animals'=>$animals,
+              'animalsAdoptions'=>$animalsAdoptions,
+              'adminChecked'=>$adminChecked,
+              'adoptionDone'=>  $adoptionDone,
+              'hospitals'=>$hospitals,
+              'adminId' => Auth::user()->id,
+              'countAnimalEachAdmin'=>$countAnimalEachAdmin,
+              'countRecipientEachAdmin' =>$countRecipientEachAdmin,
+              'countDone'=>$countDone,
+              'countWait'=> $countWait,
+              'countWaitEachAdmin'=>  $countWaitEachAdmin,
+              'countDoneEachAdmin'=>$countDoneEachAdmin,
+              'countAdoptionEachAdmin'=>  $countAdoptionEachAdmin,
+              'hospitals'=>$hospitals,
+              'admins' =>$admins
           );
-
          return view('checkAdoption',$data);
       }
 }
@@ -638,70 +597,63 @@ class AnimalController extends Controller
       if(Request::isMethod('post')){
         $status = Input::get('status');
         $adoption_id = Input::get('adoption_id');
-            $animal_id = Input::get('animal_id');
-            $date_time= Input::get('date_time');
-          $user_id = Auth::user()->id;
-          $admin = Auth::user()->id;
-            $animal_id = Input::get('animal_id');
-            $address = Input::get('address');
-            $this->AnimalRepository->countAnimalEachAdmin($admin);
+        $animal_id = Input::get('animal_id');
+        $date_time= Input::get('date_time');
+        $user_id = Auth::user()->id;
+        $admin = Auth::user()->id;
+        $animal_id = Input::get('animal_id');
+        $address = Input::get('address');
+        $this->AnimalRepository->countAnimalEachAdmin($admin);
         $result = $this->AnimalRepository->updateAdoption($adoption_id,$user_id,$address,$status,$date_time,$animal_id);
+
         if($result){
             return redirect('/checkAdoption2');
         }else{
             echo "Can not Update";
         }
 
-
     }else{
           $admin = Auth::user()->id;
-        $countAnimalEachAdmin=$this->AnimalRepository->countAnimalEachAdmin($admin);
-      $adoptions = $this->AnimalRepository->getAllAdoptionTable();
-        $users = $this->UserRepository->getAllUser();
-        $countRecipient = $this->AnimalRepository->countRecipient();
-        $recipient = $this->AnimalRepository->getAllRecipient();
+          $countAnimalEachAdmin=$this->AnimalRepository->countAnimalEachAdmin($admin);
+          $adoptions = $this->AnimalRepository->getAllAdoptionTable();
+          $users = $this->UserRepository->getAllUser();
+          $countRecipient = $this->AnimalRepository->countRecipient();
+          $recipient = $this->AnimalRepository->getAllRecipient();
           $animals = $this->AnimalRepository->getAllAnimal();
-            $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
-            $adminChecked = $this->AnimalRepository->getAllAdminChecked();
+          $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
+          $adminChecked = $this->AnimalRepository->getAllAdminChecked();
           $adoptionDone = $this->AnimalRepository  ->getAllAdoptionDone();
-            $hospitals =$this->AnimalRepository->getAllHospital();
-             $countRecipientEachAdmin =$this->AnimalRepository->countRecipientEachAdmin($admin);
-            $countDone=$this->AnimalRepository-> countDone();
-
-              $countWait =$this->AnimalRepository->countWait();
-            $countWaitEachAdmin =$this->AnimalRepository->countWaitEachAdmin($admin);
-            $countDoneEachAdmin =$this->AnimalRepository-> countDoneEachAdmin($admin);
+          $hospitals =$this->AnimalRepository->getAllHospital();
+          $countRecipientEachAdmin =$this->AnimalRepository->countRecipientEachAdmin($admin);
+          $countDone=$this->AnimalRepository-> countDone();
+          $countWait =$this->AnimalRepository->countWait();
+          $countWaitEachAdmin =$this->AnimalRepository->countWaitEachAdmin($admin);
+          $countDoneEachAdmin =$this->AnimalRepository-> countDoneEachAdmin($admin);
           $countAdoptionEachAdmin =$this->AnimalRepository->  countAdoptionEachAdmin($admin);
           $hospitals =$this->AnimalRepository->getAllHospital();
-            $admins = $this->AnimalRepository ->getAllAdmin();
-
-
-          $data = array(
+          $admins = $this->AnimalRepository ->getAllAdmin();
+           $data = array(
               'adoptions'=>$adoptions ,
-                'users'=>$users,
-                'countRecipient'=>$countRecipient,
-                'recipient'=>$recipient,
-                  'animals'=>$animals,
-                  'animalsAdoptions'=>$animalsAdoptions,
-                  'adminChecked'=>$adminChecked,
-                  'adoptionDone'=>  $adoptionDone,
-                          'hospitals'=>$hospitals,
-                          'adminId' => Auth::user()->id,
-                            'countAnimalEachAdmin'=>$countAnimalEachAdmin,
-                            'countRecipientEachAdmin' =>$countRecipientEachAdmin,
-                            'countDone'=>$countDone,
-
-                            'countWait'=> $countWait,
-                            'countWaitEachAdmin'=>  $countWaitEachAdmin,
-                            'countDoneEachAdmin'=>$countDoneEachAdmin,
-                          'countAdoptionEachAdmin'=>  $countAdoptionEachAdmin,
-                              'hospitals'=>$hospitals,
-                              'admins' =>$admins
-
-
-          );
-
-         return view('checkAdoption2',$data);
+              'users'=>$users,
+              'countRecipient'=>$countRecipient,
+              'recipient'=>$recipient,
+              'animals'=>$animals,
+              'animalsAdoptions'=>$animalsAdoptions,
+              'adminChecked'=>$adminChecked,
+              'adoptionDone'=>  $adoptionDone,
+              'hospitals'=>$hospitals,
+              'adminId' => Auth::user()->id,
+              'countAnimalEachAdmin'=>$countAnimalEachAdmin,
+              'countRecipientEachAdmin' =>$countRecipientEachAdmin,
+              'countDone'=>$countDone,
+              'countWait'=> $countWait,
+              'countWaitEachAdmin'=>  $countWaitEachAdmin,
+              'countDoneEachAdmin'=>$countDoneEachAdmin,
+              'countAdoptionEachAdmin'=>  $countAdoptionEachAdmin,
+              'hospitals'=>$hospitals,
+              'admins' =>$admins
+           );
+       return view('checkAdoption2',$data);
       }
 }
 
@@ -720,9 +672,8 @@ function closeAnimal($animal_id=0){
           }
       }elseif(Request::isMethod('get')){
         $animals = $this->AnimalRepository->getAllAnimal();
-          $data = array(
-              'animals'=>$animal,
-
+         $data = array(
+              'animals'=>$animal
           );
           return view('animal', $data);
 
@@ -745,33 +696,31 @@ function closeAnimal($animal_id=0){
 
 
           function everAdoption(){
-             $userId = Auth::user()->id;
+              $userId = Auth::user()->id;
               $everAdoption = $this->AnimalRepository->countEverAdoption($userId);
-              $data = array(
+               $data = array(
                   'everAdoption'=>$everAdoption,
 
-              );
+               );
               return view('userProfile2', $data);
 
 
           }
 
 
-
-
                     function newsAdmin(){
                       $this->middleware('auth');
-            if(Auth::user()==null){
-              return redirect('login');
-            }
+                      if(Auth::user()==null){
+                    return redirect('login');
+                    }
                         $animals = $this->AnimalRepository->getAllAnimal();
                         $animalsMoneys = $this->AnimalRepository->getAllMoney();
                         $animalsBloods= $this->AnimalRepository->getAllBlood();
                         $animalsAdoptions= $this->AnimalRepository->getAllAdoption();
                         $newsAnis = $this->NewsAniRepository->getAllNewsAni();
                         $admin = Auth::user()->id;
-                      $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
-                        $data = array(
+                        $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
+                         $data = array(
                             'animals'=>$animals ,
                             'animalsMoneys'=>$animalsMoneys,
                             'animalsBloods'=>$animalsBloods,
@@ -780,8 +729,7 @@ function closeAnimal($animal_id=0){
                             'all_users'=>$this->UserRepository->getAllUser(),
                             'countRecipientEachAdmin'=>$countRecipientEachAdmin,
                             'admin'=>true
-                        );
-
+                         );
                        return view('newsAdmin',$data);
                     }
 
@@ -793,20 +741,13 @@ function closeAnimal($animal_id=0){
                                  'news'=>$newsAnis,
                              );
                              }else{
-
                             $position =  Auth::user()->position;
-                            $data = array(
+                             $data = array(
                                  'news'=>$newsAnis,
-                               'position'=>$position
-                               );
+                                 'position'=>$position
+                             );
 
                         }
-                           return view('newsAll',$data);
+                         return view('newsAll',$data);
                     }
-
-
-
-
-
-
 }

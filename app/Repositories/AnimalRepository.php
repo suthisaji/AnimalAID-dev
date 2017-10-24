@@ -36,25 +36,22 @@ use DB;
     }
     function getAllAnimal(){
       return Animal::orderBy('created_at')->get();
-  }
-
-
+    }
 
     function animal(){
        $animals = $this->AnimalRepository->getAllAnimal();
        $data = array(
            'animals'=>$animals
        );
-       return view('animal',$data);
+     return view('animal',$data);
    }
 
    function findById($id){
-      return Animal::where('animal_id',$id)->first();
+    return Animal::where('animal_id',$id)->first();
   }
+
    function updateAnimal($animal_id,$admin_id,$animal_name,$animal_type,$animal_picture,$animal_color,$animal_gender,$animal_age,$symptomCase,$statusDonation,$doType_id){
-
        $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
-
            'admin_id'=>$admin_id,
            'animal_name'=>$animal_name,
            'animal_picture'=>$animal_picture,
@@ -74,9 +71,7 @@ use DB;
        }
    }
    function updateAnimal1($animal_id,$admin_id,$animal_name,$animal_type,$animal_color,$animal_gender,$animal_age,$symptomCase,$statusDonation,$doType_id){
-
        $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
-
            'admin_id'=>$admin_id,
            'animal_name'=>$animal_name,
            'animal_type'=>$animal_type,
@@ -86,7 +81,6 @@ use DB;
            'symptomCase'=>$symptomCase,
            'statusDonation'=>$statusDonation,
            'doType_id'=>$doType_id
-
        );
        $result = Animal::where('animal_id',$animal_id)->update($data);
        if($result > 0){
@@ -95,10 +89,10 @@ use DB;
            return false;
        }
    }
-   function updateAnimalClose($animal_id,$statusDonation){
 
+   function updateAnimalClose($animal_id,$statusDonation){
        $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
-   'statusDonation'=>$statusDonation
+          'statusDonation'=>$statusDonation
         );
        $result = Animal::where('animal_id',$animal_id)->update($data);
        if($result > 0){
@@ -107,14 +101,15 @@ use DB;
            return false;
        }
    }
+
    function updateAdoption($adoption_id,$user_id,$address,$status,$date_time,$animal_id){
       $data = array(
-                'adoption_id'=>$adoption_id  ,
-                  'address'=>$address,
-                  'status'=>$status,
-                  'date_time'=>$date_time,
-                  'user_id'=>$user_id,
-                  'animal_id'  =>  $animal_id
+          'adoption_id'=>$adoption_id  ,
+          'address'=>$address,
+          'status'=>$status,
+          'date_time'=>$date_time,
+          'user_id'=>$user_id,
+          'animal_id'  =>  $animal_id
       );
       $result = Adoption::where('adoption_id',$adoption_id)->update($data);
       if($result > 0){
@@ -126,15 +121,16 @@ use DB;
 
    function deleteAnimal($id){
      $animal = Animal::where('animal_id',$id)->first();
-    File::delete('images/'.$animal->animal_picture);
+     File::delete('images/'.$animal->animal_picture);
      $result = Animal::where('animal_id',$id)->delete();
-      $result2 = Adoption::where('animal_id',$id)->delete();
+     $result2 = Adoption::where('animal_id',$id)->delete();
        if($result>=0 && $result2>=0){
          return true;
        }else{
          return false;
        }
    }
+
   function getAllMoney(){
      $result = Animal::where('doType_id','1')->get();
      return $result;
@@ -144,39 +140,39 @@ use DB;
      $result = Animal::where('doType_id','2')->get();
      return $result;
   }
+
   function getAllAdoption(){
     $result = Animal::where('doType_id','3')->get();
     return $result;
   }
 
   function getAllAdoptionTable(){
-
-      return Adoption::orderBy('created_at')->get();
+    return Adoption::orderBy('created_at')->get();
   }
- function getAllRecipient(){
-   return Adoption::where('status','Recipient')->get();
- }
- function getAllAdminChecked(){
-      return Adoption::where('status','Wait')->get();
- }
-function getAllAdoptionDone(){
-  return Adoption::where('status','Done')->get();
-}
 
-function getAllAdmin(){
+  function getAllRecipient(){
+    return Adoption::where('status','Recipient')->get();
+  }
+
+  function getAllAdminChecked(){
+    return Adoption::where('status','Wait')->get();
+   }
+
+  function getAllAdoptionDone(){
+   return Adoption::where('status','Done')->get();
+  }
+
+  function getAllAdmin(){
    return Admin::orderBy('created_at')->get();
-}
+  }
 
-function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_id
+  function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_id
       $data = array(
-
           'address'=>$address,
           'status'=>$status,
           'date_time'=>$date_time,
           'user_id'=>$user_id,
           'animal_id'  =>  $animal_id
-
-
       );
       try{
           $result = Adoption::create($data);
@@ -184,8 +180,7 @@ function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_
       }catch(Exception $e){
           return false;
       }
-
-      }
+  }
 
       /*function count(){
         return Animal::where('doType_id','3')->count();
@@ -193,12 +188,15 @@ function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_
       function countRecipient(){ //มีผู้ประสงทั้งหมด
        return Adoption::where('status','Recipient')->count();
       }
+
       function countDone(){ //มีรับแล้วทั้้งหมด
        return Adoption::where('status','Done')->count();
       }
+
       function countWait(){ //มีรับแล้วทั้้งหมด
        return Adoption::where('status','Wait')->count();
       }
+
       function countAnimalEachAdmin($admin){
        return Animal::where('admin_id',$admin)->count();
       }
@@ -216,8 +214,8 @@ function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_
       ->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
       ->where('animals.admin_id','=',$admin)
       ->where('adoptions.status', '=','Recipient')
-    ->count();
-    }
+      ->count();
+     }
 
   /*  function countDoneEachAdmin($admin){
       return    DB::table('adoptions')
@@ -230,7 +228,7 @@ function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_
       ->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
       ->where('animals.admin_id','=',$admin)
       ->where('adoptions.status', '=','Wait')
-    ->count();
+      ->count();
     }
 
  function countDoneEachAdmin($admin){
@@ -238,14 +236,14 @@ function addAdoption($animal_id,$user_id,$address,$status,$date_time){//$animal_
      ->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
      ->where('animals.admin_id','=',$admin)
      ->where('adoptions.status', '=','Done')
-   ->count();
+     ->count();
  }
 
  function countAdoptionEachAdmin($admin){
    return    DB::table('animals')
      ->where('doType_id','=',3)
      ->where('admin_id','=',$admin)
-   ->count();
+     ->count();
  }
 
 function countEverAdoption($userId){
@@ -255,16 +253,13 @@ function countEverAdoption($userId){
   ->count();
 }
 
-
-
-
 //function showAdoptionNoRecip(){
 //  return $adopNoRecip = $this->AnimalRepository->getAllAdoption()->join_Adoption()::where('status','')
 //}
   function getAnimalNotInAdoption(){
     return Adoption::all();
-
   }
+
   function deleteAdoptionTable($id){
   $result = Adoption::where('animal_id',$id)->delete();
         if($result>0){
@@ -272,34 +267,34 @@ function countEverAdoption($userId){
         }else{
           return false;
         }
-
   }
+
   function getAllHospital(){
-      return Hospital::orderBy('created_at')->get();
+    return Hospital::orderBy('created_at')->get();
   }
 
-   function countAdminAction($userId){ //เพิ่มสั้ตว์ไปทั้งหมด ตัว
-       return Animal::where('admin_id',$userId)->count();
-      }
+  function countAdminAction($userId){ //เพิ่มสั้ตว์ไปทั้งหมด ตัว
+    return Animal::where('admin_id',$userId)->count();
+  }
 
-      function countAdminCreateNews($userId){ //สร้างข่าวไปทั้งหมด
-          return NewsAni::where('admin_id',$userId) ->where('news_type', '=','2')->count();
-         }
+  function countAdminCreateNews($userId){ //สร้างข่าวไปทั้งหมด
+    return NewsAni::where('admin_id',$userId) ->where('news_type', '=','2')->count();
+  }
 
-         function countAdminCreateAct($userId){ //สร้างกิจกกรรมไปทั้งหมด
-             return NewsAni::where('admin_id',$userId) ->where('news_type', '=','3')->count();
-            }
-            function countAdminAnsQues($userId){ //ตอบคำถามไปแล้ว ครั้ง
-                return Blog::where('adminAns_Id',$userId) ->count();
-               }
-               function countUserDonate($tel){ //บริจาคไป ครั้ง
-                   return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->count();
-                  }
+  function countAdminCreateAct($userId){ //สร้างกิจกกรรมไปทั้งหมด
+    return NewsAni::where('admin_id',$userId) ->where('news_type', '=','3')->count();
+  }
 
-                  function sumAmountUserDonate($tel){ //มบริจาคไปทั้งหมด บาท
-                      return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->sum('amount');
-                     }
+  function countAdminAnsQues($userId){ //ตอบคำถามไปแล้ว ครั้ง
+    return Blog::where('adminAns_Id',$userId) ->count();
+  }
 
+  function countUserDonate($tel){ //บริจาคไป ครั้ง
+    return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->count();
+  }
 
+  function sumAmountUserDonate($tel){ //มบริจาคไปทั้งหมด บาท
+    return Donation::where('tel','=',preg_replace('/^0/', '66', $tel)) ->sum('amount');
+  }
 
   }

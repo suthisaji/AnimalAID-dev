@@ -44,17 +44,14 @@
       li{
         font-size: 15px;
       }
-
       body{
         font-size: 16px;
       }
-
       .fl{
         font-size: 16px;
       }
     </style>
 </head>
-
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -92,7 +89,7 @@
             </ul>
         </ul>
     </div>
-    </div>
+   </div>
   </nav>
 
         <div class="container">

@@ -1,22 +1,22 @@
 @extends('layouts.app')
-    <style>
-    .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
-        margin-left: -34px;
-    }
-    body{
-      background-image:url(images/S__8175620.jpg);
-  }
-    .tran {
-    color: #000000;
-    background-color: #ffffff;
-   opacity: 0.8;
-   filter: alpha(opacity=60); /* For IE8 and earlier */
-    }
-   .fo{
-  font-size: 16.5px;
-   }
-    </style>
-<title>เข้าสู่ระบบ</title>
+<style>
+        .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
+         margin-left: -34px;
+         }
+        body{
+         background-image:url(images/S__8175620.jpg);
+        }
+        .tran{
+         color: #000000;
+         background-color: #ffffff;
+         opacity: 0.8;
+         filter: alpha(opacity=60); /* For IE8 and earlier */
+        }
+        .fo{
+         font-size: 16.5px;
+        }
+</style>
+ <title>เข้าสู่ระบบ</title>
 
 @section('content')
 <div class="container">
@@ -24,7 +24,7 @@
         <div class="col-md-8 col-md-offset-2 ">
             <div class="panel panel-default tran">
                 <div class="panel-heading">Login</div>
-                <div class="panel-body">
+                  <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

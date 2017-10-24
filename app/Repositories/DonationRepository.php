@@ -7,7 +7,7 @@ use App\Donation;
     function getAllDonation(){
       return Donation::orderBy('created_at','DESC')->get();
   }
-
+ 
 
 
      function addDonation($name,$sname,$tel,$amount){
@@ -30,7 +30,7 @@ use App\Donation;
             return Donation::count();
            }
 
-        
+
       function sumAmount(){
       return Donation::sum('amount');
 

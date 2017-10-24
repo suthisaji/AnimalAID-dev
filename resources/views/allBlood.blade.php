@@ -59,7 +59,7 @@
 
         body{
           font-size: 16px;
-        
+
         }
         .video-wrapper {
 	         position: relative;
@@ -511,8 +511,8 @@
    	// เปลี่ยน .entry-content เป็น class ที่คุณต้องการใช้
    	var embed = ('.entry-content').find('embed, iframe');
    	if (embed.length > 0) {
-   		embed.each(function() {
-   			$(this).wrap('<div class="video-wrapper"></div>');
+   		  embed.each(function() {
+   		  	$(this).wrap('<div class="video-wrapper"></div>');
    		})
    	}
    });

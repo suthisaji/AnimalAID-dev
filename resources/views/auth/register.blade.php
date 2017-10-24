@@ -1,14 +1,14 @@
 @extends('layouts.app')
 <style>
-body{
-  background-image:url(images/go.PNG);
-}
-.tran {
-color: #000000;
-background-color: #ffffff;
-opacity: 0.92;
-filter: alpha(opacity=60); /* For IE8 and earlier */
-}
+   body{
+    background-image:url(images/go.PNG);
+   }
+   .tran {
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.92;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+   }
 </style>
   <title>สมัครสมาชิก</title>
 @section('content')

@@ -47,32 +47,25 @@
       li{
         font-size: 15px;
       }
-
       body{
         font-size: 16px;
       }
-
       .fl{
         font-size: 16px;
       }
-
       .table-inverse{
         background-color: #E6E6E6;
         color: #585858;
       }
-
       .con{
         width: 1600px;
         }
-
       .t{
         font-size: 19px;
       }
-
       .t2{
         font-size: 15px;
       }
-
       .a{
         color:  #6E6E6E  ;
       }

@@ -151,19 +151,15 @@
                            @foreach($da as $d )
                              <tr>
                                <td>  {{$value = str_limit($d->topic, 80)}}</td>
-
                                <td>
-
-                                 <a href="{{url('adminReadSummer',array($d->id))}}">ดู&ตอบคำถาม</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
+                                <a href="{{url('adminReadSummer',array($d->id))}}">ดู&ตอบคำถาม</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
                                 <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a> |
-                                 <a href="{{url('editSummer',array($d->id))}}">แก้ไขคำถาม</a>
-
+                                <a href="{{url('editSummer',array($d->id))}}">แก้ไขคำถาม</a>
                                </td>
                                <td>
                                  @if($d->status=='Answered')
-                                  <img src="/images/pointg.png" style="height:19%">    ตอบแล้ว
+                                  <img src="/images/pointg.png" style="height:19%">ตอบแล้ว
                                  @else
-
                                @endif
                                </td>
                              </tr>
@@ -177,6 +173,5 @@
       </div>
     </div>
   </div>
-
-  </body>
+</body>
 </html>

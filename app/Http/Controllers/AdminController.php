@@ -16,20 +16,20 @@ class AdminController extends Controller
         protected $AnimalRepository;
     public function __construct(UserRepositoryInterface $UserRepository,AnimalRepositoryInterface $AnimalRepository)
     {
-    	$this->middleware('auth');
+    	  $this->middleware('auth');
         $this->AnimalRepository = $AnimalRepository;
         $this->UserRepository = $UserRepository;
     }
 
     function index(){
-      $admin = Auth::user()->id;
-    $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
-    	$data = array(
-    		'all_users'=>$this->UserRepository->getAllUser(),
-        'countRecipientEachAdmin'=>$countRecipientEachAdmin,
-        'admin'=>true ,
-        'da'=>  DB::table('blogs')->orderBy('created_at','DESC')->get()
-    		);
+        $admin = Auth::user()->id;
+        $countRecipientEachAdmin = $this->AnimalRepository->countRecipientEachAdmin($admin);
+    	  $data = array(
+    		 'all_users'=>$this->UserRepository->getAllUser(),
+         'countRecipientEachAdmin'=>$countRecipientEachAdmin,
+         'admin'=>true ,
+         'da'=>  DB::table('blogs')->orderBy('created_at','DESC')->get()
+    	  );
 
     	return view('admin',$data);
     }
@@ -39,12 +39,12 @@ class AdminController extends Controller
 
 
     function delete($id){
-    	$result = $this->UserRepository->deleteUser($id);
-    	if($result){
-    		return redirect('admin');
-    	}else{
-    		echo "Can not Delete this user";
-    	}
+    	 $result = $this->UserRepository->deleteUser($id);
+    	 if($result){
+    	  	return redirect('admin');
+    	 }else{
+    	  	echo "Can not Delete this user";
+      	}
     }
 
 
@@ -61,7 +61,7 @@ class AdminController extends Controller
       $created =   Auth::user()->created_at;
         $everAdoption = $this->AnimalRepository->countEverAdoption($userId);
         $countUserDonate = $this->AnimalRepository->countUserDonate($tel);
-      $sumAmountUserDonate = $this->AnimalRepository->sumAmountUserDonate($tel);
+        $sumAmountUserDonate = $this->AnimalRepository->sumAmountUserDonate($tel);
         $data = array(
           'userId'=>$userId ,
           'name' =>$name ,
@@ -69,20 +69,17 @@ class AdminController extends Controller
           'email' =>$email,
           'tel' =>$tel,
           'created' =>$created,
-                  'everAdoption'=>$everAdoption,
-                  'countUserDonate'=>$countUserDonate,
-                  'sumAmountUserDonate'=>$sumAmountUserDonate
-
-          );
-
-        return view('userProfile2',$data);
+          'everAdoption'=>$everAdoption,
+          'countUserDonate'=>$countUserDonate,
+          'sumAmountUserDonate'=>$sumAmountUserDonate
+        );
+      return view('userProfile2',$data);
     }
 
 
 
 
         function AdminProfile(){
-
           $userId  =   Auth::user()->id;
           $countAdminAction = $this->AnimalRepository->countAdminAction($userId);
           $name    =   Auth::user()->name;

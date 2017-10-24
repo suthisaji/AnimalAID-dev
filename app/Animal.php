@@ -14,14 +14,17 @@ class Animal extends Model
       //return $this->belongsTo('App\DonationType','forenge key of animal', 'primary key of donationtype');
       return $this->belongsTo('App\DonationType','doType_id', 'do_typeId');
     }
+
     public function join_Adoption(){
       return $this->belongsTo('App\Adoption','animal_id', 'animal_id');
     }
+
     public function join_User(){
-        return $this->belongsTo('App\User','admin_id', 'id');
+      return $this->belongsTo('App\User','admin_id', 'id');
     }
+
     public function join_Admin(){
-        return $this->belongsTo('App\Admin','admin_id', 'admin_id');
+      return $this->belongsTo('App\Admin','admin_id', 'admin_id');
     }
 
 }

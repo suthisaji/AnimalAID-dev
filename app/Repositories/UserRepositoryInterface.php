@@ -5,9 +5,4 @@ interface UserRepositoryInterface{
   	function isAdmin($username);
   	function deleteUser($id);
 
-
-
-
-
-
 }
