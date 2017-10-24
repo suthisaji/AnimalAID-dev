@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 body button,
 input,
 optgroup,
@@ -13,11 +18,11 @@ ol {
   padding-bottom: 0.5rem;
 }
 
-.list-categories .list-group-item-action:not(.header).active {
+/* .list-categories .list-group-item-action:not(.header).active {
   color: #55595c;
   background-color: #f7f7f9;
   border-color: rgba(0, 0, 0, 0.125);
-}
+} */
 
 .shop-listing ol.breadcrumb {
   padding: 0;
@@ -26,7 +31,104 @@ ol {
 
 .shop-item-listing .shop-item {
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 .shop-item-listing .shop-item img {
   width: 100%;
+}
+
+.shop-item-listing .shop-item .add-to-cart {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+}
+
+.shop-item-listing .shop-item .add-to-cart button {
+  cursor: pointer;
+  width: 100%;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+.shop-item-listing .shop-item .cart-remaining {
+  /* width: 100%; */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+}
+
+.shop-item-listing .shop-item .card-block {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.border-less {
+  border: none;
+  height: 280px;
+}
+
+.list-categories {
+  text-align: center;
+}
+
+.list-categories button {
+  cursor: pointer;
+}
+
+.list-categories button.active {
+  border-color: transparent;
+  border-bottom: 2px solid #000;
+  background-color: transparent;
+}
+
+.list-categories button:hover {
+  border-color: transparent;
+  border-bottom: 2px solid #000;
+  background-color: transparent;
+}
+
+#custom-search-input {
+  padding: 3px;
+  border: solid 1px #e4e4e4;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+#custom-search-input input {
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#custom-search-input button {
+  margin: 2px 0 0 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: #666666;
+  padding: 0 8px 0 10px;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover {
+  border: 0;
+  box-shadow: none;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search {
+  font-size: 23px;
+}
+
+#search-btn:focus {
+  outline: none;
+}
+
+.input-group[class*="col-"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
 }

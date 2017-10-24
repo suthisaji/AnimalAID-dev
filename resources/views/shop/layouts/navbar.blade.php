@@ -13,12 +13,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">สินค้า</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">

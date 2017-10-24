@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{--  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  --}}
     <link href="https://fonts.googleapis.com/css?family=Kanit:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('shop/css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ url('shop/css/font-awesome.min.css') }}"/>
@@ -14,37 +14,51 @@
     @include('shop.layouts.navbar')
     <div class="container mt-3">
         <div class="row">
-            <div class="col-12">
-                <div class="input-group">
+            <div class="col-md-12 mb-3 list-categories">
+                @foreach($categories as $category)
+                    <button type="button" class="btn btn-secondary">
+                        {{ $category->category_name }}
+                    </button>
+                @endforeach
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input id="item_name" type="text" placeholder="ค้นหาสินค้า" class="form-control">
+                        <input id="user_id" type="hidden" value="10">
+                            <span class="input-group-btn">
+                                <button id="search-btn" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info">
+                                    <i class="fa fa-2x fa-search"></i>
+                                </button>
+                            </span>
+                    </div>
+                </div>
+                {{--  <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <input type="text" class="form-control" id="exampleInputAmount" placeholder="ค้นหาสินค้า">
-                </div>
+                </div>  --}}
             </div>
         </div>
 
         <div class="row mt-3">
-            {{--  <div class="col-4">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
-                    <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
-                    <li class="breadcrumb-item active">ของใช้</li>
-                </ol>
-            </div>  --}}
-            <div class="col-3">
+            {{--  <div class="col-md-3 mb-3">
                 <div class="list-group list-categories">
                     <a href="#" class="list-group-item list-group-item-action active header disabled">
                         <i class="fa fa-tags" aria-hidden="true"></i>&nbspหมวดหมู่
                     </a>
                     @foreach($categories as $category)
-                        <a href="#" class="list-group-item list-group-item-action active">
+                        <a href="#" class="list-group-item list-group-item-action">
                             {{ $category->category_name }}
                         </a>
                     @endforeach
                 </div>
-            </div>
-            <div class="col-9">
+            </div>  --}}
+            
+            <div class="col-md-12">
                 <div class="card shop-listing">
                     <div class="card-header">
                         <ol class="breadcrumb">
@@ -53,41 +67,22 @@
                         </ol>
                     </div>
                     <div class="card-block row shop-item-listing">
-                        <div class="col-3 shop-item">
-                            <div class="card card-outline-primary text-xs-center">
-                                <div class="card-block">
-                                    <img src="//cdn3.tops.co.th/productimages/tpimage/8853301200899.jpg"/>
+                        @foreach($products as $product)
+                            <div class="col shop-item">
+                                <div class="card border-less text-xs-center">
+                                    <div class="card-block">
+                                        <div class="cart-remaining">
+                                            <span class="badge badge-pill badge-success">มีสินค้า</span>
+                                        </div>
+                                        <img src="{{ $product->product_pic }}"/>
+                                        <span>{{ $product->product_name }}</span>
+                                        <div class="add-to-cart">
+                                            <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-3 shop-item">
-                            <div class="card card-outline-primary text-xs-center">
-                                <div class="card-block">
-                                    <img src="//cdn0.tops.co.th/productimages/tpimage/8853301200318.jpg"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 shop-item">
-                            <div class="card card-outline-primary text-xs-center">
-                                <div class="card-block">
-                                    <img src="//cdn0.tops.co.th/productimages/tpimage/8853301200318.jpg"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 shop-item">
-                            <div class="card card-outline-primary text-xs-center">
-                                <div class="card-block">
-                                    <img src="//cdn0.tops.co.th/productimages/tpimage/8853301200318.jpg"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 shop-item">
-                            <div class="card card-outline-primary text-xs-center">
-                                <div class="card-block">
-                                    <img src="//cdn0.tops.co.th/productimages/tpimage/8853301200318.jpg"/>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

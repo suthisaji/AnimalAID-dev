@@ -8,4 +8,8 @@ class Category extends Model
 {
     protected $primaryKey = 'category_id';
     protected $fillable = ['category_name'];
+    public function products()
+    {
+        return $this->hasMany('App\ShopModel\Product');
+    }
 }
