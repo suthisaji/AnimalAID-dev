@@ -131,7 +131,7 @@ z-index:-100;
 .after4{
 position:absolute;top:1270px;left:0px;
 width:100%;
-height:90%;
+height:500px;
 }
 
 .tw{
