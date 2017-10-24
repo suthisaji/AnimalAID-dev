@@ -12,14 +12,15 @@ use App\Mail\KryptoniteFound;
 |
 */
 Route::get('/sub', function () {
-  $str =  DB::table('blogs')->select('answer')->get();
-  $str2=  json_encode($str);
-  $_str = explode('|||', $str2);
-  foreach($_str as $text){
-  echo $text.'</br>';
-  echo '$str= '.$str2 ;  echo '$str = '.$_str ;
-  }
-  return view('test2');
+    $str =  DB::table('blogs')->select('answer')->get();
+    $str2=  json_encode($str);
+    $_str = explode('|||', $str2);
+    foreach ($_str as $text) {
+        echo $text.'</br>';
+        echo '$str= '.$str2 ;
+        echo '$str = '.$_str ;
+    }
+    return view('test2');
 });
 
 Route::get('/', function () {
@@ -27,22 +28,24 @@ Route::get('/', function () {
 });
 
 use App\Animal;
-Route::get('/delete99', function(){
+Route::get('/delete99', function () {
     $result = Animal::all();
     foreach ($result as $val) {
-      if($val->doType_id==3 || (!empty($val->join_Adoption) && $animal->join_Adoption->status=="Recipient"))
-        echo $val->animal_id.'<br>';
+        if ($val->doType_id==3 || (!empty($val->join_Adoption) && $animal->join_Adoption->status=="Recipient")) {
+            echo $val->animal_id.'<br>';
+        }
     }
 });
 
 Auth::routes();
 use App\Adoption;
-Route::get('test99', function(){
+
+Route::get('test99', function () {
     $animals = Animal::all();
-    foreach($animals as $animal){
-      if(empty($animal->join_Adoption->animal_id)){
-        echo $animal->animal_id.'<br>';
-      }
+    foreach ($animals as $animal) {
+        if (empty($animal->join_Adoption->animal_id)) {
+            echo $animal->animal_id.'<br>';
+        }
     }
 });
 
@@ -53,14 +56,15 @@ Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware('c
 
 
 Route::get('/delete/{id}', 'AdminController@delete');
-Route::get('/add','AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
-Route::post('/add','AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
+Route::get('/add', 'AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
+Route::post('/add', 'AnimalController@addAnimal')->middleware('auth')->middleware('checkadmin');
 Route::get('/animal', 'AnimalController@animal')->middleware('auth')->middleware('checkadmin');
 Route::post('/animal', 'AnimalController@animal')->middleware('auth')->middleware('checkadmin');
-Route::get('/edit/{animal_id}','AnimalController@editAnimal')->middleware('checkadmin');
-Route::post('/edit','AnimalController@editAnimal')->middleware('auth')->middleware('checkadmin');
+Route::get('/edit/{animal_id}', 'AnimalController@editAnimal')->middleware('checkadmin');
+Route::post('/edit', 'AnimalController@editAnimal')->middleware('auth')->middleware('checkadmin');
 Route::get('/edit', 'AnimalController@badEditRequest');
-Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');;
+Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');
+;
 
 //เวลามึงเข้าแบบไม่ส่ง ไอดีเข้าไปมันจะเออเร่อ เพราะมันไม่มีเร้า
 //เราต้องบอกว่าเวลาจะแก้ไข ให้ส่ง ไอดีไปด้วย ส่งมาแบบนี้ไม่ได้
@@ -83,20 +87,20 @@ Route::get('/ยัง', function () {
 Route::get('/dm', 'AnimalController@animalMoney');
 Route::get('/db', 'AnimalController@animalBlood');
 Route::get('/da', 'AnimalController@animalAdoption');
-Route::get('/testmail','EmailController@sendEmail');
+Route::get('/testmail', 'EmailController@sendEmail');
 
 
 
-Route::get('/addNews','AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
-Route::post('/addNews','AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
+Route::get('/addNews', 'AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
+Route::post('/addNews', 'AnimalController@addNews')->middleware('auth')->middleware('checkadmin');
 //Route::get('/new','AnimalController@NewsAniAll');
 
-Route::get('/animalhasnews','AnimalController@animalhasnews');
-Route::post('/animalhasnews','AnimalController@animalhasnews');
+Route::get('/animalhasnews', 'AnimalController@animalhasnews');
+Route::post('/animalhasnews', 'AnimalController@animalhasnews');
 
 
-Route::get('/n','AnimalController@newsPage');
-Route::post('/n','AnimalController@newsPage');
+Route::get('/n', 'AnimalController@newsPage');
+Route::post('/n', 'AnimalController@newsPage');
 
 
 
@@ -122,14 +126,14 @@ Route::post('/checkAdoption2', 'AnimalController@checkAdoption2')->middleware('a
 Route::get('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
 Route::post('/deleteAdoptionTable/{id}', 'AnimalController@deleteAdoptionTable');
 
-Route::get('/closeAnimal/{animal_id}','AnimalController@closeAnimal');
-Route::post('/closeAnimal/{animal_id}','AnimalController@closeAnimal');
+Route::get('/closeAnimal/{animal_id}', 'AnimalController@closeAnimal');
+Route::post('/closeAnimal/{animal_id}', 'AnimalController@closeAnimal');
 
-Route::get('/userProfile','AdminController@userProfile2');
-Route::post('/userProfile','AdminController@userProfile2');
+Route::get('/userProfile', 'AdminController@userProfile2');
+Route::post('/userProfile', 'AdminController@userProfile2');
 
-Route::get('/adminProfile','AdminController@adminProfile')->middleware('auth')->middleware('checkadmin'); //เรียกใช้ middleware checkAdmin ทุกเร้าที่ต้องการสิทแอดมินเลยนะ
-Route::post('/adminProfile','AdminController@adminProfile')->middleware('auth')->middleware('checkadmin');
+Route::get('/adminProfile', 'AdminController@adminProfile')->middleware('auth')->middleware('checkadmin'); //เรียกใช้ middleware checkAdmin ทุกเร้าที่ต้องการสิทแอดมินเลยนะ
+Route::post('/adminProfile', 'AdminController@adminProfile')->middleware('auth')->middleware('checkadmin');
 
 Route::get('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
 Route::post('/addAdoptionAllPage', 'AnimalController@addAdoptionAllPage');
@@ -153,43 +157,43 @@ Route::get('/gridtest', function () {
     return view('gridtest');
 });
 
-Route::get('/newsUser','AnimalController@newsUser');
-Route::post('/newsUser','AnimalController@newsUser');
+Route::get('/newsUser', 'AnimalController@newsUser');
+Route::post('/newsUser', 'AnimalController@newsUser');
 
-Route::get('/newsAll','AnimalController@newsAll');
-Route::post('/newsAll','AnimalController@newsAll');
-
-
+Route::get('/newsAll', 'AnimalController@newsAll');
+Route::post('/newsAll', 'AnimalController@newsAll');
 
 
-Route::get('/news2','AnimalController@news2');
-Route::post('/news2','AnimalController@news2');
+
+
+Route::get('/news2', 'AnimalController@news2');
+Route::post('/news2', 'AnimalController@news2');
 
 
 Route::post('/charge', 'DonateController@charge');
 
 Route::post('/webhook', 'DonateController@webhook');
 
-Route::get('/add_activity','AnimalController@addActivity');
-Route::post('/add_activity','AnimalController@addActivity');
+Route::get('/add_activity', 'AnimalController@addActivity');
+Route::post('/add_activity', 'AnimalController@addActivity');
 
 
 
 
-Route::get('/allQuestions','SummernoteController@viewAllSummer');
-Route::get('/write','SummernoteController@viewSummer')->middleware('auth');
-Route::get('/summer','SummernoteController@viewSummer');
-Route::post('/insert','SummernoteController@insert');
-Route::get('/viewSummernote','SummernoteController@viewSummernote');
-Route::get('/readSummer/{id}','SummernoteController@readSummerInfo');
-Route::get('/deleteSummer/{id}','SummernoteController@deleteSummer')->middleware('auth');
-Route::get('/editSummer/{id}','SummernoteController@editSummer')->middleware('auth')->middleware('checkadmin');
-Route::get('/editSummerByMember/{id}','SummernoteController@editSummerByMember');
-Route::post('/updateSummer','SummernoteController@updateSummer')->middleware('auth');
-Route::post('/updateSummer2','SummernoteController@updateSummer2');
-Route::get('/adminReadSummer/{id}','SummernoteController@adminReadSummerInfo')->middleware('auth')->middleware('checkadmin');
+Route::get('/allQuestions', 'SummernoteController@viewAllSummer');
+Route::get('/write', 'SummernoteController@viewSummer')->middleware('auth');
+Route::get('/summer', 'SummernoteController@viewSummer');
+Route::post('/insert', 'SummernoteController@insert');
+Route::get('/viewSummernote', 'SummernoteController@viewSummernote');
+Route::get('/readSummer/{id}', 'SummernoteController@readSummerInfo');
+Route::get('/deleteSummer/{id}', 'SummernoteController@deleteSummer')->middleware('auth');
+Route::get('/editSummer/{id}', 'SummernoteController@editSummer')->middleware('auth')->middleware('checkadmin');
+Route::get('/editSummerByMember/{id}', 'SummernoteController@editSummerByMember');
+Route::post('/updateSummer', 'SummernoteController@updateSummer')->middleware('auth');
+Route::post('/updateSummer2', 'SummernoteController@updateSummer2');
+Route::get('/adminReadSummer/{id}', 'SummernoteController@adminReadSummerInfo')->middleware('auth')->middleware('checkadmin');
 
-Route::post('/updateSummerAns','SummernoteController@updateSummerAns');
+Route::post('/updateSummerAns', 'SummernoteController@updateSummerAns');
 Route::get('/testP', function () {
     return view('testP');
 });
@@ -218,4 +222,7 @@ Route::get('/ADEFproduct', function () {
 });
 
 
-Route::get('/listOfDonor','DonateController@listOfDonor');
+Route::get('/listOfDonor', 'DonateController@listOfDonor');
+
+/* SHOP */
+Route::get('/webshop', 'ShopController@index'); //Shop Homepage
