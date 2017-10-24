@@ -35,29 +35,10 @@
                             </span>
                     </div>
                 </div>
-                {{--  <div class="input-group">
-                    <div class="input-group-addon">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </div>
-                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="ค้นหาสินค้า">
-                </div>  --}}
             </div>
         </div>
 
         <div class="row mt-3">
-            {{--  <div class="col-md-3 mb-3">
-                <div class="list-group list-categories">
-                    <a href="#" class="list-group-item list-group-item-action active header disabled">
-                        <i class="fa fa-tags" aria-hidden="true"></i>&nbspหมวดหมู่
-                    </a>
-                    @foreach($categories as $category)
-                        <a href="#" class="list-group-item list-group-item-action">
-                            {{ $category->category_name }}
-                        </a>
-                    @endforeach
-                </div>
-            </div>  --}}
-            
             <div class="col-md-12">
                 <div class="card shop-listing">
                     <div class="card-header">
