@@ -223,6 +223,7 @@ hr.light {
 }
 .boxp figure img{
   width:100%;
+  height: 89%;
 }
 .boxp figcaption
 {
