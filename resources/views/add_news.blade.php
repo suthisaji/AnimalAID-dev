@@ -133,7 +133,7 @@
                     <div class="form-group" id="news_type">
                       <label for="news_type" class="form-label h3">ประเภท</label><br>
 
-                        &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input  type="radio" value="1" name="news_type">&nbsp;ข่าวด่วน</label>  &nbsp;&nbsp;&nbsp;
+                      <!--  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input  type="radio" value="1" name="news_type">&nbsp;ข่าวด่วน</label>  &nbsp;&nbsp;&nbsp;-->
                         &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input type="radio" value="2" name="news_type" required >&nbsp;ข่าวปกติ</label>
                     &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<label class="t2"><input type="radio" value="3" name="news_type" >&nbsp;กิจกรรม</label>
                     </div>
