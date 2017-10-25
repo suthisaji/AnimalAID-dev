@@ -20,7 +20,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -42,7 +41,7 @@
 
     <style type="text/css">
       li{
-        font-size: 15px;
+        font-size: 20px;
       }
 
       body{
@@ -50,13 +49,64 @@
       }
 
       .fl{
-        font-size: 16px;
+        font-size: 20px;
+      }
+      /*nav*/
+      .navbar-inverse {
+
+          background-color: #fffdfd;
+          border-color: #fdf9f9;
+
+          background-image: -webkit-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+          background-image: -o-linear-gradient(top,#FFFFFF 0,#FFFFFF 100%);
+          background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFFF),to(#FFFFFF));
+          background-image: linear-gradient(to bottom,#FFFFFF 0,#FFFFFF 100%);
+      }
+      .navbar-inverse .navbar-nav >li>a:hover {
+          color: #fb841b;
+          background-color: rgba(234, 243, 150, 0);
+      }
+      .navbar-inverse .navbar-nav >li>a:hover>span {
+          color: #2ECCFA;
+          background-color: rgba(234, 243, 150, 0);
+      }
+      .navbar-inverse .navbar-nav >li>a:hover>span>span {
+          color: #01DF01;
+          background-color: rgba(234, 243, 150, 0);
+      }
+
+      .navbar-inverse .navbar-nav>li>a {
+          color: #0c0c0c;
+      }
+      .navbar {
+          min-height: 88px;
+        }
+        .navbar-brand>img {
+          position: absolute;
+          left: 5%;
+        }
+        .navmain {
+          padding-top: 18px;
+          padding-bottom: 15px;
+      }
+      .navbar-inverse .navbar-toggle .icon-bar {
+          background-color: #ec9619;
+      }
+      .navbar-inverse .navbar-toggle {
+          border-color: #d29f24;
+      }
+      .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+          border-color: #fdce9a;
+      }
+      .navbar-nav>li>a {
+          padding-top: 10px;
+          padding-bottom: 9px;
       }
     </style>
 </head>
   <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
        <div class="container">
 
@@ -68,7 +118,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand"  style="font-size:20px;" href="all">Animals A-I-D </a>
+               <!-- <a class="navbar-brand"  style="font-size:20px;" href="all">Animals A-I-D </a> -->
            </div>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -95,7 +145,7 @@
                <ul class="nav navbar-nav navbar-right">
                  @if(!empty($position))
                    @if( $position== 'admin')
-                     <li class="fl tw16">
+                     <li class="navmain">
                        <a href="admin">การจัดการ</a>
                     </li>
 
@@ -107,10 +157,10 @@
                    <!-- Authentication Links -->
                    @if (Auth::guest())
 
-                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
-                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
+                       <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
-                     <li class="dropdown fl">
+                     <li class="navmain">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              {{ Auth::user()->name }} <span class="caret"></span>
                          </a>
