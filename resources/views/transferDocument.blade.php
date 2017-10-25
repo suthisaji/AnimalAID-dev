@@ -69,7 +69,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="../add">เพิ่มการขอรับบริจาค</a></li>
             <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
@@ -77,6 +76,8 @@
             ->where('adoptions.status', '=','Recipient')
           ->count()}} </span></a></li>
             <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
+            <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
+            <li class="active"><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -99,22 +100,21 @@
   {{$t->dateTimeOfTransfer}}
 @endforeach
 <div class="panel-heading">
-   <h4><b>แอดมิน ตรวจสอบหลักฐานการโอนเงิน</b></h4>
+   <center><h3><b>แอดมินตรวจสอบหลักฐานการโอนเงิน</b></h3></center>
 </div>
       <div class="panel-body">
           <table class="table table-striped">
                <thead>
                  <tr>
-                    <th>order No.</th>
-                    <th>ชื่อ</th>
-                   <th>วันเวลาที่โอน</th>
-                   <th>ชื่อธนาคาร</th>
-                   <th>สาขา</th>
-                    <th>จำนวนเงินที่โอน</th>
-                   <th>ภาพสลิป</th>
-                     <th> อัพหลักฐานเมื่อ</th>
-                   <th>ตรวจสอบ</th>
-                   <th> สถานะ</th>
+                   <th><center>Order No.</center></th>
+                   <th><center>วันเวลาที่โอน</center></th>
+                   <th><center>ชื่อธนาคาร</center></th>
+                   <th><center>สาขา</center></th>
+                   <th><center>จำนวนเงินที่โอน</center></th>
+                   <th><center>ภาพสลิป</center></th>
+                   <th><center>อัพหลักฐานเมื่อ</center></th>
+                   <th><center>ตรวจสอบ</center></th>
+                   <th><center>สถานะ</center></th>
 
                  </tr>
                </thead>
