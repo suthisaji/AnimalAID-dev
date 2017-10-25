@@ -52,19 +52,19 @@
                 <li>0</li>
             </ul> <!-- .count -->
         </a>
-    
+
         <div class="cd-cart">
             <div class="wrapper">
                 <header>
                     <h2>Cart</h2>
                 </header>
-                
+
                 <div class="body">
                     <ul>
                         <!-- products added to the cart will be inserted here using JavaScript -->
                     </ul>
                 </div>
-    
+
                 <footer>
                     <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿</em></a>
                 </footer>

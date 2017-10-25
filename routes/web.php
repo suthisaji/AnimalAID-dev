@@ -242,3 +242,8 @@ Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware
 /* SHOP */
 Route::get('/webshop', 'ShopController@index'); //Shop Homepage
 /* SHOP */
+
+/* listProduct */
+Route::get('/transferDocument', 'ProductController@transferDocument');
+Route::post('/transferDocument', 'ProductController@transferDocument');
+/* listProduct */

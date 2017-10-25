@@ -8,14 +8,18 @@ use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
+use App\Repositories\TransferMoneyRepositoryInterface;
 use DB;
 use DateTime;
 
 class ProductController extends Controller
 {  protected $CategoryRepository;
-  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository){
+   protected $TransferMoneyRepository;
+
+  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository){
       $this->CategoryRepository = $CategoryRepository;
       $this->ProductRepository = $ProductRepository;
+      $this->TransferMoneyRepository = $TransferMoneyRepository;
     }
 
   function addProduct(){
@@ -162,5 +166,19 @@ class ProductController extends Controller
        );
      return view('listProduct',$data);
   }
+
+function transferDocument(){
+  $this->middleware('auth');
+  if(Auth::user()==null){
+return redirect('login');
+}
+$transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+$data = array(
+   'transferMoney'=>$transferMoney,
+);
+return view('transferDocument',$data);
+}
+
+
 
 }
