@@ -226,3 +226,4 @@ Route::get('/listOfDonor', 'DonateController@listOfDonor');
 
 /* SHOP */
 Route::get('/webshop', 'ShopController@index'); //Shop Homepage
+/* SHOP */
