@@ -9,17 +9,20 @@ use Auth;
 use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
 use App\Repositories\TransferMoneyRepositoryInterface;
+use App\Repositories\ShippingRepositoryInterface;
 use DB;
 use DateTime;
 
 class ProductController extends Controller
 {  protected $CategoryRepository;
    protected $TransferMoneyRepository;
+    protected $ShippingRepository;
 
-  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository){
+  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository){
       $this->CategoryRepository = $CategoryRepository;
       $this->ProductRepository = $ProductRepository;
       $this->TransferMoneyRepository = $TransferMoneyRepository;
+      $this->ShippingRepository = $ShippingRepository;
     }
 
   function addProduct(){
@@ -180,5 +183,59 @@ return view('transferDocument',$data);
 }
 
 
+function changeStatusToConfirmTransferMoney($order_number=0){
 
+      if(Request::isMethod('post')){
+        $order_number = Input::get('order_number');
+        $checking_status= Input::get('checking_status');
+        $result = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
+
+          if($result){
+              return redirect('/transferDocument');
+          }else{
+              echo "Can not Update";
+          }
+      }elseif(Request::isMethod('get')){
+        $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+         $data = array(
+              'transferMoney'=>$transferMoney
+          );
+          return view('transferDocument', $data);
+
+      }
+
+  }
+function confirmTransferMoney(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
+
+  if(Request::isMethod('post')){
+
+    $order_number = Input::get('order_number');
+    $checking_status= Input::get('checking_status');
+    $result = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
+    if($result){
+      $ordering_id = Input::get('ordering_id');
+      $buyer_id= Input::get('buyer_id');
+      $address = Input::get('address');
+      $tel = Input::get('tel');
+      $email = Input::get('email');
+      $checking_status= Input::get('checking_status');
+
+      $result = $this->ShippingRepository->addShipping($ordering_id,$buyer_id,$address,$tel,$email);//$animal_id
+
+      if($result){
+          return redirect('/transferDocument');
+      }else{
+          echo "Failed to add adopt";
+      }
+    }else{
+        echo "Can not Update";
+    }
+
+
+          }else{
+
+            return redirect('/transferDocument');
+          }
+
+}
 }

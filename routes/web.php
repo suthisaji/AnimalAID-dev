@@ -246,4 +246,11 @@ Route::get('/webshop', 'ShopController@index'); //Shop Homepage
 /* listProduct */
 Route::get('/transferDocument', 'ProductController@transferDocument');
 Route::post('/transferDocument', 'ProductController@transferDocument');
-/* listProduct */ 
+/* listProduct */
+
+
+
+/*status confirm transferDocument*/
+Route::get('/confirm/{order_number}','ProductController@confirmTransferMoney');
+Route::post('/confirm/{order_number}','ProductController@confirmTransferMoney');
+/*status confirm transferDocument*/

@@ -106,6 +106,7 @@
                <thead>
                  <tr>
                     <th>order No.</th>
+                    <th>ชื่อ</th>
                    <th>วันเวลาที่โอน</th>
                    <th>ชื่อธนาคาร</th>
                    <th>สาขา</th>
@@ -122,14 +123,27 @@
                  @foreach ($transferMoney as $t)
                    <tr>
                      <td>{{$t->order_number}}</td>
-                     <td>    {{$t->dateTimeOfTransfer}}</td>
+                     <td>{{$t->join_Ordering->join_User->name}}</td>
+                     <td>{{$t->dateTimeOfTransfer}}</td>
                      <td>{{$t->Bank_name}}</td>
                      <td>{{$t->Bank_Branch}}</td>
                       <td>{{$t->amountOfTransfer}}</td>
                      <td><img src="{{url('/images/'.$t->picture_slip)}}" alt="" width="130" height="130"></td>
                      <td>{{$t->created_at}}</td>
                  <td>
-                  <a href="#" class="btn btn-sm btn-primary">ถูกต้องจัดส่งได้</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}<br>
+                   <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                     <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
+                     <input type="hidden" class="form-control" name="ordering_id" value="{{ $t->join_Ordering->ordering_id}}" readonly/>
+                     <input type="hidden"class="form-control" name="buyer_id" value="{{$t->join_Ordering->customer_id}}" />
+                     <input type="hidden"class="form-control" name="address"  value="{{$t->join_Ordering->join_User->address}}" />
+                     <input type="hidden"class="form-control" name="tel"  value="{{$t->join_Ordering->join_User->tel}}"  />
+                     <input type="hidden"class="form-control" name="email"  value="{{$t->join_Ordering->join_User->email}}" />
+
+
+                                 <input type="hidden" class="form-control" name="checking_status" value="confirm"/>
+                                 <button class=" btn btn-sm btn-primary">ถูกต้องจัดส่งได้</button>
+                   </form>
+          {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}<br>
 &nbsp;<a href="#" class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</a>
                     </td>
                     <td>

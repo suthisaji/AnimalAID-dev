@@ -80,6 +80,16 @@ class ProductRepository implements ProductRepositoryInterface{
    return Product::where('product_id',$product_id)->first();
  }
 
-
+ function updateTransferMoneyConfirm($order_number,$checking_status){
+     $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+        'checking_status'=>$checking_status
+      );
+     $result = transferMoney::where('order_number',$order_number)->update($data);
+     if($result > 0){
+         return true;
+     }else{
+         return false;
+     }
+ }
 
 }
