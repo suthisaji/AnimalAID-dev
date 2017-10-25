@@ -246,4 +246,4 @@ Route::get('/webshop', 'ShopController@index'); //Shop Homepage
 /* listProduct */
 Route::get('/transferDocument', 'ProductController@transferDocument');
 Route::post('/transferDocument', 'ProductController@transferDocument');
-/* listProduct */
+/* listProduct */ 
