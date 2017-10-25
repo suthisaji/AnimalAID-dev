@@ -46,6 +46,7 @@
     <!--start datatable-->
      <script src="  https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" ></script>
      <script src="  https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+
      <script>
    $(document).ready(function() {
        $('#example').dataTable( {
@@ -68,7 +69,7 @@
         }
 
         body{
-          font-size: 16px;
+          font-size: 17px;
         }
         /*nav*/
         .navbar-inverse {
@@ -151,7 +152,9 @@
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav ">
-
+                 <li class="navmain">
+                     <a href="all">หน้าหลัก</a>
+                 </li>
                    <li class="navmain ">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
@@ -172,7 +175,7 @@
                <ul class="nav navbar-nav navbar-right">
                  @if(!empty($position))
                    @if( $position== 'admin')
-                     <li class="fl tw16">
+                     <li class="navmain">
                        <a href="admin">การจัดการ</a>
                     </li>
 
@@ -184,10 +187,10 @@
                    <!-- Authentication Links -->
                    @if (Auth::guest())
 
-                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
-                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
+                       <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
-                     <li class="dropdown fl">
+                     <li class="navmain">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              {{ Auth::user()->name }} <span class="caret"></span>
                          </a>
@@ -237,31 +240,25 @@
        <div class="container">
      <div class="panel-heading">
 
-
-
-
-
-<br>
-       <br><br><h2>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง<h2>  <h1>จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</h1>
-
         <div class="panel-heading">
-     <p class="lead">รายชื่อผู้บริจาค</p>
+     <p class="lead"><center><h1><b>รายชื่อผู้บริจาค</b></h1></center></p>
+     <h3><li>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง</li></h3>
+     <h3><li>จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
         </div>
               <div class="panel-body">
                   <table class="table table-striped display" id="example">
                        <thead>
                          <tr>
-                           <th>วันเวลาที่บริจาค</th>
-                           <th>&nbsp;&nbsp;&nbsp;&nbsp;ชื่อผู้บริจาค</th>
-                           <th></th>
-                           <th>จำนวนเงิน</th>
+                           <th><center>วันที่บริจาค</center></th>
+                           <th colspan="2"><center>ชื่อผู้บริจาค</center></th>
+                           <th><center>จำนวนเงิน</center></th>
                          </tr>
                        </thead>
                        <tbody>
 
                       @foreach($donor as $donor)
                            <tr>
-                              <td> {{ str_limit($donor->created_at, $limit = 10, $end = '') }} </td>
+                              <td><center> {{ str_limit($donor->created_at, $limit = 10, $end = '') }} </center></td>
                              <td>
                                   {{$donor->name}}
                             </td>
@@ -269,12 +266,10 @@
                             {{$donor->sname}}
                             </td>
                             <td> <span class="pull-center text-muted small">
-                                 <em>{{$donor->amount}} บาท</em>
+                                 <em><center>{{$donor->amount}} บาท</center></em>
                              </span></td>
                            </tr>
-
-
-                         @endforeach
+                           @endforeach
 
                        </tbody>
 

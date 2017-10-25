@@ -4,11 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ config('app.name', 'Animal-AID-Admin') }}</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Animal-AID-Admin') }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -19,6 +27,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+
     <style>
     .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
         margin-left: -34px;

@@ -266,6 +266,9 @@
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
+                 <li class="navmain">
+                     <a href="all">หน้าหลัก</a>
+                 </li>
                    <li class="navmain">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
@@ -358,7 +361,7 @@
 
                        <div class="col-sm-2"></div>
                        <div class="col-sm-8">
-                         <div class="list-group-item tran">
+                         <div class="list-group-item tran" style="background-color:#FFF9CE;">
                        <h4>สัตว์โลกทุกชีวิตย่อมมีเกิด แก่ เจ็บ ตาย ในเมื่อคนเรายังป่วย ยังต้องการเลือด เพื่อทำการรักษา สัตว์เลี้ยงก็ย่อมต้องการเช่นกัน</h4>
                        <h3>ธนาคารเลือดสัตว์เลี้ยง
                            <small>เป็นสถานที่จัดเก็บ และสำรองเลือดในรูปแบบผลิตภัณฑ์เลือดชนิดต่างๆ เช่น</small>
