@@ -219,3 +219,12 @@ Route::get('/ADEFproduct', function () {
 
 
 Route::get('/listOfDonor','DonateController@listOfDonor');
+
+
+
+
+Route::get('/addProductPage','ProductController@addProductPageVar')->middleware('auth')->middleware('checkadmin');
+Route::post('/addProductPage','ProductController@addProductPageVar')->middleware('auth')->middleware('checkadmin');
+
+Route::get('/add_product','ProductController@addProduct')->middleware('auth')->middleware('checkadmin');
+Route::post('/add_product','ProductController@addProduct')->middleware('auth')->middleware('checkadmin');
