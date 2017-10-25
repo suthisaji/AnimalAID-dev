@@ -238,4 +238,4 @@ Route::post('/edit_Product','ProductController@editProduct')->middleware('auth')
 Route::get('/listProduct','ProductController@listOfProduct');
 Route::post('/listProduct','ProductController@listOfProduct');
 
-Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware('checkadmin');;
+Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware('checkadmin');
