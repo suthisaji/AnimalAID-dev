@@ -9,4 +9,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
-resources/views/adminProfile.blade.php
+public/images/*
+public/phpmyadmin
