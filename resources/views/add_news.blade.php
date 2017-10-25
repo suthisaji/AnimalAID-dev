@@ -89,7 +89,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="../add">เพิ่มการขอรับบริจาค</a></li>
             <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li class="active"><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{$countRecipientEachAdmin}} </span></a></li>
