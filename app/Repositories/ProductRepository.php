@@ -30,7 +30,7 @@ class ProductRepository implements ProductRepositoryInterface{
     return Product::orderBy('created_at')->get();
   }
 
-  function updateProduct($product_name,$category_id,$product_detail,$number_product,$product_price,$product_pic){
+  function updateProduct($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price,$product_pic){
       $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
         'product_name'=>$product_name,
         'category_id'=>$category_id,
@@ -46,7 +46,7 @@ class ProductRepository implements ProductRepositoryInterface{
           return false;
       }
   }
-  function updateProduct1($product_name,$category_id,$product_detail,$number_product,$product_price){//จะให้ทำอันนี้ ถ้าแอดมินไม่ได้แก้ไขรูป
+  function updateProduct1($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price){//จะให้ทำอันนี้ ถ้าแอดมินไม่ได้แก้ไขรูป
       $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
         'product_name'=>$product_name,
         'category_id'=>$category_id,
@@ -76,8 +76,10 @@ class ProductRepository implements ProductRepositoryInterface{
       }
   }
 
-  function findById($id){
-   return Product::where('product_id',$id)->first();
+  function findById($product_id){
+   return Product::where('product_id',$product_id)->first();
  }
+
+
 
 }

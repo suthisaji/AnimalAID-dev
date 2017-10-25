@@ -64,7 +64,7 @@ class ProductController extends Controller
           }
 
       if(Request::isMethod('post')){
-        $productId = Input::get('product_id');
+        $product_id = Input::get('product_id');
         $product_name = Input::get('product_name');//
         //------upload image and store------
 
@@ -82,10 +82,10 @@ class ProductController extends Controller
         $newImageName = 'product_'.str_random(5).$imageName;
         Request::file('product_pic')->move($path, $newImageName);
         //----------------------------------
-          $result = $this->ProductRepository->updateProduct($productId,$product_name,$category_id,$product_detail,$number_product,$product_price,$newImageName);
+          $result = $this->ProductRepository->updateProduct($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price,$newImageName);
 
         }else {
-          $result = $this->ProductRepository->updateProduct1($productId,$product_name,$category_id,$number_product,$product_detail,$product_price);
+          $result = $this->ProductRepository->updateProduct1($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price);
         }
           if($result){
               return redirect('/addProductPage');
@@ -97,10 +97,10 @@ class ProductController extends Controller
           //เรียกใช้ method getalldonaationtype ละส่งค่าไปหน้าวิว
           $category = $this->CategoryRepository->getAllCategory();//ใช่ชื่อนี้อ่อ5555
            $data = array(
-              'product_name'=>$product_name,
+              'product'=>$product,
               'category'=>$category //เรา เอาอันนี้ไปใช้ในหน้าวิว donationType --คือ key มัน
            );
-          return view('edit', $data);
+          return view('editProduct', $data);
           //ในนี้บอกว่า เอาไอดีที่ส่งมาเอาไปหาใน ดีบี ละดึงค่ามาแสดง
           // $product_id=0 ตรงนี้หมายความว่า ถ้าไม่มี anumalid ส่งมา มันจะเปน0
           // พอเวลามึงกดส่งค่า มันจะเป็น url localhost:8000/edit
@@ -135,5 +135,18 @@ class ProductController extends Controller
      return view('addProductPage',$data);
   }
 
+  function editProductPageVar(){
+    $this->middleware('auth');
+    if(Auth::user()==null){
+  return redirect('login');
+  }
+    $category = $this->CategoryRepository->getAllCategory();
+  $product = $this->ProductRepository->getAllProduct();
+       $data = array(
+          'category'=>$category,
+            'product'=>$product,
+       );
+     return view('editProduct',$data);
+  }
 
 }

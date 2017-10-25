@@ -228,3 +228,8 @@ Route::post('/addProductPage','ProductController@addProductPageVar')->middleware
 
 Route::get('/add_product','ProductController@addProduct')->middleware('auth')->middleware('checkadmin');
 Route::post('/add_product','ProductController@addProduct')->middleware('auth')->middleware('checkadmin');
+
+Route::get('/edit_Product/{product_id}','ProductController@editProduct')->middleware('checkadmin');
+
+Route::get('/edit_Product','ProductController@editProductPageVar')->middleware('auth')->middleware('checkadmin');
+Route::post('/edit_Product','ProductController@editProduct')->middleware('auth')->middleware('checkadmin');

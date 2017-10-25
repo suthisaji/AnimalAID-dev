@@ -70,7 +70,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li class="active"><a href="../add">เพิ่มการขอรับบริจาค</a></li>
-            <li><a href="../product">รายชื่อสัตว์</a></li>
+            <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
             ->where('animals.admin_id','=', Auth::user()->id)
