@@ -15,6 +15,9 @@
         .fo{
          font-size: 16.5px;
         }
+        .head{
+          font-size: 20px;
+        }
 </style>
  <title>เข้าสู่ระบบ</title>
 
@@ -23,13 +26,13 @@
     <div class="row " >
         <div class="col-md-8 col-md-offset-2 ">
             <div class="panel panel-default tran">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading head">Login</div>
                   <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label fo">username</label>
+                            <label for="username" class="col-md-4 control-label fo">Username</label>
 
                             <div class="col-md-6">
                                 <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
