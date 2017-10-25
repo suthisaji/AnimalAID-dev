@@ -115,7 +115,7 @@ class ProductController extends Controller
   function deleteProduct($product_id){
     $result = $this->ProductRepository->deleteProduct($product_id);
     if($result){
-        return redirect('/addProductPage');
+        return redirect('/listProduct');
     }else{
         echo "Can not delete product";
     }

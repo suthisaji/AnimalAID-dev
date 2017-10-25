@@ -85,6 +85,9 @@
                                        <span>{{$product->product_name}}</span>
                                        <div class="add-to-cart">
                                            <a href="/edit_Product/{{ $product->product_id }}" class="btn btn-sm btn-primary " >แก้ไข</a>
+||
+                                      
+<a href="/deleteProduct/{{ $product->product_id }}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยืนยันการลบสินค้า !!!')">ลบ</a>
                                        </div>
                                    </div>
                                </div>

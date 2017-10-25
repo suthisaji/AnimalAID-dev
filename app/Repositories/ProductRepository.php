@@ -66,7 +66,7 @@ class ProductRepository implements ProductRepositoryInterface{
 
   function deleteProduct($id){
     $product = Product::where('product_id',$id)->first();
-    File::delete('images/'.$product->product_picture);
+    File::delete('images/'.$product->product_pic);
     $result = Product::where('product_id',$id)->delete();
     $result2 = Product::where('product_id',$id)->delete();
       if($result>=0 && $result2>=0){

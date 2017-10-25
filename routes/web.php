@@ -60,7 +60,7 @@ Route::post('/animal', 'AnimalController@animal')->middleware('auth')->middlewar
 Route::get('/edit/{animal_id}','AnimalController@editAnimal')->middleware('checkadmin');
 Route::post('/edit','AnimalController@editAnimal')->middleware('auth')->middleware('checkadmin');
 Route::get('/edit', 'AnimalController@badEditRequest');
-Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');;
+Route::get('/deleteAnimal/{id}', 'AnimalController@deleteAnimal')->middleware('checkadmin');
 
 //เวลามึงเข้าแบบไม่ส่ง ไอดีเข้าไปมันจะเออเร่อ เพราะมันไม่มีเร้า
 //เราต้องบอกว่าเวลาจะแก้ไข ให้ส่ง ไอดีไปด้วย ส่งมาแบบนี้ไม่ได้
@@ -237,3 +237,5 @@ Route::post('/edit_Product','ProductController@editProduct')->middleware('auth')
 
 Route::get('/listProduct','ProductController@listOfProduct');
 Route::post('/listProduct','ProductController@listOfProduct');
+
+Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware('checkadmin');;
