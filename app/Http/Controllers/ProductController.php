@@ -149,4 +149,18 @@ class ProductController extends Controller
      return view('editProduct',$data);
   }
 
+  function listOfProduct(){
+    $this->middleware('auth');
+    if(Auth::user()==null){
+  return redirect('login');
+  }
+    $category = $this->CategoryRepository->getAllCategory();
+    $product = $this->ProductRepository->getAllProduct();
+       $data = array(
+          'category'=>$category,
+            'product'=>$product,
+       );
+     return view('listProduct',$data);
+  }
+
 }

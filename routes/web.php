@@ -233,3 +233,7 @@ Route::get('/edit_Product/{product_id}','ProductController@editProduct')->middle
 
 Route::get('/edit_Product','ProductController@editProductPageVar')->middleware('auth')->middleware('checkadmin');
 Route::post('/edit_Product','ProductController@editProduct')->middleware('auth')->middleware('checkadmin');
+
+
+Route::get('/listProduct','ProductController@listOfProduct');
+Route::post('/listProduct','ProductController@listOfProduct');
