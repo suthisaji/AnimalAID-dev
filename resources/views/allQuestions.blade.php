@@ -149,7 +149,7 @@
       .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
         background-image: linear-gradient(to bottom, #ffd391 0, #ffd67b 100%);
       }
-    
+
       /*จบเนป*/
       </style>
   </head>
@@ -176,7 +176,9 @@
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav ">
-
+                 <li class="navmain">
+                     <a href="all">หน้าหลัก</a>
+                 </li>
                    <li class="navmain ">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
