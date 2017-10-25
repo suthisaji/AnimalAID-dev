@@ -196,7 +196,6 @@ Route::get('/testP', function () {
 
 
 
-
 Route::get('/ADEFhome', function () {
     return view('ADEFhome');
 });
@@ -222,7 +221,7 @@ Route::get('/listOfDonor','DonateController@listOfDonor');
 
 
 
-
+/*
 Route::get('/addProductPage','ProductController@addProductPageVar')->middleware('auth')->middleware('checkadmin');
 Route::post('/addProductPage','ProductController@addProductPageVar')->middleware('auth')->middleware('checkadmin');
 
@@ -239,3 +238,4 @@ Route::get('/listProduct','ProductController@listOfProduct');
 Route::post('/listProduct','ProductController@listOfProduct');
 
 Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware('checkadmin');
+*/
