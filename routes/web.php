@@ -238,3 +238,7 @@ Route::get('/listProduct','ProductController@listOfProduct');
 Route::post('/listProduct','ProductController@listOfProduct');
 
 Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware('checkadmin');
+
+/* SHOP */
+Route::get('/webshop', 'ShopController@index'); //Shop Homepage
+/* SHOP */

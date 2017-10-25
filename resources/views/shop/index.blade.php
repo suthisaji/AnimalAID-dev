@@ -57,7 +57,6 @@
             <div class="wrapper">
                 <header>
                     <h2>Cart</h2>
-                    <span class="undo">Item removed. <a href="#0">Undo</a></span>
                 </header>
                 
                 <div class="body">
@@ -67,7 +66,7 @@
                 </div>
     
                 <footer>
-                    <a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+                    <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿</em></a>
                 </footer>
             </div>
         </div> <!-- .cd-cart -->

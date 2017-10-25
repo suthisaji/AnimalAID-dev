@@ -8,6 +8,12 @@ jQuery(document).ready(function($) {
     var cartTrigger = cartWrapper.children(".cd-cart-trigger");
     var cartCount = cartTrigger.children(".count");
     var addToCartBtn = $(".cd-add-to-cart");
+    var cartCheckout = cartWrapper.find(".checkout")
+
+    cartCheckout.on("click", function(event){
+      event.preventDefault();
+      console.log('go checkout')
+    })
 
     addToCartBtn.on("click", function(event) {
       event.preventDefault();
@@ -246,3 +252,4 @@ jQuery(document).ready(function($) {
       : cartTotal.text((Number(cartTotal.text()) - Number(price)).toFixed(2));
   }
 });
+
