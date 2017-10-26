@@ -161,7 +161,7 @@
 
                                 <input type="hidden" class="form-control" name="checking_status" value="confirm"/>
 
-                              <br>  <button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
+                              <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
                 </form>
                   <form action="/cancel/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                   <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
@@ -192,7 +192,7 @@
                     </td>
                     <td>
                     @if($t->checking_status=='wait')
-                      <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ</span>
+                      <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ*</span>
                     @endif
                     </td>
 
