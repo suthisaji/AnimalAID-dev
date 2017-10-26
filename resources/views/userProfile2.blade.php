@@ -248,12 +248,16 @@
                   <span class="badge ">{{$sumAmountUserDonate}} ฿</span>
                   ยอดที่บริจาค
                     </li>
-                    <!-- ดูสถานะการจัดส่ง -->
-                    <li class="list-group-item list-group-item-info">
-                  <span class="badge"></span>
-                  <center>เช็คสถานะการจัดส่ง</center>
-                    </li>
                       </ul>
+
+                      <div class="row text-center">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                          <a href="#" class="btn btn-warning fl">เช็คสถานะการจัดส่ง</a>
+                        </div>
+                        <div class="col-md-3"></div>
+                      </div>
+
                 </div>
                 </b>
 
