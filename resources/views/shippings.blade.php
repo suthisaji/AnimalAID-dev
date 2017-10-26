@@ -96,7 +96,7 @@
 
   <div class="container">
     <div class="panel-heading">
-      <center><h3><b>ใบจัดส่งสินค้า<b></h3></center>
+      <center><h3><b>แสดงการจัดส่งสินค้า<b></h3></center>
     </div>
 
     <div class="panel-heading">
@@ -109,8 +109,9 @@
             <th><center>ที่อยู่</center></th>
             <th><center>โทรศัพท์</center></th>
             <th><center>อีเมล์</center></th>
-            <th><center>สถานะ</center></th>
             <th><center>วันที่ส่งสินค้า</center></th>
+            <th><center>เลขพัสดุ</center></th>
+            <th><center>สถานะ</center></th>
           </tr>
         </thead>
 

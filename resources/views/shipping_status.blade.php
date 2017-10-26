@@ -211,7 +211,22 @@
       <center><h3><b>สถานะการจัดส่งสินค้า<b></h3></center>
     </div>
 
-    
+    <div class="panel-heading">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><center>เลขพัสดุ</center></th>
+            <th><center>สถานะ</center></th>
+          </tr>
+        </thead>
+
+        <tbody>
+<!-- ดึงข้อมูลจากดาต้าเบส -->
+        </tbody>
+      </table>
+    </div>
+
+
   </div>
 
 </body>
