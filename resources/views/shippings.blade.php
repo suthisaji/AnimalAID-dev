@@ -9,9 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
-    <title>Ask</title>
-    @section('content')
+    <title>Shippings</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -39,32 +37,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <!--start datatable-->
-     <script src="  https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" ></script>
-     <script src="  https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
-     <script>
-     $(document).ready(function() {
-         $('#example').DataTable();
-     } );
-     </script>
-     <!--end datatable-->
+
     {{Html::style('css/shop-homepage.css')}}
 
     <style type="text/css">
       li{
         font-size: 15px;
       }
-
       body{
         font-size: 16px;
       }
-
       .fl{
         font-size: 16px;
       }
     </style>
 </head>
-
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -82,13 +69,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a  href="../animal">รายชื่อสัตว์</a></li>
+            <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{$countRecipientEachAdmin}} </span></a></li>
-            <li class="active"><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
+            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{$countRecipientEachAdmin}}  </span></a></li>
+            <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
             <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
-            <li><a href="../shippings">ใบจัดส่งสินค้า</a></li>
+            <li class="active"><a href="../shippings">ใบจัดส่งสินค้า</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -108,72 +95,31 @@
   </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-
-        <div class="panel panel-default">
-          <div class="panel-heading">แอดมินตอบปัญหา</div>
-          <div class="panel-body">
-            <table class="table">
-              {{--  <thead>
-                    <tr>
-                       <th>name</th>
-                       <th>email</th>
-                       <th>position</th>
-                       <th>tel</th>
-                       <th>action</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                    @foreach($all_users as $user)
-                    @if($user->position=='admin')
-                            <tr class="danger">
-                    @else
-                    <tr>
-                    @endif
-
-                           <td>{{$user->name}}</td>
-                            <td> {{$user->email}}</td>
-                            <td> {{$user->position}}</td>
-                              <td> {{$user->tel}}</td>
-
-                             <td><a href="/edit" class="btn btn-info btn-sm">Edit</a></td>
-                              <td><a href="/delete/{{$user->id}}" class="btn btn-danger btn-sm" onclick="return confirm('Please confirm again !!!') ">Delete</a></td>
-                            </tr>
-                            @endforeach
-                    </tbody>--}}<table class="table table-striped display" id="example">
-                         <thead>
-                           <tr>
-                             <th>หัวเรื่อง</th>
-                             <th>แอคชั่น</th>
-                             <th></th>
-                           </tr>
-                         </thead>
-                         <tbody>
-                           @foreach($da as $d )
-                             <tr>
-                               <td>  {{$value = str_limit($d->topic, 80)}}</td>
-                               <td>
-                                <a href="{{url('adminReadSummer',array($d->id))}}">ดู&ตอบคำถาม</a> | {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
-                                <a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >ลบ</a> |
-                                <a href="{{url('editSummer',array($d->id))}}">แก้ไขคำถาม</a>
-                               </td>
-                               <td>
-                                 @if($d->status=='Answered')
-                                  <img src="/images/pointg.png" style="height:19%">ตอบแล้ว
-                                 @else
-                               @endif
-                               </td>
-                             </tr>
-                           @endforeach
-                         </tbody>
-
-                    </table>
-            </table>
-          </div>
-        </div>
-      </div>
+    <div class="panel-heading">
+      <center><h3><b>ใบจัดส่งสินค้า<b></h3></center>
     </div>
+
+    <div class="panel-heading">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><center>Shippig ID</center></th>
+            <th><center>Order ID</center></th>
+            <th><center>Buyer ID</center></th>
+            <th><center>ที่อยู่</center></th>
+            <th><center>โทรศัพท์</center></th>
+            <th><center>อีเมล์</center></th>
+            <th><center>สถานะ</center></th>
+            <th><center>วันที่ส่งสินค้า</center></th>
+          </tr>
+        </thead>
+
+        <tbody>
+<!-- ดึงข้อมูลจากดาต้าเบส -->
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </body>
 </html>

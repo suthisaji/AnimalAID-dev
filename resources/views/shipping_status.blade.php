@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>User Profile</title>
+    <title>Check shipping status</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -207,68 +207,12 @@
    </nav>
 
   <div class="container">
-
-      <div class="col-xs-12">
-        <div class="box box-success">
-          <div class="panel-body box-header">
-              <div class="col-md-12 lead si">
-                <center><h1>ข้อมูลส่วนผู้ใช้</h1></center>
-                <hr>
-              </div>
-            <div class="row">
-              <div class="col-md-5 text-center">
-                <img src="\images\user.png" alt="Mountain View" style="width:80%; height:80%; max-width: 100%;">
-              </div>
-               <b>
-              <div class="col-md-7">
-                <div class="row">
-                  <div class="col-md-12">
-                    <center><h2 class="only-bottom-margin">ผู้ใช้ : {{$name}}<br></h2></center>
-                  </div>
-                </div>
-                <div class="row si">
-                  <div class="col-md-8">
-
-                    <span class="text-muted ">รหัสผู้ใช้: <span> {{ $userId}} <br>
-                    <span class="text-muted">username: </span> {{$username}} <br>
-                    <span class="text-muted">Email: </span>  {{$email}}<br><br>
-                    <span class="text-muted">เบอรติดต่อ: </span>  {{$tel}}<br>
-                    <span class="text-muted">สมัครเมื่อ: </span> {{$created}} <br>
-
-                    <br>
-
-
-                      <ul class="list-group ">
-
-                    <li class="list-group-item list-group-item-info">
-                  <span class="badge si">{{$countUserDonate}} ครั้ง </span>
-                  กิจกรรมที่เคยช่วยเหลือ
-                    </li>
-                    <li class="list-group-item list-group-item-info">
-                  <span class="badge ">{{$sumAmountUserDonate}} ฿</span>
-                  ยอดที่บริจาค
-                    </li>
-                    <!-- ดูสถานะการจัดส่ง -->
-                    <li class="list-group-item list-group-item-info">
-                  <span class="badge"></span>
-                  <center>เช็คสถานะการจัดส่ง</center>
-                    </li>
-                      </ul>
-                </div>
-                </b>
-
-              </div>
-            </div>
-          </div>
-          <!--<div class="box-footer clearfix">-->
-            <!--<div class="box-footer clearfix">-->
-
-            <!--</div>-->
-          <!--</div>-->
-        </div>
-      </div>
+    <div class="panel-heading">
+      <center><h3><b>สถานะการจัดส่งสินค้า<b></h3></center>
     </div>
 
-</div>
+    
+  </div>
+
 </body>
 </html>
