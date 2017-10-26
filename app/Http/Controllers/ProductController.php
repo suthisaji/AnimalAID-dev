@@ -239,7 +239,44 @@ function confirmTransferMoney(){//สร้างตาราง shipping แล
 
 }
 
+function noConfirmTransferMoney(){//เปลี่ยน checking_status เป็น noConfirm ด้วย
 
+  if(Request::isMethod('post')){
+
+    $order_number = Input::get('order_number');
+    $checking_status= Input::get('checking_status');
+    $result = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
+
+
+      if($result){
+          return redirect('/transferDocument');
+
+    }else{
+        echo "Can not Update";
+    }
+
+
+}
+}
+function cancelTransferMoney(){//เปลี่ยน checking_status เป็น noConfirm ด้วย
+
+  if(Request::isMethod('post')){
+
+    $order_number = Input::get('order_number');
+    $checking_status= Input::get('checking_status');
+    $result = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
+
+
+      if($result){
+          return redirect('/transferDocument');
+
+    }else{
+        echo "Can not Update";
+    }
+
+
+}
+}
 /*เปลี่ยน สเตตัสการจัดส่ง เป็นยกเลิก*/
 function statusShippingToCancel($ordering_id=0){
 

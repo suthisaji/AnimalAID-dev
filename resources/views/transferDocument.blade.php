@@ -105,13 +105,13 @@
                <thead>
                  <tr>
                    <th><center>Order No.</center></th>
+                   <th><center>ผู้สั่งซื้อ</center></th>
                    <th><center>วันเวลาที่โอน</center></th>
                    <th><center>ชื่อธนาคาร</center></th>
                    <th><center>สาขา</center></th>
                    <th><center>จำนวนเงินที่โอน</center></th>
                    <th><center>ภาพสลิป</center></th>
                    <th><center>อัพหลักฐานเมื่อ</center></th>
-                   <th><center>ตรวจสอบ</center></th>
                    <th><center>สถานะ</center></th>
 
                  </tr>
@@ -143,10 +143,22 @@
                                  <button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
                  </form>
                 <!--ยังไม่ทำ ถ้าไม่ถูกต้อง-->
-                                &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
+                <form action="/noConfirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
+                <input type="hidden" class="form-control" name="checking_status" value="noConfirm"/>
+                  &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
+                </form>
+              @elseif($t->checking_status=='noConfirm')
+                  <b>หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่งรหัส{{$t->join_Ordering->customer_id}}</b>
+                  <form action="/cancel/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                  <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
+                  <input type="hidden" class="form-control" name="checking_status" value="cancel"/>
+                    &nbsp;<button class="btn btn-sm btn-danger">ยกเลิกการสั่งสินค้า</button>
+                  </form>
 
-
-                  @else
+                @elseif($t->checking_status=='cancel')
+                    <b>การสั่งสินค้านี้ ถูกยกเลิกแล้ว ordering ID:{{ $t->join_Ordering->ordering_id}}</b>
+                  @elseif($t->checking_status=='confirm'&&($t->join_Ordering->join_Shipping->shipping_status==null||$t->join_Ordering->join_Shipping->shipping_status==''))
                   </form>
                     <b>กำลังทำการจัดส่ง</b>
                     <br>
@@ -155,16 +167,19 @@
                      <input type="hidden" class="form-control" name="ordering_id" value="{{$t->join_Ordering->ordering_id}}"/>
                     <button class="btn btn-sm btn-danger" onclick="return confirm('ยกเลิกการจัดส่งสินค้า')">แจ้งยกเลิกการจัดส่ง</button>
                   </from>
+                @elseif($t->checking_status=='confirm'&&$t->join_Ordering->join_Shipping->shipping_status=='cancel')
+                    <b style="color:red;">การจัดส่งถูกยกเลิก</b>
+                  @elseif($t->join_Ordering->join_Shipping->shipping_status=='complete')
+                      <b style="color:red;">การจัดส่งเรียบร้อยแล้ว</b>
+                      {{$t->join_Ordering->join_Shipping->package_id}}
                   @endif
 
           {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}<br>
 
                     </td>
                     <td>
-                      @if($t->status=='confirm')
-                       <img src="/images/pointg.png" style="width:4%;height:13%"> การสั่งสินค้าสำเร็จ
-                     @elseif($t->checking_status=='wait')
-                      ยังไม่ตรวจสอบ
+                    @if($t->checking_status=='wait')
+                      <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ</span>
                     @endif
                     </td>
 

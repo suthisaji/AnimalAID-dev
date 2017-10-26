@@ -254,6 +254,14 @@ Route::post('/transferDocument', 'ProductController@transferDocument');
 Route::get('/confirm/{order_number}','ProductController@confirmTransferMoney');
 Route::post('/confirm/{order_number}','ProductController@confirmTransferMoney');
 /*status confirm transferDocument*/
+/*status noConfirm transferDocument*/
+Route::get('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney');
+Route::post('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney');
+/*status noConfirm transferDocument*/
+/*status cancel transferDocument for buy*/
+Route::get('/cancel/{order_number}','ProductController@cancelTransferMoney');
+Route::post('/cancel/{order_number}','ProductController@cancelTransferMoney');
+/*status cancel transferDocument for buy*/
 
 /*status cancel shipping*/
 Route::get('/cancel/{ordering_id}','ProductController@statusShippingToCancel');
