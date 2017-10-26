@@ -253,7 +253,7 @@
                       <div class="row text-center">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                          <a href="#" class="btn btn-warning fl">เช็คสถานะการจัดส่ง</a>
+                          <a href="/shipping_status" class="btn btn-warning fl">เช็คสถานะการจัดส่ง</a>
                         </div>
                         <div class="col-md-3"></div>
                       </div>

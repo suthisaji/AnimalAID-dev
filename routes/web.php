@@ -216,6 +216,10 @@ Route::get('/ADEFproduct', function () {
     return view('ADEFproduct');
 });
 
+Route::get('/shipping_status', function () {
+    return view('shipping_status');
+});
+
 
 
 Route::get('/listOfDonor','DonateController@listOfDonor');
