@@ -78,7 +78,7 @@
             <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
             <li class="active"><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
-            <li><a href="../shippings">ใบจัดส่งสินค้า</a></li>
+            <li><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:red">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -117,9 +117,10 @@
 
                  </tr>
                </thead>
+                @foreach ($transferMoney as $t)
                <tbody>
 
-                 @foreach ($transferMoney as $t)
+
                    <tr>
                      <td>{{$t->order_number}}</td>
                      <td>{{$t->join_Ordering->join_User->name}}</td>
@@ -150,7 +151,7 @@
                   &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
                 </form>
               @elseif($t->checking_status=='noConfirm')
-                  <b>หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่ง รหัส{{$t->join_Ordering->customer_id}}</b>
+                  <b><span style="color:red">หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่ง รหัส:</span>{{$t->join_Ordering->customer_id}} :{{$t->join_Ordering->join_User->tel}} {{$t->join_Ordering->join_User->email}}</b>
                   <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                     <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
                     <input type="hidden" class="form-control" name="ordering_id" value="{{ $t->join_Ordering->ordering_id}}" readonly/>
@@ -172,20 +173,20 @@
 
                 @elseif($t->checking_status=='cancel')
                     <b>การสั่งสินค้านี้ ถูกยกเลิกแล้ว ordering ID:{{ $t->join_Ordering->ordering_id}}</b>
-                  @elseif($t->checking_status=='confirm'&&($t->join_Ordering->join_Shipping->shipping_status==null||$t->join_Ordering->join_Shipping->shipping_status==''))
+                  @elseif($t->checking_status=='confirm'&&($t->join_Ordering->join_Shipping->shipping_status==null||$t->join_Ordering->join_Shipping->shipping_status==''||$t->join_Ordering->join_Shipping->shipping_status=='กำลังตรวจสอบ'))
                   </form>
                     <b>กำลังทำการจัดส่ง</b>
                     <br>
-                    <form action="/cancel/{{$t->join_Ordering->join_Shipping->ordering_id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                    <form action="/cancelShipping/{{$t->join_Ordering->join_Shipping->ordering_id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                      <input type="hidden" class="form-control" name="shipping_status" value="cancel"/>
                      <input type="hidden" class="form-control" name="ordering_id" value="{{$t->join_Ordering->ordering_id}}"/>
                     <button class="btn btn-sm btn-danger" onclick="return confirm('ยกเลิกการจัดส่งสินค้า')">แจ้งยกเลิกการจัดส่ง</button>
                   </from>
                 @elseif($t->checking_status=='confirm'&&$t->join_Ordering->join_Shipping->shipping_status=='cancel')
                     <b style="color:red;">การจัดส่งถูกยกเลิก</b>
-                  @elseif($t->join_Ordering->join_Shipping->shipping_status=='complete')
-                      <b style="color:red;">การจัดส่งเรียบร้อยแล้ว</b>
-                      {{$t->join_Ordering->join_Shipping->package_id}}
+                  @elseif($t->join_Ordering->join_Shipping->shipping_status=='จัดส่งแล้ว')
+                      <b style="color:blue;">การจัดส่งเรียบร้อยแล้ว</b>
+                    <br>  เลขพัสด: {{$t->join_Ordering->join_Shipping->package_id}}
                   @endif
 
           {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}<br>
@@ -198,10 +199,10 @@
                     </td>
 
                    </tr>
-                 @endforeach
+
 
                </tbody>
-
+   @endforeach
           </table>
 
       </div>

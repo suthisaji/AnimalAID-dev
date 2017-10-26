@@ -174,7 +174,7 @@ function transferDocument(){
   $this->middleware('auth');
   if(Auth::user()==null){
 return redirect('login');
-}
+  }
 $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
 $data = array(
    'transferMoney'=>$transferMoney,
@@ -300,8 +300,43 @@ function statusShippingToCancel($ordering_id=0){
       }
 
   }
+  function shippingDocument(){//จะแสดงข้อมูลหน้า Shipping
+    $this->middleware('auth');
+    if(Auth::user()==null){
+  return redirect('login');
+    }
+  $shipping = $this->ShippingRepository->getAllShipping();
+  $data = array(
+     'shipping'=>$shipping,
+  );
+  return view('shippings',$data);
+  }
 
+  /*เปลี่ยน สเตตัสการจัดส่ง เป็นยกเลิก*/
+  function shippingAfterDelivery($ordering_id=0){
 
+        if(Request::isMethod('post')){
+          $ordering_id = Input::get('ordering_id');
+          $dateTimeShipping= Input::get('dateTimeShipping');
+          $package_id= Input::get('package_id');
+          $shipping_status=Input::get('shipping_status');
+          $result = $this->ShippingRepository->updateShippingAfterDelivery($ordering_id, $shipping_status,$dateTimeShipping, $package_id);
+
+            if($result){
+                return redirect('/shippings');
+            }else{
+                echo "cannot update";
+            }
+        }elseif(Request::isMethod('get')){
+          $shipping = $this->ShippingRepository->getAllShipping();
+           $data = array(
+                'shipping'=>$shipping
+            );
+            return view('shippings', $data);
+
+        }
+
+    }
 
 
 }

@@ -217,6 +217,7 @@ Route::get('/ADEFproduct', function () {
 });
 
 
+
 Route::get('/listOfDonor','DonateController@listOfDonor');
 
 
@@ -264,6 +265,12 @@ Route::post('/cancel/{order_number}','ProductController@cancelTransferMoney');
 /*status cancel transferDocument for buy*/
 
 /*status cancel shipping*/
-Route::get('/cancel/{ordering_id}','ProductController@statusShippingToCancel');
-Route::post('/cancel/{ordering_id}','ProductController@statusShippingToCancel');
+Route::get('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel');
+Route::post('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel');
+/*status cancel shipping*/
+Route::get('/shippings','ProductController@shippingDocument');
+Route::post('/shippings','ProductController@shippingDocument');
+/*status cancel shipping*/
+Route::get('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery');
+Route::post('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery');
 /*status cancel shipping*/

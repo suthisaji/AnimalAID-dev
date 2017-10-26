@@ -71,11 +71,14 @@
         <ul class="nav navbar-nav">
             <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{$countRecipientEachAdmin}}  </span></a></li>
+            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
+            ->where('animals.admin_id','=', Auth::user()->id)
+            ->where('adoptions.status', '=','Recipient')
+          ->count()}} </span></a></li>
             <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
             <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
-            <li class="active"><a href="../shippings">ใบจัดส่งสินค้า</a></li>
+            <li class="active"><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:red">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -105,18 +108,49 @@
           <tr>
             <th><center>Shippig ID</center></th>
             <th><center>Order ID</center></th>
-            <th><center>Buyer ID</center></th>
+            <th><center>รหัสผู้สั่งซื้อ</center></th>
             <th><center>ที่อยู่</center></th>
             <th><center>โทรศัพท์</center></th>
             <th><center>อีเมล์</center></th>
-            <th><center>สถานะ</center></th>
             <th><center>วันที่ส่งสินค้า</center></th>
+            <th><center>หมายเลขพัสดุ</center></th>
+
+            <td><center><center></td>
+
+              <th><center>สถานะการจัดส่ง</center></th>
           </tr>
         </thead>
-
+ @foreach ($shipping as $s)
         <tbody>
+
+          <td><center>{{$s->shipping_id}}<center></td>
+          <td><center>{{$s->ordering_id}}<center></td>
+          <td><center>{{$s->buyer_id}}<center></td>
+          <td><center>{{$s->address}}<center></td>
+          <td><center>{{$s->tel}}<center></td>
+          <td><center>{{$s->email}}<center></td>
+
+              <form action="/shippingUpdate/{{$s->ordering_id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+<input type="hidden" name="ordering_id" value="{{$s->ordering_id}}"/>
+
+
+          @if($s->shipping_status!='กำลังตรวจสอบ')
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><center>@if($s->shipping_status=='cancel') <b style="color:red;">ยกเลิกการจัดส่ง</b> @elseif($s->shipping_status=='จัดส่งแล้ว')<b style="color:blue;">จัดส่งแล้ว</b> @endif<center></td>
+          @else
+            <td><center><input type="date" name="dateTimeShipping"required/><center></td>
+            <td><center><input type="text" name="package_id" required/><center></td>
+              <input type="hidden" name="shipping_status" value="จัดส่งเรียบร้อย" />
+            <td>  <button class=" btn btn-sm btn-primary" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง')">ถูกต้อง</button></td>
+          <td>  กำลังตรวจสอบ</td>
+          @endif
+         </form>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
+
         </tbody>
+        @endforeach
       </table>
     </div>
 

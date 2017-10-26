@@ -44,6 +44,20 @@ function updateShippingCancel($ordering_id,$shipping_status){
     }
 }
 
+function updateShippingAfterDelivery($ordering_id,$shipping_status,$dateTimeShipping,$package_id){
+    $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+       'dateTimeShipping'=>$dateTimeShipping,
+       'package_id'=>$package_id,
+       'shipping_status'=>$shipping_status
+     );
+    $result = Shipping::where('ordering_id',$ordering_id)->update($data);
+    if($result > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 
 
