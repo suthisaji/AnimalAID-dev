@@ -254,3 +254,8 @@ Route::post('/transferDocument', 'ProductController@transferDocument');
 Route::get('/confirm/{order_number}','ProductController@confirmTransferMoney');
 Route::post('/confirm/{order_number}','ProductController@confirmTransferMoney');
 /*status confirm transferDocument*/
+
+/*status cancel shipping*/
+Route::get('/cancel/{ordering_id}','ProductController@statusShippingToCancel');
+Route::post('/cancel/{ordering_id}','ProductController@statusShippingToCancel');
+/*status cancel shipping*/

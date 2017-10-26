@@ -31,4 +31,20 @@ function addShipping($ordering_id,$buyer_id,$address,$tel,$email){
       return false;
   }
 }
+
+function updateShippingCancel($ordering_id,$shipping_status){
+    $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+       'shipping_status'=>$shipping_status
+     );
+    $result = Shipping::where('ordering_id',$ordering_id)->update($data);
+    if($result > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+
+
 }

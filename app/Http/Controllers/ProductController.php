@@ -231,11 +231,40 @@ function confirmTransferMoney(){//สร้างตาราง shipping แล
         echo "Can not Update";
     }
 
- 
+
           }else{
 
             return redirect('/transferDocument');
           }
 
 }
+
+
+/*เปลี่ยน สเตตัสการจัดส่ง เป็นยกเลิก*/
+function statusShippingToCancel($ordering_id=0){
+
+      if(Request::isMethod('post')){
+        $ordering_id = Input::get('ordering_id');
+        $shipping_status= Input::get('shipping_status');
+        $result = $this->ShippingRepository->updateShippingCancel($ordering_id,$shipping_status);
+
+          if($result){
+              return redirect('/transferDocument');
+          }else{
+              echo "cannot update";
+          }
+      }elseif(Request::isMethod('get')){
+        $shipping = $this->ShippingRepository->getAllShipping();
+         $data = array(
+              'shipping'=>$shipping
+          );
+          return view('transferDocument', $data);
+
+      }
+
+  }
+
+
+
+
 }

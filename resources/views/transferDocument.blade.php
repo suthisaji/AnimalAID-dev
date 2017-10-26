@@ -96,9 +96,7 @@
    </div>
   </nav>
    <div class="container">
-@foreach ($transferMoney as $t)
-  {{$t->dateTimeOfTransfer}}
-@endforeach
+
 <div class="panel-heading">
    <center><h3><b>แอดมินตรวจสอบหลักฐานการโอนเงิน</b></h3></center>
 </div>
@@ -141,10 +139,26 @@
 
 
                                  <input type="hidden" class="form-control" name="checking_status" value="confirm"/>
-                                 <button class=" btn btn-sm btn-primary">ถูกต้องจัดส่งได้</button>
-                   </form>
+                  @if($t->checking_status=='wait')
+                                 <button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
+                 </form>
+                <!--ยังไม่ทำ ถ้าไม่ถูกต้อง-->
+                                &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
+
+
+                  @else
+                  </form>
+                    <b>กำลังทำการจัดส่ง</b>
+                    <br>
+                    <form action="/cancel/{{$t->join_Ordering->join_Shipping->ordering_id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                     <input type="hidden" class="form-control" name="shipping_status" value="cancel"/>
+                     <input type="hidden" class="form-control" name="ordering_id" value="{{$t->join_Ordering->ordering_id}}"/>
+                    <button class="btn btn-sm btn-danger" onclick="return confirm('ยกเลิกการจัดส่งสินค้า')">แจ้งยกเลิกการจัดส่ง</button>
+                  </from>
+                  @endif
+
           {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}<br>
-&nbsp;<a href="#" class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</a>
+
                     </td>
                     <td>
                       @if($t->status=='confirm')
