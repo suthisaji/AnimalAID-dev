@@ -71,16 +71,14 @@
         <ul class="nav navbar-nav">
             <li><a href="../animal">รายชื่อสัตว์</a></li>
             <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red"> {{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
             ->where('animals.admin_id','=', Auth::user()->id)
             ->where('adoptions.status', '=','Recipient')
           ->count()}} </span></a></li>
-            <li><a href="../admin">ตอบปัญหา: <span style="color:#FFFF00">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
+            <li><a href="../admin">ตอบปัญหา: <span style="color:red">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
-            <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:#FFFF00">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
-            <li class="active"><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
-
+            <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
+            <li class="active"><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:red">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -101,7 +99,7 @@
 
   <div class="container">
     <div class="panel-heading">
-      <center><h3><b>แสดงการจัดส่งสินค้า<b></h3></center>
+      <center><h3><b>ใบจัดส่งสินค้า<b></h3></center>
     </div>
 
     <div class="panel-heading">
@@ -115,16 +113,11 @@
             <th><center>โทรศัพท์</center></th>
             <th><center>อีเมล์</center></th>
             <th><center>วันที่ส่งสินค้า</center></th>
-<<<<<<< HEAD
             <th><center>หมายเลขพัสดุ</center></th>
 
             <td><center><center></td>
 
               <th><center>สถานะการจัดส่ง</center></th>
-=======
-            <th><center>เลขพัสดุ</center></th>
-            <th><center>สถานะ</center></th>
->>>>>>> f1f2bba43189a58d15545eeada784b13330fb0cd
           </tr>
         </thead>
  @foreach ($shipping as $s)
