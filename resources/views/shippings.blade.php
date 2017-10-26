@@ -142,7 +142,7 @@
           @else
             <td><center><input type="date" name="dateTimeShipping"required/><center></td>
             <td><center><input type="text" name="package_id" required/><center></td>
-              <input type="hidden" name="shipping_status" value="จัดส่งเรียบร้อย" />
+              <input type="hidden" name="shipping_status" value="จัดส่งแล้ว" />
             <td>  <button class=" btn btn-sm btn-primary" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง')">ถูกต้อง</button></td>
           <td>  กำลังตรวจสอบ</td>
           @endif

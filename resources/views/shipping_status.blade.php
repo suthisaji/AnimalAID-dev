@@ -222,10 +222,12 @@
         </thead>
 @foreach($shipping as $s)
         <tbody>
+          @if($s->buyer_id==Auth::user()->id)
               <td><center>{{$s->ordering_id}}</center></td>
           <td><center>{{$s->package_id}}</center></td>
           <td><center>{{$s->shipping_status}}</center></td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
+@endif
         </tbody>
       @endforeach
       </table>
