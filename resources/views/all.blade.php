@@ -836,7 +836,7 @@ transform: skew(-135deg) translateX(0%);
    <!-- /.container -->
 
    <div class="follow">
-    <a  href="donate"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
+    <a  href="webshop"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
    </div>
 
     </body>
