@@ -219,10 +219,13 @@
             <th><center>สถานะ</center></th>
           </tr>
         </thead>
-
+@foreach($shipping as $s)
         <tbody>
+          <td>{{$s->package_id}}</td>
+          <td>{{$s->shipping_status}}</td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
         </tbody>
+      @endforeach
       </table>
     </div>
 

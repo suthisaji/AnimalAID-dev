@@ -216,9 +216,7 @@ Route::get('/ADEFproduct', function () {
     return view('ADEFproduct');
 });
 
-Route::get('/shipping_status', function () {
-    return view('shipping_status');
-});
+
 
 
 
@@ -249,32 +247,36 @@ Route::get('/webshop', 'ShopController@index'); //Shop Homepage
 /* SHOP */
 
 /* listProduct */
-Route::get('/transferDocument', 'ProductController@transferDocument');
-Route::post('/transferDocument', 'ProductController@transferDocument');
+Route::get('/transferDocument', 'ProductController@transferDocument')->middleware('auth')->middleware('checkadmin');
+Route::post('/transferDocument', 'ProductController@transferDocument')->middleware('auth')->middleware('checkadmin');
 /* listProduct */
 
 
 
 /*status confirm transferDocument*/
-Route::get('/confirm/{order_number}','ProductController@confirmTransferMoney');
-Route::post('/confirm/{order_number}','ProductController@confirmTransferMoney');
+Route::get('/confirm/{order_number}','ProductController@confirmTransferMoney')->middleware('auth')->middleware('checkadmin');
+Route::post('/confirm/{order_number}','ProductController@confirmTransferMoney')->middleware('auth')->middleware('checkadmin');
 /*status confirm transferDocument*/
 /*status noConfirm transferDocument*/
-Route::get('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney');
-Route::post('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney');
+Route::get('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney')->middleware('auth')->middleware('checkadmin');
+Route::post('/noConfirm/{order_number}','ProductController@noConfirmTransferMoney')->middleware('auth')->middleware('checkadmin');
 /*status noConfirm transferDocument*/
 /*status cancel transferDocument for buy*/
-Route::get('/cancel/{order_number}','ProductController@cancelTransferMoney');
-Route::post('/cancel/{order_number}','ProductController@cancelTransferMoney');
+Route::get('/cancel/{order_number}','ProductController@cancelTransferMoney')->middleware('auth')->middleware('checkadmin');
+Route::post('/cancel/{order_number}','ProductController@cancelTransferMoney')->middleware('auth')->middleware('checkadmin');
 /*status cancel transferDocument for buy*/
 
 /*status cancel shipping*/
-Route::get('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel');
-Route::post('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel');
+Route::get('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel')->middleware('auth')->middleware('checkadmin');
+Route::post('/cancelShipping/{ordering_id}','ProductController@statusShippingToCancel')->middleware('auth')->middleware('checkadmin');
 /*status cancel shipping*/
-Route::get('/shippings','ProductController@shippingDocument');
-Route::post('/shippings','ProductController@shippingDocument');
+Route::get('/shippings','ProductController@shippingDocument')->middleware('auth')->middleware('checkadmin');
+Route::post('/shippings','ProductController@shippingDocument')->middleware('auth')->middleware('checkadmin');
 /*status cancel shipping*/
-Route::get('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery');
-Route::post('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery');
+Route::get('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery')->middleware('auth')->middleware('checkadmin');
+Route::post('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDelivery')->middleware('auth')->middleware('checkadmin');
 /*status cancel shipping*/
+/* listProduct */
+Route::get('/shipping_status', 'ProductController@shipping_statusDocument')->middleware('auth');
+Route::post('/shipping_status', 'ProductController@shipping_statusDocument')->middleware('auth');
+/* listProduct */

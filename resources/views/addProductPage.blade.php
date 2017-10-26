@@ -149,12 +149,13 @@
                   <button class="btn btn-success">เพิ่มสินค้า</button>
                 </div>
                 <br>
-                <div class="text-center">
-                  <button a href="/listProduct" class="btn btn-success">ดูรายการสินค้าทั้งหมด</button>
-                </div>
+
               </form>
+                 <div class="text-center">
+                <a href="/listProduct" class="btn btn-info" style="font-size:18px">ดูรายการสินค้าทั้งหมด</a>
+                </div>
             </div>
-            <div class="col-sm-3" style=""></div>
+
           </div>
         </div>
 

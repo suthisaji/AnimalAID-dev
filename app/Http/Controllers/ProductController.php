@@ -338,5 +338,18 @@ function statusShippingToCancel($ordering_id=0){
 
     }
 
+    function shipping_statusDocument(){//จะแสดงข้อมูลหน้า Shipping_status
+      $this->middleware('auth');
+      if(Auth::user()==null){
+    return redirect('login');
+      }
+    $shipping = $this->ShippingRepository->getAllShipping();
+    $data = array(
+       'shipping'=>$shipping,
+    );
+    return view('shipping_status',$data);
+    }
+
+
 
 }
