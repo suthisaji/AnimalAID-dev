@@ -149,11 +149,24 @@
                   &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
                 </form>
               @elseif($t->checking_status=='noConfirm')
-                  <b>หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่งรหัส{{$t->join_Ordering->customer_id}}</b>
+                  <b>หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่ง รหัส{{$t->join_Ordering->customer_id}}</b>
+                  <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+                    <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
+                    <input type="hidden" class="form-control" name="ordering_id" value="{{ $t->join_Ordering->ordering_id}}" readonly/>
+                    <input type="hidden"class="form-control" name="buyer_id" value="{{$t->join_Ordering->customer_id}}" />
+                    <input type="hidden"class="form-control" name="address"  value="{{$t->join_Ordering->join_User->address}}" />
+                    <input type="hidden"class="form-control" name="tel"  value="{{$t->join_Ordering->join_User->tel}}"  />
+                    <input type="hidden"class="form-control" name="email"  value="{{$t->join_Ordering->join_User->email}}" />
+
+
+                                <input type="hidden" class="form-control" name="checking_status" value="confirm"/>
+
+                              <br>  <button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
+                </form>
                   <form action="/cancel/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                   <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
                   <input type="hidden" class="form-control" name="checking_status" value="cancel"/>
-                    &nbsp;<button class="btn btn-sm btn-danger">ยกเลิกการสั่งสินค้า</button>
+                <br>  <button class="btn btn-sm btn-danger">ยกเลิกการสั่งสินค้า</button>
                   </form>
 
                 @elseif($t->checking_status=='cancel')
