@@ -272,6 +272,9 @@
                    <li class="navmain">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
+                   <li class="navmain ">
+                       <a href="webshop">ของที่ระลึก</a>
+                   </li>
                    <li class="navmain active">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
