@@ -215,14 +215,16 @@
       <table class="table table-striped">
         <thead>
           <tr>
+            <th><center>รหัสใบสั่งซื้อ</center></th>
             <th><center>เลขพัสดุ</center></th>
             <th><center>สถานะ</center></th>
           </tr>
         </thead>
 @foreach($shipping as $s)
         <tbody>
-          <td>{{$s->package_id}}</td>
-          <td>{{$s->shipping_status}}</td>
+              <td><center>{{$s->ordering_id}}</center></td>
+          <td><center>{{$s->package_id}}</center></td>
+          <td><center>{{$s->shipping_status}}</center></td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
         </tbody>
       @endforeach
