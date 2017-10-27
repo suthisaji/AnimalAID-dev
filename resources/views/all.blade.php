@@ -495,6 +495,7 @@ transform: skew(-135deg) translateX(0%);
                <div class="container">
                <br>
                <br>
+
                    <div class="row">
 
                             <img class="after" src="images\Cee.PNG" >
@@ -536,7 +537,7 @@ transform: skew(-135deg) translateX(0%);
 
 
 <br>
-<br>
+
 
 <div class="row">
 @php($b=0)
