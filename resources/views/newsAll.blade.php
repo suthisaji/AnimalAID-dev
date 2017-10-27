@@ -297,10 +297,10 @@
        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/7ghlxSAMdjE" frameborder="0" allowfullscreen></iframe>
      </div>
      <div class="col-sm-6 video-wrapper">
-       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/CjttDvfRVc8" frameborder="0" allowfullscreen></iframe>
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/UBOyqjD2qFg" frameborder="0" allowfullscreen></iframe>
      </div>
      <div class="col-sm-6 video-wrapper">
-       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/UBOyqjD2qFg" frameborder="0" allowfullscreen></iframe>
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/CjttDvfRVc8" frameborder="0" allowfullscreen></iframe>
      </div>
    </div>
    </div>

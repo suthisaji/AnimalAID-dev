@@ -582,8 +582,6 @@ transform: skew(-135deg) translateX(0%);
     <div class="col-md-12"  >
 <br><br><br>
       <h3 class="my-4"  ><b>ข่าวสาร</b></h3>
-
-
 <br><br><br><br><br><br>
         <div class="row">
 
@@ -756,11 +754,11 @@ transform: skew(-135deg) translateX(0%);
 
         <div class="col-sm-4">
           <div  >
-            <a  href="da"><center id="div4"><img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></center></a>
+            <a  href="da"><center ><img class="lig" src="images\Picture4.png" alt=""width="260" height="170"></center></a>
           </div>
         </div>
       </div>
-      <br ><br>
+      <br id="div4" ><br >
   </div>
 <!-- /.row -->
 <!-- </div> -->
