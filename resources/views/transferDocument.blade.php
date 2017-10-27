@@ -78,7 +78,7 @@
             <li><a href="../admin">ตอบปัญหา: <span style="color:#FFFF00">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
             <li class="active"><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:#FFFF00">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->count()}}</span></a></li>
-            <li><a href="../shippings">ใบจัดส่งสินค้า:<span style="color:red">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
+            <li><a href="../shippings">ใบจัดส่งสินค้า:<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -110,7 +110,7 @@
                    <th><center>วันเวลาที่โอน</center></th>
                    <th><center>ชื่อธนาคาร</center></th>
                    <th><center>สาขา</center></th>
-                   <th><center>จำนวนเงินที่โอน</center></th>
+                   <th><center>จำนวนเงินที่โอน฿</center></th>
                    <th><center>ภาพสลิป</center></th>
                    <th><center>อัพหลักฐานเมื่อ</center></th>
                    <th><center>สถานะ</center></th>
@@ -148,7 +148,7 @@
                 <form action="/noConfirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                 <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
                 <input type="hidden" class="form-control" name="checking_status" value="noConfirm"/>
-                  &nbsp;<button class="btn btn-sm btn-danger">หลักฐานไม่ถูกต้อง</button>
+                  &nbsp;<button class="btn btn-sm btn-danger" onclick="return confirm('หลักฐานไม่ถูกต้อง')">หลักฐานไม่ถูกต้อง</button>
                 </form>
               @elseif($t->checking_status=='noConfirm')
                   <b><span style="color:red">หลักฐานไม่ถูกต้อง กรุณาสอบถามผู้สั่ง รหัส:</span>{{$t->join_Ordering->customer_id}} :{{$t->join_Ordering->join_User->tel}} {{$t->join_Ordering->join_User->email}}</b>
@@ -168,7 +168,7 @@
                   <form action="/cancel/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
                   <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
                   <input type="hidden" class="form-control" name="checking_status" value="cancel"/>
-                <br>  <button class="btn btn-sm btn-danger">ยกเลิกการสั่งสินค้า</button>
+                <br>  <button class="btn btn-sm btn-danger" onclick="return confirm('ต้องการยกเลิกการสั่งสินค้า')">ยกเลิกการสั่งสินค้า</button>
                   </form>
 
                 @elseif($t->checking_status=='cancel')
@@ -194,19 +194,18 @@
                     </td>
                     <td>
                     @if($t->checking_status=='wait')
-                      <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ*</span>
+                      <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ</span>
                     @endif
                     </td>
 
                    </tr>
-
-
                </tbody>
    @endforeach
           </table>
 
       </div>
 </div>
+
 
 </body>
 </html>

@@ -56,12 +56,12 @@ class DonateController extends Controller
                 $amount = $payload['data']['amount'];
                 $amount = substr($amount, 0, strlen($amount)-2).'.'.substr($amount, -2);
 
-              /*  Nexmo::message()->send([
+               Nexmo::message()->send([
                     'to' => $tel,
                     'from' => 'NEXMO',
                     'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
                     'type' => 'unicode'
-                ]);*/
+                ]);
               $result = $this->DonationRepository->addDonation($name,$sname,$tel,$amount);
 
                 return Response::json([
@@ -83,7 +83,7 @@ class DonateController extends Controller
 
       $data = array(
           'amount'=>$amount,
-          'sname'=>$sname, 
+          'sname'=>$sname,
         'name'=>$name,
   );
 

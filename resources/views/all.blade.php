@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>การขอรับบริจาคทั้งหมด</title>
+    <title>มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) </title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -386,7 +386,7 @@ transform: skew(-135deg) translateX(0%);
      <img class="after2" src="images\wg.PNG" alt="">
      <img class="after4" src="images\gray.jpg" alt="">
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top"  alt=""></a>
 
        <div class="container">
 
@@ -487,15 +487,16 @@ transform: skew(-135deg) translateX(0%);
            <!-- /.navbar-collapse -->
        </div>
        <!-- /.container -->
+
    </nav>
 
 
 
                <div class="container">
-
+               <br>
+               <br>
                    <div class="row">
-                     <br>
-                     <br>
+
                             <img class="after" src="images\Cee.PNG" >
                        <div class="col-md-9">
 
@@ -837,6 +838,7 @@ transform: skew(-135deg) translateX(0%);
 
    <div class="follow">
     <a  href="webshop"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
+
    </div>
 
     </body>

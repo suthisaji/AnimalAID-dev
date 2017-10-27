@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\AnimalRepositoryInterface;
+use App\Repositories\ShippingRepositoryInterface;
 use App\Adoption;
 use Auth;
 use DB;
@@ -14,11 +15,12 @@ class AdminController extends Controller
 {
     protected $UserRepository;
         protected $AnimalRepository;
-    public function __construct(UserRepositoryInterface $UserRepository,AnimalRepositoryInterface $AnimalRepository)
+    public function __construct(UserRepositoryInterface $UserRepository,AnimalRepositoryInterface $AnimalRepository,ShippingRepositoryInterface $ShippingRepository)
     {
     	  $this->middleware('auth');
         $this->AnimalRepository = $AnimalRepository;
         $this->UserRepository = $UserRepository;
+        $this->ShippingRepository = $ShippingRepository;
     }
 
     function index(){
@@ -52,6 +54,7 @@ class AdminController extends Controller
 
 
 
+
     function userProfile2(){
       $userId  =   Auth::user()->id;
       $name    =   Auth::user()->name;
@@ -62,7 +65,8 @@ class AdminController extends Controller
         $everAdoption = $this->AnimalRepository->countEverAdoption($userId);
         $countUserDonate = $this->AnimalRepository->countUserDonate($tel);
         $sumAmountUserDonate = $this->AnimalRepository->sumAmountUserDonate($tel);
-        $data = array(
+        $shipping = $this->ShippingRepository->getAllShipping();
+         $data = array(
           'userId'=>$userId ,
           'name' =>$name ,
           'username' =>$username,
@@ -71,8 +75,9 @@ class AdminController extends Controller
           'created' =>$created,
           'everAdoption'=>$everAdoption,
           'countUserDonate'=>$countUserDonate,
-          'sumAmountUserDonate'=>$sumAmountUserDonate
-        );
+          'sumAmountUserDonate'=>$sumAmountUserDonate,
+          'shipping'=>$shipping,
+         );
       return view('userProfile2',$data);
     }
 

@@ -239,11 +239,13 @@
    <!-- Page Content -->
        <div class="container">
      <div class="panel-heading">
-
+<br>
+       <h3><li style="color:darkorange;">มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง</li></h3>
+       <h3><li style="color:goldenrod;">จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
         <div class="panel-heading">
+
      <p class="lead"><center><h1><b>รายชื่อผู้บริจาค</b></h1></center></p>
-     <h3><li>มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง</li></h3>
-     <h3><li>จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
+
         </div>
               <div class="panel-body">
                   <table class="table table-striped display" id="example">
