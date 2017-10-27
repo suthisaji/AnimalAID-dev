@@ -244,8 +244,12 @@
 
      <div class="row">
          <div class="col-sm-6" style="background-color:#FFF4EA;">
+
+
+
              <h1 class="page-header">ข่าวสาร</h1>
              <div class="list-group-item">
+
              @foreach($news as $new)
                 @if($new->news_type==2||$new->news_type==1)
          {{--{{$new->news_id}}</td>
@@ -284,6 +288,21 @@
               <br>
          </div>
      </div>
+     <div class="row">
+        <h1 class="page-header">สัตว์ปลอดโรคคนปลอดภัยฯ 2560</h1>
+     <div class="col-sm-6  video-wrapper">
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/BKK9HE5kKU8" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div class="col-sm-6 video-wrapper">
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/7ghlxSAMdjE" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div class="col-sm-6 video-wrapper">
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/CjttDvfRVc8" frameborder="0" allowfullscreen></iframe>
+     </div>
+     <div class="col-sm-6 video-wrapper">
+       <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/UBOyqjD2qFg" frameborder="0" allowfullscreen></iframe>
+     </div>
+   </div>
    </div>
 
        <hr>
@@ -299,6 +318,18 @@
 
    </div>
    <!-- /.container -->
+
+   <script type="text/javascript">
+      $(docment).ready(function() {
+      	// เปลี่ยน .entry-content เป็น class ที่คุณต้องการใช้
+      	var embed = ('.entry-content').find('embed, iframe');
+      	if (embed.length > 0) {
+      		  embed.each(function() {
+      		  	$(this).wrap('<div class="video-wrapper"></div>');
+      		})
+      	}
+      });
+      </script>
     </body>
 
 </html>
