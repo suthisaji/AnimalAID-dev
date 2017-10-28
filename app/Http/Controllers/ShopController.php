@@ -20,4 +20,14 @@ class ShopController extends Controller
         );
         return view('shop.index', $data);
     }
+
+
+    function listProductAdminView()
+    {
+        $data = array(
+            'categories' => Category::all(),
+            'products' => Product::paginate(20)
+        );
+        return view('shop.listProductAdminView', $data);
+    }
 }

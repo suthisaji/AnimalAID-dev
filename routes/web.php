@@ -246,6 +246,9 @@ Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware
 Route::get('/webshop', 'ShopController@index'); //Shop Homepage
 /* SHOP */
 
+/* ListProductFor admin*/
+Route::get('/listProductAdminView', 'ShopController@listProductAdminView'); //Shop Homepage
+/* ListProductFor admin*/
 /* listProduct */
 Route::get('/transferDocument', 'ProductController@transferDocument')->middleware('auth')->middleware('checkadmin');
 Route::post('/transferDocument', 'ProductController@transferDocument')->middleware('auth')->middleware('checkadmin');

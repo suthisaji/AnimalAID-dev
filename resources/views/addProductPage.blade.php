@@ -152,7 +152,7 @@
 
               </form>
                  <div class="text-center">
-                <a href="/listProduct" class="btn btn-info" style="font-size:18px">ดูรายการสินค้าทั้งหมด</a>
+                <a href="/listProductAdminView" class="btn btn-info" style="font-size:18px">ดูรายการสินค้าทั้งหมด</a>
                 </div>
             </div>
 

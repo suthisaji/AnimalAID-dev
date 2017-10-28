@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url('shop/css/shop.css') }}"/>
   </head>
   <body>
-    @include('shop.layouts.navbar')
+    
     <div class="container mt-3">
         @yield('content')
     </div>

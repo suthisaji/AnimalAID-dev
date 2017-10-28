@@ -122,7 +122,7 @@ class ProductController extends Controller
   function deleteProduct($product_id){
     $result = $this->ProductRepository->deleteProduct($product_id);
     if($result){
-        return redirect('/listProduct');
+        return redirect('/shop.listProductAdminView');
     }else{
         echo "Can not delete product";
     }
@@ -156,19 +156,7 @@ class ProductController extends Controller
      return view('editProduct',$data);
   }
 
-  function listOfProduct(){
-    $this->middleware('auth');
-    if(Auth::user()==null){
-  return redirect('login');
-  }
-    $category = $this->CategoryRepository->getAllCategory();
-    $product = $this->ProductRepository->getAllProduct();
-       $data = array(
-          'category'=>$category,
-            'product'=>$product,
-       );
-     return view('listProduct',$data);
-  }
+
 
 function transferDocument(){
   $this->middleware('auth');
@@ -351,5 +339,5 @@ function statusShippingToCancel($ordering_id=0){
     }
 
 
-  
+
 }
