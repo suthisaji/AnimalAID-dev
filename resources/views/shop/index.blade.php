@@ -23,7 +23,7 @@
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
                                     </div>
-                                    <img src="{{ $product->product_pic }}"/>
+                                      <img src="{{url('/images/'.$product->product_pic)}}">
                                     <span>{{ $product->product_name }}</span>
                                     <div class="add-to-cart">
                                         <button type="button" class="btn btn-sm btn-primary cd-add-to-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
