@@ -4,7 +4,7 @@ use App\NewsAni;
 class NewsAniRepository implements NewsAniRepositoryInterface{
 
     function getAllNewsAni(){
-      return NewsAni::orderBy('created_at')->get();
+      return NewsAni::orderBy('created_at', 'desc')->get();
     }
 
     function addNewsAni($head_News,$adminId,$newImageName,$content,$news_type){

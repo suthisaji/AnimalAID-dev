@@ -160,7 +160,7 @@
 
       <tbody>
         @foreach($animals as $animal)
-
+          @if( $animal->admin_id == $adminId)
 
           <tr>
             <td>{{$animal->animal_id}}</td>
@@ -278,7 +278,7 @@
               </td>
           </tr>
               @endif
-
+          @endif
             @endforeach
       </tbody>
     </table>

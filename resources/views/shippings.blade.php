@@ -101,7 +101,7 @@
     <div class="panel-heading">
       <center><h3><b>ใบจัดส่งสินค้า<b></h3></center>
     </div>
-
+@if(DB::table('shippings')->count()>0)
     <div class="panel-heading">
       <table class="table table-striped">
         <thead>
@@ -143,7 +143,7 @@
             <td><center><input type="date" name="dateTimeShipping"required/><center></td>
             <td><center><input type="text" name="package_id" required/><center></td>
               <input type="hidden" name="shipping_status" value="จัดส่งแล้ว" />
-            <td>  <button class=" btn btn-sm btn-primary" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง')">ถูกต้อง</button></td>
+            <td>  <button class=" btn btn-sm btn-primary" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง')">ยินยัน</button></td>
           <td>  กำลังตรวจสอบ</td>
           @endif
          </form>
@@ -153,6 +153,10 @@
         @endforeach
       </table>
     </div>
+  @else
+    <br>
+<center><h2 style="color:orange">ยังไม่มีใบจัดส่งสินค้า</h2></center>
+  @endif
 
   </div>
 </body>

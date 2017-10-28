@@ -35,7 +35,7 @@ use DB;
         }
     }
     function getAllAnimal(){
-      return Animal::orderBy('created_at')->get();
+      return Animal::orderBy('created_at', 'desc')->get();
     }
 
     function animal(){
