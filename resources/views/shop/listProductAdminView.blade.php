@@ -1,5 +1,6 @@
-@extends('shop.layouts.main')
+@extends('shop.layouts.mainAdmin')
 @section('content')
+
     <div class="row">
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
