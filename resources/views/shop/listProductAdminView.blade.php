@@ -24,7 +24,7 @@
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">รหัส{{$product->product_id}}</span>
                                     </div>
-                                    <img src="{{ $product->product_pic }}"/>
+                                    <img src="{{url('/images/'.$product->product_pic)}}">
                                     <span>{{ $product->product_name }}</span>
                                       <span>{{ $product->product_price }}</span>
                                     <div class="add-to-cart">
