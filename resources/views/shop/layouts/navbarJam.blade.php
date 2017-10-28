@@ -11,6 +11,7 @@
 .navbar {
     text-transform: unset;
 }
+
 </style>
 <nav class="navbar navbar-toggleable-md navbar-light bg-inverse">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
