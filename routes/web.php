@@ -216,9 +216,7 @@ Route::get('/ADEFproduct', function () {
     return view('ADEFproduct');
 });
 
-Route::get('/userPurchase', function () {
-    return view('userPurchase');
-});
+
 
 
 
@@ -286,7 +284,14 @@ Route::get('/shipping_status', 'ProductController@shipping_statusDocument')->mid
 Route::post('/shipping_status', 'ProductController@shipping_statusDocument')->middleware('auth');
 /* listProduct */
 
+/*userPurchase*/
+Route::get('/userPurchase', 'ProductController@userPurchase');
+
 /*updateAdress User*/
 Route::get('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
 Route::post('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
 /*updateAdress User*/
+/*updateSlipAndDateTimeTransfer*/
+Route::get('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
+Route::post('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
+/*updateSlipAndDateTimeTransfer*/

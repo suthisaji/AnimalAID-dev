@@ -366,8 +366,10 @@ function statusShippingToCancel($ordering_id=0){
 
           }elseif(Request::isMethod('get')){
             $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+                $shipping = $this->ShippingRepository->getAllShipping();
              $data = array(
-                  'transferMoney'=>$transferMoney
+                  'transferMoney'=>$transferMoney,
+                    'shipping'=>$shipping,
               );
               return view('userPurchase', $data);
 
@@ -375,5 +377,50 @@ function statusShippingToCancel($ordering_id=0){
 
       }
 
+
+
+      function userPurchase(){//จะแสดงข้อมูลหน้า Shipping_status
+        $this->middleware('auth');
+        if(Auth::user()==null){
+      return redirect('login');
+        }
+      $shipping = $this->ShippingRepository->getAllShipping();
+        $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+      $data = array(
+         'shipping'=>$shipping,
+               'transferMoney'=>$transferMoney,
+      );
+      return view('userPurchase',$data);
+      }
+
+
+      function updateSlip(){//เปลี่ยน checking_status เป็น noConfirm ด้วย
+
+        if(Request::isMethod('post')){
+        $checking_status=Input::get('checking_status');
+
+        $order_number= Input::get('order_number');
+          $dateTimeOfTransfer = Input::get('dateTimeOfTransfer');
+          if (Input::hasFile('picture_slip')) {
+          $temp = Request::file('picture_slip')->getPathName();
+          $imageName = Request::file('picture_slip')->getClientOriginalName();
+          $path = base_path().'/public/images/';
+          $newImageName = 'slip_'.str_random(5).$imageName;
+          Request::file('picture_slip')->move($path, $newImageName);
+
+          $result = $this->TransferMoneyRepository->updateTransferMoneySlip($newImageName,$dateTimeOfTransfer,$order_number,$checking_status);
+
+
+            if($result){
+                return redirect('/userPurchase');
+
+          }else{
+              echo "Can not Update";
+          }
+
+
+      }
+      }
+    }
 
 }

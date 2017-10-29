@@ -101,6 +101,7 @@ class AdminController extends Controller
                     $countAdminAnsQues = $this->AnimalRepository->countAdminAnsQues($userId);
                     $sumAmountUserDonate = $this->AnimalRepository->sumAmountUserDonate($tel);
                     $countUserDonate = $this->AnimalRepository->countUserDonate($tel);
+                    $shipping = $this->ShippingRepository->getAllShipping();
             $data = array(
               'userId'=>$userId ,
               'name' =>$name ,
@@ -118,7 +119,8 @@ class AdminController extends Controller
               'countAdminCreateAct'=>$countAdminCreateAct,
               'countAdminAnsQues'=>$countAdminAnsQues,
               'countUserDonate'=>$countUserDonate,
-              'sumAmountUserDonate'=>$sumAmountUserDonate
+              'sumAmountUserDonate'=>$sumAmountUserDonate,
+              'shipping'=>$shipping,
               );
 
             return view('adminProfile',$data);

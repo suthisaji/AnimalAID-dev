@@ -314,7 +314,7 @@
 
 
    <div class="container">
-     <div class="row">
+     <div class="row"  style="border:solid 1px;border-color:gray;">
        <div class="col-sm-3" style=""></div>
 
        <div class="col-md-6">
@@ -347,14 +347,97 @@
 
             <input type="hidden" class="form-control" name="id" value="{{ Auth::user()->id }}"/>
            <div class="text-center">
-             <button class="btn btn-success">ยืนยันการสั่งซื้อ</button>
+             <br>
+             <button class="btn btn-success" onclick="return confirm('ยืนยันการสั่งซื้อสินค้า')">ยืนยันการสั่งซื้อ</button>
            </div>
+           <br>
+           <br>
          </form>
        </div>
        <div class="col-sm-3" style=""></div>
      </div>
-   </div>
 
+
+
+
+
+
+
+
+
+   @foreach ($transferMoney as $t)
+     @if($t->picture_slip=='NULL')
+      <div class="container">
+        <div class="row" style="border:solid 1px;border-color:gray;">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+              <h1 class="display-4" style="text-align:center; color:#424242; ">แจ้งชำระเงิน ใบสั่งซื้อหมายเลข {{$t->join_Ordering->ordering_id}}</h1>
+              <form name="updateSlip" action="/updateSlip/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">
+                  {{ Form::token() }}
+
+                  <div class="form-group">
+                      <label for="dateTimeOfTransfer" class="form-label h3">ชำระวันที่และเวลา</label>
+                      <input type="datetime-local" class="form-control" name="dateTimeOfTransfer" required/>
+
+                  </div>
+
+                  <div class="form-group" id="slip">
+                      <label for="picture_slip" class="form-label h3">รูปภาพหลักฐานการโอน</label><br>
+                      <input type="file"  name="picture_slip"  required/ >
+                  </div>
+
+                  <input type="hidden" class="form-control" name=" order_number"  value="{{$t->order_number}}"/>
+                 <input type="hidden" class="form-control" name="checking_status"  value="กำลังตรวจสอบหลักฐาน"/>
+                </tr>
+
+                <div class="text-center">
+                    <button class="btn btn-success" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง  หากมีข้อผิดพลาดทางเราจะติดต่อกลับไปค่ะ')">ส่งหลักฐานการโอน</button>
+                </div>
+                <br><br>
+              </form>
+
+          </div>
+      </div>
+      </div>
+@else
+<center><h2 style="color:green">ส่งหลักฐานยืนยันแล้ว </h2></center>
+@endif
+ @endforeach
+<br>
+<br>
+<br>
+
+
+
+<div class="container">
+  <div class="panel-heading">
+    <center><h3><b>สถานะการจัดส่งสินค้า<b></h3></center>
+  </div>
+
+  <div class="panel-heading">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><center>รหัสใบสั่งซื้อ</center></th>
+          <th><center>เลขพัสดุ</center></th>
+          <th><center>สถานะ</center></th>
+        </tr>
+      </thead>
+@foreach($shipping as $s)
+      <tbody>
+        @if($s->buyer_id==Auth::user()->id)
+            <td><center>{{$s->ordering_id}}</center></td>
+        <td><center>{{$s->package_id}}</center></td>
+        <td><center>{{$s->shipping_status}}</center></td>
+<!-- ดึงข้อมูลจากดาต้าเบส -->
+@endif
+      </tbody>
+    @endforeach
+    </table>
+  </div>
+
+
+</div>
 
        </body>
    </html>

@@ -25,4 +25,20 @@ class TransferMoneyRepository implements TransferMoneyRepositoryInterface{
       }
   }
 
+  function updateTransferMoneySlip($newImageName,$dateTimeOfTransfer,$order_number,$checking_status){
+    $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+       'dateTimeOfTransfer'=>$dateTimeOfTransfer,
+        'picture_slip'=>$newImageName,
+        'checking_status'=>$checking_status
+
+     );
+    $result = TransferMoney::where('order_number',$order_number)->update($data);
+    if($result > 0){
+        return true;
+    }else{
+        return false;
+    }
+
+  }
+
 }
