@@ -287,29 +287,23 @@
        <!-- /.container -->
    </nav>
    <div class="container">
-     <br><br>   @php($disap='no')
   @foreach($transferMoney as $tr)
      <h3 class="cur">
-         @if($tr->join_Ordering->customer_id==Auth::user()->id)
-            @if(($tr->picture_slip==null)&&($tr->join_Ordering->order_number==$tr->order_number))
+        @if(($tr->join_Ordering->customer_id==Auth::user()->id)&&($tr->picture_slip=='NULL')&&($tr->join_Ordering->order_number==$tr->order_number))
           <span style="color:lightgreen">ยืนยันการสั่งซื้อสินค้าแล้ว &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
           <span  style="color:lightgreen"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อแล้ว</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
           <span  style="color:gray"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยัน</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
           <span  style="color:gray"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า</span></h3>
-            @php($disap='ok')
-           @elseif(($tr->picture_slip!=null)&&($tr->join_Ordering->order_number==$tr->order_number))
+        @elseif(($tr->join_Ordering->customer_id==Auth::user()->id)&&($tr->picture_slip!='NULL')&&($tr->join_Ordering->order_number==$tr->order_number))
           <span style="color:lightgreen">ยืนยันการสั่งซื้อสินค้า &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
                 <span  style="color:lightgreen"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อ</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
             <span  style="color:lightgreen"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยันแล้ว</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-            <span  style="color:orange;"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า : <small style="color:#DF7401">@if($tr->checking_status=='confirm') รอการจัดส่ง @else {{$tr->checking_status}}@endif</small></span></h3>
-            @php($disap='ok')
-           @else
-           <span style="color:gray">ยืนยันการสั่งซื้อสินค้า &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
-           <span style="color:gray"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อ</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-           <span style="color:gray"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยัน</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-           <span style="color:gray"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า</span></h3>
-             @php($disap='no')
-             @endif
+            <span  style="color:orange;"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า click</span></h3>
+        @else
+       <span style="color:gray">ยืนยันการสั่งซื้อสินค้า &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
+        <span style="color:gray"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อ</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <span style="color:gray"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยัน</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+        <span style="color:gray"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า</span></h3>
           @endif
 @endforeach
 <br>
@@ -345,7 +339,7 @@
    </div>
 
 
- @if($disap!='ok')
+
    <div class="container">
 
      <div class="row"  style="border:solid 1px;border-color:gray;">
@@ -387,22 +381,9 @@
            <br>
            <br>
          </form>
-
- </div>
- </div>
-     @else
-       <div class="container">
-        <div  style="background-color:#E0F8EC">
-  <div class="bgc panel-heading">
-    <br>
-
-      <center> คุณได้กรอกข้อมูลการจัดส่งแล้ว<center>
-        </div>
-          </div>
-          <br>
-
-     @endif
-
+       </div>
+       <div class="col-sm-3" style=""></div>
+     </div>
 
 
 
@@ -413,8 +394,7 @@
 
 
    @foreach ($transferMoney as $t)
-     @if(($t->join_Ordering->customer_id==Auth::user()->id))
-       @if($t->picture_slip==null)
+     @if($t->picture_slip=='NULL')
       <div class="container">
         <div class="row" style="border:solid 1px;border-color:gray;">
           <div class="col-md-3"></div>
@@ -447,14 +427,13 @@
           </div>
       </div>
       </div>
-     @else
+@else
   <br>
   <br>
   <div class="bgc panel-heading">
 <center ><h2 id="div3"style="color:green">คุณได้ส่งหลักฐานยืนยันแล้ว </h2></center>
 </div>
-    @endif
-    @endif
+@endif
  @endforeach
 <br>
 <br>
@@ -473,15 +452,15 @@
         <tr>
           <th><center>รหัสใบสั่งซื้อ</center></th>
           <th><center>เลขพัสดุ</center></th>
-          <th id="div4"><center>สถานะ</center></th>
+          <th><center>สถานะ</center></th>
         </tr>
       </thead>
 @foreach($shipping as $s)
-      <tbody>
+      <tbody id="div4">
         @if($s->buyer_id==Auth::user()->id)
             <td><center>{{$s->ordering_id}}</center></td>
         <td><center>{{$s->package_id}}</center></td>
-        <td><center>@if($s->shipping_status=='กำลังตรวจสอบ') กำลังเตรียมการจัดส่ง @else {{$s->shipping_status}}@endif</center></td>
+        <td><center>{{$s->shipping_status}}</center></td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
 @endif
       </tbody>

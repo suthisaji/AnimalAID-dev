@@ -288,8 +288,8 @@ Route::post('/shipping_status', 'ProductController@shipping_statusDocument')->mi
 Route::get('/userPurchase', 'ProductController@userPurchase');
 
 /*updateAdress User*/
-Route::get('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
-Route::post('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
+Route::get('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth');
+Route::post('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth');
 /*updateAdress User*/
 /*updateSlipAndDateTimeTransfer*/
 Route::get('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
