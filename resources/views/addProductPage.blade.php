@@ -51,6 +51,7 @@
         font-size: 16px;
       }
 
+
     </style>
 </head>
 <body>
@@ -147,13 +148,13 @@
                 </div>
 
                 <div class="text-center">
-                  <button class="btn btn-success">เพิ่มสินค้า</button>
+                  <button class="btn btn-success" style="font-size:18px">เพิ่มสินค้า</button>
                 </div>
                 <br>
 
               </form>
                  <div class="text-center">
-                <a href="/listProductAdminView" class="btn btn-info" style="font-size:18px">ดูรายการสินค้าทั้งหมด</a>
+                <button class="btn btn-info btn-block" style="font-size:16px;"><a href="/listProductAdminView">ดูรายการสินค้าทั้งหมด</a></button>
                 </div>
             </div>
 
