@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url('shop/css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ url('shop/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" href="{{ url('shop/css/shop.css') }}"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
   <body>
     @include('shop.layouts.navbar')

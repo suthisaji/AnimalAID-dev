@@ -23,8 +23,8 @@
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
                                     </div>
-                                    <img src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
-                                    <span>{{ $product->product_name }}</span>
+                                    <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
+                                    <span class="product-name">{{ $product->product_name }}</span>
                                     <div class="add-to-cart">
                                         <button type="button" class="btn btn-sm btn-primary cd-add-to-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
                                     </div>
@@ -74,5 +74,27 @@
 @endsection
 
 @section('embled_script')
+<script>
+var cartCheckout = $(".cd-cart-container").find(".checkout")
 
+cartCheckout.on("click", function(event){
+    event.preventDefault();
+    console.log('go checkout', _cartList)
+    fetch("{{url('webshop/checkout')}}", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        credentials: "same-origin",
+        body: JSON.stringify({
+            _token: "{{ csrf_token() }}",
+            cart: _cartList
+        })
+    })
+    .then(res => {
+        console.log(res)
+    })
+})
+</script>
 @endsection

@@ -1,6 +1,7 @@
+let _cartList = [];
 jQuery(document).ready(function($) {
   var cartWrapper = $(".cd-cart-container");
-  var _cartList = [];
+  
   if (cartWrapper.length > 0) {
     var cartBody = cartWrapper.find(".body");
     var cartList = cartBody.find("ul").eq(0);
@@ -8,12 +9,7 @@ jQuery(document).ready(function($) {
     var cartTrigger = cartWrapper.children(".cd-cart-trigger");
     var cartCount = cartTrigger.children(".count");
     var addToCartBtn = $(".cd-add-to-cart");
-    var cartCheckout = cartWrapper.find(".checkout")
-
-    cartCheckout.on("click", function(event){
-      event.preventDefault();
-      console.log('go checkout')
-    })
+    
 
     addToCartBtn.on("click", function(event) {
       event.preventDefault();
@@ -95,7 +91,7 @@ jQuery(document).ready(function($) {
         `<li class="product">
           <div class="product-image">
               <a href="#0">
-                  <img src="https://animals-aid.com/images/${item.img}" alt="placeholder"/>
+                  <img style="width: 50%; max-height: 30px;" src="https://animals-aid.com/images/${item.img}" alt="placeholder"/>
               </a>
           </div>
           <div class="product-details">
@@ -251,5 +247,9 @@ jQuery(document).ready(function($) {
       ? cartTotal.text((Number(cartTotal.text()) + Number(price)).toFixed(2))
       : cartTotal.text((Number(cartTotal.text()) - Number(price)).toFixed(2));
   }
+
+  $('.category-btn').click(function(){
+    window.location.href = $(this).data('url')
+  })
 });
 

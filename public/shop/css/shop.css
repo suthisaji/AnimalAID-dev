@@ -935,3 +935,17 @@ h1 {
   display: inline-flex;
   margin: 0 auto;
 }
+
+.product-name{
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+
+.product-image{
+  top: 20%;
+  position: absolute;
+  left: 0;
+  max-height: 150px;
+}
