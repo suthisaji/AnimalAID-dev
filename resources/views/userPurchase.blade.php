@@ -168,6 +168,13 @@
     box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0);
 }
 /*จบเนป*/
+.cur{
+  cursor: pointer;
+}
+.bgc{
+    background-color:#E0F8EC;
+    border-radius: 3px;
+}
     </style>
 
   </head>
@@ -280,6 +287,26 @@
        <!-- /.container -->
    </nav>
    <div class="container">
+  @foreach($transferMoney as $tr)
+     <h3 class="cur">
+        @if(($tr->join_Ordering->customer_id==Auth::user()->id)&&($tr->picture_slip=='NULL')&&($tr->join_Ordering->order_number==$tr->order_number))
+          <span style="color:lightgreen">ยืนยันการสั่งซื้อสินค้าแล้ว &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
+          <span  style="color:lightgreen"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อแล้ว</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          <span  style="color:gray"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยัน</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+          <span  style="color:gray"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า</span></h3>
+        @elseif(($tr->join_Ordering->customer_id==Auth::user()->id)&&($tr->picture_slip!='NULL')&&($tr->join_Ordering->order_number==$tr->order_number))
+          <span style="color:lightgreen">ยืนยันการสั่งซื้อสินค้า &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <span  style="color:lightgreen"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อ</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <span  style="color:lightgreen"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยันแล้ว</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+            <span  style="color:orange;"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า click</span></h3>
+        @else
+       <span style="color:gray">ยืนยันการสั่งซื้อสินค้า &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span>
+        <span style="color:gray"id="click1" class="hoverOranger" >กรอกข้อมูลติดต่อ</span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <span style="color:gray"id="click3" class="hoverOranger" >ส่งหลักฐานยืนยัน</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+        <span style="color:gray"id="click4" class="hoverOranger" >สถานะการจัดส่งสินค้า</span></h3>
+          @endif
+@endforeach
+<br>
      <div class="panel-heading">
        <center><h3><b>สั่งซื้อสินค้า<b></h3></center>
      </div>
@@ -314,10 +341,11 @@
 
 
    <div class="container">
+
      <div class="row"  style="border:solid 1px;border-color:gray;">
        <div class="col-sm-3" style=""></div>
 
-       <div class="col-md-6">
+       <div class="col-md-6" id="div2">
          <h1 style="text-align:center">กรุณากรอกข้อมูลการจัดส่ง</h1><!--DB::User-->
          <form name="addPurchase" action="/addPurchase/{{ Auth::user()->id}}" class="form" method="post" enctype="multipart/form-data" onsubmit="return validation()">{{ Form::token() }}
 
@@ -375,7 +403,7 @@
               <form name="updateSlip" action="/updateSlip/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">
                   {{ Form::token() }}
 
-                  <div class="form-group">
+                  <div class="form-group" id="div3">
                       <label for="dateTimeOfTransfer" class="form-label h3">ชำระวันที่และเวลา</label>
                       <input type="datetime-local" class="form-control" name="dateTimeOfTransfer" required/>
 
@@ -400,7 +428,11 @@
       </div>
       </div>
 @else
-<center><h2 style="color:green">ส่งหลักฐานยืนยันแล้ว </h2></center>
+  <br>
+  <br>
+  <div class="bgc panel-heading">
+<center ><h2 id="div3"style="color:green">คุณได้ส่งหลักฐานยืนยันแล้ว </h2></center>
+</div>
 @endif
  @endforeach
 <br>
@@ -424,7 +456,7 @@
         </tr>
       </thead>
 @foreach($shipping as $s)
-      <tbody>
+      <tbody id="div4">
         @if($s->buyer_id==Auth::user()->id)
             <td><center>{{$s->ordering_id}}</center></td>
         <td><center>{{$s->package_id}}</center></td>
@@ -438,6 +470,32 @@
 
 
 </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('#click1').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div1').offset().top},1000);
+    })
+
+$('#click2').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div2').offset().top},1000);
+    })
+
+$('#click3').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div3').offset().top},1000);
+    })
+
+$('#click4').click(function(){
+    $('html,body').animate({
+      scrollTop: $('#div4').offset().top},1000);
+    })
+})
+
+</script>
 
        </body>
    </html>
