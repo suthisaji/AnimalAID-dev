@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
         `<li class="product">
           <div class="product-image">
               <a href="#0">
-                  <img src="${item.img}" alt="placeholder"/>
+                  <img src="https://animals-aid.com/images/${item.img}" alt="placeholder"/>
               </a>
           </div>
           <div class="product-details">
