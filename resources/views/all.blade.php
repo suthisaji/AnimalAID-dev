@@ -543,7 +543,7 @@ transform: skew(-135deg) translateX(0%);
 @php($b=0)
   <!-- Related Projects Row -->
     <div class="col-md-12">
-      <h3 class="my-4"><b>ขอเชิญร่วมกิจกรรม   </b>    &nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;      <span id="click1" class="hoverOranger" >ข่าวสาร</span>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  <span id="click2" class="hoverOranger" >Product</span>
+      <h3 class="my-4"><b>ขอเชิญร่วมกิจกรรม   </b>    &nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;      <span id="click1" class="hoverOranger" >ข่าวสาร</span>
       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<span id="click3" class="hoverOranger" >Games</span>   &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<span id="click4" class="hoverOranger" >เกี่ยวกับมูลนิธิ</span></h3>
 <br><br><br><br><br><br><br>
         <div class="row">
@@ -643,47 +643,10 @@ transform: skew(-135deg) translateX(0%);
 
           <div class="col-md-12">
             <p id="div2"><p>
-          <br><br><br>
-          <hr class="light">
-          <br><br>
-
-               <div class="row">
-
-                 <!-- Related Projects Row  -->
-                   <div class="col-md-12">
-                     <h2 class="my-4" ><b>Product<b> </h2>
-
-                       <div class="row">
+          <br>
 
 
-                         <div class="col-sm-4 col-lg-4 col-md-4">  plate&screw
-                           <div class="thumbnail" >
-                             <img src="images\test.JPG" alt="">
-                           </div>
-                         </div>
 
-                         <div class="col-sm-4 col-lg-4 col-md-4"> เสื้อ
-                           <div class="thumbnail">
-                             <img src="images\1.JPG" alt="">
-                           </div>
-                         </div>
-
-                         <div class="col-sm-4 col-lg-4 col-md-4"> ที่นั่ง
-                           <div class="thumbnail">
-                             <img src="images\fghj.JPG" alt="">
-                           </div>
-                         </div>
-
-                           <br>
-                       </div>
-
-                   </div>
-                 <!-- /.row -->
-
-               </div>
-               <br><br><br>
-  <hr class="light" >
-  <br><br><br><br><br>
   <div class="row" id="div3">
 
     <!-- Related Projects Row -->
