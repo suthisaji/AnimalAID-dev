@@ -251,7 +251,9 @@
 
   <body >
   <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <a  class="navbar-brand" href="all">
+       <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
