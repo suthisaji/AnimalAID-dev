@@ -121,7 +121,7 @@ height:500px;
 .after2{
 position:absolute;top:610px;left:0px;
 width:100%;
-height:76%;
+height:86%;
 }
 .after3{
 position:absolute;left:0px;
@@ -729,7 +729,8 @@ transform: skew(-135deg) translateX(0%);
 
      <!-- Related Projects Row -->
        <div class="col-md-12 b"  >
-
+      <br>
+        <center> <img  class="lig" src="images\logo2.jpg" alt="" width="55%" height="44%" style=""></center>
          <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
              <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) <br>
              ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br></h3>
