@@ -1,5 +1,12 @@
 @extends('shop.layouts.main')
 @section('content')
+<style>
+  .follow{
+    position:fixed;
+    top:16%;
+    right: 1%;
+  }
+</style>
     <div class="row">
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
@@ -75,6 +82,13 @@
             </div>
         </div> <!-- .cd-cart -->
     </div> <!-- cd-cart-container -->
+
+    <div class="follow">
+      <a  href="userPurchase">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.PNG" alt="donateIcon" width="200" height="60">
+      </a>
+    </div>
+
 @endsection
 
 @section('embled_script')

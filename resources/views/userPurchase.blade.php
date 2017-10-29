@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>หาบ้านให้สัตว์</title>
+    <title>รายการสั่งซื้อสินค้า</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -199,13 +199,13 @@
                    <li class="navmain ">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li class="navmain ">
+                   <li class="navmain active ">
                        <a href="webshop">ของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li class="navmain active ">
+                   <li class="navmain">
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
                    <li class="navmain ">
