@@ -85,7 +85,7 @@
 
     <div class="follow">
       <a  href="userPurchase">
-        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.PNG" alt="donateIcon" width="200" height="60">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.png" alt="purchaseIcon" width="200" height="60">
       </a>
     </div>
 
