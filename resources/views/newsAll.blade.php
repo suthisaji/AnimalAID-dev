@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>การขอรับบริจาคทั้งหมด</title>
+    <title>ข่าวสารและกิจกรรม</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -155,7 +155,7 @@
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li class="navmain ">
-                       <a href="webshop">ของที่ระลึก</a>
+                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>

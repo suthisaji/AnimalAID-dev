@@ -200,7 +200,7 @@
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li class="navmain ">
-                       <a href="webshop">ของที่ระลึก</a>
+                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>

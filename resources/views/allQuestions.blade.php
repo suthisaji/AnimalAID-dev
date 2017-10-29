@@ -26,7 +26,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 
-    <title>summer Note</title>
+    <title>สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</title>
 
       {{Html::style('css/shop-homepage.css')}}<!--ตรงนี้คือฟ้อนแบบไม่มีหัว-->
       <style>
@@ -183,7 +183,7 @@
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
                    <li class="navmain ">
-                       <a href="webshop">ของที่ระลึก</a>
+                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>
