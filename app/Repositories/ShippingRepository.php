@@ -4,6 +4,8 @@ use App\TransferMoney;
 use App\Product;
 use App\User;
 use App\Shipping;
+use App\Ordering;
+
 use File;
 use DB;
 
@@ -64,10 +66,11 @@ function addOrdering($ordering_id,$order_number,$customer_id,$pay_status){
       'order_number'=>$order_number,
       'customer_id'=>$customer_id,
       'pay_status'=>$pay_status,
+      'ordering_id'=>$ordering_id,
 
   );
   try{
-      $result = TransferMoney::create($data);
+      $result = Ordering::create($data);
       return true;
   }catch(Exception $e){
       return false;

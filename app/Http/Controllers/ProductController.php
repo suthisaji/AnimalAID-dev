@@ -360,6 +360,7 @@ function statusShippingToCancel($ordering_id=0){
                   return redirect('/userPurchase');
               }elseif($result3){
                   return redirect('/userPurchase');
+                }else{
                   echo "Can not Update".mysqli_error();
               }
 

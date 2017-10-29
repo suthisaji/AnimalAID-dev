@@ -345,7 +345,7 @@
             <input type="text" class="form-control" name="order_number" value="{{rand(0,190000)}}"/>
            <input type="hidden" class="form-control" name="ordering_id" value="{{rand(200000,380000)}}"/>
 
-<input type="hidden" class="form-control" name="id" value="{{ Auth::user()->id }}"/>
+            <input type="hidden" class="form-control" name="id" value="{{ Auth::user()->id }}"/>
            <div class="text-center">
              <button class="btn btn-success">ยืนยันการสั่งซื้อ</button>
            </div>
@@ -354,7 +354,7 @@
        <div class="col-sm-3" style=""></div>
      </div>
    </div>
-   
+
 
        </body>
    </html>
