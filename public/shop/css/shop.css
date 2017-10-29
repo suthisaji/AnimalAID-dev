@@ -14,7 +14,8 @@ select,
 textarea,
 ul,
 ol {
-  font-family: "Kanit";
+  font-family: "Athiti";
+  font-size: 16px;
 }
 
 .navbar {
@@ -150,7 +151,7 @@ ol {
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -189,10 +190,10 @@ h1 {
   }
 }
 
-/* -------------------------------- 
-  
-  Main Components 
-  
+/* --------------------------------
+
+  Main Components
+
   -------------------------------- */
 .cd-cart-container::before {
   /* dark bg layer visible when the cart is open */
