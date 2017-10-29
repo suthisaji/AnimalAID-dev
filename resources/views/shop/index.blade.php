@@ -18,8 +18,8 @@
             <div class="card shop-listing">
                 <div class="card-header">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
-                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li>
+                        <b><li class="breadcrumb-item"><a href="#">สินค้า</a></li>
+                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li></b>
                     </ol>
                 </div>
                 <div class="card-block row shop-item-listing">
@@ -85,7 +85,7 @@
 
     <div class="follow">
       <a  href="userPurchase">
-        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.PNG" alt="donateIcon" width="200" height="60">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.png" alt="purchaseIcon" width="200" height="60">
       </a>
     </div>
 
