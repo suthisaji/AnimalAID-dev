@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
-        <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
@@ -264,7 +264,7 @@
                <!-- <a class="navbar-brand"  style="font-size:20px;"  href="all">Animals A-I-D</a> -->
            </div>
            <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                  <li class="navmain">
                      <a href="all">หน้าหลัก</a>

@@ -18,8 +18,8 @@
             <div class="card shop-listing">
                 <div class="card-header">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
-                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li>
+                        <b><li class="breadcrumb-item"><a href="#">สินค้า</a></li>
+                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li></b>
                     </ol>
                 </div>
                 <div class="card-block row shop-item-listing">
