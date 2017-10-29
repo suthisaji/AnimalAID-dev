@@ -216,7 +216,9 @@ Route::get('/ADEFproduct', function () {
     return view('ADEFproduct');
 });
 
-
+Route::get('/userPurchase', function () {
+    return view('userPurchase');
+});
 
 
 
@@ -283,3 +285,8 @@ Route::post('/shippingUpdate/{ordering_id}','ProductController@shippingAfterDeli
 Route::get('/shipping_status', 'ProductController@shipping_statusDocument')->middleware('auth');
 Route::post('/shipping_status', 'ProductController@shipping_statusDocument')->middleware('auth');
 /* listProduct */
+
+/*updateAdress User*/
+Route::get('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
+Route::post('/addPurchase/{id}','ProductController@updateAddressToUser')->middleware('auth')->middleware('checkadmin');
+/*updateAdress User*/

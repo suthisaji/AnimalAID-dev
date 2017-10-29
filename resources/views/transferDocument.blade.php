@@ -110,7 +110,7 @@
                    <th><center>วันเวลาที่โอน</center></th>
                    <th><center>ชื่อธนาคาร</center></th>
                    <th><center>สาขา</center></th>
-                   <th><center>จำนวนเงินที่โอน฿</center></th>
+                   <th><center>จำนวนเงินที่ต้องโอน฿</center></th>
                    <th><center>ภาพสลิป</center></th>
                    <th><center>อัพหลักฐานเมื่อ</center></th>
                    <th><center>สถานะ</center></th>

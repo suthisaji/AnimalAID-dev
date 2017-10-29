@@ -25,7 +25,9 @@
                                     </div>
                                       <img src="{{url('/images/'.$product->product_pic)}}">
                                     <span>{{ $product->product_name }}</span>
+
                                     <div class="add-to-cart">
+                                        <span style="color:orange;"><b>{{ $product->product_price }}</b>฿</span>
                                         <button type="button" class="btn btn-sm btn-primary cd-add-to-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
@@ -66,8 +68,10 @@
                 </div>
 
                 <footer>
-                    <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿</em></a>
+                    <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿ </em></a>
                 </footer>
+
+
             </div>
         </div> <!-- .cd-cart -->
     </div> <!-- cd-cart-container -->

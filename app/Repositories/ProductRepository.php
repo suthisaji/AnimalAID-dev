@@ -91,5 +91,17 @@ class ProductRepository implements ProductRepositoryInterface{
          return false;
      }
  }
-
+ function updateAddress($id,$address){
+     $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+       'id'=>$id,
+       'address'=>$address,
+    
+     );
+     $result = User::where('id',$id)->update($data);
+     if($result > 0){
+         return true;
+     }else{
+         return false;
+     }
+ }
 }

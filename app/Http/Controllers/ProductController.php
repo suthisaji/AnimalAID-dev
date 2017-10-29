@@ -338,6 +338,41 @@ function statusShippingToCancel($ordering_id=0){
     return view('shipping_status',$data);
     }
 
+    function updateAddressToUser($id=0){
+
+          if(Request::isMethod('post')){
+            $id = Input::get('id');
+            $customer_id = Input::get('id');
+            $address= Input::get('address');
+            $Bank_name=Input::get('Bank_name');
+            $pay_status=Input::get('pay_status');
+
+            $order_number= Input::get('order_number');
+            $ordering_id=Input::get('ordering_id');
+            $amountOfTransfer=Input::get('amountOfTransfer');
+
+            $result1 = $this->ProductRepository->updateAddress($id,$address);
+            $result2 = $this->ShippingRepository->addTransferMoney($order_number,$Bank_name,$amountOfTransfer);
+            $result3= $this->ShippingRepository->addOrdering($ordering_id,$order_number,$customer_id,$pay_status);
+              if($result1){
+                  return redirect('/userPurchase');
+              }elseif($result2){
+                  return redirect('/userPurchase');
+              }elseif($result3){
+                  return redirect('/userPurchase');
+                  echo "Can not Update".mysqli_error();
+              }
+
+          }elseif(Request::isMethod('get')){
+            $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+             $data = array(
+                  'transferMoney'=>$transferMoney
+              );
+              return view('userPurchase', $data);
+
+          }
+
+      }
 
 
 }

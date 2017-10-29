@@ -30,4 +30,7 @@ class ShopController extends Controller
         );
         return view('shop.listProductAdminView', $data);
     }
+
+  
+
 }

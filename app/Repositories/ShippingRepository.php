@@ -58,6 +58,37 @@ function updateShippingAfterDelivery($ordering_id,$shipping_status,$dateTimeShip
     }
 }
 
+function addOrdering($ordering_id,$order_number,$customer_id,$pay_status){
+  $data = array(
+
+      'order_number'=>$order_number,
+      'customer_id'=>$customer_id,
+      'pay_status'=>$pay_status,
+
+  );
+  try{
+      $result = TransferMoney::create($data);
+      return true;
+  }catch(Exception $e){
+      return false;
+  }
+}
+
+
+function addTransferMoney($order_number,$Bank_name,$amountOfTransfer){
+  $data = array(
+      'order_number'=>$order_number,
+      'Bank_name'=>$Bank_name,
+      'amountOfTransfer'=>$amountOfTransfer,
+
+  );
+  try{
+      $result = TransferMoney::create($data);
+      return true;
+  }catch(Exception $e){
+      return false;
+  }
+}
 
 
 
