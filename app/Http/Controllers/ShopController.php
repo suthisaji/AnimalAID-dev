@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ShopModel\Category;
 use App\ShopModel\Product;
-use App\Product_reserve;
-use App\ReserveProduct;
 
 class ShopController extends Controller
 {
@@ -14,28 +12,30 @@ class ShopController extends Controller
     {
     }
 
-    function index()
+    function index(Request $request)
     {
-        $data = array(
-            'categories' => Category::all(),
-            'products' => Product::paginate(20),
-            'product_reserves'=>Product_reserve::all(),
-            'reserveProducts'=>ReserveProduct::all(),
-        );
+        $data = [];
+        if($request->cate){
+            $category = Category::where('category_name', $request->cate)->first();
+            $data = array(
+                'categories' => Category::all(),
+                'products' => Product::where('category_id', $category->category_id)->paginate(20)
+            );
+        }else{
+            $data = array(
+                'categories' => Category::all(),
+                'products' => Product::paginate(20)
+            );
+        }
+
         return view('shop.index', $data);
     }
 
-
-    function listProductAdminView()
-    {
-        $data = array(
-            'categories' => Category::all(),
-            'products' => Product::paginate(20)
-        );
-        return view('shop.listProductAdminView', $data);
+    function checkout(Request $request){
+      return view('shop.checkout');
     }
 
-
-
-
+    function submit(){
+        return view('shop.submit');
+    }
 }

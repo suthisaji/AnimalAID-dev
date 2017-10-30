@@ -244,6 +244,10 @@ Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct')->middleware
 
 /* SHOP */
 Route::get('/webshop', 'ShopController@index'); //Shop Homepage
+Route::get('/webshop/checkout', 'ShopController@checkout')->middleware('auth'); //Shop Checkout
+Route::resource('/webshop/cart', 'CartController');
+Route::delete('/webshop/emptyCart', 'CartController@emptyCart');
+Route::get('/webshop/submit', 'ShopController@submit')->middleware('auth');
 /* SHOP */
 
 /* ListProductFor admin*/

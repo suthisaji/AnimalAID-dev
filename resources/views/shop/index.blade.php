@@ -1,12 +1,5 @@
 @extends('shop.layouts.main')
 @section('content')
-<style>
-  .follow{
-    position:fixed;
-    top:16%;
-    right: 1%;
-  }
-</style>
     <div class="row">
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
@@ -18,8 +11,8 @@
             <div class="card shop-listing">
                 <div class="card-header">
                     <ol class="breadcrumb">
-                        <b><li class="breadcrumb-item"><a href="#">สินค้า</a></li>
-                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li></b>
+                        <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
+                        <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li>
                     </ol>
                 </div>
                 <div class="card-block row shop-item-listing">
@@ -30,21 +23,16 @@
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
                                     </div>
-                                      <img src="{{url('/images/'.$product->product_pic)}}">
-                                    <span>{{ $product->product_name }}</span>
-
+                                    <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
+                                    <span class="product-name">{{ $product->product_name }}</span>
                                     <div class="add-to-cart">
-                                        <span style="color:orange;"><b>{{ $product->product_price }}</b>฿</span>
-                                        <form name="addReserveProduct" action="/addReserveProduct" class="form" method="post" enctype="multipart/form-data" onsubmit="return validation()">{{ Form::token() }}
-                                          <input type="hidden" name="customer_id" value="{{ Auth::user()->id}}"/>
-                                          <input type="hidden" name="reserve_status" value="reserve"/>
-
-                                          <input type="hidden" name="product_id" value="{{$product->product_id}}"/>
-                                            <input type="hidden" name="product_number" value=1>
-
-                                        <button type="submit" class="btn btn-sm btn-primary " >หยิบใส่ตะกร้า</button>
+                                        <form action="{{ url('webshop/cart') }}" method="post">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{$product->product_id}}"/>
+                                            <input type="hidden" name="name" value="{{$product->product_name}}"/>
+                                            <input type="hidden" name="price" value="{{$product->product_price}}"/>
+                                            <button type="submit" class="btn btn-sm btn-primary cd-add-to-cart-removeit" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
@@ -62,26 +50,58 @@
         </div>
     </div>
 
-    <div class="container">
-    @foreach( $product_reserves as $pr)
-      {{$pr->join_Product->product_name}}
-         ราคา {{$pr->join_Product->product_price}} ฿
-        จำนวน  <input type="number" value="{{$pr->product_number}}"/>
-          รวม   <input type="text" value="<?php echo $pr->product_number*$pr->join_Product->product_price;?> "/>
-    @endforeach
-    </div>
-
-
-
-
-    <div class="follow">
-      <a  href="userPurchase">
-        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\purchase.png" alt="purchaseIcon" width="200" height="60">
-      </a>
-    </div>
-
+    <div class="cd-cart-container empty">
+        <a href="#0" class="cd-cart-trigger">
+            Cart
+            <ul class="count"> <!-- cart items count -->
+                <li>0</li>
+                <li>0</li>
+            </ul> <!-- .count -->
+        </a>
+    
+        <div class="cd-cart">
+            <div class="wrapper">
+                <header>
+                    <h2>Cart</h2>
+                </header>
+                
+                <div class="body">
+                    <ul>
+                        <!-- products added to the cart will be inserted here using JavaScript -->
+                    </ul>
+                </div>
+    
+                <footer>
+                    <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿</em></a>
+                </footer>
+            </div>
+        </div> <!-- .cd-cart -->
+    </div> <!-- cd-cart-container -->
 @endsection
 
 @section('embled_script')
+<script>
+var cartCheckout = $(".cd-cart-container").find(".checkout")
 
+cartCheckout.on("click", function(event){
+    event.preventDefault();
+    console.log('go checkout', _cartList)
+    fetch("{{url('webshop/checkout')}}", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        credentials: "same-origin",
+        body: JSON.stringify({
+            _token: "{{ csrf_token() }}",
+            cart: _cartList
+        })
+    })
+    .then(res => {
+        console.log(res)
+        //window.location.href = "{{url('webshop/checkout')}}"
+    })
+})
+</script>
 @endsection
