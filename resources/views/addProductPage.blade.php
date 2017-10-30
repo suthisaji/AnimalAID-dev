@@ -143,7 +143,7 @@
                   <input type="number" class="form-control" name="number_product"/ required>
                 </div>
                 <div class="form-group">
-                  <label for="product_price" class="form-label">ราคาขายสินค้า (บาท)</label>
+                  <label for="product_price" class="form-label">ราคาขายสินค้า (บาท)/หน่วย</label>
                   <input type="number" class="form-control" name="product_price"/ required>
                 </div>
 

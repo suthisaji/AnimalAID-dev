@@ -128,7 +128,10 @@
                      <td>{{$t->Bank_name}}</td>
                      <td>{{$t->Bank_Branch}}</td>
                       <td>{{$t->amountOfTransfer}}</td>
-                     <td><img src="{{url('/images/'.$t->picture_slip)}}" alt="" width="130" height="130"></td>
+                      <!-- ให้คุณดูตรง ปลายๆบรรทัดด้านล่างนี้ครับ ตรง zoomToggle น่ะ ตรงตัวเลข 2ตัวแรก คือขนาดของภาพก่อนที่จะ zoom (เลข 200px กับ 210px อ่ะ)  ส่วน 2 ตัวหลังเป็นขนาดของภาพขณะที่ zoom ครับ (เลข 300px กับ 320px อ่ะ)  -->
+
+
+                     <td><img src="{{url('/images/'.$t->picture_slip)}}"  style="cursor:pointer;" alt="" width="130" height="130" onclick="zoomToggle('130px','100px','200%','140%',this); "></td>
                      <td>{{$t->created_at}}</td>
                  <td>
                    <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
@@ -204,8 +207,18 @@
           </table>
 
       </div>
-</div>
 
+</div>
+<script>
+var nW,nH,oH,oW;
+function zoomToggle(iWideSmall,iHighSmall,iWideLarge,iHighLarge,whichImage){
+oW=whichImage.style.width;oH=whichImage.style.height;
+if((oW==iWideLarge)||(oH==iHighLarge)){
+nW=iWideSmall;nH=iHighSmall;}else{
+nW=iWideLarge;nH=iHighLarge;}
+whichImage.style.width=nW;whichImage.style.height=nH;
+}
+</script>
 
 </body>
 </html>

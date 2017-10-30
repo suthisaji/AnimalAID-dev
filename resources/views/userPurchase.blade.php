@@ -481,7 +481,9 @@
         @if($s->buyer_id==Auth::user()->id)
             <td><center>{{$s->ordering_id}}</center></td>
         <td><center>{{$s->package_id}}</center></td>
-        <td><center>@if($s->shipping_status=='กำลังตรวจสอบ') กำลังเตรียมการจัดส่ง @else {{$s->shipping_status}}@endif</center></td>
+        <td><center>@if($s->shipping_status=='กำลังตรวจสอบ') กำลังเตรียมการจัดส่ง
+        @else {{$s->shipping_status}}
+        @endif</center></td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
 @endif
       </tbody>
