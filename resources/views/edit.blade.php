@@ -87,7 +87,17 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/admin">การจัดการ</a></li>
+          <li class="active"><a href="../animal">รายชื่อสัตว์</a></li>
+          <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
+          <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:#FFFF00"> {{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
+          ->where('animals.admin_id','=', Auth::user()->id)
+          ->where('adoptions.status', '=','Recipient')
+        ->count()}} </span></a></li>
+          <li><a href="../admin">ตอบปัญหา: <span style="color:#FFFF00">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
+          <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
+          <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:#FFFF00">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
+          <li><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

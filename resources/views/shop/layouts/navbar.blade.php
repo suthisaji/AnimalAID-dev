@@ -15,7 +15,7 @@
         <img src="{{ url('images/S__1261612.jpg') }}" width="60" height="60">
     </a>
     <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="navmain">
                 <a class="nav-link" href="all">หน้าแรก <span class="sr-only">(current)</span></a>
             </li>
