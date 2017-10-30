@@ -10,8 +10,9 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a class="navbar-brand" href="all">
-        <img src="{{ url('images/S__1261612.jpg') }}" width="60px"/>
+        <img src="{{ url('images/S__1261612.jpg') }}" width="60" height="60">
     </a>
     <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
