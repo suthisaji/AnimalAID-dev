@@ -27,7 +27,7 @@ class ShopController extends Controller
                 'products' => Product::paginate(20)
             );
         }
-
+        
         return view('shop.index', $data);
     }
 
