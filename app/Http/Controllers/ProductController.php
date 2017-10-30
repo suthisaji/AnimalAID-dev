@@ -10,6 +10,8 @@ use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
 use App\Repositories\TransferMoneyRepositoryInterface;
 use App\Repositories\ShippingRepositoryInterface;
+use App\Repositories\ReserveProductRepositoryInterface;
+use App\Repositories\Product_reserveRepositoryInterface;
 use DB;
 use DateTime;
 
@@ -18,11 +20,13 @@ class ProductController extends Controller
    protected $TransferMoneyRepository;
     protected $ShippingRepository;
 
-  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository){
+  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository,ReserveProductRepositoryInterface $ReserveProductRepository,Product_reserveRepositoryInterface $Product_reserveRepository){
       $this->CategoryRepository = $CategoryRepository;
       $this->ProductRepository = $ProductRepository;
       $this->TransferMoneyRepository = $TransferMoneyRepository;
       $this->ShippingRepository = $ShippingRepository;
+      $this->ReserveProductRepository = $ReserveProductRepository;
+      $this->Product_reserveRepository = $Product_reserveRepository;
     }
 
   function addProduct(){
@@ -158,17 +162,17 @@ class ProductController extends Controller
 
 
 
-function transferDocument(){
-  $this->middleware('auth');
-  if(Auth::user()==null){
-return redirect('login');
+  function transferDocument(){
+    $this->middleware('auth');
+    if(Auth::user()==null){
+  return redirect('login');
+    }
+  $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+  $data = array(
+     'transferMoney'=>$transferMoney,
+  );
+  return view('transferDocument',$data);
   }
-$transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
-$data = array(
-   'transferMoney'=>$transferMoney,
-);
-return view('transferDocument',$data);
-}
 
 
 function changeStatusToConfirmTransferMoney($order_number=0){
@@ -422,5 +426,46 @@ function statusShippingToCancel($ordering_id=0){
       }
       }
     }
+
+
+    function addReserveProduct(){//หยิบลงตะกร้า สร้าง table ReserveProduct and Product_reserve
+            $this->middleware('auth');
+            if(Auth::user()==null){
+              return redirect('login');
+            }
+      if(Request::isMethod('get')){
+        $reserveProduct = $this->ReserveProductRepository->getAllReserveProduct();
+        $Product_reserve = $this->Product_reserveRepository->getAllProduct_reserve();
+         $data = array(
+          'resserveProduct'=>$reserveProduct,
+          'Product_reserve'=>  $Product_reserve
+         );
+        return view('shop.index',$data);
+      }else if(Request::isMethod('post')){
+
+            $customer_id = Input::get('customer_id');
+            $reserve_status= Input::get('reserve_status');
+            $product_id= Input::get('product_id');
+            $product_number= Input::get('product_number');
+          $result = $this->ReserveProductRepository->addReserveProduct($customer_id,$reserve_status);
+
+            if($result){
+              $reserve_id = DB::table('reserveProducts')
+                ->where('customer_id','=',$customer_id)
+                ->value('reserve_id');
+              $result2= $this->Product_reserveRepository->addproduct_reserve($reserve_id,$product_id,$product_number);
+
+                  if($result2){
+                    return redirect('/webshop');
+                  }
+            }else{
+                echo "Failed to add Reserve product";
+            }
+      }
+    }
+
+
+   
+
 
 }

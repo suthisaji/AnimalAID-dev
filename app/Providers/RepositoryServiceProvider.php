@@ -32,5 +32,7 @@ class RepositoryServiceProvider extends ServiceProvider
           App::bind('App\Repositories\CategoryRepositoryInterface','App\Repositories\CategoryRepository');
           App::bind('App\Repositories\TransferMoneyRepositoryInterface','App\Repositories\TransferMoneyRepository');
           App::bind('App\Repositories\ShippingRepositoryInterface','App\Repositories\ShippingRepository');
+          App::bind('App\Repositories\ReserveProductRepositoryInterface','App\Repositories\ReserveProductRepository');
+          App::bind('App\Repositories\Product_reserveRepositoryInterface','App\Repositories\Product_reserveRepository');
     }
 }

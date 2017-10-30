@@ -295,3 +295,7 @@ Route::post('/addPurchase/{id}','ProductController@updateAddressToUser')->middle
 Route::get('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
 Route::post('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
 /*updateSlipAndDateTimeTransfer*/
+
+
+Route::get('/addReserveProduct','ProductController@addReserveProduct');
+Route::post('/addReserveProduct','ProductController@addReserveProduct');

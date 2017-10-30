@@ -35,7 +35,16 @@
 
                                     <div class="add-to-cart">
                                         <span style="color:orange;"><b>{{ $product->product_price }}</b>฿</span>
-                                        <button type="button" class="btn btn-sm btn-primary cd-add-to-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
+                                        <form name="addReserveProduct" action="/addReserveProduct" class="form" method="post" enctype="multipart/form-data" onsubmit="return validation()">{{ Form::token() }}
+                                          <input type="hidden" name="customer_id" value="{{ Auth::user()->id}}"/>
+                                          <input type="hidden" name="reserve_status" value="reserve"/>
+
+                                          <input type="hidden" name="product_id" value="{{$product->product_id}}"/>
+                                            <input type="hidden" name="product_number" value=1>
+
+                                        <button type="submit" class="btn btn-sm btn-primary " >หยิบใส่ตะกร้า</button>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -53,35 +62,17 @@
         </div>
     </div>
 
-    <div class="cd-cart-container empty">
-        <a href="#0" class="cd-cart-trigger">
-            Cart
-            <ul class="count"> <!-- cart items count -->
-                <li>0</li>
-                <li>0</li>
-            </ul> <!-- .count -->
-        </a>
-
-        <div class="cd-cart">
-            <div class="wrapper">
-                <header>
-                    <h2>Cart</h2>
-                </header>
-
-                <div class="body">
-                    <ul>
-                        <!-- products added to the cart will be inserted here using JavaScript -->
-                    </ul>
-                </div>
-
-                <footer>
-                    <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿ </em></a>
-                </footer>
+    <div class="container">
+    @foreach( $product_reserves as $pr)
+      {{$pr->join_Product->product_name}}
+         ราคา {{$pr->join_Product->product_price}} ฿
+        จำนวน  <input type="number" value="{{$pr->product_number}}"/>
+          รวม   <input type="text" value="<?php echo $pr->product_number*$pr->join_Product->product_price;?> "/>
+    @endforeach
+    </div>
 
 
-            </div>
-        </div> <!-- .cd-cart -->
-    </div> <!-- cd-cart-container -->
+
 
     <div class="follow">
       <a  href="userPurchase">
