@@ -32,18 +32,10 @@ class ShopController extends Controller
     }
 
     function checkout(Request $request){
-      foreach($request->cart as $record){
-        $product_name = "";
-        $product_quantity = "";
-        $product_price = "";
-        foreach($record as $key=>$value){
-            if($key == "name"){
-                $product_name = $value;
-            }else if($key == "quantity"){
-                $product_quantity = $value;
-            }
-        }
-        echo $product_name.'/n';
-      }
+      return view('shop.checkout');
+    }
+
+    function submit(){
+        return view('shop.submit');
     }
 }

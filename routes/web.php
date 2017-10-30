@@ -226,5 +226,8 @@ Route::get('/listOfDonor', 'DonateController@listOfDonor');
 
 /* SHOP */
 Route::get('/webshop', 'ShopController@index'); //Shop Homepage
-Route::post('/webshop/checkout', 'ShopController@checkout'); //Shop Checkout
+Route::get('/webshop/checkout', 'ShopController@checkout')->middleware('auth'); //Shop Checkout
+Route::resource('/webshop/cart', 'CartController');
+Route::delete('/webshop/emptyCart', 'CartController@emptyCart');
+Route::get('/webshop/submit', 'ShopController@submit')->middleware('auth');
 /* SHOP */

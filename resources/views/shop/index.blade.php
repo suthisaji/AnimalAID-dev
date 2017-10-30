@@ -26,7 +26,13 @@
                                     <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
                                     <span class="product-name">{{ $product->product_name }}</span>
                                     <div class="add-to-cart">
-                                        <button type="button" class="btn btn-sm btn-primary cd-add-to-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
+                                        <form action="{{ url('webshop/cart') }}" method="post">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{$product->product_id}}"/>
+                                            <input type="hidden" name="name" value="{{$product->product_name}}"/>
+                                            <input type="hidden" name="price" value="{{$product->product_price}}"/>
+                                            <button type="submit" class="btn btn-sm btn-primary cd-add-to-cart-removeit" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -94,6 +100,7 @@ cartCheckout.on("click", function(event){
     })
     .then(res => {
         console.log(res)
+        //window.location.href = "{{url('webshop/checkout')}}"
     })
 })
 </script>
