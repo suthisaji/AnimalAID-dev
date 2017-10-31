@@ -71,4 +71,9 @@ class CartController extends Controller
         Cart::destroy();
         return redirect('webshop/cart')->withSuccessMessage('Your cart has been cleared!');
     }
+    public function emptyCart2()
+    {
+        Cart::destroy();
+
+    }
 }

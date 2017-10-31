@@ -22,21 +22,25 @@
                   <!--แถบสถานะ-->
                                 @include('shop.components.status')
 
-                  <!--แถบสถานะ-->
+                  <!--แถบสถานะ-->@if(DB::table('shippings')->where('ordering_id',$o->ordering_id)->count()>0)
                                     @if($o->join_Shipping->package_id!=null)
-                                      @else
+
+                                       <h4 style="color:blue;">โปรดรอการตรวจสอบการสั่งสินค้าครั้งเก่าก่อน</h4>
+                                     @else
                                        <h4 style="color:blue;">โปรดรอการตรวจสอบการสั่งสินค้าครั้งเก่าก่อน</h4>
                                     @endif
-                    @elseif($o->pay_status=='paid' && $o->join_TransferMoney->picture_slip!=null)
-                               @if((DB::table('orderings')->where('pay_status','wait')->count()==0 ))
-                              @include('shop.components.order')
-                              @include('shop.components.status')
-                            @endif
+                                @else
+                                @endif
 
 
+                    @elseif( Cart::total() ==0 )
+                            @include('shop.components.status')
+                   @elseif( Cart::total() !=0)
+                       @include('shop.components.order')
+                       @include('shop.components.status')
+                    @else
+                          @include('shop.components.status')
 
-                      @else
-                        @include('shop.components.status')
                     @endif
 
             @endif

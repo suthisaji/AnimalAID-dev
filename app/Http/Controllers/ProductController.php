@@ -16,6 +16,7 @@ use App\Repositories\Ordering_productRepositoryInterface;
 use App\Repositories\OrderingRepositoryInterface;
 use App\Ordering;
 use App\Product;
+use Cart;
 
 use DB;
 use DateTime;
@@ -548,7 +549,7 @@ function statusShippingToCancel($ordering_id=0){
              $number_product = $number_productBefore- $product_number;
 
              $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
-
+             $result5=Cart::destroy();
             if($result1){
                   return redirect('/webshop/checkout');
               }elseif($result2){
@@ -558,6 +559,8 @@ function statusShippingToCancel($ordering_id=0){
                   return redirect('/webshop/checkout');
               }elseif($result4){
                   return redirect('/webshop/checkout');
+              }elseif($result5){
+                    return redirect('/webshop/checkout');
               }else{
 
 

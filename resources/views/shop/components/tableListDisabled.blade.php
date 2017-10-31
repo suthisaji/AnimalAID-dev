@@ -1,5 +1,5 @@
 <br>
-<div style="background-color:#f9e3e7;color:#c35b6b;font-size:18px;"><br><center><b>การสั่งซื้อครั้งใหม่<b></center><b><br></div>
+<div style="background-color:#f9e3e7;color:#c35b6b;font-size:18px;"><br><center><b>การสั่งซื้อล่าสุด<b></center><b><br></div>
 <table class="table">
     <thead>
         <tr>
