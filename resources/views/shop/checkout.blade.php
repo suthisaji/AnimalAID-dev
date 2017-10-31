@@ -11,29 +11,43 @@
           @foreach($ordering as $o)
 
             @if($o->customer_id == Auth::user()->id)
-                 @if($o->pay_status='wait' && $o->join_TransferMoney->picture_slip==null)
-                     @include('shop.components.tableListDisabled')
-                     @include('shop.components.updateSlip')
+                    @if($o->pay_status=='wait' && $o->join_TransferMoney->picture_slip==null)
+                          @include('shop.components.tableListDisabled')
+                          @include('shop.components.updateSlip')
 
-                   @elseif($o->pay_status='wait' && $o->join_TransferMoney->picture_slip!=null)
+                    @elseif($o->pay_status=='wait' && $o->join_TransferMoney->picture_slip!=null)
 
+                               @include('shop.components.tableListDisabled')
 
                   <!--แถบสถานะ-->
-                 @include('shop.components.status')
+                                @include('shop.components.status')
+
                   <!--แถบสถานะ-->
+                                    @if($o->join_Shipping->package_id!=null)
+                                      @else
+                                       <h4 style="color:blue;">โปรดรอการตรวจสอบการสั่งสินค้าครั้งเก่าก่อน</h4>
+                                    @endif
+                    @elseif($o->pay_status=='paid' && $o->join_TransferMoney->picture_slip!=null)
+                               @if((DB::table('orderings')->where('pay_status','wait')->count()==0 ))
+                              @include('shop.components.order')
+                              @include('shop.components.status')
+                            @endif
 
 
-                   @else
-                        @include('shop.components.order')
-                   @endif
+
+                      @else
+                        @include('shop.components.status')
+                    @endif
+
             @endif
 
 
           @endforeach
 
 
-
-
+     @if(DB::table('orderings')->count()==0)
+         @include('shop.components.order')
+     @endif
 
 
 

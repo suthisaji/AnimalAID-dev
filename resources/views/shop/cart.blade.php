@@ -34,12 +34,13 @@
                                     <th class="table-image"></th>
                                     <th>Product</th>
                                     <th>Quantity</th>
+
                                     <th>Price</th>
                                     <th class="column-spacer"></th>
                                     <th></th>
                                 </tr>
                             </thead>
-
+@php($n=0)
                             <tbody>
                                 @foreach (Cart::content() as $item)
                                 <tr>
@@ -47,13 +48,23 @@
                                     <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
                                     <td>
                                         <select class="quantity" data-id="{{ $item->rowId }}">
-                                            <option {{ $item->qty == 1 ? 'selected' : '' }}>1</option>
-                                            <option {{ $item->qty == 2 ? 'selected' : '' }}>2</option>
-                                            <option {{ $item->qty == 3 ? 'selected' : '' }}>3</option>
-                                            <option {{ $item->qty == 4 ? 'selected' : '' }}>4</option>
-                                            <option {{ $item->qty == 5 ? 'selected' : '' }}>5</option>
+                                            <option {{ $item->qty == 1 ? 'selected' : '' }}>1 @php($i=1)</option>
+                                            <option {{ $item->qty == 2 ? 'selected' : '' }}>2 @php($i=2)</option>
+                                            <option {{ $item->qty == 3 ? 'selected' : '' }}>3 @php($i=3)</option>
+                                            <option {{ $item->qty == 4 ? 'selected' : '' }}>4 @php($i=4)</option>
+                                            <option {{ $item->qty == 5 ? 'selected' : '' }}>5 @php($i=5)</option>
                                         </select>
+                                        @foreach($products as $p)
+                                          @if($item->id==$p->product_id)
+                                            @if(($p->number_product-$item->qty)>=0)
+                                            เหลือ  {{$p->number_product-$item->qty }} ชิ้น
+                                          @else
+                                            สินค้ามีไม่พอค่ะ @php($n=1)
+                                          @endif
+                                        @endif
+                                       @endforeach
                                     </td>
+
                                     <td>${{ $item->subtotal }}</td>
                                     <td class=""></td>
                                     <td>
@@ -96,8 +107,11 @@
                         </table>
 
                         <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">Continue Shopping</a> &nbsp;
+                        @if($n==1)
+                          สินค้ามีไม่เพียงพอตามที่คุณลูกค้าต้องการ กรุณาลดจำนวนลงค่ะ
+                        @else
                         <a href="{{ url('/webshop/checkout') }}" class="btn btn-success btn-lg">Proceed to Checkout</a>
-
+                      @endif
                         <div style="float:right">
                             <form action="{{ url('/webshop/emptyCart') }}" method="POST">
                                 {!! csrf_field() !!}

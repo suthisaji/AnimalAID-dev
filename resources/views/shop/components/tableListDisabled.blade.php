@@ -1,3 +1,5 @@
+<br>
+<div style="background-color:#f9e3e7;color:#c35b6b;font-size:18px;"><br><center><b>การสั่งซื้อครั้งใหม่<b></center><b><br></div>
 <table class="table">
     <thead>
         <tr>
@@ -27,7 +29,7 @@
              @endif
            </select>
        </td>
-       <td>${{ $item->subtotal }}</td> <!--ราคา item-->
+       <td><h5>${{ $item->subtotal }}</h5></td> <!--ราคา item-->
 
  </tbody>
  @endforeach

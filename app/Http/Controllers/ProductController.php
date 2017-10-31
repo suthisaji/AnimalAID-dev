@@ -15,6 +15,7 @@ use App\Repositories\Product_reserveRepositoryInterface;
 use App\Repositories\Ordering_productRepositoryInterface;
 use App\Repositories\OrderingRepositoryInterface;
 use App\Ordering;
+use App\Product;
 
 use DB;
 use DateTime;
@@ -519,7 +520,7 @@ function statusShippingToCancel($ordering_id=0){
             $province=Input::get('province');
             $zipcode=Input::get('zipcode');
 
-
+            $number_productBefore = Input::get('number_product');
 
 
 
@@ -533,15 +534,29 @@ function statusShippingToCancel($ordering_id=0){
             $amountOfTransfer=Input::get('amountOfTransfer');
 
 
+
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
+
+
+
+
+
             $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
+
+
+             $number_product = $number_productBefore- $product_number;
+
+             $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
+
             if($result1){
                   return redirect('/webshop/checkout');
               }elseif($result2){
                   return redirect('/webshop/checkout');
 
               }elseif($result3){
+                  return redirect('/webshop/checkout');
+              }elseif($result4){
                   return redirect('/webshop/checkout');
               }else{
 
@@ -575,6 +590,7 @@ function statusShippingToCancel($ordering_id=0){
         'transferMoney'=>$transferMoney,
         'ordering_product'=>$ordering_product,
         'ordering' => Ordering::all(),
+        'product'=>Product::all(),
       );
       return view('shop.checkout',$data);
       }

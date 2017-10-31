@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Cart;
 use Validator;
+use App\ShopModel\Product;
 class CartController extends Controller
+
+
+
 {
     public function index()
     {
-        return view('shop.cart');
+      $data=array(
+        'products'=>Product::all(),
+      );
+        return view('shop.cart',$data);
     }
 
     public function create()

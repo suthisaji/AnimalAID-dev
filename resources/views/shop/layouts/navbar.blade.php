@@ -8,10 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/all">หน้าแรก <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">สินค้า</a>
+                <a class="nav-link" href="/webshop">สินค้า</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/webshop/checkout">order</a>
             </li>
         </ul>
         <ul class="navbar-nav">

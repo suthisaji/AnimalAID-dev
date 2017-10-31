@@ -31,10 +31,35 @@
                    <td>
 
                         @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                           @foreach($product as $p)
+                             @if($item->id==$p->product_id)
+                            <input type="hidden" name="number_product"value="{{$p->number_product}}">
+                            @endif
+                           @endforeach
                         @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                          @foreach($product as $p)
+                            @if($item->id==$p->product_id)
+                           <input type="hidden" name="number_product"value="{{$p->number_product}}">
+                           @endif
+                          @endforeach
                         @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                          @foreach($product as $p)
+                            @if($item->id==$p->product_id)
+                           <input type="hidden" name="number_product"value="{{$p->number_product}}">
+                           @endif
+                          @endforeach
                         @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                          @foreach($product as $p)
+                            @if($item->id==$p->product_id)
+                           <input type="hidden" name="number_product"value="{{$p->number_product}}">
+                           @endif
+                          @endforeach
                         @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                          @foreach($product as $p)
+                            @if($item->id==$p->product_id)
+                           <input type="hidden" name="number_product"value="{{$p->number_product}}">
+                           @endif
+                          @endforeach
 
                          @endif
                        </select>
@@ -48,7 +73,7 @@
 
 
             <div class="card-block row shop-item-listing">
-                ราคารวม {{ Cart::total() }}<br>
+                ราคารวม &nbsp; <h3>{{ Cart::total() }}</h3> บาท<br>
               </div>
                 กรุณากรอกที่อยู่เพื่อรับของ
                 <div class="card-block row shop-item-listing">
@@ -75,7 +100,9 @@
             <!--  รหัสใบเรียกเก็บเงิน -->  <input type="hidden" class="form-control" name="order_number" value="{{rand(0,190000)}}"/>
             <!--  รหัสใบสั่งซื้อ-->       <input type="hidden" class="form-control" name="ordering_id" value="{{rand(200000,380000)}}"/>
                  <!--  customer_id--> <input type="hidden" class="form-control" name="id" value="{{ Auth::user()->id }}"/>
-                 <!--amountOfTransfer-->        <input type="hidden" class="form-control" name="amountOfTransfer" value="{{ Cart::total() }}"/>
+                 <!--amountOfTransfer--><input type="hidden" class="form-control" name="amountOfTransfer" value="{{ Cart::total() }}"/>
+
+
 
 
 

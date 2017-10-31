@@ -106,5 +106,18 @@ class ProductRepository implements ProductRepositoryInterface{
  }
 
 
- 
+ function updateNumber_product($product_id,$number_product){
+     $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+        'number_product'=>$number_product
+      );
+     $result = Product::where('product_id',$product_id)->update($data);
+     if($result > 0){
+         return true;
+     }else{
+         return false;
+     }
+ }
+
+
+
 }
