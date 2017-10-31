@@ -1,3 +1,4 @@
+
 <div class="row mt-3">
     <div class="col-md-12">
         <div class="card shop-listing">
@@ -29,20 +30,22 @@
                   <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
                    <td>
 
-                        @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input type="hidden" name="product_number"  value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input type="hidden" name="product_number"  value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/><input type="hidden" name="product_number"  value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input type="hidden" name="product_number"  value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                        @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  value="{{$item->qty}}"/>
 
                          @endif
                        </select>
-                   </td>
-                   <td>${{ $item->subtotal }}</td> <!--ราคา item-->
+                           </td>
+                         <td>${{ $item->subtotal }}</td> <!--ราคา item-->
              <!--product_id--><input type="hidden" class="form-control" name="product_id" value="{{$item->id}}"/>
-             <input type="hidden" class="form-control" name="amount" value="{{ $item->subtotal}}"/>
-</table>
-            @endforeach
+                       <input type="hidden" class="form-control" name="amount" value="{{ $item->subtotal}}"/>
+                     </tbody>
+                         @endforeach
+                  </table>
+
 
             <div class="card-block row shop-item-listing">
                 ราคารวม {{ Cart::total() }}<br>

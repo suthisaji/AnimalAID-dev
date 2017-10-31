@@ -20,4 +20,9 @@ class Ordering extends Model
     public function join_Ordering_product(){
       return $this->belongsTo('App\Ordering_product','ordering_id', 'ordering_id');
     }
+
+    public function join_TransferMoney(){
+      return $this->belongsTo('App\TransferMoney','order_number', 'order_number');
+    }
+
 }

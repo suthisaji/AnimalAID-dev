@@ -20,7 +20,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -138,7 +138,7 @@
                      <input type="hidden"class="form-control" name="order_number"  value="{{$t->order_number}}" />
                      <input type="hidden" class="form-control" name="ordering_id" value="{{ $t->join_Ordering->ordering_id}}" readonly/>
                      <input type="hidden"class="form-control" name="buyer_id" value="{{$t->join_Ordering->customer_id}}" />
-                     <input type="hidden"class="form-control" name="address"  value="{{$t->join_Ordering->join_User->address}}" />
+                     <input type="hidden"class="form-control" name="address"  value="{{$t->join_Ordering->home}}" />
                      <input type="hidden"class="form-control" name="tel"  value="{{$t->join_Ordering->join_User->tel}}"  />
                      <input type="hidden"class="form-control" name="email"  value="{{$t->join_Ordering->join_User->email}}" />
 
@@ -214,6 +214,16 @@
       </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
 <script>
 var nW,nH,oH,oW;
 function zoomToggle(iWideSmall,iHighSmall,iWideLarge,iHighLarge,whichImage){

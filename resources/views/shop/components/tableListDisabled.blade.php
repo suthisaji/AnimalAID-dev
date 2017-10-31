@@ -9,7 +9,7 @@
 
         </tr>
     </thead>
-       <form name="createOrdering" action="/createOrdering/{{ Auth::user()->id}}" class="form" method="post" enctype="multipart/form-data" onsubmit="return validation()">{{ Form::token() }}
+
       @foreach (Cart::content() as $item)
     <tbody>
 
@@ -28,7 +28,7 @@
            </select>
        </td>
        <td>${{ $item->subtotal }}</td> <!--ราคา item-->
- <!--product_id--><input type="hidden" class="form-control" name="product_id" value="{{$item->id}}"/>
- <input type="hidden" class="form-control" name="amount" value="{{ $item->subtotal}}"/>
+
+ </tbody>
+ @endforeach
 </table>
-@endforeach

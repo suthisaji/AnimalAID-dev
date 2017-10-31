@@ -12,4 +12,12 @@ class Shipping extends Model
   public function join_User(){
     return $this->belongsTo('App\User','buyer_id', 'id');
   }
+
+  public function join_Ordering(){
+    return $this->belongsTo('App\Ordering','ordering_id', 'ordering_id');
+  }
+
+
+
+
 }

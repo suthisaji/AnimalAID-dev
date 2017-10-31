@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     @foreach ($transferMoney as $t)
-@if(Auth::user()->id==$t->join_Ordering->customer_id)
+@if(Auth::user()->id==$t->join_Ordering->customer_id&&$t->join_Ordering->pay_status!='paid')
        <div class="container">
          <div class="row" style="border:solid 1px;border-color:gray;">
            <div class="col-md-3"></div>
            <div class="col-md-6">
                <h1 class="display-4" style="text-align:center; color:#424242; ">แจ้งชำระเงิน ใบสั่งซื้อหมายเลข {{$t->join_Ordering->ordering_id}}</h1>
-               <form name="updateSlip" action="/updateSlip/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">
+               <form name="updateSlip2" action="/updateSlip2/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">
                    {{ Form::token() }}
 
                    <div class="form-group" id="div3">
@@ -34,6 +34,7 @@
            </div>
        </div>
        </div>
+@else
 @endif
   @endforeach
   </div>

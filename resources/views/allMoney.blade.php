@@ -496,11 +496,11 @@
                            <div class="caption">
 
                              <h5>
-                               @if($animal->join_donationType->do_typeName=='Donation Money') ขอรับบริจาคเงิน
+                               @if($animal->join_donationType->do_typeName=='Donation Money') สัตว์ที่ได้รับการช่วยเหลือ
                                @elseif($animal->join_donationType->do_typeName=='Blood Donation') ขอรับบริจาคเลือด
                                @else หาบ้านให้สัตว์
                                @endif
-                               <span style="color:blue">{{$animal->animal_name}}</span> &nbsp;&nbsp; {{$animal->animal_type}}
+                               <span style="color:blue">{{$animal->animal_name}}</span> &nbsp;{{$animal->animal_type}}
                              </h5>
 
                              <!-- <h6>{{$animal->animal_type}}</h6> -->

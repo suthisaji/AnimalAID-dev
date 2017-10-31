@@ -38,12 +38,6 @@ class ShopController extends Controller
     function submit(){
         return view('shop.submit');
     }
-    function listProductAdminView()
-    {
-        $data = array(
-            'categories' => Category::all(),
-            'products' => Product::paginate(20)
-        );
-        return view('shop.listProductAdminView', $data);
-    }
+
+
 }
