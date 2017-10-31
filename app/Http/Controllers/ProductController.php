@@ -12,6 +12,10 @@ use App\Repositories\TransferMoneyRepositoryInterface;
 use App\Repositories\ShippingRepositoryInterface;
 use App\Repositories\ReserveProductRepositoryInterface;
 use App\Repositories\Product_reserveRepositoryInterface;
+use App\Repositories\Ordering_productRepositoryInterface;
+use App\Repositories\OrderingRepositoryInterface;
+use App\Ordering;
+
 use DB;
 use DateTime;
 
@@ -19,14 +23,19 @@ class ProductController extends Controller
 {  protected $CategoryRepository;
    protected $TransferMoneyRepository;
     protected $ShippingRepository;
+      protected $Ordering_productRepository;
+        protected $OrderingRepository;
 
-  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository,ReserveProductRepositoryInterface $ReserveProductRepository,Product_reserveRepositoryInterface $Product_reserveRepository){
+  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository,ReserveProductRepositoryInterface $ReserveProductRepository,Product_reserveRepositoryInterface $Product_reserveRepository,Ordering_productRepositoryInterface $Ordering_productRepository ,OrderingRepositoryInterface $OrderingRepository){
       $this->CategoryRepository = $CategoryRepository;
       $this->ProductRepository = $ProductRepository;
       $this->TransferMoneyRepository = $TransferMoneyRepository;
       $this->ShippingRepository = $ShippingRepository;
       $this->ReserveProductRepository = $ReserveProductRepository;
       $this->Product_reserveRepository = $Product_reserveRepository;
+      $this->Ordering_productRepository=$Ordering_productRepository;
+      $this->OrderingRepository=$OrderingRepository;
+
     }
 
   function addProduct(){
@@ -197,38 +206,42 @@ function changeStatusToConfirmTransferMoney($order_number=0){
       }
 
   }
-function confirmTransferMoney(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
+  function confirmTransferMoney(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
 
-  if(Request::isMethod('post')){
+    if(Request::isMethod('post')){
 
-    $order_number = Input::get('order_number');
-    $checking_status= Input::get('checking_status');
-    $result = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
-    if($result){
-      $ordering_id = Input::get('ordering_id');
-      $buyer_id= Input::get('buyer_id');
-      $address = Input::get('address');
-      $tel = Input::get('tel');
-      $email = Input::get('email');
+      $order_number = Input::get('order_number');
       $checking_status= Input::get('checking_status');
+      $result1 = $this->TransferMoneyRepository->updateTransferMoneyConfirm($order_number,$checking_status);
+      if($result1){
+        $ordering_id = Input::get('ordering_id');
+        $buyer_id= Input::get('buyer_id');
+        $address = Input::get('address');
+        $tel = Input::get('tel');
+        $email = Input::get('email');
+        $checking_status= Input::get('checking_status');
 
-      $result = $this->ShippingRepository->addShipping($ordering_id,$buyer_id,$address,$tel,$email);//$animal_id
+             $result2 = $this->ShippingRepository->addShipping($ordering_id,$buyer_id,$address,$tel,$email);//$animal_id
+                 if($result2){
+                       $pay_status= Input::get('pay_status');
 
-      if($result){
-          return redirect('/transferDocument');
-      }else{
-          echo "Failed to add adopt";
-      }
-    }else{
-        echo "Can not Update";
-    }
+                          $result3= $this->OrderingRepository->updateOrderingPaid($ordering_id,$pay_status);
+                          if($result3){
+                          return redirect('/transferDocument');
+                            }else{
+                            echo "Failed to add adopt";
+                           }
 
 
-          }else{
+              }else{
+                echo "Failed to add adopt";
+              }
+         }else{
+         echo "Can not Update";
+         }
 
-            return redirect('/transferDocument');
-          }
 
+  }
 }
 
 function noConfirmTransferMoney(){//เปลี่ยน checking_status เป็น noConfirm ด้วย
@@ -427,8 +440,37 @@ function statusShippingToCancel($ordering_id=0){
       }
     }
 
+    function updateSlip2(){//เปลี่ยน checking_status เป็น noConfirm ด้วย
 
-    function addReserveProduct(){//หยิบลงตะกร้า สร้าง table ReserveProduct and Product_reserve
+      if(Request::isMethod('post')){
+      $checking_status=Input::get('checking_status');
+
+      $order_number= Input::get('order_number');
+        $dateTimeOfTransfer = Input::get('dateTimeOfTransfer');
+        if (Input::hasFile('picture_slip')) {
+        $temp = Request::file('picture_slip')->getPathName();
+        $imageName = Request::file('picture_slip')->getClientOriginalName();
+        $path = base_path().'/public/images/';
+        $newImageName = 'slip_'.str_random(5).$imageName;
+        Request::file('picture_slip')->move($path, $newImageName);
+
+        $result = $this->TransferMoneyRepository->updateTransferMoneySlip($newImageName,$dateTimeOfTransfer,$order_number,$checking_status);
+
+
+          if($result){
+              return redirect('/webshop/checkout');
+
+        }else{
+            echo "Can not Update";
+        }
+
+
+    }
+    }
+  }
+
+
+    /*function addReserveProduct(){//หยิบลงตะกร้า สร้าง table ReserveProduct and Product_reserve
             $this->middleware('auth');
             if(Auth::user()==null){
               return redirect('login');
@@ -462,10 +504,82 @@ function statusShippingToCancel($ordering_id=0){
                 echo "Failed to add Reserve product";
             }
       }
-    }
+    }*/
+
+    function createOrdering($id=0){
+
+          if(Request::isMethod('post')){
+
+            $customer_id = Input::get('id');/*addOrdering*/
+            $ordering_id=Input::get('ordering_id');
+            $pay_status=Input::get('pay_status');
+            $home=Input::get('home');
+            $district=Input::get('district');
+            $amphoe=Input::get('amphoe');
+            $province=Input::get('province');
+            $zipcode=Input::get('zipcode');
 
 
-   
+
+
+
+            $product_id=Input::get('product_id');/*addOrdering_product*/
+            $product_number=Input::get('product_number');
+            $amount = Input::get('amount');
+
+
+            $Bank_name=Input::get('Bank_name');/*addTransferMoney*/
+            $order_number= Input::get('order_number');/*ไป addOrderingด้วย*/
+            $amountOfTransfer=Input::get('amountOfTransfer');
+
+
+            $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
+            $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
+            $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
+            if($result1){
+                  return redirect('/webshop/checkout');
+              }elseif($result2){
+                  return redirect('/webshop/checkout');
+
+              }elseif($result3){
+                  return redirect('/webshop/checkout');
+              }else{
+
+
+                  echo "Can not Update".mysqli_error();
+              }
+
+          }elseif(Request::isMethod('get')){
+            $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+            $shipping = $this->ShippingRepository->getAllShipping();
+             $data = array(
+                  'transferMoney'=>$transferMoney,
+                    'shipping'=>$shipping,
+              );
+              return view('shop.checkout', $data);
+
+          }
+
+      }
+
+      function checkoutDocument(){//จะแสดงข้อมูลหน้า Shipping_status
+        $this->middleware('auth');
+        if(Auth::user()==null){
+      return redirect('login');
+        }
+      $shipping = $this->ShippingRepository->getAllShipping();
+      $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
+      $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
+      $data = array(
+        'shipping'=>$shipping,
+        'transferMoney'=>$transferMoney,
+        'ordering_product'=>$ordering_product,
+        'ordering' => Ordering::all(),
+      );
+      return view('shop.checkout',$data);
+      }
+
+
 
 
 }

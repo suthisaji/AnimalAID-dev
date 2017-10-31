@@ -143,7 +143,12 @@
                      <input type="hidden"class="form-control" name="email"  value="{{$t->join_Ordering->join_User->email}}" />
 
 
+
                                  <input type="hidden" class="form-control" name="checking_status" value="confirm"/>
+
+                       <input type="hidden" class="form-control" name="pay_status" value="paid"/>
+
+
                   @if($t->checking_status=='wait'||$t->checking_status=='กำลังตรวจสอบหลักฐาน')
                                  <button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้องจัดส่งได้</button>
                  </form>

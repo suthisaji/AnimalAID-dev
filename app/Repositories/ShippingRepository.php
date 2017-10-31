@@ -5,6 +5,7 @@ use App\Product;
 use App\User;
 use App\Shipping;
 use App\Ordering;
+use App\Ordering_product;
 
 use File;
 use DB;
@@ -78,6 +79,32 @@ function addOrdering($ordering_id,$order_number,$customer_id,$pay_status){
 }
 
 
+
+function addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode){
+  $data = array(
+
+      'order_number'=>$order_number,
+      'customer_id'=>$customer_id,
+      'pay_status'=>$pay_status,
+      'ordering_id'=>$ordering_id,
+      'home'=>$home,
+      'district'=>$district,
+      'amphoe'=>$amphoe,
+      'province'=>$province,
+      'zipcode'=>$zipcode,
+
+
+
+  );
+  try{
+      $result = Ordering::create($data);
+      return true;
+  }catch(Exception $e){
+      return false;
+  }
+}
+
+
 function addTransferMoney($order_number,$Bank_name,$amountOfTransfer){
   $data = array(
       'order_number'=>$order_number,
@@ -94,5 +121,34 @@ function addTransferMoney($order_number,$Bank_name,$amountOfTransfer){
 }
 
 
+function addTransferMoney2($order_number,$Bank_name,$amountOfTransfer){
+  $data = array(
+      'order_number'=>$order_number,
+      'Bank_name'=>$Bank_name,
+      'amountOfTransfer'=>$amountOfTransfer,
+  );
+  try{
+      $result = TransferMoney::create($data);
+      return true;
+  }catch(Exception $e){
+      return false;
+  }
+}
+
+function addOrdering_product($ordering_id,$product_id,$product_number,$amount){
+  $data = array(
+       'ordering_id'=>$ordering_id,
+      'product_id'=>$product_id,
+      'product_number'=>$product_number,
+      'amount'=>$amount,
+
+  );
+  try{
+      $result =Ordering_product::create($data);
+      return true;
+  }catch(Exception $e){
+      return false;
+  }
+}
 
 }
