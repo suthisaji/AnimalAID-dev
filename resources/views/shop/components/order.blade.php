@@ -54,10 +54,10 @@
                            <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}">
                            @endif
                           @endforeach
-                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="number_product"  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
                           @foreach($product as $p)
                             @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}" id="number_product" >
+                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"  >
                            @endif
                           @endforeach
 

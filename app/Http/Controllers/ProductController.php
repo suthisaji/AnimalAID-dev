@@ -536,7 +536,7 @@ function statusShippingToCancel($ordering_id=0){
             $amountOfTransfer=Input::get('amountOfTransfer');
 
 
-
+                      $number_product = ($number_productBefore- $product_number);
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
 
@@ -547,7 +547,7 @@ function statusShippingToCancel($ordering_id=0){
             $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
 
 
-             $number_product = $number_productBefore- $product_number;
+
 
              $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
              $result5=Cart::destroy();
