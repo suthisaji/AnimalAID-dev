@@ -2,9 +2,10 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;
-    <a  class="navbar-brand" href="all">
-      <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+
+    <a class="navbar-brand" href="all">
+        <img src="{{ url('images/S__1261612.jpg') }}" width="60px"/>
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
@@ -44,7 +45,7 @@
 
                     <ul class="dropdown-menu" role="menu">
                       @if(Auth::user()->position=='user')
-                      <li class="nav-link">
+                      <li class="fl tw16">
                         <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                       </li>
                       <li class="fl">
