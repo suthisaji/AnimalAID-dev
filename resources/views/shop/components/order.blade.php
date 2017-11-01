@@ -33,31 +33,31 @@
                         @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
                            @foreach($product as $p)
                              @if($item->id==$p->product_id)
-                            <input type="hidden" name="number_product" id="number_product"value="{{$p->number_product}}">
+                            <input type="hidden" name="number_product" id="number_product"value="{{$p->number_product}}"> <input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
                             @endif
                            @endforeach
                         @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
                           @foreach($product as $p)
                             @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}">
+                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
                            @endif
                           @endforeach
                         @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
                           @foreach($product as $p)
                             @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}">
+                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
                            @endif
                           @endforeach
                         @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  id="product_number" value="{{$item->qty}}"/>
                           @foreach($product as $p)
                             @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}">
+                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
                            @endif
                           @endforeach
                         @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
                           @foreach($product as $p)
                             @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"  >
+                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"  ><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
                            @endif
                           @endforeach
 
@@ -106,6 +106,7 @@
 
 
 
+
                 <button type="submit" id="send" class="btn btn-success btn-lg" onclick="return confirm('ยืนยันการสั่งซื้อสินค้า')">ยืนยันการสั่งซื้อ</button>
 
           {{-- </form> --}}
@@ -140,6 +141,9 @@ $.ajax({
     Bank_name: $('#Bank_name')[0].value,
     order_number: $('#order_number')[0].value,
     amountOfTransfer: $('#amountOfTransfer')[0].value,
+
+
+   minus_product: $('#minus_product')[0].value,
 
     _token:$('#token')[0].value
 

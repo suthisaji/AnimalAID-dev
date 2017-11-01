@@ -59,7 +59,7 @@
                                             @if(($p->number_product-$item->qty)>=0)
                                             มีทั้งหมด  {{$p->number_product}} ชิ้น
                                           @else
-                                            สินค้าหมดแล้ว {{$p->number_product}} ชิ้น @php($n=1)
+                                            สินค้าหมดแล้ว มี 0 ชิ้น @php($n=1)
                                           @endif
                                         @endif
                                        @endforeach

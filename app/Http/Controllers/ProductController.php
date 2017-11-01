@@ -522,7 +522,7 @@ function statusShippingToCancel($ordering_id=0){
             $province=Input::get('province');
             $zipcode=Input::get('zipcode');
 
-            $number_productBefore = Input::get('number_product');
+            $number_product = Input::get('minus_product');
 
 
 
@@ -536,7 +536,7 @@ function statusShippingToCancel($ordering_id=0){
             $amountOfTransfer=Input::get('amountOfTransfer');
 
 
-            $number_product = ($number_productBefore- $product_number);
+
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
 
