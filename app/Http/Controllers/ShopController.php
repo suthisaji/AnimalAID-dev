@@ -19,12 +19,12 @@ class ShopController extends Controller
             $category = Category::where('category_name', $request->cate)->first();
             $data = array(
                 'categories' => Category::all(),
-                'products' => Product::where('category_id', $category->category_id)->paginate(20)
+                'products' => Product::where('category_id', $category->category_id)->paginate(18)
             );
         }else{
             $data = array(
                 'categories' => Category::all(),
-                'products' => Product::paginate(20)
+                'products' => Product::paginate(18)
             );
         }
 
@@ -43,7 +43,7 @@ class ShopController extends Controller
     {
         $data = array(
             'categories' => Category::all(),
-            'products' => Product::paginate(20)
+            'products' => Product::paginate(18)
         );
         return view('shop.listProductAdminView', $data);
     }

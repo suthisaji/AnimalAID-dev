@@ -84,7 +84,7 @@
                 <input type="text" id="province" name="province" placeholder="จังหวัด"/>
                <input type="text" id="zipcode" name="zipcode" placeholder="รหัสไปรษณี"/>
 
-               <div class="form-group" id="Bank_name">
+               <div class="form-group">
                  <label for="Bank_name" class="form-label">ธนาคาร</label><br>
                  <label><input type="radio" value="กรุงเทพ สาขาบิ๊กซี อยุธยา มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน บัญชีเลขที่ 790-020373-3" name="Bank_name" id="Bank_name"required="required"><span style="color:blue;">
                    ธนาคารกรุงเทพ สาขาบิ๊กซี อยุธยา

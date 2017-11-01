@@ -295,7 +295,7 @@ function statusShippingToCancel($ordering_id=0){
           if($result){
               return redirect('/transferDocument');
           }else{
-              echo "cannot update";
+              echo "cannot update".die('query failed'. mysqli_error());
           }
       }elseif(Request::isMethod('get')){
         $shipping = $this->ShippingRepository->getAllShipping();
@@ -357,7 +357,7 @@ function statusShippingToCancel($ordering_id=0){
     return view('shipping_status',$data);
     }
 
-    function updateAddressToUser($id=0){
+    /*function updateAddressToUser($id=0){
 
           if(Request::isMethod('post')){
             $id = Input::get('id');
@@ -395,7 +395,7 @@ function statusShippingToCancel($ordering_id=0){
           }
 
       }
-
+*/
 
 
       function userPurchase(){//จะแสดงข้อมูลหน้า Shipping_status
@@ -536,7 +536,7 @@ function statusShippingToCancel($ordering_id=0){
             $amountOfTransfer=Input::get('amountOfTransfer');
 
 
-                      $number_product = ($number_productBefore- $product_number);
+            $number_product = ($number_productBefore- $product_number);
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
 

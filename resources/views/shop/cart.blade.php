@@ -57,9 +57,9 @@
                                         @foreach($products as $p)
                                           @if($item->id==$p->product_id)
                                             @if(($p->number_product-$item->qty)>=0)
-                                            เหลือ  {{$p->number_product-$item->qty }} ชิ้น
+                                            มีทั้งหมด  {{$p->number_product}} ชิ้น
                                           @else
-                                            สินค้ามีไม่พอค่ะ @php($n=1)
+                                            สินค้าหมดแล้ว {{$p->number_product}} ชิ้น @php($n=1)
                                           @endif
                                         @endif
                                        @endforeach

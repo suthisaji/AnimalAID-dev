@@ -189,7 +189,7 @@
                      <input type="hidden" class="form-control" name="shipping_status" value="cancel"/>
                      <input type="hidden" class="form-control" name="ordering_id" value="{{$t->join_Ordering->ordering_id}}"/>
                     <button class="btn btn-sm btn-danger" onclick="return confirm('ยกเลิกการจัดส่งสินค้า')">แจ้งยกเลิกการจัดส่ง</button>
-                  </from>
+                  </form>
                 @elseif($t->checking_status=='confirm'&&$t->join_Ordering->join_Shipping->shipping_status=='cancel')
                     <b style="color:red;">การจัดส่งถูกยกเลิก</b>
                   @elseif($t->join_Ordering->join_Shipping->shipping_status=='จัดส่งแล้ว')
