@@ -70,10 +70,10 @@
 
                        <ul class="dropdown-menu" role="menu">
                          @if(Auth::user()->position=='user')
-                         <li class="fl">
+                         <li class="nav-link">
                            <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                          </li>
-                         <li class="fl">
+                         <li class="nav-link">
                              <a href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
@@ -84,10 +84,10 @@
                                  {{ csrf_field() }}
                              </form>
                          </li>
-                       @else <li class="fl">
+                       @else <li class="nav-link">
                           <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
                         </li>
-                           <li class="fl">
+                           <li class="nav-link">
                                <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
