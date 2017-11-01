@@ -511,6 +511,7 @@ function statusShippingToCancel($ordering_id=0){
     function createOrdering($id=0){
 
           if(Request::isMethod('post')){
+            var_dump(Input::all());
 
             $customer_id = Input::get('id');/*addOrdering*/
             $ordering_id=Input::get('ordering_id');
