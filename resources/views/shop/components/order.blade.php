@@ -149,12 +149,9 @@ $.ajax({
 
 
   },success: function(data){
-    console.log('data ===> ',data)
-     if(data.statusCode === 200){
-       send(50)
-       $('#district').val('')
-       $('#amphoe').val('')
-     }
+    alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
+    window.location.reload();
+
    }
    })
 

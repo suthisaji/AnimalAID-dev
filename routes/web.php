@@ -22,6 +22,8 @@ Route::get('/sub', function () {
   return view('test2');
 });
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
