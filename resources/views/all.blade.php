@@ -651,7 +651,7 @@ transform: skew(-135deg) translateX(0%);
 
     <!-- Related Projects Row -->
       <div class="col-md-12">
-        <h2 class="my-4">Games</h2>
+        <h2 class="my-4"><b>Games</b></h2>
 
           <div class="row">
 
@@ -699,7 +699,7 @@ transform: skew(-135deg) translateX(0%);
 <!-- /.container -->
 <!-- Related Projects Row -->
   <div class="col-md-12">
-    <h3 class="my-4">ประเภทการบริจาค</h3>
+    <h3 class="my-4"><b>ประเภทการบริจาค</b></h3>
     <br>
       <div class="row">
 
@@ -730,7 +730,7 @@ transform: skew(-135deg) translateX(0%);
      <!-- Related Projects Row -->
        <div class="col-md-12 b"  >
       <br>
-        <center> <img  class="lig" src="images\logo2.jpg" alt="" width="55%" height="44%" style=""></center>
+        <center> <img  class="lig" src="images\logo2.jpg" alt="" width="40%" height="40%" style=""></center>
          <br><center><h2 class="my-4">เกี่ยวกับมูลนิธิ</h2></center>
              <h3>ชื่อภาษาไทย มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน (สปฉ.) <br>
              ชื่อภาษาอังกฤษ Animal in Disaster and Emergency Foundation (ADEF) <br></h3>
