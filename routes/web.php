@@ -323,3 +323,13 @@ Route::get('/webshop/checkout', 'ProductController@checkoutDocument');
 Route::get('/updateSlip2/{order_number}','ProductController@updateSlip2')->middleware('auth');
 Route::post('/updateSlip2/{order_number}','ProductController@updateSlip2')->middleware('auth');
 /*updateSlipAndDateTimeTransfer*/
+
+/*user_updateslip*/
+Route::get('/userupdateslip', function () {
+    return view('userupdateslip');
+});
+Route::get('/createUserUpdateSlip','ProductController@updateSlip3');
+Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
+
+/*admin_checkslip*/
+Route::get('/adminCheckSlip', 'ProductController@adminCheckSlipDocument');

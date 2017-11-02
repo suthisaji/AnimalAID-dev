@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductReservesTable extends Migration
+class CreateUserUpdateSlipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateProductReservesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_reserves', function (Blueprint $table) {
-
+        Schema::create('userUpdateSlips', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('reserve_id');
-          $table->string('product_id');
-          $table->string('product_number');
+          $table->string('name');
+          $table->string('picture_slip');
+          $table->string('status_check_yet');
+          $table->string('admin_id');
+          $table->string('status_slip');
           $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateProductReservesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_reserves');
+        Schema::dropIfExists('userUpdateSlips');
     }
 }
