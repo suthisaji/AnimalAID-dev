@@ -43,9 +43,10 @@
 
                     @endif
 
-            @endif
 
-
+   @else
+     @include('shop.components.order')
+@endif
           @endforeach
 
 
