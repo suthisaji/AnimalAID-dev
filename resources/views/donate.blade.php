@@ -174,9 +174,14 @@ body{
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-
+                 <li class="navmain">
+                     <a href="all">หน้าหลัก</a>
+                 </li>
                    <li class="navmain active">
                        <a href="dm">การบริจาคเงิน</a>
+                   </li>
+                   <li class="navmain ">
+                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a  href="db">การบริจาคเลือด</a>
@@ -235,7 +240,7 @@ body{
 
 
 
- 
+
            </div>
            <!-- /.navbar-collapse -->
        </div>
@@ -254,10 +259,10 @@ body{
             <div class="row text-center">
 
                 <div class="col-lg-12">
-                  <h2>บริจาคเงินผ่านทางบัตรเครดิต</h2>
+                  <h2>บริจาคเงินผ่านทาง iBanking</h2>
                   <h3>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</h3>
-                  <h4>ผ่านบัญชีออมทรัพย์ ธนาคารกรุงเทพ สาขา บิ๊กซีอยุธยา</h4>
-                  <h2>เลขที่บัญชี 790-020373-3</h2>
+                  <h4>ผ่านบัญชีออมทรัพย์ ธนาคารกรุงไทย สาขามหาวิทยาลัยเกษตรศาสตร์ บางเขน</h4>
+                  <h3>บัญชีเลขที่ 986-4-399968-3</h3>
                   <br>
 
                 </div>
