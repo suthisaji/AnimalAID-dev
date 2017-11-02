@@ -207,9 +207,10 @@
 
                   {!! html_entity_decode($data->content) !!}
 
-                 </div>
+                </div><div align = 'right'><small >ถามเมื่อ</small> {{$data->created_at}}</div>
         </div>
         <!--แสดงคำตอบ-->
+
           @if($data->answer!=null)
         <div class="panel panel-default" style="border-color:#F3E2A9;">
           <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
@@ -219,6 +220,7 @@
 {!! html_entity_decode($data->answer) !!}
          </div>
         </div>
+
         @endif
         <!--แสดงคำตอบ-->
 

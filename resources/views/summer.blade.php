@@ -312,7 +312,7 @@ label > span, #error_summernote{
         <div class="panel-body">
           <div class="form-group owner">
             <label for="topic">questioner <span id="error_questioner"></span></label>
-            <input type="text" name="name" id="name"   class="form-control" required value="{{Auth::user()->username}}" >
+            <input type="text" name="name" id="name"   class="form-control" required value="{{Auth::user()->name}}" >
           </div>
           <div class="form-group to">
             <label for="topic">Title <span id="error_topic"></span></label>
@@ -376,16 +376,22 @@ label > span, #error_summernote{
                          </thead>
                          <tbody>
                            @foreach($data as $d )
+                             @if($d->userid!=Auth::user()->id)
                              <tr>
                                <td>  {{$value = str_limit($d->topic, 80)}}</td>
 
                                <td>
 
                                  <a href="{{url('readSummer',array($d->id))}}">เปิดอ่าน</a>  {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
-                              <!--  |<a href="{{url('deleteSummer',array($d->id))}}" onclick="return confirm('Please confirm again !!!')" >Delete</a> |
-                                 <a href="{{url('editSummer',array($d->id))}}">Edit</a>-->
+                                   @if($d->status=='Answered')
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="/images/pointg.png" style="width:1%;height:19%"> ตอบแล้ว
+                                   @else
+
+                                 @endif
                                </td>
                              </tr>
+                           @else
+                           @endif
                            @endforeach
                          </tbody>
 

@@ -313,7 +313,9 @@
                             </tr>
                           </thead>
                           <tbody>
+                             @php($i=0)
                             @foreach($data as $d )
+                              @if($i<20)
                               <tr>
                                 <td>  {{$value = str_limit($d->topic, 80)}}</td>
 
@@ -322,9 +324,18 @@
                                   <a href="{{url('readSummer',array($d->id))}}">View</a> {{-- จะให้ชิดขวาก้ได้ เพิ่มแท้ก   <p align="right"> นี้--}}
 
 
+                                    @if($d->status=='Answered')
+                                  &nbsp;  &nbsp;   &nbsp;   &nbsp;    <img src="/images/pointg.png" style="width:2%;height:18%"> ตอบแล้ว
+                                    @else
 
+                                  @endif
                                 </td>
+
                               </tr>
+                                 @php($i++)
+                               @else
+
+                              @endif
                             @endforeach
                           </tbody>
 

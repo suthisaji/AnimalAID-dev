@@ -396,7 +396,7 @@
                                @elseif($animal->join_donationType->do_typeName=='Blood Donation') ขอรับบริจาคเลือด
                                @else หาบ้านให้สัตว์
                                @endif
-                               <span style="color:blue">{{$animal->animal_name}}</span> &nbsp;&nbsp; {{$animal->animal_type}}
+                              รหัส:{{$animal->animal_id}} <span style="color:blue"> {{$animal->animal_name}}</span> &nbsp;&nbsp; {{$animal->animal_type}}
                              </h5>
 
                              <!-- <h6>{{$animal->animal_type}}</h6> -->
@@ -455,6 +455,7 @@
                              @else
                                 หาบ้านให้สัตว์
                               @endif<br>
+                                    รหัส:{{$animal->animal_id}}<br>
                                    ชื่อสัตว์:{{$animal->animal_name}}<br>
                                    อายุ        :{{$animal->animal_age}} ปี<br>
                                    ชนิดของสัตว์ :{{$animal->animal_type}}<br>
