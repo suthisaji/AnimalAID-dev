@@ -82,7 +82,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="font-size:20px;" href="all">Animals A-I-D </a>
+        <a class="navbar-brand" style="font-size:20px;" href="../all">Animals A-I-D </a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html  lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>แอดมินแก้ไขคำถาม</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
+    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-      <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <title>แอดมินแก้ไขคำถาม</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+
     <!-- Styles -->
     <link href="https://animal-aid.me/css/app.css" rel="stylesheet">
+
+    {{Html::style('css/shop-homepage.css')}}
 
     <!-- Scripts -->
     <script>
         window.Laravel = {"csrfToken":"lTGlgWKoqayN8ejijUYGiNOqRPDyRt58eg8QpU7w"};
     </script>
     <style>
+    body{
+      font-size: 16px;
+    }
     .navbar>.container-fluid .navbar-brand, .navbar>.container .navbar-brand {
         margin-left: -34px;
     }
@@ -80,7 +102,7 @@
   </head>
   <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">  <a  class="navbar-brand" href="all">   <img src="../images/S__1261612.jpg" width="60" height="60" class="d-inline-block align-top" alt=""></a>
 
        <div class="container">
 
@@ -100,9 +122,14 @@
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse tw" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav ">
-
+                 <li class="navmain">
+                     <a href="../all">หน้าหลัก</a>
+                 </li>
                    <li class="navmain ">
                        <a href="../dm">การบริจาคเงิน</a>
+                   </li>
+                   <li class="navmain ">
+                       <a href="../webshop">สั่งซื้อของที่ระลึก</a>
                    </li>
                    <li class="navmain ">
                        <a href="../db">การบริจาคเลือด</a>
@@ -121,7 +148,7 @@
                <ul class="nav navbar-nav navbar-right">
                  @if(!empty($position))
                    @if( $position== 'admin')
-                     <li class="fl tw16">
+                     <li class="navmain">
                        <a href="../admin">การจัดการ</a>
                     </li>
 
@@ -133,10 +160,10 @@
                    <!-- Authentication Links -->
                    @if (Auth::guest())
 
-                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
-                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
+                       <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
-                     <li class="dropdown fl">
+                     <li class="navmain">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              {{ Auth::user()->name }} <span class="caret"></span>
                          </a>

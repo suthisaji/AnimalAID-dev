@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
-        <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
