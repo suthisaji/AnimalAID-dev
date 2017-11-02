@@ -326,7 +326,7 @@ Route::post('/updateSlip2/{order_number}','ProductController@updateSlip2')->midd
 
 /*user_updateslip*/
 Route::get('/userupdateslip', function () {
-    return view('userupdateslip');
+    return view('UserUpdateSlip');
 });
 Route::get('/createUserUpdateSlip','ProductController@updateSlip3');
 Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
