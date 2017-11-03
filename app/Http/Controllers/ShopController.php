@@ -17,9 +17,11 @@ class ShopController extends Controller
         $data = [];
         if($request->cate){
             $category = Category::where('category_name', $request->cate)->first();
+
             $data = array(
                 'categories' => Category::all(),
                 'products' => Product::where('category_id', $category->category_id)->paginate(18)
+                'ps' => Product::all(),
             );
         }else{
             $data = array(

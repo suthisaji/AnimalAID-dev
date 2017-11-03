@@ -22,8 +22,9 @@
                                 <div class="card-block">
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
-                                    </div>
-                                    <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
+                                    </div>  @foreach($data as $d )
+                                <a href="{{url('productDetail',array($d->id))}}">  <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/></a>
+                                @endforeach
                                     <span class="product-name">{{ $product->product_name }}</span>
                                     <div class="add-to-cart">
                                         <form action="{{ url('webshop/cart') }}" method="post">
@@ -58,19 +59,19 @@
                 <li>0</li>
             </ul> <!-- .count -->
         </a>
-    
+
         <div class="cd-cart">
             <div class="wrapper">
                 <header>
                     <h2>Cart</h2>
                 </header>
-                
+
                 <div class="body">
                     <ul>
                         <!-- products added to the cart will be inserted here using JavaScript -->
                     </ul>
                 </div>
-    
+
                 <footer>
                     <a href="#0" class="checkout btn"><em>ยอดรวม <span>0</span>฿</em></a>
                 </footer>
