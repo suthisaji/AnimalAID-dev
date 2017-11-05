@@ -229,7 +229,7 @@
                    <div class="row">
                      <div class="col-md-8">
                         @foreach($data as $p )
-                       <center><h2 class="text-muted">ชื่อสินค้า : {{$p->created_at}}<br></h2></center>
+                       <center><h2 class="text-muted">ชื่อสินค้า : {{$p->product_name}}<br></h2></center>
                        @endforeach
                      </div>
                    </div>

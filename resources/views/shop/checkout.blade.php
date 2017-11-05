@@ -51,7 +51,7 @@
 
 
 
-       @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count())==(DB::table('orderings')->where('pay_status','paid')->count())&& Cart::total()!=0 )
+       @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count())==(DB::table('orderings')->where('pay_status','paid')->count())&&(DB::table('orderings')->where('pay_status','paid')->count()>0)&& Cart::total()!=0 )
         @include('shop.components.status')
         @include('shop.components.order')
       @endif

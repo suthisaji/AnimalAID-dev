@@ -1,7 +1,6 @@
 <style>
 /*pop up*/
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
-
 .b, .bb {
 position: absolute;
 width: 100%;
@@ -10,7 +9,6 @@ background-attachment: fixed;
 background-size: cover;
 background-position: center;
 }
-
 .bb {
 background:#e6fff2;
 opacity: .4;
@@ -22,15 +20,12 @@ top: 5px;
 right: 0px;
 background: darkgray;
 }
-
-
 #send:hover {
 background: #8ecf68;
 }
 #send:active {
 background: #5a9f32;
 }
-
 .message {
 position: absolute;
 top: -200px;
@@ -92,17 +87,14 @@ background: #8ecf68;
 .message #ok:active {
 background: #5a9f32;
 }
-
 .comein {
 top: 150px;
 opacity: 1;
 }
-
 label > span, #error_summernote{
 color: red;
 font-weight: bold;
 }
-
 /*end popup*/
 </style>
 <div class="row mt-3">
@@ -250,37 +242,23 @@ $.ajax({
     amphoe: $('#amphoe')[0].value,
     province: $('#province')[0].value,
     zipcode: $('#zipcode')[0].value,
-
     id: $('#id')[0].value,
     ordering_id: $('#ordering_id')[0].value,
     pay_status: $('#pay_status')[0].value,
     home: $('#home')[0].value,
-
     number_product: $('#number_product').value,
-
     product_id: $('#product_id')[0].value,
     product_number: $('#product_number')[0].value,
     amount: $('#amount')[0].value,
-
     Bank_name: $('#Bank_name')[0].value,
     order_number: $('#order_number')[0].value,
     amountOfTransfer: $('#amountOfTransfer')[0].value,
-
-
    minus_product: $('#minus_product')[0].value,
-
     _token:$('#token')[0].value
-
-
   },success: function(data){
     alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
     window.location.reload();
-
    }
    })
-
    });
-
-
-
 </script>
