@@ -198,8 +198,8 @@ Route::get('/testP', function () {
 
 
 
-Route::get('/ADEFhome', function () {
-    return view('ADEFhome');
+Route::get('/test2', function () {
+    return view('test2');
 });
 
 Route::get('/ADEFfoundation', function () {

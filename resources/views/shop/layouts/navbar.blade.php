@@ -46,7 +46,7 @@
                     <ul class="dropdown-menu" role="menu">
                       @if(Auth::user()->position=='user')
                       <li class="fl tw16">
-                        <a href="userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
+                        <a href="../userProfile">ข้อมูลส่วนตัวผู้ใช้ </a>
                       </li>
                       <li class="fl">
                           <a href="{{ route('logout') }}"
@@ -60,7 +60,7 @@
                           </form>
                       </li>
                     @else <li class="fl tw16">
-                       <a href="adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
+                       <a href="../adminProfile">ข้อมูลส่วนตัวแอดมิน</a>
                      </li>
                         <li class="fl">
                             <a href="{{ route('logout') }}"

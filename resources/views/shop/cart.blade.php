@@ -44,7 +44,7 @@
                             <tbody>
                                 @foreach (Cart::content() as $item)
                                 <tr>
-                                    <td class="table-image"><a href="{{ url('webshop', [$item->model->slug]) }}"><img src="{{ asset('img/' . $item->model->image) }}" alt="product" class="img-responsive cart-image"></a></td>
+
                                     <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
                                     <td>
                                         <select class="quantity" data-id="{{ $item->rowId }}">
@@ -78,7 +78,7 @@
 
                                 @endforeach
                                 <tr>
-                                    <td class="table-image"></td>
+                                
                                     <td></td>
                                     <td class="small-caps table-bg" style="text-align: right">Subtotal</td>
                                     <td>${{ Cart::instance('default')->subtotal() }}</td>

@@ -8,61 +8,57 @@
     </div>
 
 
-          @foreach($ordering as $o)
+       @foreach($ordering as $o)
 
-            @if($o->customer_id == Auth::user()->id)
-                    @if($o->pay_status=='wait' && $o->join_TransferMoney->picture_slip==null)
-                          @include('shop.components.tableListDisabled')
-                          @include('shop.components.updateSlip')
+                 @if(Auth::user()->id==$o->customer_id){{-- ถ้า  Auth เท่ากับ ผู้ซื้อ--}}
 
-                    @elseif($o->pay_status=='wait' && $o->join_TransferMoney->picture_slip!=null)
+                        @if(DB::table('orderings')->where('pay_status','wait')->count()>0)
+                               @if($o->join_TransferMoney->picture_slip==null)
 
-                               @include('shop.components.tableListDisabled')
+                                     @include('shop.components.updateSlip')
+                                     @include('shop.components.status')
 
-                  <!--แถบสถานะ-->
-                                @include('shop.components.status')
+                               @elseif($o->join_TransferMoney->picture_slip!=null&&$o->pay_status!='paid')
+                                 <br>
+                                    <h2 style="color:red;">รอการตรวจสอบหลักฐานการโอน การสั่งซื้อล่าสุด</h2>
+                                    @include('shop.components.tableListDisabled')
+                                    @include('shop.components.status')
 
-                  <!--แถบสถานะ-->@if(DB::table('shippings')->where('ordering_id',$o->ordering_id)->count()>0)
-                                    @if($o->join_Shipping->package_id!=null)
+                               @endif
+                        @else
 
-                                       <h4 style="color:blue;">โปรดรอการตรวจสอบการสั่งสินค้าครั้งเก่าก่อน</h4>
-                                     @else
-                                       <h4 style="color:blue;">โปรดรอการตรวจสอบการสั่งสินค้าครั้งเก่าก่อน</h4>
-                                    @endif
-                                @else
-                                @endif
+                        @endif
+                  @endif
 
 
-                    @elseif( Cart::total() ==0 )
-                            @include('shop.components.status')
-                   @elseif( Cart::total() !=0)
-                       @include('shop.components.order')
-                       @include('shop.components.status')
-                    @else
-                          @include('shop.components.status')
-
-                    @endif
 
 
-   @else
-     @include('shop.components.order')
-@endif
-          @endforeach
 
 
-     @if(DB::table('orderings')->count()==0)
-         @include('shop.components.order')
+
+
+
+
+
+
+        @endforeach
+
+        @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()!=0 )
+            @include('shop.components.order')
+        @elseif((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()==0 )
+          ยังไม่มีการสั่งซื้อ
+        @endif
+
+
+
+       @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count())==(DB::table('orderings')->where('pay_status','paid')->count())&& Cart::total()!=0 )
+        @include('shop.components.status')
+        @include('shop.components.order')
+      @endif
+      @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count())==(DB::table('orderings')->where('pay_status','paid')->count())&& Cart::total()==0 )
+       @include('shop.components.status')
+
      @endif
-
-
-
-
-
-
-
-
-
-
 @endsection
 
 

@@ -182,14 +182,18 @@
           <h4 class="modal-title">รายละเอียดการสั่งสินค้า</h4>
         </div>
         <div class="modal-body">
-           @foreach ($shipping as $s2)
+
              <table class="table table-striped">
                <thead><th><center>รหัสสินค้า</center></th> <th><center>  ชื่อสินค้า</center> </th><th> <center> จำนวน </center></th><thead>
+                 @foreach ($shipping as $s2)
+          
           <tbody> <td><center> {{$s2->join_Ordering->join_Ordering_product->join_Product->product_id}}</center</td><br>
                   <td><center>{{$s2->join_Ordering->join_Ordering_product->join_Product->product_name}}</center</td><br>
                   <td> <center>{{$s2->join_Ordering->join_Ordering_product->product_number}}</center ></td></tbody>
+
+                @endforeach
          </table>
-          @endforeach
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -207,15 +211,18 @@
           <h4 class="modal-title">ข้อมูลติดต่อและที่อยู่จัดส่ง</h4>
         </div>
         <div class="modal-body">
-           @foreach ($shipping as $s2)
+
              <table class="table table-striped">
                <thead><th><center>e-mail</center></th> <th><center>  ที่อยู่จัดส่ง</center> </th><th> <center> เบอร์โทรศัพท์ </center></th><thead>
-          <tbody> <td><center> {{$s->email}}</center</td><br>
+          <tbody>
+             @foreach ($shipping as $s2)
+             <td><center> {{$s->email}}</center</td><br>
                   <td><center>{{$s->address}}</center</td><br>
                   <td> <center>{{$s->tel}}</center ></td></tbody>
+                      @endforeach
           </table>
 
-          @endforeach
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
