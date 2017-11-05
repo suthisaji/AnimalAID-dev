@@ -14,8 +14,10 @@ use App\Repositories\ReserveProductRepositoryInterface;
 use App\Repositories\Product_reserveRepositoryInterface;
 use App\Repositories\Ordering_productRepositoryInterface;
 use App\Repositories\OrderingRepositoryInterface;
+use App\Repositories\UserUpdateSlipRepositoryInterface;
 use App\Ordering;
 use App\Product;
+use App\UserUpdateSlip;
 use Cart;
 
 use DB;
@@ -27,8 +29,9 @@ class ProductController extends Controller
     protected $ShippingRepository;
       protected $Ordering_productRepository;
         protected $OrderingRepository;
+        protected $UserUpdateSlipRepository;
 
-  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository,ReserveProductRepositoryInterface $ReserveProductRepository,Product_reserveRepositoryInterface $Product_reserveRepository,Ordering_productRepositoryInterface $Ordering_productRepository ,OrderingRepositoryInterface $OrderingRepository){
+  function __construct(CategoryRepositoryInterface $CategoryRepository,ProductRepositoryInterface $ProductRepository,TransferMoneyRepositoryInterface $TransferMoneyRepository,ShippingRepositoryInterface $ShippingRepository,ReserveProductRepositoryInterface $ReserveProductRepository,Product_reserveRepositoryInterface $Product_reserveRepository,Ordering_productRepositoryInterface $Ordering_productRepository ,OrderingRepositoryInterface $OrderingRepository, UserUpdateSlipRepositoryInterface   $UserUpdateSlipRepository){
       $this->CategoryRepository = $CategoryRepository;
       $this->ProductRepository = $ProductRepository;
       $this->TransferMoneyRepository = $TransferMoneyRepository;
@@ -37,7 +40,7 @@ class ProductController extends Controller
       $this->Product_reserveRepository = $Product_reserveRepository;
       $this->Ordering_productRepository=$Ordering_productRepository;
       $this->OrderingRepository=$OrderingRepository;
-
+      $this->UserUpdateSlipRepository=$UserUpdateSlipRepository;
     }
 
   function addProduct(){
@@ -599,6 +602,56 @@ function statusShippingToCancel($ordering_id=0){
       return view('shop.checkout',$data);
       }
 
+      function updateSlip3(){
+
+        if(Request::isMethod('get')){
+          $category = $this->CategoryRepository->getAllCategory();
+           $data = array(
+            'category'=>$category
+           );
+          return view('addProductPage',$data);
+        }else if(Request::isMethod('post')){
+              $name = Input::get('name');
+              //$productPicture = Input::get('ani_picture');
+              //------upload image and store------
+              $temp = Request::file('picture_slip')->getPathName();
+              $imageName = Request::file('picture_slip')->getClientOriginalName();
+              $path = base_path().'/public/images/';
+              $newImageName = 'picture_slip_'.str_random(5).$imageName;
+              Request::file('picture_slip')->move($path, $newImageName);
+              //----------------------------------
+
+              $dateTimeTransfer= Input::get('dateTimeTransfer');
+              $status_check_yet=Input::get('status_check_yet');
+
+    //echo $product_name.' '.$newImageName.' '.$product_detail.' '.$product_price.' '.$number_product.' '.$category_id;
+            $result = $this->UserUpdateSlipRepository->addUserUpdateSlip($name,$dateTimeTransfer,$newImageName,$status_check_yet);
+
+
+              if($result){
+                  return redirect('/userupdateslip');
+              }else{
+                  echo "Failed to add product";
+              }
+        }
+      }
+
+      function adminCheckSlipDocument(){
+        $this->middleware('auth');
+        if(Auth::user()==null){
+      return redirect('login');
+        }
+      $userUpdateSlip = $this->UserUpdateSlipRepository->getAllUserUpdateSlip();
+      $data = array(
+         'userUpdateSlip'=>$userUpdateSlip,
+      );
+      return view('adminCheckSlip',$data);
+      }
+
+      public function productsInfo($id){
+        $data=DB::table('products')->where('product_id',$id)->first();
+        return view('productDetail',compact('data'));
+      }
 
 
 

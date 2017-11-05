@@ -303,14 +303,10 @@ Route::get('/createOrdering/{id}','ProductController@createOrdering')->middlewar
 Route::post('/createOrdering/{id}','ProductController@createOrdering')->middleware('auth');
 /*updateAdress User new and create ordering*/
 
-
-
-
 /*updateSlipAndDateTimeTransfer*/
 Route::get('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
 Route::post('/updateSlip/{order_number}','ProductController@updateSlip')->middleware('auth');
 /*updateSlipAndDateTimeTransfer*/
-
 
 Route::get('/addReserveProduct','ProductController@addReserveProduct');
 Route::post('/addReserveProduct','ProductController@addReserveProduct');
@@ -318,8 +314,21 @@ Route::post('/addReserveProduct','ProductController@addReserveProduct');
 /*userPurchase*/
 Route::get('/webshop/checkout', 'ProductController@checkoutDocument');
 
-
 /*updateSlipAndDateTimeTransfer*/
 Route::get('/updateSlip2/{order_number}','ProductController@updateSlip2')->middleware('auth');
 Route::post('/updateSlip2/{order_number}','ProductController@updateSlip2')->middleware('auth');
 /*updateSlipAndDateTimeTransfer*/
+
+/*user_updateslip*/
+Route::get('/userupdateslip', function () {
+    return view('UserUpdateSlip');
+});
+Route::get('/createUserUpdateSlip','ProductController@updateSlip3');
+Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
+
+/*admin_checkslip*/
+Route::get('/adminCheckSlip', 'ProductController@adminCheckSlipDocument');
+
+/*Product_Detail*/
+Route::get('/productDetail/{id}',  'ProductController@productsInfo');
+Route::post('/productDetail/{id}',  'ProductController@productsInfo');

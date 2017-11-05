@@ -36,5 +36,6 @@ class RepositoryServiceProvider extends ServiceProvider
           App::bind('App\Repositories\Product_reserveRepositoryInterface','App\Repositories\Product_reserveRepository');
           App::bind('App\Repositories\Ordering_productRepositoryInterface','App\Repositories\Ordering_productRepository');
           App::bind('App\Repositories\OrderingRepositoryInterface','App\Repositories\OrderingRepository');
+          App::bind('App\Repositories\UserUpdateSlipRepositoryInterface','App\Repositories\UserUpdateSlipRepository');
     }
 }
