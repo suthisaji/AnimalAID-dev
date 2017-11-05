@@ -22,10 +22,17 @@
                                 <div class="card-block">
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
+<<<<<<< HEAD
                                     </div>
                                     <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/>
                                     <span class="product-name">{{ $product->product_name }} <span style="color:#FF4000;">{{$product->product_price}}</span>฿</span>
 
+=======
+                                    </div>  @foreach($data as $d )
+                                <a href="{{url('productDetail',array($d->id))}}">  <img class="product-image" src="{{ 'https://animals-aid.com/images/'.$product->product_pic }}"/></a>
+                                @endforeach
+                                    <span class="product-name">{{ $product->product_name }}</span>
+>>>>>>> 3bd45f004f94f71a711f38b8aac41dab06f7d383
                                     <div class="add-to-cart">
                                         <form action="{{ url('webshop/cart') }}" method="post">
                                             {{ csrf_field() }}

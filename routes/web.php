@@ -330,5 +330,5 @@ Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
 Route::get('/adminCheckSlip', 'ProductController@adminCheckSlipDocument');
 
 /*Product_Detail*/
-Route::get('/productDetail/{id}',  'ProductController@productsInfo');
-Route::post('/productDetail/{id}',  'ProductController@productsInfo');
+Route::get('/productDetail/{id}', 'ProductController@productsInfo');
+Route::post('/productDetail', 'ProductController@productsInfo');

@@ -648,8 +648,9 @@ function statusShippingToCancel($ordering_id=0){
       return view('adminCheckSlip',$data);
       }
 
+
       public function productsInfo($id){
-        $data=DB::table('products')->where('product_id',$id)->first();
+        $data=DB::table('products')->where('product_id',$id)->get();
         return view('productDetail',compact('data'));
       }
 
