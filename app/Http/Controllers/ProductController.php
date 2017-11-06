@@ -458,6 +458,9 @@ function statusShippingToCancel($ordering_id=0){
               return view('shop.checkout', $data);
           }
       }
+
+
+
       function checkoutDocument(){//จะแสดงข้อมูลหน้า Shipping_status
         $this->middleware('auth');
         if(Auth::user()==null){

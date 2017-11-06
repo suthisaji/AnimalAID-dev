@@ -22,6 +22,7 @@
                                  <br>
                                     <h2 style="color:red;">รอการตรวจสอบหลักฐานการโอน การสั่งซื้อล่าสุด</h2>
                                     @include('shop.components.tableListDisabled')
+                                      @include('shop.components.khun')
                                     @include('shop.components.status')
 
                                @endif
@@ -46,7 +47,7 @@
         @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()!=0 )
             @include('shop.components.order')
         @elseif((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()==0 )
-          ยังไม่มีการสั่งซื้อ
+        <br>  <h2 style="color:orange;">ยังไม่มีการสั่งซื้อ</h2>
         @endif
 
 

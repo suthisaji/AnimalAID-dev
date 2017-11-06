@@ -196,7 +196,7 @@ Route::get('/testP', function () {
     return view('testP');
 });
 
-
+Route::get('/Q&ASummer','SummernoteController@QASummerInfo');
 
 Route::get('/test2', function () {
     return view('test2');

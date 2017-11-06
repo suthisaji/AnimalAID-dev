@@ -53,6 +53,11 @@ class SummernoteController extends Controller
       return view('adminReadSummer',compact('data')); //จะเอาไปใช้ที่หน้า AdminreadSummer
     }
 
+    public function QASummerInfo(){
+      $data=DB::table('blogs')->orderBy('created_at','DESC')->get();
+      return view('Q&A',compact('data'));
+    }
+
     public function deleteSummer($id){
        DB::table('blogs')->where('id',$id)->delete();
        return back();

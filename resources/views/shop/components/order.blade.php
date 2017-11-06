@@ -1,6 +1,9 @@
 <style>
 /*pop up*/
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+.btn {
+    font-size: 1.2rem;
+  }
 .b, .bb {
 position: absolute;
 width: 100%;
@@ -203,28 +206,14 @@ font-weight: bold;
 
 
 
-                                   <div class='bb'></div>
-                                   <div class="form-group">
+
+
 
                 <button type="submit" id="send" class="btn btn-success btn-lg" onclick="return confirm('ยืนยันการสั่งซื้อสินค้า')">ยืนยันการสั่งซื้อ</button>
-              </div>
-              <div class='message'>
-              <div class='check'>
-                &#10004;
-              </div>
-              <p>
-                ตั้งกระทู้คำถาม
-              </p>
-              <p>
-                เรียบร้อย
-              </p>
-              <button id='ok'>
-                ตกลง
-              </button>
-            </div>
+
+
             <!--end popup-->
 
-              </div>
           {{-- </form> --}}
             </div>
         </div>

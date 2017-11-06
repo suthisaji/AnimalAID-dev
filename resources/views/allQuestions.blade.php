@@ -302,7 +302,7 @@
 
           <br>
            <div class="panel-heading">
-              <h4><b>คำถามทั้งหมด </b></h4>
+              <button class="btn" ><h4 ><b ><a href="Q&ASummer">คำถามทั้งหมด</a> </b></h4></button>
            </div>
                  <div class="panel-body">
                      <table class="table table-striped ">
