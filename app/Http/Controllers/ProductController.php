@@ -256,12 +256,19 @@ function statusShippingToCancel($ordering_id=0){
     if(Auth::user()==null){
   return redirect('login');
     }
+        $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
+    
   $shipping = $this->ShippingRepository->getAllShipping();
   $data = array(
      'shipping'=>$shipping,
+     'ordering_product'=>$ordering_product
   );
   return view('shippings',$data);
   }
+
+
+
+
   /*เปลี่ยน สเตตัสการจัดส่ง เป็นยกเลิก*/
   function shippingAfterDelivery($ordering_id=0){
         if(Request::isMethod('post')){

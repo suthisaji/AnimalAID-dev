@@ -131,8 +131,65 @@
           <td><center>{{$s->shipping_id}}<center></td>
           <td><center>{{$s->ordering_id}}<center></td>
           <td><center>{{$s->buyer_id}}<center></td>
-            <td><center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">รายการสินค้า</button></center></td>
-      <td><center><button type="button" class="btn btn-info2 btn-lg" data-toggle="modal" data-target="#myModal1" style="color:white;">ติดต่อและที่จัดส่ง</button></center></td>
+            <td><center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">รายการสินค้า</button></center>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">ข้อมูลติดต่อและที่อยู่จัดส่ง</h4>
+                    </div>
+                    <div class="modal-body">
+
+                         <table class="table table-striped">
+                           <thead><th><center>e-mail</center></th> <th><center>  ที่อยู่จัดส่ง</center> </th><th> <center> เบอร์โทรศัพท์ </center></th><thead>
+                      <tbody>
+
+                         <td><center> {{$s->email}}</center</td><br>
+                              <td><center>{{$s->address}}</center</td><br>
+                              <td> <center>{{$s->tel}}</center ></td></tbody>
+
+                      </table>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div></td>
+      <td><center><button type="button" class="btn btn-info2 btn-lg" data-toggle="modal" data-target="#myModal1" style="color:white;">ติดต่อและที่จัดส่ง</button></center>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">รายละเอียดการสั่งสินค้า</h4>
+              </div>
+              <div class="modal-body">
+
+                   <table class="table table-striped">
+
+                     <thead><th><center>รหัสสินค้า</center></th> <th><center>  ชื่อสินค้า</center> </th><th> <center> จำนวน </center></th><thead>
+                @foreach($ordering_product as $op)
+
+                <tbody> <td><center> {{$op->product_id}}</center></td><br>
+                        <td><center>{{$op->join_Product->product_name}}</center</td><br>
+                        <td> <center>{{$op->product_number}}</center ></td></tbody>
+
+               @endforeach
+               </table>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div></td>
 
 
               <form action="/shippingUpdate/{{$s->ordering_id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
@@ -173,63 +230,9 @@
 
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">รายละเอียดการสั่งสินค้า</h4>
-        </div>
-        <div class="modal-body">
-
-             <table class="table table-striped">
-               <thead><th><center>รหัสสินค้า</center></th> <th><center>  ชื่อสินค้า</center> </th><th> <center> จำนวน </center></th><thead>
-                 @foreach ($shipping as $s2)
-          
-          <tbody> <td><center> {{$s2->join_Ordering->join_Ordering_product->join_Product->product_id}}</center</td><br>
-                  <td><center>{{$s2->join_Ordering->join_Ordering_product->join_Product->product_name}}</center</td><br>
-                  <td> <center>{{$s2->join_Ordering->join_Ordering_product->product_number}}</center ></td></tbody>
-
-                @endforeach
-         </table>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ข้อมูลติดต่อและที่อยู่จัดส่ง</h4>
-        </div>
-        <div class="modal-body">
-
-             <table class="table table-striped">
-               <thead><th><center>e-mail</center></th> <th><center>  ที่อยู่จัดส่ง</center> </th><th> <center> เบอร์โทรศัพท์ </center></th><thead>
-          <tbody>
-             @foreach ($shipping as $s2)
-             <td><center> {{$s->email}}</center</td><br>
-                  <td><center>{{$s->address}}</center</td><br>
-                  <td> <center>{{$s->tel}}</center ></td></tbody>
-                      @endforeach
-          </table>
 
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
 
