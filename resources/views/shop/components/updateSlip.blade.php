@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     @foreach ($transferMoney as $t)
-@if(Auth::user()->id==$t->join_Ordering->customer_id&&$t->join_Ordering->pay_status!='paid')
+   @if(Auth::user()->id==$t->join_Ordering->customer_id&&$t->join_Ordering->pay_status!='paid')
        <div class="container">
          <div class="row" style="border:solid 1px;border-color:gray;">
            <div class="col-md-3"></div>

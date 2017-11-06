@@ -423,13 +423,80 @@ function statusShippingToCancel($ordering_id=0){
             $amphoe=Input::get('amphoe');
             $province=Input::get('province');
             $zipcode=Input::get('zipcode');
-            $number_product = Input::get('minus_product');
-            $product_id=Input::get('product_id');/*addOrdering_product*/
-            $product_number=Input::get('product_number');
-            $amount = Input::get('amount');
+          //  $number_product = Input::get('minus_product');
+            //$product_id=Input::get('product_id');/*addOrdering_product*/
+            foreach (Cart::content() as $item){
+
+             $product = $this->ProductRepository->getAllProduct();
+                  if( $item->qty == 1 ? 'selected' : '' ) {
+                    $product_number=$item->qty;
+                     foreach($product as $p){
+                       if($item->id==$p->product_id){
+                         $minus_product=($p->number_product)-($item->qty);
+                         $product_id=$item->id;
+                         $amount=$item->subtotal;
+                         $number_product  = $minus_product;
+
+                    }
+                  }
+                }elseif( $item->qty == 2 ? 'selected' : '' )  {
+                    $product_number=$item->qty;
+                    foreach($product as $p){
+                      if($item->id==$p->product_id){
+                         $minus_product=($p->number_product)-($item->qty);
+                            $product_id=$item->id;
+                            $amount=$item->subtotal;
+                              $number_product  = $minus_product;
+                      }
+                   }
+
+               }elseif( $item->qty == 3 ? 'selected' : '' ) {
+                      $product_number=$item->qty;
+                    foreach($product as $p){
+                      if($item->id==$p->product_id){
+                      $minus_product=($p->number_product)-($item->qty);
+                         $product_id=$item->id;
+                         $amount=$item->subtotal;
+                           $number_product  = $minus_product;
+                   }
+                 }
+
+               }elseif( $item->qty == 4 ? 'selected' : '' )  {
+              $product_number=$item->qty;
+                    foreach($product as $p){
+                      if($item->id==$p->product_id){
+                        $minus_product=($p->number_product)-($item->qty);
+                           $product_id=$item->id;
+                           $amount=$item->subtotal;
+                             $number_product  = $minus_product;
+                  }
+                }
+                } elseif( $item->qty == 5 ? 'selected' : '' )   {
+                    $product_number=$item->qty;
+                  foreach($product as $p){
+                      if($item->id==$p->product_id){
+
+                        $minus_product=($p->number_product)-($item->qty);
+                           $product_id=$item->id;
+                           $amount=$item->subtotal;
+                          $number_product  = $minus_product;
+                   }
+                 }
+
+                  }
+
+             }
+
+
+
+
+
+          //  $product_number=Input::get('product_number');
+          //  $amount = Input::get('amount');
             $Bank_name=Input::get('Bank_name');/*addTransferMoney*/
             $order_number= Input::get('order_number');/*ไป addOrderingด้วย*/
             $amountOfTransfer=Input::get('amountOfTransfer');
+
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
             $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);

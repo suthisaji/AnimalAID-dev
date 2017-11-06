@@ -125,43 +125,17 @@ font-weight: bold;
 {{--       ไม่เอาแล้ว เพราะส่งไปกับ json แล้ว  <form name="createOrdering" action="/createOrdering/{{ Auth::user()->id}}" class="form" method="post" enctype="multipart/form-data" onsubmit="return validation()">{{ Form::token() }} --}}
                   @foreach (Cart::content() as $item)
                 <tbody>
-<input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+           <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
 
                   <td>{{$item->id}}</td>
                   <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
                    <td>
 
-                        @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
-                           @foreach($product as $p)
-                             @if($item->id==$p->product_id)
-                            <input type="hidden" name="number_product" id="number_product"value="{{$p->number_product}}"> <input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
-                            @endif
-                           @endforeach
-                        @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
-                          @foreach($product as $p)
-                            @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
-                           @endif
-                          @endforeach
-                        @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
-                          @foreach($product as $p)
-                            @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
-                           @endif
-                          @endforeach
-                        @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number"  id="product_number" value="{{$item->qty}}"/>
-                          @foreach($product as $p)
-                            @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
-                           @endif
-                          @endforeach
-                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/><input class="form-control" type="hidden" name="product_number" id="product_number"  value="{{$item->qty}}"/>
-                          @foreach($product as $p)
-                            @if($item->id==$p->product_id)
-                           <input type="hidden" name="number_product"  id="number_product"value="{{$p->number_product}}"  ><input type="hidden" name="minus_product"  id="minus_product"value="{{($p->number_product)-($item->qty)}}"  >
-                           @endif
-                          @endforeach
-
+                        @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/>
+                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/>
                            @endif
                          </select>
                              </td>
@@ -235,14 +209,14 @@ $.ajax({
     ordering_id: $('#ordering_id')[0].value,
     pay_status: $('#pay_status')[0].value,
     home: $('#home')[0].value,
-    number_product: $('#number_product').value,
-    product_id: $('#product_id')[0].value,
-    product_number: $('#product_number')[0].value,
-    amount: $('#amount')[0].value,
+  //  number_product: $('#number_product').value,
+  //  product_id: $('#product_id')[0].value,
+//    product_number: $('#product_number')[0].value,
+//    amount: $('#amount')[0].value,
     Bank_name: $('#Bank_name')[0].value,
     order_number: $('#order_number')[0].value,
     amountOfTransfer: $('#amountOfTransfer')[0].value,
-   minus_product: $('#minus_product')[0].value,
+   //minus_product: $('#minus_product')[0].value,
     _token:$('#token')[0].value
   },success: function(data){
     alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
