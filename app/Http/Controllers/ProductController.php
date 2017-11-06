@@ -484,11 +484,10 @@ function statusShippingToCancel($ordering_id=0){
                  }
 
                   }
+                    $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
+                     $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
 
              }
-
-
-
 
 
           //  $product_number=Input::get('product_number');
@@ -499,8 +498,8 @@ function statusShippingToCancel($ordering_id=0){
 
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
-            $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
-             $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
+
+
              $result5=Cart::destroy();
             if($result1){
                   return redirect('/webshop/checkout');
