@@ -29,7 +29,8 @@
 
 
 
-                                
+
+
 
                                     <div class="add-to-cart">
                                         <form action="{{ url('webshop/cart') }}" method="post">
@@ -42,6 +43,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <span class="text-muted"><a href="{{url('productDetail',array($product->product_id))}}">รายละเอียดสินค้า </a<span>
+
+
+
                         </div>
                     @endforeach
                 </div>

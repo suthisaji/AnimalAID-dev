@@ -20,13 +20,15 @@ class ShopController extends Controller
 
             $data = array(
                 'categories' => Category::all(),
+                 'product' => Category::all(),
                 'products' => Product::where('category_id', $category->category_id)->paginate(18),
-                
+
             );
         }else{
             $data = array(
                 'categories' => Category::all(),
                 'products' => Product::paginate(18),
+                  'product' => Product::all(),
 
             );
         }
