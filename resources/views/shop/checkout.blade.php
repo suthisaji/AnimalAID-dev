@@ -3,9 +3,7 @@
     <div class="row">
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
-    <div class="row">
-        @include('shop.components.search')
-    </div>
+    
 
 
        @foreach($ordering as $o)
