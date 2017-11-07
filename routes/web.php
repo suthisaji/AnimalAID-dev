@@ -342,3 +342,8 @@ Route::post('/checkRigth/{id}','ProductController@checkRigthSlip')->middleware('
 Route::get('/checkCancel/{id}','ProductController@checkCancelSlip')->middleware('auth')->middleware('checkadmin');
 Route::post('/checkCancel/{id}','ProductController@checkCancelSlip')->middleware('auth')->middleware('checkadmin');
 /*status checkCancelSlip*/
+
+/*status checkWrongSlip*/
+Route::get('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('auth')->middleware('checkadmin');
+/*status checkWrongSlip*/

@@ -165,8 +165,7 @@
          <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
          <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
          <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
-
-                   <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
+            <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
      </form>
      @elseif($u->status_slip=='Cancel')
      ถูกยกเลิกการตรวจสอบ
@@ -175,8 +174,7 @@
        <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
        <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
        <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
-
-                 <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
+          <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
    </form>
    @else
      {{ $u->status_check_yet}}
@@ -185,9 +183,17 @@
        <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
        <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
        <input type="hidden"class="form-control" name="status_slip"  value="Cancel" />
-
-                 <br><button class=" btn btn-sm btn-warning" onclick="return confirm('ต้องการยกเลิก')">ยกเลิก</button>
+          <br><button class=" btn btn-sm btn-warning" onclick="return confirm('ต้องการยกเลิก')">ยกเลิก</button>
    </form>
+
+   <form action="/checkCancel/{{$u->id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+     <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
+     <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
+     <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
+     <input type="hidden"class="form-control" name="status_slip"  value="Wrong" />
+        <br><button class=" btn btn-sm btn-danger" onclick="return confirm('หลักฐานผิด')">ไม่ถูกต้อง</button>
+ </form>
+
 
       @endif
 

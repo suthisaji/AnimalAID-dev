@@ -55,4 +55,21 @@ function checkCancelSlip($id,$status_check_yet,$admin_id,$status_slip){
   }
 
 }
+
+function checkWrongSlip($id,$status_check_yet,$admin_id,$status_slip){
+  $data = array(//ช่องนี้ = ตัวแปรที่ใส่มาใน parameter
+     'id'=>$id,
+      'status_check_yet'=>$status_check_yet,
+      'admin_id'=>$admin_id,
+      'status_slip'=>$status_slip
+
+   );
+  $result =UserUpdateSlip::where('id',$id)->update($data);
+  if($result > 0){
+      return true;
+  }else{
+      return false;
+  }
+
+}
 }
