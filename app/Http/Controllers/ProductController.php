@@ -598,4 +598,42 @@ function statusShippingToCancel($ordering_id=0){
         $data=DB::table('products')->where('product_id',$id)->get();
         return view('productDetail',compact('data'));
       }
-}
+
+
+
+
+
+      function checkRigthSlip(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
+        if(Request::isMethod('post')){
+          $id = Input::get('id');
+          $status_check_yet= Input::get('status_check_yet');
+          $admin_id= Input::get('admin_id');
+          $status_slip= Input::get('status_slip');
+          $result1 = $this->UserUpdateSlipRepository->checkRigthSlip($id,$status_check_yet,$admin_id,$status_slip);
+          if($result1){
+            return redirect('/adminCheckSlip');
+          }else{
+            echo "Failed to Update Rigth";
+          }
+        }else{
+          echo "Can not Update";
+        }
+      }
+
+      function checkCancelSlip(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
+        if(Request::isMethod('post')){
+          $id = Input::get('id');
+          $status_check_yet= Input::get('status_check_yet');
+          $admin_id= Input::get('admin_id');
+          $status_slip= Input::get('status_slip');
+          $result1 = $this->UserUpdateSlipRepository->checkCancelSlip($id,$status_check_yet,$admin_id,$status_slip);
+          if($result1){
+            return redirect('/adminCheckSlip');
+          }else{
+            echo "Failed to Update Rigth";
+          }
+        }else{
+          echo "Can not Update";
+        }
+      }
+    }

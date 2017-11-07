@@ -3,7 +3,7 @@
     <div class="row">
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
-    
+
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shop-listing">
@@ -17,6 +17,7 @@
                     @foreach($products as $product)
                         <div class="col-md-2 col-sm-3 col-6 shop-item">
                             <div class="card border-less text-xs-center">
+                              <a href="{{url('productDetail',array($product->product_id))}}">
                                 <div class="card-block">
                                     <div class="cart-remaining">
                                         <span class="badge badge-pill badge-success">มีสินค้า</span>
@@ -26,12 +27,6 @@
                                     <span class="product-name">{{ $product->product_name }} <span style="color:#FF4000;">{{$product->product_price}}</span>฿</span>
 
 
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 
                                     <div class="add-to-cart">
                                         <form action="{{ url('webshop/cart') }}" method="post">
@@ -43,11 +38,8 @@
                                         </form>
                                     </div>
                                 </div>
+                                </a>
                             </div>
-
-                            <span class="text-muted"><a href="{{url('productDetail',array($product->product_id))}}">รายละเอียดสินค้า </a<span>
-
-
 
                         </div>
                     @endforeach

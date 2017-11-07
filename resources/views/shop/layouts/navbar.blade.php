@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="all">
+    <a class="navbar-brand" href="../all">
         <img src="{{ url('images/S__1261612.jpg') }}" width="60px"/>
     </a>
 

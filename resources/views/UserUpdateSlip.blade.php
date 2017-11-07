@@ -217,7 +217,7 @@
               <div class="row" style="border:solid 1px;border-color:gray;">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <h1 class="display-4" style="text-align:center; color:#424242; ">แจ้งชำระเงิน ใบสั่งซื้อหมายเลข </h1>
+                    <h1 class="display-4" style="text-align:center; color:#424242; ">แจ้งการโอนเงินเข้ามูลนิธิ</h1>
                     <form name="createUserUpdateSlip" action="/createUserUpdateSlip" class="form" method="post" enctype="multipart/form-data">
                         {{ Form::token() }}
 
