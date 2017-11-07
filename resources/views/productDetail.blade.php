@@ -236,11 +236,10 @@
                    <div class="row si">
                      <div class="col-md-8" style="font-size: 18px;">
 
-                       <span class="text-muted">รหัสสินค้า : <span> <br>
-                       <span class="text-muted">รายละเอียดสินค้า : </span> <br><br>
-                       <span class="text-muted">ราคา บาท</span><br>
-                       <span class="text-muted">มีสินค้าทั้งหมด ชิ้น </span> <br><br>
-                       <center><span class="text-muted">QUANTITY </span> <br><br></center>
+                       <span class="text-muted">รหัสสินค้า : {{$p->product_id}}<span> <br>
+                       <span class="text-muted">รายละเอียดสินค้า : {{$p->product_detail}} </span> <br><br>
+                       <span class="text-muted">ราคา {{$p->product_price}} บาท</span><br>
+                       <span class="text-muted">มีสินค้าทั้งหมด {{$p->number_product}} ชิ้น </span> <br><br>
                     </div>
 
                     <center><div class="col-md-8">
