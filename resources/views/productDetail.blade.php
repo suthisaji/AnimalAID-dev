@@ -220,27 +220,28 @@
                    <center><h1>รายละเอียดสินค้า</h1></center>
                    <hr>
                  </div>
+                   @foreach($data as $p )
                <div class="row">
                  <div class="col-md-5 text-center">
-                   <img src="\images\icon_02.png" alt="Mountain View" style="width:80%; height:80%; max-width: 100%;">
+                   <img src="{{url($p->product_pic)}}" alt="Product_Pic" style="width:80%; height:80%; max-width: 100%;">
+
                  </div>
                   <b>
                  <div class="col-md-7">
                    <div class="row">
                      <div class="col-md-8">
-                        @foreach($data as $p )
+
                        <center><h2 class="text-muted">ชื่อสินค้า : {{$p->product_name}}<br></h2></center>
-                       @endforeach
+
                      </div>
                    </div>
                    <div class="row si">
                      <div class="col-md-8" style="font-size: 18px;">
 
-                       <span class="text-muted">รหัสสินค้า : <span> <br>
-                       <span class="text-muted">รายละเอียดสินค้า : </span> <br><br>
-                       <span class="text-muted">ราคา บาท</span><br>
-                       <span class="text-muted">มีสินค้าทั้งหมด ชิ้น </span> <br><br>
-                       <center><span class="text-muted">QUANTITY </span> <br><br></center>
+                       <span class="text-muted">รหัสสินค้า : {{$p->product_id}}<span> <br>
+                       <span class="text-muted">รายละเอียดสินค้า : {{$p->product_detail}} </span> <br><br>
+                       <center><span class="text-muted">ราคา {{$p->product_price}} บาท</span></center>
+                       <center><span class="text-muted">มีสินค้าทั้งหมด {{$p->number_product}} ชิ้น </span></center> <br><br>
                     </div>
 
                     <center><div class="col-md-8">
@@ -255,6 +256,7 @@
 
                  </div>
                </div>
+                @endforeach
              </div>
              <!--<div class="box-footer clearfix">-->
                <!--<div class="box-footer clearfix">-->
