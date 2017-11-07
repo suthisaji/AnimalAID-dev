@@ -3,9 +3,7 @@
     <div class="row">
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
-    <div class="row">
-        @include('shop.components.search')
-    </div>
+  
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shop-listing">
@@ -32,10 +30,10 @@
                             <thead>
                                 <tr>
                                     <th class="table-image"></th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
+                                    <th>สินค้า</th>
+                                    <th>จำนวน</th>
 
-                                    <th>Price</th>
+                                    <th>ราคา</th>
                                     <th class="column-spacer"></th>
                                     <th></th>
                                 </tr>
@@ -71,16 +69,16 @@
                                         <form action="{{ url('webshop/cart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                             {!! csrf_field() !!}
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <input type="submit" class="btn btn-danger btn-sm" value="Remove">
+                                            <input type="submit" class="btn btn-danger btn-sm" value="ลบ">
                                         </form>
                                     </td>
                                 </tr>
 
                                 @endforeach
                                 <tr>
-                                
+
                                     <td></td>
-                                    <td class="small-caps table-bg" style="text-align: right">Subtotal</td>
+                                    <td class="small-caps table-bg" style="text-align: right">ราคา</td>
                                     <td>${{ Cart::instance('default')->subtotal() }}</td>
                                     <td></td>
                                     <td></td>
@@ -88,8 +86,8 @@
                                 <tr>
                                     <td class="table-image"></td>
                                     <td></td>
-                                    <td class="small-caps table-bg" style="text-align: right">Tax</td>
-                                    <td>${{ Cart::instance('default')->tax() }}</td>
+                                    <td class="small-caps table-bg" style="text-align: right">ค่าจัดส่งฟรี</td>
+                                    <td>฿{{ Cart::instance('default')->tax() }}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -97,8 +95,8 @@
                                 <tr class="border-bottom">
                                     <td class="table-image"></td>
                                     <td style="padding: 40px;"></td>
-                                    <td class="small-caps table-bg" style="text-align: right">Your Total</td>
-                                    <td class="table-bg">${{ Cart::total() }}</td>
+                                    <td class="small-caps table-bg" style="text-align: right">ยอดรวม</td>
+                                    <td class="table-bg">฿{{ Cart::total() }}</td>
                                     <td class="column-spacer"></td>
                                     <td></td>
                                 </tr>
@@ -106,24 +104,24 @@
                             </tbody>
                         </table>
 
-                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">Continue Shopping</a> &nbsp;
+                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">ช๊อปต่อ</a> &nbsp;
                         @if($n==1)
                           สินค้ามีไม่เพียงพอตามที่คุณลูกค้าต้องการ กรุณาลดจำนวนลงค่ะ
                         @else
-                        <a href="{{ url('/webshop/checkout') }}" class="btn btn-success btn-lg">Proceed to Checkout</a>
+                        <a href="{{ url('/webshop/checkout') }}" class="btn btn-success btn-lg">ทำการสั่งซื้อ</a>
                       @endif
                         <div style="float:right">
                             <form action="{{ url('/webshop/emptyCart') }}" method="POST">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-lg" value="Empty Cart">
+                                <input type="submit" class="btn btn-danger btn-lg" value="ตะกร้าเปล่า">
                             </form>
                         </div>
 
                     @else
 
                         <h3>You have no items in your shopping cart</h3>
-                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">Continue Shopping</a>
+                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">ช๊อปต่อ</a>
 
                     @endif
 

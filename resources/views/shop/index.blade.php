@@ -3,9 +3,7 @@
     <div class="row">
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
-    <div class="row">
-        @include('shop.components.search')
-    </div>
+    
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shop-listing">
@@ -30,7 +28,10 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 
                                     <div class="add-to-cart">
                                         <form action="{{ url('webshop/cart') }}" method="post">

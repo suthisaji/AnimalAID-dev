@@ -163,6 +163,10 @@
                   <input type="number" class="form-control" name="number_product" value="{{$product->number_product}}" required>
                 </div>
                 <div class="form-group">
+                  <label for="number_product" class="form-label">จำนวนสินค้าที่จะเพิ่ม</label>
+                  <input type="number" class="form-control" name="add_num"  value="0">
+                </div>
+                <div class="form-group">
                   <label for="product_price" class="form-label">ราคาขายสินค้า ฿</label>
                   <input type="number" class="form-control" name="product_price" value="{{$product->product_price}}" required>
                 </div>

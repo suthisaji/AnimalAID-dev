@@ -389,7 +389,7 @@
 
                                      <div class="col-md-6">
                                        <label for="">นามสกุล</label>
-                                       <input type="text" class="form-control" id="sname" placeholder="นามสกุล"/>
+                                       <input type="text" class="form-control" id="sname" placeholder="นามสกุล" value=" "/>
                                      </div>
                                    </div>
 

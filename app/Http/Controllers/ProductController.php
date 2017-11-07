@@ -81,9 +81,11 @@ class ProductController extends Controller
         //------upload image and store------
       //  $productPicture = Input::get('ani_picture');
         $product_detail= Input::get('product_detail');
-       $number_product=Input::get('number_product');
+       $number_productBe=Input::get('number_product');
       $category_id= Input::get('category_id');
       $product_price= Input::get('product_price');
+      $add_num= Input::get('add_num');
+      $number_product =$number_productBe+$add_num;
         if (Input::hasFile('product_pic')) {
         $temp = Request::file('product_pic')->getPathName();
         $imageName = Request::file('product_pic')->getClientOriginalName();
@@ -91,6 +93,8 @@ class ProductController extends Controller
         $newImageName = 'product_'.str_random(5).$imageName;
         Request::file('product_pic')->move($path, $newImageName);
         //----------------------------------
+
+
           $result = $this->ProductRepository->updateProduct($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price,$newImageName);
         }else {
           $result = $this->ProductRepository->updateProduct1($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price);
@@ -257,7 +261,7 @@ function statusShippingToCancel($ordering_id=0){
   return redirect('login');
     }
         $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
-    
+
   $shipping = $this->ShippingRepository->getAllShipping();
   $data = array(
      'shipping'=>$shipping,
