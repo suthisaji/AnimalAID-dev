@@ -149,10 +149,10 @@
                    <!-- Authentication Links -->
                    @if (Auth::guest())
 
-                       <li class="fl   btn-default tw16"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
-                       <li class="fl   btn-default tw16"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
+                       <li class="navmain"><a href="{{ route('login') }}"><span>เข้าสู่ระบบ</span></a></li>
+                       <li class="navmain"><a href="{{ route('register') }}"><span><span>สมัครสมาชิก</span></span></a></li>
                    @else
-                     <li class="dropdown fl">
+                     <li class="navmain">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              {{ Auth::user()->name }} <span class="caret"></span>
                          </a>
@@ -202,33 +202,33 @@
       <br><br><br>
         <div class="panel panel-default">
            <div class="panel-heading">
-              <h4>กระทู้คำถาม</h4>
+              <center><h1>กระทู้คำถาม</h1></center>
            </div>
              @foreach($data as $data)
                  <div class="panel-body" style="word-wrap:break-word;">
 
-                   <h1>{{$data->topic}}</h1>
+                   <h3>{{$data->topic}}</h3>
                    <hr>
 
                   {!! html_entity_decode($data->content) !!}
 
-                </div><div align = 'right'><small >ถามเมื่อ</small> {{$data->created_at}}</div>
-        </div>
+                </div><div align = 'right'><small >ถามเมื่อ</small> {{$data->created_at}}</div><br><br>
+
         <!--แสดงคำตอบ-->
 
           @if($data->answer!=null)
         <div class="panel panel-default" style="border-color:#F3E2A9;">
           <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
-             <h4>คำตอบ</h4>
+             <h3>คำตอบ</h3>
           </div>
-                 <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
-                   {!! html_entity_decode($data->answer) !!}
-                   </div>
+          <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
+            {!! html_entity_decode($data->answer) !!}
+          </div>
         </div>
       @endif
       @endforeach
       <!--แสดงคำตอบ-->
-
+      </div>
 
 
     </div>
