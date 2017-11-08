@@ -255,17 +255,20 @@ function statusShippingToCancel($ordering_id=0){
           return view('transferDocument', $data);
       }
   }
+
+
   function shippingDocument(){//จะแสดงข้อมูลหน้า Shipping
     $this->middleware('auth');
     if(Auth::user()==null){
   return redirect('login');
     }
-        $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
+  $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
 
   $shipping = $this->ShippingRepository->getAllShipping();
   $data = array(
      'shipping'=>$shipping,
-     'ordering_product'=>$ordering_product
+     'ordering_product'=>$ordering_product,
+     'ordering' => Ordering::all(),
   );
   return view('shippings',$data);
   }
