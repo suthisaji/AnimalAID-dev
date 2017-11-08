@@ -223,7 +223,12 @@
 
                         <div class="form-group" id="div3">
                             <label for="name" class="form-label h3">ชื่อ-นามสกุล</label>
-                            <input type="text" class="form-control" name="name" required/>
+                            <input type="text" class="form-control" name="name1" value="{{Auth::user()->name}}" disabled/>  <input type="hidden" class="form-control" name="name" value="{{Auth::user()->id}}" />
+                        </div>
+
+                        <div class="form-group" id="div3">
+                            <label for="name" class="form-label h3">จำนวนเงินที่บริจาค(บาท)</label>
+                            <input type="text" class="form-control" name="amount" required/>
                         </div>
 
                         <div class="form-group" id="div3">

@@ -102,6 +102,7 @@ class DonateController extends Controller
         'donor'=>$donor,
         'numOfList'=>$numOfList,
         'sumOfAmount'=>$sumOfAmount,
+        'userUpdateSlip'=>UserUpdateSlip::all()
 
           ) ;
     return view('listOfDonor',$data);
