@@ -7,12 +7,13 @@ class UserUpdateSlipRepository implements UserUpdateSlipRepositoryInterface{
   function getAllUserUpdateSlip(){
     return UserUpdateSlip::orderBy('created_at')->get();
   }
-function addUserUpdateSlip($name,$dateTimeTransfer,$newImageName,$status_check_yet){
+function addUserUpdateSlip($name,$dateTimeTransfer,$newImageName,$status_check_yet,$amount){
   $data = array(
       'name'=>$name,
       'dateTimeTransfer'=>$dateTimeTransfer,
       'picture_slip' => $newImageName,
-      'status_check_yet' => $status_check_yet
+      'status_check_yet' => $status_check_yet,
+      'amount' => $amount
   );
   try{
       $result = UserUpdateSlip::create($data);

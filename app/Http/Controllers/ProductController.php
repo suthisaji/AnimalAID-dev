@@ -577,8 +577,9 @@ function statusShippingToCancel($ordering_id=0){
               //----------------------------------
               $dateTimeTransfer= Input::get('dateTimeTransfer');
               $status_check_yet=Input::get('status_check_yet');
+              $amount=Input::get('amount');
     //echo $product_name.' '.$newImageName.' '.$product_detail.' '.$product_price.' '.$number_product.' '.$category_id;
-            $result = $this->UserUpdateSlipRepository->addUserUpdateSlip($name,$dateTimeTransfer,$newImageName,$status_check_yet);
+            $result = $this->UserUpdateSlipRepository->addUserUpdateSlip($name,$dateTimeTransfer,$newImageName,$status_check_yet,$amount);
               if($result){
                   return redirect('/userupdateslip');
               }else{
