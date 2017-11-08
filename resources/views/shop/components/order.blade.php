@@ -32,11 +32,11 @@
                   <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
                    <td>
 
-                        @if( $item->qty == 1 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 2 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 3 ? 'selected' : '' )    <input type="text" disabled value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 4 ? 'selected' : '' )    <input type="text"disabled value="{{$item->qty}}"/>
-                        @elseif( $item->qty == 5 ? 'selected' : '' )    <input type="text" disabled  value="{{$item->qty}}"/>
+                        @if( $item->qty == 1 ? 'selected' : '' )    {{$item->qty}}
+                        @elseif( $item->qty == 2 ? 'selected' : '' )   {{$item->qty}}
+                        @elseif( $item->qty == 3 ? 'selected' : '' )    {{$item->qty}}
+                        @elseif( $item->qty == 4 ? 'selected' : '' )    {{$item->qty}}
+                        @elseif( $item->qty == 5 ? 'selected' : '' )   {{$item->qty}}
                            @endif
                          </select>
                              </td>

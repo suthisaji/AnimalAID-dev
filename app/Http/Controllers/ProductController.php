@@ -125,7 +125,7 @@ class ProductController extends Controller
   function deleteProduct($product_id){
     $result = $this->ProductRepository->deleteProduct($product_id);
     if($result){
-        return redirect('/shop.listProductAdminView');
+        return redirect('/listProductAdminView');
     }else{
         echo "Can not delete product";
     }
@@ -659,7 +659,7 @@ function statusShippingToCancel($ordering_id=0){
       }
 
 
-    
+
 
 
     }
