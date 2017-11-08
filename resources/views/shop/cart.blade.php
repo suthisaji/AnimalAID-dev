@@ -3,7 +3,7 @@
     <div class="row">
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
-  
+
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shop-listing">
@@ -63,7 +63,7 @@
                                        @endforeach
                                     </td>
 
-                                    <td>${{ $item->subtotal }}</td>
+                                    <td>฿{{ $item->subtotal }}</td>
                                     <td class=""></td>
                                     <td>
                                         <form action="{{ url('webshop/cart', [$item->rowId]) }}" method="POST" class="side-by-side">
