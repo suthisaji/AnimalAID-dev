@@ -803,10 +803,12 @@ transform: skew(-135deg) translateX(0%);
     <a  href="webshop"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
     <br>
     @foreach($ordering as $o)
-      @if($o->customer_id==Auth::user()->id)
-       <a  href="webshop/checkout"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\order-.png" alt="OrderIcon" width="200" height="60"></a>
-     @endif
-    @endforeach
+       @if (Auth::guest())
+       @elseif($o->customer_id==Auth::user()->id)
+    <a href="webshop/checkout"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\order-.png" alt="OrderIcon" width="200" height="60"></a>
+      @else
+    @endif
+@endforeach
    </div>
 
     </body>

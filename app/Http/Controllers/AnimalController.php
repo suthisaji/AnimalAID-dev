@@ -98,7 +98,9 @@ class AnimalController extends Controller
               'users'=>$users,
               'hospitals'=>$hospitals,
               'admins' =>$admins,
-              'donor'=>$donor
+              'donor'=>$donor,
+              'ordering'=>Ordering::all(),
+
           );
       }else{
         $animals = $this->AnimalRepository->getAllAnimal();
