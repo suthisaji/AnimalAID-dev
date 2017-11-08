@@ -99,11 +99,11 @@
 <script>
 $('#send_form').submit(function(){
   swal({
- title: "แน่ใจว่าจะสั่งซื้อ?",
- text: "าา!",
+ title: "ยืนยันการสั่งซื้อ",
+ text: "โปรดรอหลังคลิ๊ก",
  type: "warning",
  showCancelButton: true,
- confirmButtonClass: "btn-danger",
+ confirmButtonClass: "btn-success",
  confirmButtonText: "ใช่ สั่งซื้อ",
  closeOnConfirm: true
 },
@@ -132,7 +132,7 @@ function(){
       _token:$('#token')[0].value
     },success: function(data){
       // alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
-      swal("Good job!", "You clicked the button!", "success")
+      swal("คุณได้สั่งซื้อสินค้าแล้ว เรียบร้อย!", "ส่งหลักฐานถัดไป", "success")
       window.location.reload();
      }
    });
