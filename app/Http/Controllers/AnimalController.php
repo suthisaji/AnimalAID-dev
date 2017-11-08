@@ -8,6 +8,7 @@ use App\Animal;
 use App\Adoption;
 use App\User;
 use App\Admin;
+use App\Ordering;
 use Auth;
 use App\Repositories\AnimalRepositoryInterface;
 use App\Repositories\DonationTypeRepositoryInterface;
@@ -116,7 +117,8 @@ class AnimalController extends Controller
             'position'=>$position,
             'hospitals'=>$hospitals,
             'admins' =>$admins,
-            'donor'=>$donor
+            'donor'=>$donor,
+            'ordering'=>Ordering::all(),
           );
       }
           return view('all',$data);
