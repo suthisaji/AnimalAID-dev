@@ -7,7 +7,9 @@ use Response;
 use Nexmo\Laravel\Facade\Nexmo;
 use App\Repositories\DonationRepositoryInterface;
 use App\Donation;
+use App\User;
 use DB;
+use App\UserUpdateSlip;
 class DonateController extends Controller
 {
 
@@ -102,7 +104,8 @@ class DonateController extends Controller
         'donor'=>$donor,
         'numOfList'=>$numOfList,
         'sumOfAmount'=>$sumOfAmount,
-        'userUpdateSlip'=>UserUpdateSlip::all()
+        'userUpdateSlip'=>UserUpdateSlip::all(),
+          'user'=>User::all()
 
           ) ;
     return view('listOfDonor',$data);
