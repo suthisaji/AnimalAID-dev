@@ -202,8 +202,8 @@
       <br><br><br>
         <div class="panel panel-default">
            <div class="panel-heading">
-              <center><h1>กระทู้คำถาม</h1></center>
-           </div>
+              <center><h1>กระทู้ถามตอบ</h1></center>
+           </div>@php($i=0)
              @foreach($data as $data)
                  <div class="panel-body" style="word-wrap:break-word;">
 
@@ -217,15 +217,22 @@
         <!--แสดงคำตอบ-->
 
           @if($data->answer!=null)
-        <div class="panel panel-default" style="border-color:#F3E2A9;">
-          <div class="panel-heading" style="background-color:#F3E2A9;border-color:#F3E2A9;">
-             <h3>คำตอบ</h3>
+
+                    @if($i%2==0)
+                      <div class="panel panel-default" style="border-color:#f7c38f;">
+                       <div class="panel-heading" style="background-color:#F5D0A9;border-color:#F7BE81;">
+                    @else
+                        <div class="panel panel-default" style="border-color:#F3F781;">
+                      <div class="panel-heading" style="background-color:#F2F5A9;border-color:#F2F5A9;">
+                      @endif
+                             <h3>คำตอบ</h3>
+                             </div>
+                             <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
+                            {!! html_entity_decode($data->answer) !!}
+                    </div>
           </div>
-          <div class="panel-body" style="word-wrap:break-word;background-color:#F7F8E0;border-color:#F3E2A9;">
-            {!! html_entity_decode($data->answer) !!}
-          </div>
-        </div>
-      @endif
+          @endif
+       @php($i++)
       @endforeach
       <!--แสดงคำตอบ-->
       </div>
