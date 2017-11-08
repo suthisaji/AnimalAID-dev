@@ -156,8 +156,48 @@
    <tbody>
 
      <td><center>{{ $u->id }}</center></td>
-     <td><center><img src="{{url('/images/'.$u->picture_slip)}}" width="50%" height="50%"></center></td>
-     <td><center>{{ $u->status_check_yet}}</center></td>
+     <td><center><img src="{{url('/images/'.$u->picture_slip)}}" width="30%" height="30%"></center></td>
+     <td><center>
+
+       @if($u->status_check_yet=='NotCheck')
+       <form action="/checkRigth/{{$u->id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+         <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
+         <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
+         <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
+         <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
+            <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
+     </form>
+     @elseif($u->status_slip=='Cancel')
+     ถูกยกเลิกการตรวจสอบ
+     <form action="/checkRigth/{{$u->id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+       <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
+       <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
+       <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
+       <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
+          <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
+   </form>
+   @else
+     {{ $u->status_check_yet}}
+     <form action="/checkCancel/{{$u->id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+       <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
+       <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
+       <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
+       <input type="hidden"class="form-control" name="status_slip"  value="Cancel" />
+          <br><button class=" btn btn-sm btn-warning" onclick="return confirm('ต้องการยกเลิก')">ยกเลิก</button>
+   </form>
+
+   <form action="/checkCancel/{{$u->id}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
+     <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
+     <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
+     <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
+     <input type="hidden"class="form-control" name="status_slip"  value="Wrong" />
+        <br><button class=" btn btn-sm btn-danger" onclick="return confirm('หลักฐานผิด')">ไม่ถูกต้อง</button>
+ </form>
+
+
+      @endif
+
+      </center></td>
   <!-- ดึงข้อมูลจากดาต้าเบส -->
 
    </tbody>

@@ -223,7 +223,7 @@
                    @foreach($data as $p )
                <div class="row">
                  <div class="col-md-5 text-center">
-                   <img src="{{url($p->product_pic)}}" alt="Product_Pic" style="width:80%; height:80%; max-width: 100%;">
+                   <img src="{{url('/images/'.$p->product_pic)}}" alt="Product_Pic" style="width:80%; height:80%; max-width: 100%;">
 
                  </div>
                   <b>
@@ -247,6 +247,7 @@
                     <center><div class="col-md-8">
                        <ul class="list-group">
                          <li class="list-group-item list-group-item-info"><center>ปุ่มเพิ่มสินค้าลงตะกร้า</center></li>
+
                        </ul>
                     </div></center>
                        <br>

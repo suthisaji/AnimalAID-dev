@@ -327,8 +327,23 @@ Route::get('/createUserUpdateSlip','ProductController@updateSlip3');
 Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
 
 /*admin_checkslip*/
-Route::get('/adminCheckSlip', 'ProductController@adminCheckSlipDocument');
+Route::get('/adminCheckSlip', 'ProductController@adminCheckSlipDocument')->middleware('auth')->middleware('checkadmin');
 
 /*Product_Detail*/
 Route::get('/productDetail/{id}', 'ProductController@productsInfo');
 Route::post('/productDetail', 'ProductController@productsInfo');
+
+/*status checkRigthSlip*/
+Route::get('/checkRigth/{id}','ProductController@checkRigthSlip')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkRigth/{id}','ProductController@checkRigthSlip')->middleware('auth')->middleware('checkadmin');
+/*status checkRigthSlip*/
+
+/*status checkCancelSlip*/
+Route::get('/checkCancel/{id}','ProductController@checkCancelSlip')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkCancel/{id}','ProductController@checkCancelSlip')->middleware('auth')->middleware('checkadmin');
+/*status checkCancelSlip*/
+
+/*status checkWrongSlip*/
+Route::get('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('auth')->middleware('checkadmin');
+Route::post('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('auth')->middleware('checkadmin');
+/*status checkWrongSlip*/
