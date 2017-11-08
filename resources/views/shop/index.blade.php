@@ -7,9 +7,9 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shop-listing">
-                <div class="card-header">
+                <div class="card-header" style="font-size: 16px;">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">สินค้า</a></li>
+                        <li class="breadcrumb-item"><a href="../webshop">สินค้า</a></li>
                         <li class="breadcrumb-item active">เครื่องใช้ของสัตว์</li>
                     </ol>
                 </div>
