@@ -7,7 +7,7 @@
         <img src="{{ url('images/S__1261612.jpg') }}" width="60px"/>
     </a>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse" id="navbarColor01" style="font-size: 18px;">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/all">หน้าแรก <span class="sr-only">(current)</span></a>

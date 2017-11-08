@@ -281,6 +281,51 @@
                   </table>
 
               </div>
+<hr>
+
+
+<div class="panel-body">
+    <table class="table table-striped display" id="example">
+         <thead>
+           <tr>
+             <th><center>วันที่บริจาค</center></th>
+             <th><center>ชื่อผู้บริจาค</center></th>
+             <th><center>จำนวนเงิน</center></th>
+           </tr>
+         </thead>
+         <tbody>
+
+        @foreach($userUpdateSlip as $u2)
+             <tr>
+                <td><center> {{ str_limit($u2->created_at, $limit = 10, $end = '') }} </center></td>
+               <td>
+                    {{$u2->name}}
+              </td>
+              <td> <span class="pull-center text-muted small">
+                   <em><center>{{$u2->amount}} บาท</center></em>
+               </span></td>
+             </tr>
+             @endforeach
+
+         </tbody>
+
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        <!-- Footer -->
        <hr>

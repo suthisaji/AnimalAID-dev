@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title>Animal List</title>
+    <title>AdminCheckSlip</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
@@ -141,21 +141,23 @@
   <!--แถบสถานะ-->   <div class="container">
   <br>
   <div class="panel-heading">
-  <center><h3><b>สถานะการจัดส่งสินค้า<b></h3></center>
+  <center><h3><b>สถานะแจ้งการโอนเงินเข้ามูลนิธิ<b></h3></center>
   </div>
   <div class="panel-heading">
   <table class="table table-striped">
    <thead>
      <tr>
-       <th><center>ID-Slip</center></th>
-       <th><center>PictureSlip</center></th>
-       <th id="div4"><center>Check</center></th>
+       <th><center>ID ใบเสร็จรับเงิน</center></th>
+       <th><center>ชื่อผู้โอน</center></th>
+       <th><center>รูปภาพใบเสร็จรับเงิน</center></th>
+       <th><center>ตรวจสอบ</center></th>
      </tr>
    </thead>
 @foreach($userUpdateSlip as $u)
    <tbody>
 
      <td><center>{{ $u->id }}</center></td>
+     <td><center>{{ $u->name }}</center></td>
      <td><center><img src="{{url('/images/'.$u->picture_slip)}}" width="30%" height="30%"></center></td>
      <td><center>
 

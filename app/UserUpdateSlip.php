@@ -10,7 +10,13 @@ class UserUpdateSlip extends Model
   protected $fillable = ['name','picture_slip','dateTimeTransfer','status_check_yet','admin_id','status_slip','amount','created_at','updated_at'];
 
 
-  public function join_user(){
-    return $this->belongsTo('App\User','id', 'admin_id');
+//  public function join_user(){
+  //  return $this->belongsTo('App\User','id', 'admin_id');
+  //}
+
+  public function join_User(){
+    return $this->belongsTo('App\User','id', 'id');
   }
+
+
 }
