@@ -50,7 +50,54 @@
       .fl{
         font-size: 16px;
       }
-    </style>
+      /*dropdow*/
+      /* Style The Dropdown Button */
+      .dropbtn {
+          background-color: #303030;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+      }
+
+      /* The container <div> - needed to position the dropdown content */
+      .dropdown {
+          position: relative;
+          display: inline-block;
+      }
+
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+      }
+
+      /* Links inside the dropdown */
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      .dropdown:hover .dropbtn {
+          background-color: #3e8e41;
+      }
+      </style>
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,10 +121,24 @@
             <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:#FFFF00">{{$countRecipientEachAdmin}} </span></a></li>
             <li><a href="../admin">ตอบปัญหา: <span style="color:#FFFF00">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
-            <li><a href="../transferDocument">ตรวจสอบสลิปเงิน: <span style="color:#FFFF00">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
-            <li><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
 
+            <li><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
+           <li class="dropdown">
+             <div class="dropdown">
+               <button class="dropbtn">ตรวจสอบสลิป</button>
+               <div class="dropdown-content">
+                 <a href="transferDocument">สลิปสั่งสินค้า:<span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a>
+                 <a href="adminCheckSlip">สลิปการบริจาคเงิน:<span style="color:red">{{DB::table('userUpdateSlips')->where('status_check_yet', '=','NotCheck')->count()}}</a>
+               </div>
+             </div>
+
+           </li>
         </ul>
+
+
+
+
+
 
         <ul class="nav navbar-nav navbar-right">
           <!-- Left Side Of Navbar -->
