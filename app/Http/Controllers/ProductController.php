@@ -559,12 +559,15 @@ function statusShippingToCancel($ordering_id=0){
       return view('shop.checkout',$data);
       }
       function updateSlip3(){
+        $this->middleware('auth');
+        if(Auth::user()==null){
+      return redirect('login');}
         if(Request::isMethod('get')){
           $category = $this->CategoryRepository->getAllCategory();
            $data = array(
             'category'=>$category
            );
-          return view('addProductPage',$data);
+          return view('userupdateslip',$data);
         }else if(Request::isMethod('post')){
               $name = Input::get('name');
               //$productPicture = Input::get('ani_picture');
@@ -583,7 +586,7 @@ function statusShippingToCancel($ordering_id=0){
               if($result){
                   return redirect('/userupdateslip');
               }else{
-                  echo "Failed to add product";
+                  echo "Failed to update Slip";
               }
         }
       }

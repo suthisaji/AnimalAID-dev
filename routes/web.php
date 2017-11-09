@@ -320,10 +320,8 @@ Route::post('/updateSlip2/{order_number}','ProductController@updateSlip2')->midd
 /*updateSlipAndDateTimeTransfer*/
 
 /*user_updateslip*/
-Route::get('/userupdateslip', function () {
-    return view('UserUpdateSlip');
-});
-Route::get('/createUserUpdateSlip','ProductController@updateSlip3');
+
+Route::get('/userupdateslip','ProductController@updateSlip3')->middleware('auth');
 Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
 
 /*admin_checkslip*/
