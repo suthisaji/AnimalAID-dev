@@ -3,20 +3,36 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a class="navbar-brand" href="../all">
-        <img src="{{ url('images/S__1261612.jpg') }}" width="60px"/>
+        <img src="{{ url('images/S__1261612.jpg') }}" width="60" height="60" class="d-inline-block align-top" alt=""/>
     </a>
 
     <div class="collapse navbar-collapse" id="navbarColor01" style="font-size: 17px;">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/all">หน้าแรก <span class="sr-only">(current)</span></a>
+            <li class="navmain">
+                <a class="nav-link" href="/all">หน้าหลัก <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/webshop">สินค้า</a>
+            <li class="navmain">
+                <a class="nav-link" href="/dm">การบริจาคเงิน</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/webshop/checkout">order</a>
+            <li class="navmain active">
+                <a class="nav-link" href="/webshop">สั่งซื้อของที่ระลึก</a>
+            </li>
+            <li class="navmain">
+                <a class="nav-link" href="/db">การบริจาคเลือด</a>
+            </li>
+            <li class="navmain">
+                <a class="nav-link" href="/da">หาบ้านให้สัตว์</a>
+            </li>
+            <li class="navmain">
+                <a class="nav-link" href="/newsAll">ข่าวสารและกิจกรรม</a>
+            </li>
+            <li class="navmain">
+                <a class="nav-link" href="/allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
+            </li>
+            <li class="navmain">
+                <a class="nav-link" href="/webshop/checkout">รายการสินค้า</a>
             </li>
         </ul>
         <ul class="navbar-nav">
