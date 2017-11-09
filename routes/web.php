@@ -321,7 +321,7 @@ Route::post('/updateSlip2/{order_number}','ProductController@updateSlip2')->midd
 
 /*user_updateslip*/
 
-Route::get('/userupdateslip','ProductController@updateSlip3')->middleware('auth');
+Route::get('/userupdateslip','ProductController@updateSlip3');
 Route::post('/createUserUpdateSlip','ProductController@updateSlip3');
 
 /*admin_checkslip*/
