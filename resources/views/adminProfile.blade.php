@@ -144,6 +144,9 @@
                     <ul class="list-group">
                       <li class="list-group-item list-group-item-info">   <span class="badge si">{{ $countUserDonate}} ครั้ง </span> บริจาคช่วยเหลือ </li>
                     </ul>
+                    <ul class="list-group">
+                      <a href="userupdateslip"  ><img src="\images\jang.png"  style="width:60%; height:50%; "></a>
+                      </ul>
                   </div>
                 </div>
 

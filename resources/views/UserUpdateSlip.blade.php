@@ -11,11 +11,11 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" link href="{{url('css/bootstrap.css')}}">
-    <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
-    <link rel="stylesheet" href="{{url('/css/index.css')}}"/>
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
@@ -24,11 +24,10 @@
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+
 
     <!-- Styles -->
-    <link href="https://animal-aid.me/css/app.css" rel="stylesheet">
+
 
     {{Html::style('css/shop-homepage.css')}}
 
@@ -223,7 +222,7 @@
 
                         <div class="form-group" id="div3">
                             <label for="name" class="form-label h3">ชื่อ-นามสกุล</label>
-                            <input type="text" class="form-control" name="name1" value="{{Auth::user()->name}}" disabled/>  <input type="hidden" class="form-control" name="name" value="{{Auth::user()->id}}" />
+                         <input type="text" class="form-control" name="name"  required />
                         </div>
 
                         <div class="form-group" id="div3">
@@ -245,10 +244,11 @@
                       </tr>
 
                       <div class="text-center">
-                          <button class="btn btn-success" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง  หากมีข้อผิดพลาดทางเราจะติดต่อกลับไปค่ะ')">ส่งหลักฐานการโอน</button>
+                          <button class="btn btn-success">ส่งหลักฐานการโอน</button>
                       </div>
                       <br><br>
                     </form>
+                    หากหลักฐานถูกต้อง ระบบจะดึงข้อมูลผู้บริจาคแสดงที่หน้า รายชื่อผู้บริจาค
      <br>
                 </div>
             </div>

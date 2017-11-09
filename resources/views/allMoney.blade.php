@@ -474,6 +474,7 @@
                        <h3>ผู้ใช้จะปลอดภัยจากการปลอมแปลง หรือเก็บข้อมูลบัตรเครดิต เพราะมีเทคโนโลยีตรวจสอบข้อมูลว่า เป็นข้อมูลจริงหรือไม่</h3>
                        <h3>ทำให้ไม่มีเรื่องการกรอกข้อมูลปลอมได้ ระบบของเราไม่จำเป็นต้องเก็บข้อมูลบัตรเครดิตของผู้ใช้ไว้</h3>
                        <h3>เพราะ Token จะเป็นตัวแทนข้อมูลบัตรเครดิตของผู้ใช้ที่ถูกเข้ารหัสไว้แล้ว </h3> --}}
+                       <hr>
 
 
 
@@ -607,10 +608,11 @@
                </div>
 
            </div>
+
            <div class="col-md-3 ro">
 
 
-             <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
+             <a  href="userupdateslip"><img src="\images\jang.png" width="230px" height="60px"></a>
 
                <p class="lead"><a href="listOfDonor"><center>รายชื่อผู้บริจาค</center></a></p>
                 @php($i=0)

@@ -255,8 +255,10 @@
                     </li>
                       </ul>
 
+                      <ul class="list-group">
+                        <a href="userupdateslip"  ><img src="\images\jang.png"  style="width:60%; height:50%; "></a>
+                        </ul>
 
-          
                 </div>
                 </b>
 
