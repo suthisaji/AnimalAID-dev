@@ -560,13 +560,16 @@ function statusShippingToCancel($ordering_id=0){
       }
       function updateSlip3(){
 
-      
+        $this->middleware('auth');
+        if(Auth::user()==null){
+      return redirect('login');
+    }
         if(Request::isMethod('get')){
           $category = $this->CategoryRepository->getAllCategory();
            $data = array(
             'category'=>$category
            );
-          return view('userupdateslip',$data);
+          return view('UserUpdateSlip',$data);
         }else if(Request::isMethod('post')){
               $name = Input::get('name');
               //$productPicture = Input::get('ani_picture');
