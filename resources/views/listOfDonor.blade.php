@@ -247,7 +247,7 @@
        <h3><li style="color:goldenrod;">จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
         <div class="panel-heading">
 
-     <p class="lead"><center><h1><b>รายชื่อผู้บริจาค</b></h1></center></p>
+     <p class="lead"><center><h1><b>รายชื่อผู้บริจาค ผ่าน omise tester</b></h1></center></p>
 
         </div>
               <div class="panel-body">
@@ -283,6 +283,9 @@
               </div>
 <hr>
 
+
+<br>
+<p class="lead"><center><h1><b>รายชื่อผู้บริจาค จากการตรวจสอบหลักฐานการโอน</b></h1></center></p>
 
 <div class="panel-body">
     <table class="table table-striped display" id="example">
