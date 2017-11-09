@@ -559,9 +559,8 @@ function statusShippingToCancel($ordering_id=0){
       return view('shop.checkout',$data);
       }
       function updateSlip3(){
-        $this->middleware('auth');
-        if(Auth::user()==null){
-      return redirect('login');}
+
+      
         if(Request::isMethod('get')){
           $category = $this->CategoryRepository->getAllCategory();
            $data = array(
