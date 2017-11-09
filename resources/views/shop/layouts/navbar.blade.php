@@ -32,7 +32,7 @@
                 <a class="nav-link" href="/allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
             </li>
             <li class="navmain">
-                <a class="nav-link" href="/webshop/checkout">รายการสินค้า</a>
+                <a class="nav-link" href="/webshop/checkout">ออเดอร์ของฉัน</a>
             </li>
         </ul>
         <ul class="navbar-nav">
