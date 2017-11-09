@@ -555,9 +555,9 @@
            </div>
            <div class="col-md-3 ro">
 
-             <a  href="dm"><center><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"><center></a>
+             <a  href="dm"><img onmouseover="bigImg1(this)" onmouseout="normalImg1(this)" border="0" src="\images\icondonate.png" alt="donateIcon" width="240" height="160"></a>
 
-               <p class="lead"><a href="listOfDonor">รายชื่อผู้บริจาค</a></p>
+               <p class="lead"><a href="listOfDonor"><center>รายชื่อผู้บริจาค</center></a></p>
                 @php($i=0)
                   <div class="list-group">
 
