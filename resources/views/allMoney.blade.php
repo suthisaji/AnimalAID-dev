@@ -164,7 +164,6 @@
     background-image: linear-gradient(to bottom, #ffd391 0, #ffd67b 100%);
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
-
     box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.0);
 }
 /*จบเนป*/
