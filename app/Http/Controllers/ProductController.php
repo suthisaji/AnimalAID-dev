@@ -18,6 +18,7 @@ use App\UserUpdateSlip;
 use Cart;
 use DB;
 use DateTime;
+
 class ProductController extends Controller
 {  protected $CategoryRepository;
    protected $TransferMoneyRepository;
@@ -165,6 +166,7 @@ class ProductController extends Controller
   $transferMoney = $this->TransferMoneyRepository->getAllTransferMoney();
   $data = array(
      'transferMoney'=>$transferMoney,
+        'ordering' => Ordering::all(),
   );
   return view('transferDocument',$data);
   }
@@ -676,6 +678,18 @@ function statusShippingToCancel($ordering_id=0){
             echo "Can not delete order";
         }
       }
+
+
+      function deleteSlipTimeOut($ordering_id,$order_number){
+
+        $result = $this->OrderingRepository->deleteSlipTimeOut($ordering_id,$order_number);
+        if($result){
+            return redirect('/transferDocument');
+        }else{
+            echo "Can not delete orderSlipTimeOut".mysqli_error() ;
+        }
+      }
+
 
 
     }

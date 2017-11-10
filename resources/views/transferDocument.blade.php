@@ -222,7 +222,12 @@
 
       </div>
 
+      @foreach($ordering as $o)
+      <a href="/deleteSlipTimeOut/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งที่ไม่อัพสลิปภายในสามวัน</a>
+      @endforeach
 </div>
+
+
 
 
 
