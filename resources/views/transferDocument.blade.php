@@ -114,6 +114,7 @@
                  <tr>
                    <th><center>Order No.</center></th>
                    <th><center>ผู้สั่งซื้อ</center></th>
+                    <th><center>E-mail</center></th>
                    <th><center>วันเวลาที่โอน</center></th>
                    <th><center>ชื่อธนาคาร</center></th>
                    <th><center>สาขา</center></th>
@@ -131,6 +132,7 @@
                    <tr>
                      <td>{{$t->order_number}}</td>
                      <td>{{$t->join_Ordering->join_User->name}}</td>
+                      <td>{{$t->join_Ordering->join_User->email}}</td>
                      <td>{{$t->dateTimeOfTransfer}}</td>
                      <td>{{$t->Bank_name}}</td>
                      <td>{{$t->Bank_Branch}}</td>

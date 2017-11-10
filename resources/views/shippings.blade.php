@@ -150,12 +150,13 @@
                     <div class="modal-body">
 
                          <table class="table table-striped">
-                           <thead><th><center>E-mail</center></th> <th><center>
-
-                             ที่อยู่จัดส่ง
-                          </center> </th><th> <center> เบอร์โทรศัพท์ </center></th><thead>
+                           <thead>
+                             <th><center>ผู้รับ</center></th>
+                             <th><center>E-mail</center></th>
+                             <th><center>    ที่อยู่จัดส่ง   </center> </th>
+                          <th> <center> เบอร์โทรศัพท์ </center></th><thead>
                       <tbody>
-
+                          <td><center> {{Auth::user()->name}}</center></td><br>
                          <td><center> {{$s->email}}</center></td><br>
                               <td><center>    @foreach($ordering as $o)
                                     @if($o->ordering_id==$o->join_Shipping->ordering_id)

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{{ url('shop/jquery.Thailand.js/dist/jquery.Thailand.min.css') }}">
    <link rel="stylesheet" href="{{ url('css/sweetalert.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+    btn-lg, .btn-group-lg1>.btn {
+       padding: 1rem 1rem;
+      }
+    </style>
   </head>
   <body>
     @include('shop.layouts.navbar')
