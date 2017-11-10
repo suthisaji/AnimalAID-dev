@@ -302,7 +302,7 @@
              <tr>
                 <td><center> {{ str_limit($u2->created_at, $limit = 10, $end = '') }} </center></td>
                <td>
-                    {{$u2->name}}
+                  <center>  {{$u2->name}}</center>
               </td>
               <td> <span class="pull-center text-muted small">
                    <em><center>{{$u2->amount}} บาท</center></em>

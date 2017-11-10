@@ -79,7 +79,7 @@
 
                                     <td></td>
                                     <td class="small-caps table-bg" style="text-align: right">ราคา</td>
-                                    <td>${{ Cart::instance('default')->subtotal() }}</td>
+                                    <td>฿{{ Cart::instance('default')->subtotal() }}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>

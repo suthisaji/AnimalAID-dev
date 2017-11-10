@@ -86,7 +86,7 @@ class DonateController extends Controller
       $data = array(
           'amount'=>$amount,
           'sname'=>$sname,
-        'name'=>$name,
+          'name'=>$name,
   );
 
 
@@ -105,7 +105,7 @@ class DonateController extends Controller
         'numOfList'=>$numOfList,
         'sumOfAmount'=>$sumOfAmount,
         'userUpdateSlip'=>UserUpdateSlip::all(),
-          'user'=>User::all()
+        'user'=>User::all()
 
           ) ;
     return view('listOfDonor',$data);

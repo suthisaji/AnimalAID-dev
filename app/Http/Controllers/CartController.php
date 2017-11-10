@@ -30,10 +30,10 @@ class CartController extends Controller
             return $cartItem->id === $request->id;
         });
         if (!$duplicates->isEmpty()) {
-            return redirect('webshop/cart')->withSuccessMessage('Item is already in your cart!');
+            return redirect('webshop/cart')->withSuccessMessage('สินค้าอยู่ในตะกร้าแล้ว!');
         }
         Cart::add($request->id, $request->name, 1, $request->price)->associate('App\ShopModel\Product');
-        return redirect('webshop/cart')->withSuccessMessage('Item was added to your cart!');
+        return redirect('webshop/cart')->withSuccessMessage('สินคร้าอยู่ในตะกร้าแล้ว!');
     }
 
     public function show($id)

@@ -20,8 +20,8 @@
 
 
 
-    <!--css of picture content
-    <link rel="stylesheet" link href="{{url('css/stylep.css')}}">-->
+
+  {{--  <link rel="stylesheet" link href="{{url('css/stylep.css')}}">--}}
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
 
@@ -705,7 +705,7 @@ transform: skew(-135deg) translateX(0%);
 
         <div class="col-sm-4">
           <div >
-            <a  href="donate"><center><img  class="lig" src="images\Picture2.png" alt="donateIcon" width="260" height="170" style=""></center><a>
+            <a  href="dm"><center><img  class="lig" src="images\Picture2.png" alt="donateIcon" width="260" height="170" style=""></center><a>
           </div>
         </div>
 

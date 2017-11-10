@@ -244,12 +244,7 @@
                        <center><span class="text-muted">มีสินค้าทั้งหมด {{$p->number_product}} ชิ้น </span></center> <br><br>
                     </div>
 
-                    <center><div class="col-md-8">
-                       <ul class="list-group">
-                         <li class="list-group-item list-group-item-info"><center>ปุ่มเพิ่มสินค้าลงตะกร้า</center></li>
-
-                       </ul>
-                    </div></center>
+                
                        <br>
 
                    </div>
