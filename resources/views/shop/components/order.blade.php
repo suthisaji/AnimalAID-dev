@@ -54,11 +54,11 @@
                 กรุณากรอกที่อยู่เพื่อรับของ
                 <div class="card-block row shop-item-listing">
 
-                 <input type="text" id="home" name="home" placeholder="บ้านเลขที่ และ หมู่บ้าน" required/>
-                <input type="text" id="district" name="district" placeholder="ตำบล" required/>
-                <input type="text" id="amphoe" name="amphoe" placeholder="อำเภอ" required/>
-                <input type="text" id="province" name="province" placeholder="จังหวัด" required/>
-               <input type="text" id="zipcode" name="zipcode" placeholder="รหัสไปรษณี" required/>
+                 <input type="text" id="home" name="home" placeholder="บ้านเลขที่ และ หมู่บ้าน" style="width:250px;" required/>
+                <input type="text" id="district" name="district" placeholder="ตำบล" required style="width:250px;"/>
+                <input type="text" id="amphoe" name="amphoe" placeholder="อำเภอ" required style="width:250px;"/>
+                <input type="text" id="province" name="province" placeholder="จังหวัด" required style="width:250px;"/>
+               <input type="text" id="zipcode" name="zipcode" placeholder="รหัสไปรษณี" required style="width:150px;"/>
 
                <div class="form-group">
                  <label for="Bank_name" class="form-label">ธนาคาร</label><br>
