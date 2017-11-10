@@ -72,8 +72,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href="../animal">รายชื่อสัตว์</a></li>
-            <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:#FFFF00">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
+            <li><a href="../addNews">เพิ่มข่าว&กิจกรรม</a></li>
+            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยง: <span style="color:#FFFF00">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
             ->where('animals.admin_id','=', Auth::user()->id)
             ->where('adoptions.status', '=','Recipient')
           ->count()}}</span></a></li>
@@ -83,8 +83,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ตรวจสอบสลิป<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="transferDocument">สลิปสั่งสินค้า:<span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
-                <li><a href="adminCheckSlip">สลิปการบริจาคเงิน:<span style="color:red">{{DB::table('userUpdateSlips')->where('status_check_yet', '=','NotCheck')->count()}}</a>
+                <li><a href="transferDocument">สลิปสั่งสินค้า: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
+                <li><a href="adminCheckSlip">สลิปการบริจาคเงิน: <span style="color:red">{{DB::table('userUpdateSlips')->where('status_check_yet', '=','NotCheck')->count()}}</a>
                   <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">{{csrf_field()}}</form></li>
               </ul>
             </li>

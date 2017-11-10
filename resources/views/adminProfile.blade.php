@@ -16,7 +16,7 @@
     <link rel="stylesheet" link href="{{url('css/bootstrap.min.css')}}">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('/css/shop-homepage.css')}}"/>
@@ -50,6 +50,7 @@
       .fl{
         font-size: 16px;
       }
+
     </style>
 </head>
 <body>
@@ -70,16 +71,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href="../animal">รายชื่อสัตว์</a></li>
-            <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:#FFFF00"> {{$countRecipientEachAdmin}}  </span></a></li>
+            <li><a href="../addNews">เพิ่มข่าว&กิจกรรม</a></li>
+            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยง: <span style="color:#FFFF00"> {{$countRecipientEachAdmin}}  </span></a></li>
             <li><a href="../admin">ตอบปัญหา: <span style="color:#FFFF00">{{DB::table('blogs')->where('status','answered')->count()}}</span>/{{DB::table('blogs')->count()}}</a></li>
             <li><a href="../addProductPage">เพิ่มสินค้า</a></li>
-            <li><a href="../shippings">ใบจัดส่งสินค้า :<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
+            <li><a href="../shippings">ใบจัดส่งสินค้า:<span style="color:#FFFF00">{{DB::table('shippings')->where('shipping_status', '=','กำลังตรวจสอบ')->count()}}</span></a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ตรวจสอบสลิป<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="transferDocument">สลิปสั่งสินค้า:<span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
-                <li><a href="adminCheckSlip">สลิปการบริจาคเงิน:<span style="color:red">{{DB::table('userUpdateSlips')->where('status_check_yet', '=','NotCheck')->count()}}</a>
+                <li><a href="transferDocument">สลิปสั่งสินค้า: <span style="color:red">{{DB::table('transferMoneys')->where('checking_status', '=','wait')->orWhere('checking_status', '=','กำลังตรวจสอบหลักฐาน')->count()}}</span></a></li>
+                <li><a href="adminCheckSlip">สลิปการบริจาคเงิน: <span style="color:red">{{DB::table('userUpdateSlips')->where('status_check_yet', '=','NotCheck')->count()}}</a>
                   <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">{{csrf_field()}}</form></li>
               </ul>
             </li>
