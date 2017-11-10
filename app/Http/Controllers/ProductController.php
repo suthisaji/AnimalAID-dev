@@ -130,6 +130,9 @@ class ProductController extends Controller
         echo "Can not delete product";
     }
   }
+
+
+
   function addProductPageVar(){
     $this->middleware('auth');
     if(Auth::user()==null){
@@ -664,7 +667,15 @@ function statusShippingToCancel($ordering_id=0){
       }
 
 
+      function deleteOrder($ordering_id,$order_number){
 
+        $result = $this->OrderingRepository->deleteOrder($ordering_id,$order_number);
+        if($result){
+            return redirect('/webshop');
+        }else{
+            echo "Can not delete order";
+        }
+      }
 
 
     }

@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories;
 use App\Ordering;
-
-
+use App\Ordering_product;
+use App\TransferMoney;
 use File;
 use DB;
 
@@ -25,4 +25,18 @@ class OrderingRepository implements OrderingRepositoryInterface{
           return false;
       }
   }
+
+
+
+    function deleteOrder($ordering_id,$order_number){
+      $ordering = Ordering::where('ordering_id',$ordering_id)->first();
+      $result = Ordering_product::where('ordering_id',$ordering_id)->delete();
+      $result1 = Ordering::where('ordering_id',$ordering_id)->delete();
+      $result2 = TransferMoney::where('order_number',$order_number)->delete();
+        if($result>=0 && $result2>=0){
+          return true;
+        }else{
+          return false;
+        }
+    }
 }

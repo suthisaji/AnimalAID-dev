@@ -3,7 +3,7 @@
     <div class="row">
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
-    
+
 
 
        @foreach($ordering as $o)
@@ -15,14 +15,19 @@
 
                                      @include('shop.components.updateSlip')
                                      @include('shop.components.status')
-
-                               @elseif($o->join_TransferMoney->picture_slip!=null&&$o->pay_status!='paid')
-                                 <br>
+                                     <br>
+                              <a href="/deleteOrder/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่ง</a>
+                              <br>
+                               @elseif($o->join_TransferMoney->picture_slip!=null&&$o->pay_status!='paid'&&$o->join_TransferMoney->checking_status=='กำลังตรวจสอบหลักฐาน')
+                                 <br><br>
                                     <h2 style="color:red;">รอการตรวจสอบหลักฐานการโอน การสั่งซื้อล่าสุด</h2>
                                     @include('shop.components.tableListDisabled')
                                       @include('shop.components.khun')
                                     @include('shop.components.status')
-
+                               @elseif($o->join_TransferMoney->picture_slip!=null&&$o->pay_status!='paid'&&$o->join_TransferMoney->checking_status=='noConfirm')
+                                <h2 style="color:red;"> หลักฐานที่แจ้งไม่ถูกต้อง</h2>
+                                <h3> แจ้งใหม่ หรือ ยกเลิกการสั่งซื้อ </h3>   <a href="/deleteOrder/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่ง</a>
+                                  @include('shop.components.updateSlip')
                                @endif
                         @else
 
@@ -44,6 +49,7 @@
 
         @if((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()!=0 )
             @include('shop.components.order')
+
         @elseif((DB::table('orderings')->where('customer_id','=',Auth::user()->id)->count()==0)&& Cart::total()==0 )
         <br>  <h2 style="color:orange;">ยังไม่มีการสั่งซื้อ</h2>
         @endif

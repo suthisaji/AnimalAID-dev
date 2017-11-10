@@ -104,7 +104,7 @@
                             </tbody>
                         </table>
 
-                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">ช๊อปต่อ</a> &nbsp;
+                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">กลับไปดูรายการสินค้า</a> &nbsp;
                         @if($n==1)
                           สินค้ามีไม่เพียงพอตามที่คุณลูกค้าต้องการ กรุณาลดจำนวนลงค่ะ
                         @else
@@ -114,14 +114,14 @@
                             <form action="{{ url('/webshop/emptyCart') }}" method="POST">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-lg" value="ตะกร้าเปล่า">
+                                <input type="submit" class="btn btn-danger btn-lg" value="ล้างตะกร้า">
                             </form>
                         </div>
 
                     @else
 
-                        <h3>You have no items in your shopping cart</h3>
-                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">ช๊อปต่อ</a>
+                        <h3>ตะกร้าว่างเปล่า</h3>
+                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">กลับไปดูรายการสินค้า</a>
 
                     @endif
 

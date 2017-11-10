@@ -52,24 +52,24 @@ class CartController extends Controller
             'quantity' => 'required|numeric|between:1,5'
         ]);
          if ($validator->fails()) {
-            session()->flash('error_message', 'Quantity must be between 1 and 5.');
+            session()->flash('error_message', 'สั่งได้มากสุด 5 ชิ้น.');
             return response()->json(['success' => false]);
          }
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
+        session()->flash('success_message', '');
         return response()->json(['success' => true]);
     }
 
     public function destroy($id)
     {
         Cart::remove($id);
-        return redirect('webshop/cart')->withSuccessMessage('Item has been removed!');
+        return redirect('webshop/cart')->withSuccessMessage('ลบออกแล้ว!');
     }
 
     public function emptyCart()
     {
         Cart::destroy();
-        return redirect('webshop/cart')->withSuccessMessage('Your cart has been cleared!');
+        return redirect('webshop/cart')->withSuccessMessage('ล้างตะกร้าแล้ว!');
     }
     public function emptyCart2()
     {

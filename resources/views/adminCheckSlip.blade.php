@@ -161,7 +161,8 @@
 
      <td><center>{{ $u->id }}</center></td>
      <td><center>{{ $u->name }}</center></td>
-     <td><center><img src="{{url('/images/'.$u->picture_slip)}}" width="30%" height="30%"></center></td>
+
+      <td><center><img src="{{url('/images/'.$u->picture_slip)}}"  style="cursor:pointer;" alt="" width="20%" height="20%" onclick="zoomToggle('130px','100px','100%','100%',this); "><center></td>
      <td><center>
 
        @if($u->status_check_yet=='NotCheck')
@@ -218,7 +219,16 @@
 
 </body>
 </html>
-
+<script>
+var nW,nH,oH,oW;
+function zoomToggle(iWideSmall,iHighSmall,iWideLarge,iHighLarge,whichImage){
+oW=whichImage.style.width;oH=whichImage.style.height;
+if((oW==iWideLarge)||(oH==iHighLarge)){
+nW=iWideSmall;nH=iHighSmall;}else{
+nW=iWideLarge;nH=iHighLarge;}
+whichImage.style.width=nW;whichImage.style.height=nH;
+}
+</script>
 
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
