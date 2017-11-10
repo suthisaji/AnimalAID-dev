@@ -53,8 +53,8 @@ class OrderingRepository implements OrderingRepositoryInterface{
         $now2= $now->format('d');
 
 
-        //  $i= $t->created_at->format('d')-$now2  ;
-        $i= 15-$now2  ;
+         $i= $t->created_at->format('d')-$now2  ;
+        
           $outcome = abs($i);
 
           if(($t->order_number==$order_number)&&($t->picture_slip==null)&&($outcome>=4)){
