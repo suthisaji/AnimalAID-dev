@@ -45,8 +45,8 @@ body button, input, optgroup, select, textarea, ul, ol {}
 .shop-item-listing .shop-item .add-to-cart button {
     cursor: pointer;
     width: 100%;
-    padding-bottom: 0.2rem;
-    padding-top: 0.2rem;
+    /*padding-bottom: 0.2rem;
+    padding-top: 0.2rem;*/
 }
 
 .shop-item-listing .shop-item .cart-remaining {

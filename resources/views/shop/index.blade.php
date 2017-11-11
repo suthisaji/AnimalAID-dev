@@ -34,7 +34,10 @@
                                             <input type="hidden" name="id" value="{{$product->product_id}}"/>
                                             <input type="hidden" name="name" value="{{$product->product_name}}"/>
                                             <input type="hidden" name="price" value="{{$product->product_price}}"/>
-                                            <button type="submit" class="btn btn-sm btn-primary cd-add-to-cart-removeit glyphicon glyphicon-shopping-cart" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"><i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i></button>
+                                            <button type="submit" class="btn btn-sm btn-primary cd-add-to-cart-removeit">
+                                              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"></span>
+                                             <i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
