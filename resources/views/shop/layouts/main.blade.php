@@ -15,6 +15,23 @@
     btn-lg, .btn-group-lg1>.btn {
        padding: 1rem 1rem;
       }
+    .lyl{
+    max-width: 18%;
+}
+.btn-sm, .btn-group-sm>.btn {
+    padding: 0rem 0rem;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #504e4e;
+    border-color: #504e4e;
+}
+.page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: rgba(255, 104, 0, 0.73);
+    border-color: #f99d57;
+}
     </style>
   </head>
   <body>

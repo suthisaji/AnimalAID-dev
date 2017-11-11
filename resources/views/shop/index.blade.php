@@ -36,7 +36,7 @@
                                             <input type="hidden" name="price" value="{{$product->product_price}}"/>
                                             <button type="submit" class="btn btn-sm btn-primary cd-add-to-cart-removeit">
                                               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" data-price="{{ $product->product_price }}" data-img="{{ $product->product_pic }}" data-name="{{ $product->product_name }}"></span>
-                                             <i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i>
+                                             <i class="fa fa-2x fa-cart-plus" aria-hidden="true"></i><img class="lyl"src="images\ta.gif" alt="" width="20px" height="28px">
                                             </button>
                                         </form>
                                     </div>
@@ -54,7 +54,11 @@
                     @endif
                     </div>
                 </div>
+                <br>
+                <br>
             </div>
+            <br>
+            <br>
         </div>
     </div>
 
