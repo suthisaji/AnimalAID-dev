@@ -26,10 +26,10 @@
                 <a class="nav-link" href="/da">หาบ้านให้สัตว์</a>
             </li>
             <li class="navmain">
-                <a class="nav-link" href="/newsAll">ข่าวสารและกิจกรรม</a>
+                <a class="nav-link" href="/newsAll">ข่าวสาร&กิจกรรม</a>
             </li>
             <li class="navmain">
-                <a class="nav-link" href="/allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
+                <a class="nav-link" href="/allQuestions">สอบถามเกี่ยวกับสัตว์เลี้ยง</a>
             </li>
             <li class="navmain">
                 <a class="nav-link" href="/webshop/checkout">ออเดอร์ของฉัน</a>

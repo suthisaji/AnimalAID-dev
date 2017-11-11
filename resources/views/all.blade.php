@@ -418,10 +418,10 @@ transform: skew(-135deg) translateX(0%);
                        <a href="da">หาบ้านให้สัตว์</a>
                    </li>
                    <li class="navmain ">
-                       <a href="newsAll">ข่าวสารและกิจกรรม</a>
+                       <a href="newsAll">ข่าวสาร&กิจกรรม</a>
                    </li>
                    <li class="navmain ">
-                       <a href="allQuestions">สอบถามผู้รู้เกี่ยวกับสัตว์เลี้ยง</a>
+                       <a href="allQuestions">สอบถามเกี่ยวกับสัตว์เลี้ยง</a>
                    </li>
 
                </ul>
