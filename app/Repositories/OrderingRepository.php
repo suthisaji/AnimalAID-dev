@@ -41,7 +41,7 @@ class OrderingRepository implements OrderingRepositoryInterface{
         date_timezone_set($now, timezone_open('Asia/Bangkok'));
         $now2= $now->format('d');
 
- $i= $t->created_at->format('d')-$now2;
+          $i= $t->created_at->format('d')-$now2;
           $outcome = abs($i);
           if(($t->order_number==$order_number)&&($t->picture_slip==null)&&($outcome>=4)){
             $ordering = Ordering::where('ordering_id',$ordering_id)->first();
