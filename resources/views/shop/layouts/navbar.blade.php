@@ -2,7 +2,7 @@
 .navbar {
     font-size: 0.875rem;
     text-transform: uppercase;
-    font-weight: 500
+    font-weight: 600
 }
 </style>
 
