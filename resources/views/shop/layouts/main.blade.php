@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Webshop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('shop/css/bootstrap.min.css') }}"/>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Athiti">
+    <link rel="stylesheet" href="{{ url('shop/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" href="{{ url('shop/css/shop.css') }}"/>
     <link rel="stylesheet" href="{{ url('shop/jquery.Thailand.js/dist/jquery.Thailand.min.css') }}">
    <link rel="stylesheet" href="{{ url('css/sweetalert.css') }}">
