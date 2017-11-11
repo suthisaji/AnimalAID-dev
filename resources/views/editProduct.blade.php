@@ -71,8 +71,8 @@
         <ul class="nav navbar-nav">
 
             <li><a href="../animal">รายชื่อสัตว์</a></li>
-            <li><a href="../addNews">เพิ่มข่าวและกิจกรรม</a></li>
-            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยงสัตว์: <span style="color:red">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
+            <li><a href="../addNews">เพิ่มข่าว&กิจกรรม</a></li>
+            <li><a href="../checkAdoption">ตรวจสอบการขอรับเลี้ยง: <span style="color:red">{{DB::table('adoptions')->join('animals', 'adoptions.animal_id', '=', 'animals.animal_id')
             ->where('animals.admin_id','=', Auth::user()->id)
             ->where('adoptions.status', '=','Recipient')
           ->count()}}</span></a></li>
