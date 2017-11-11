@@ -18,7 +18,6 @@ use App\UserUpdateSlip;
 use Cart;
 use DB;
 use DateTime;
-
 class ProductController extends Controller
 {  protected $CategoryRepository;
    protected $TransferMoneyRepository;
@@ -94,8 +93,6 @@ class ProductController extends Controller
         $newImageName = 'product_'.str_random(5).$imageName;
         Request::file('product_pic')->move($path, $newImageName);
         //----------------------------------
-
-
           $result = $this->ProductRepository->updateProduct($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price,$newImageName);
         }else {
           $result = $this->ProductRepository->updateProduct1($product_id,$product_name,$category_id,$product_detail,$number_product,$product_price);
@@ -131,9 +128,6 @@ class ProductController extends Controller
         echo "Can not delete product";
     }
   }
-
-
-
   function addProductPageVar(){
     $this->middleware('auth');
     if(Auth::user()==null){
@@ -260,15 +254,12 @@ function statusShippingToCancel($ordering_id=0){
           return view('transferDocument', $data);
       }
   }
-
-
   function shippingDocument(){//จะแสดงข้อมูลหน้า Shipping
     $this->middleware('auth');
     if(Auth::user()==null){
   return redirect('login');
     }
   $ordering_product=  $this->Ordering_productRepository->getAllOrdering_product();
-
   $shipping = $this->ShippingRepository->getAllShipping();
   $data = array(
      'shipping'=>$shipping,
@@ -277,10 +268,6 @@ function statusShippingToCancel($ordering_id=0){
   );
   return view('shippings',$data);
   }
-
-
-
-
   /*เปลี่ยน สเตตัสการจัดส่ง เป็นยกเลิก*/
   function shippingAfterDelivery($ordering_id=0){
         if(Request::isMethod('post')){
@@ -445,7 +432,6 @@ function statusShippingToCancel($ordering_id=0){
           //  $number_product = Input::get('minus_product');
             //$product_id=Input::get('product_id');/*addOrdering_product*/
             foreach (Cart::content() as $item){
-
              $product = $this->ProductRepository->getAllProduct();
                   if( $item->qty == 1 ? 'selected' : '' ) {
                     $product_number=$item->qty;
@@ -455,7 +441,6 @@ function statusShippingToCancel($ordering_id=0){
                          $product_id=$item->id;
                          $amount=$item->subtotal;
                          $number_product  = $minus_product;
-
                     }
                   }
                 }elseif( $item->qty == 2 ? 'selected' : '' )  {
@@ -468,7 +453,6 @@ function statusShippingToCancel($ordering_id=0){
                               $number_product  = $minus_product;
                       }
                    }
-
                }elseif( $item->qty == 3 ? 'selected' : '' ) {
                       $product_number=$item->qty;
                     foreach($product as $p){
@@ -479,7 +463,6 @@ function statusShippingToCancel($ordering_id=0){
                            $number_product  = $minus_product;
                    }
                  }
-
                }elseif( $item->qty == 4 ? 'selected' : '' )  {
               $product_number=$item->qty;
                     foreach($product as $p){
@@ -494,31 +477,23 @@ function statusShippingToCancel($ordering_id=0){
                     $product_number=$item->qty;
                   foreach($product as $p){
                       if($item->id==$p->product_id){
-
                         $minus_product=($p->number_product)-($item->qty);
                            $product_id=$item->id;
                            $amount=$item->subtotal;
                           $number_product  = $minus_product;
                    }
                  }
-
                   }
                     $result3 = $this->ShippingRepository->addOrdering_product($ordering_id,$product_id,$product_number,$amount);
                      $result4= $this->ProductRepository->updateNumber_product($product_id,$number_product);
-
              }
-
-
           //  $product_number=Input::get('product_number');
           //  $amount = Input::get('amount');
             $Bank_name=Input::get('Bank_name');/*addTransferMoney*/
             $order_number= Input::get('order_number');/*ไป addOrderingด้วย*/
             $amountOfTransfer=Input::get('amountOfTransfer');
-
             $result1 = $this->ShippingRepository->addTransferMoney2($order_number,$Bank_name,$amountOfTransfer);
             $result2= $this->ShippingRepository->addOrdering2($ordering_id,$order_number,$customer_id,$pay_status,$home,$district,$amphoe,$province,$zipcode);
-
-
              $result5=Cart::destroy();
             if($result1){
                   return redirect('/webshop/checkout');
@@ -543,9 +518,6 @@ function statusShippingToCancel($ordering_id=0){
               return view('shop.checkout', $data);
           }
       }
-
-
-
       function checkoutDocument(){//จะแสดงข้อมูลหน้า Shipping_status
         $this->middleware('auth');
         if(Auth::user()==null){
@@ -564,7 +536,6 @@ function statusShippingToCancel($ordering_id=0){
       return view('shop.checkout',$data);
       }
       function updateSlip3(){
-
         $this->middleware('auth');
         if(Auth::user()==null){
       return redirect('login');
@@ -612,11 +583,6 @@ function statusShippingToCancel($ordering_id=0){
         $data=DB::table('products')->where('product_id',$id)->get();
         return view('productDetail',compact('data'));
       }
-
-
-
-
-
       function checkRigthSlip(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
         if(Request::isMethod('post')){
           $id = Input::get('id');
@@ -633,7 +599,6 @@ function statusShippingToCancel($ordering_id=0){
           echo "Can not Update";
         }
       }
-
       function checkCancelSlip(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
         if(Request::isMethod('post')){
           $id = Input::get('id');
@@ -650,7 +615,6 @@ function statusShippingToCancel($ordering_id=0){
           echo "Can not Update";
         }
       }
-
       function checkWrongSlip(){//สร้างตาราง shipping และเปลี่ยน checking_status เป็น confirm ด้วย
         if(Request::isMethod('post')){
           $id = Input::get('id');
@@ -667,10 +631,7 @@ function statusShippingToCancel($ordering_id=0){
           echo "Can not Update";
         }
       }
-
-
       function deleteOrder($ordering_id,$order_number){
-
         $result = $this->OrderingRepository->deleteOrder($ordering_id,$order_number);
         if($result){
             return redirect('/webshop');
@@ -678,10 +639,7 @@ function statusShippingToCancel($ordering_id=0){
             echo "Can not delete order";
         }
       }
-
-
       function deleteSlipTimeOut($ordering_id,$order_number){
-
         $result = $this->OrderingRepository->deleteSlipTimeOut($ordering_id,$order_number);
         if($result){
             return redirect('/transferDocument');
@@ -689,7 +647,4 @@ function statusShippingToCancel($ordering_id=0){
             echo "Can not delete orderSlipTimeOut".mysqli_error() ;
         }
       }
-
-
-
     }

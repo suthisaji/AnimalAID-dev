@@ -213,6 +213,9 @@
                     @if($t->checking_status=='wait'||$t->checking_status=='กำลังตรวจสอบหลักฐาน')
                       <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ</span>
                     @endif
+
+                    <a href="/deleteSlipTimeOut/{{ $t->join_Ordering->ordering_id }}/{{$t->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งที่ไม่อัพสลิปภายในสามวัน</a>
+
                     </td>
 
                    </tr>
@@ -222,9 +225,7 @@
 
       </div>
 
-      @foreach($ordering as $o)
-      <a href="/deleteSlipTimeOut/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งที่ไม่อัพสลิปภายในสามวัน</a>
-      @endforeach
+
 </div>
 
 
