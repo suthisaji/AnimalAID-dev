@@ -122,6 +122,7 @@
                    <th><center>ภาพสลิป</center></th>
                    <th><center>อัพหลักฐานเมื่อ</center></th>
                    <th><center>สถานะ</center></th>
+                    <th></th>
 
                  </tr>
                </thead>
@@ -214,10 +215,20 @@
                       <img src="/images/redc.jpg" style="width:7px;height:8px"> &nbsp;<span style="color:red;">ยังไม่ตรวจสอบ</span>
                     @endif
 
-                    <a href="/deleteSlipTimeOut/{{ $t->join_Ordering->ordering_id }}/{{$t->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งที่ไม่อัพสลิปภายในสามวัน</a>
+
 
                     </td>
+                    <?php     $now = new DateTime();
+                        $now->add(new DateInterval('P1D'));
+                        date_timezone_set($now, timezone_open('Asia/Bangkok'));
+                        $now2= $now->format('d');
 
+                          $i= $t->created_at->format('d')-$now2;
+                          $outcome = abs($i);?>
+                    @if(($t->picture_slip==null)&&($outcome>=4))
+              <td> <a href="/deleteSlipTimeOut/{{ $t->join_Ordering->ordering_id }}/{{$t->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งที่ไม่อัพสลิปภายในสามวัน</a></td>
+            @else
+            @endif
                    </tr>
                </tbody>
    @endforeach
