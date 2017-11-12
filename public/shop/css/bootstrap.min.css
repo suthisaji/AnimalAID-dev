@@ -3093,7 +3093,8 @@ tbody.collapse.show {
 }
 
 .show>.dropdown-menu {
-    display: block
+    display: block;
+    padding-left: 10px;
 }
 
 .show>a {
