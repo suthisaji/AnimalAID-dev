@@ -132,8 +132,9 @@ function(){
       _token:$('#token')[0].value
     },success: function(data){
       // alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
-      swal("คุณได้สั่งซื้อสินค้าแล้ว เรียบร้อย!", "ส่งหลักฐานถัดไป", "success")
-      window.location.reload();
+      swal("คุณได้สั่งซื้อแล้ว เรียบร้อย!", "ส่งหลักฐานถัดไป", "success")
+       setTimeout( "window.location.reload()", 5000);
+
      }
    });
 });
