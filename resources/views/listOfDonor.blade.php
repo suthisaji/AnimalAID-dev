@@ -320,12 +320,9 @@
 
 </div>
 
-{{----
-@php($sum1=DB::table('userUpdateSlips')->where('status_slip','Right')->sum('amount'))
-@php($sum2=$sumOfAmount)
-{{@php($sumall=$sum1+$sum2)
-<hr>
-<center><h3>ยอดรวมทั้งหมด{{$sumall}}</h3></center>--}}
+
+
+
 
 
 
