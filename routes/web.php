@@ -346,6 +346,6 @@ Route::get('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('a
 Route::post('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('auth')->middleware('checkadmin');
 /*status checkWrongSlip*/
 
-Route::get('/deleteOrder/{ordering_id}/{order_number}', 'ProductController@deleteOrder')->middleware('checkadmin');
+Route::get('/deleteOrder/{ordering_id}/{order_number}', 'ProductController@deleteOrder')->middleware('auth');
 
 Route::get('/deleteSlipTimeOut/{ordering_id}/{order_number}', 'ProductController@deleteSlipTimeOut')->middleware('checkadmin');
