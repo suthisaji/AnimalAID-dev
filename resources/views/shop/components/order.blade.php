@@ -49,8 +49,8 @@
 
 
             <div class="card-block row shop-item-listing">
-                ราคารวม &nbsp; <h3>{{ Cart::total() }}</h3> บาท<br>
-              </div>
+           ราคารวม &nbsp; <h3><span style="color:green;" >{{ Cart::total() }}</span></h3>  &nbsp;บาท<br>
+           </div>
                 กรุณากรอกที่อยู่เพื่อรับของ
                 <div class="card-block row shop-item-listing">
 
@@ -59,7 +59,7 @@
                 <input type="text" id="amphoe" name="amphoe" placeholder="อำเภอ" required style="width:250px;"/>
                 <input type="text" id="province" name="province" placeholder="จังหวัด" required style="width:250px;"/>
                <input type="text" id="zipcode" name="zipcode" placeholder="รหัสไปรษณี" required style="width:150px;"/>
-
+<br><br>
                <div class="form-group">
                  <label for="Bank_name" class="form-label">ธนาคาร</label><br>
                  <label><input type="radio" value="กรุงเทพ สาขาบิ๊กซี อยุธยา มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน บัญชีเลขที่ 790-020373-3" name="Bank_name" id="Bank_name"required="required"><span style="color:blue;">

@@ -97,7 +97,7 @@
                                     <td class="table-image"></td>
                                     <td style="padding: 40px;"></td>
                                     <td class="small-caps table-bg" style="text-align: right">ยอดรวมทั้งหมด</td>
-                                    <td class="table-bg"><span style="color:green;">฿{{ Cart::total() }}</span></td>
+                                    <td class="table-bg"><span style="color:green;    font-weight: 700;">฿{{ Cart::total() }}</span></td>
                                     <td class="column-spacer"></td>
                                     <td></td>
                                 </tr>
@@ -122,7 +122,7 @@
 
                     @else
 
-                        <h3>ตะกร้าว่างเปล่า</h3>
+                        &nbsp; &nbsp;<h3 style="color:orange;">ตะกร้าว่างเปล่า</h3>&nbsp; &nbsp;
                         <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">กลับไปดูรายการสินค้า</a>
 
                     @endif
