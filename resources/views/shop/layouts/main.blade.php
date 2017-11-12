@@ -35,6 +35,9 @@
 .bu{
    padding: 0.3rem 0.6rem;
 }
+.ft {
+    font-size: 18px;
+  }
     </style>
   </head>
   <body>

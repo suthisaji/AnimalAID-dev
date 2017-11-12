@@ -4,7 +4,7 @@
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
 
-    <div class="row mt-3">
+    <div class="row mt-3 ft">
         <div class="col-md-12">
             <div class="card shop-listing">
                 <div class="card-header">
@@ -30,12 +30,12 @@
                             <thead>
                                 <tr>
 
-                                    <th>สินค้า</th>
-                                    <th>จำนวน</th>
+                                    <th><center>สินค้า</center></th>
+                                    <th><center>จำนวน</center></th>
 
-                                    <th>ราคา</th>
+                                    <th><center>ราคา</center></th>
                                     <th class="column-spacer"></th>
-                                    <th></th>
+
                                 </tr>
                             </thead>
 @php($n=0)
@@ -43,8 +43,8 @@
                                 @foreach (Cart::content() as $item)
                                 <tr>
 
-                                    <td><a href="{{ url('productDetail',array($item->id))}}">{{ $item->name }}</a></td>
-                                    <td>
+                                    <td><center><a href="{{ url('productDetail',array($item->id))}}">{{ $item->name }}</a></center></td>
+                                    <td><center>
                                         <select class="quantity" data-id="{{ $item->rowId }}">
                                             <option {{ $item->qty == 1 ? 'selected' : '' }}>1 @php($i=1)</option>
                                             <option {{ $item->qty == 2 ? 'selected' : '' }}>2 @php($i=2)</option>
@@ -56,16 +56,16 @@
                                         @foreach($products as $p)
                                           @if($item->id==$p->product_id)
                                             @if(($p->number_product-$item->qty)>=0)
-                                          &nbsp;   &nbsp;   &nbsp;  &nbsp; มีทั้งหมด  {{$p->number_product}} ชิ้น
+                                          &nbsp;   &nbsp;   &nbsp;  &nbsp; มีทั้งหมด  {{$p->number_product}} ชิ้น</center>
                                           @else
-                                          &nbsp;   &nbsp;  &nbsp;    &nbsp; สินค้าหมดแล้ว มี 0 ชิ้น @php($n=1)
+                                          &nbsp;   &nbsp;  &nbsp;    &nbsp; สินค้าหมดแล้ว มี 0 ชิ้น @php($n=1)</center>
                                           @endif
                                         @endif
                                        @endforeach
                                     </td>
 
-                                    <td>฿{{ $item->subtotal }}</td>
-                                    <td class=""></td>
+                                    <td><center>฿{{ $item->subtotal }}</center></td>
+
                                     <td>
                                         <form action="{{ url('webshop/cart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                             {!! csrf_field() !!}
@@ -80,7 +80,7 @@
 
                                     <td></td>
                                     <td class="small-caps table-bg" style="text-align: right">รวม</td>
-                                    <td>฿{{ Cart::instance('default')->subtotal() }}</td>
+                                    <td> <span style="color:green;">฿ {{ Cart::instance('default')->subtotal() }}</span></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -97,19 +97,20 @@
                                     <td class="table-image"></td>
                                     <td style="padding: 40px;"></td>
                                     <td class="small-caps table-bg" style="text-align: right">ยอดรวมทั้งหมด</td>
-                                    <td class="table-bg">฿{{ Cart::total() }}</td>
+                                    <td class="table-bg"><span style="color:green;">฿{{ Cart::total() }}</span></td>
                                     <td class="column-spacer"></td>
                                     <td></td>
                                 </tr>
 
                             </tbody>
                         </table>
-
-                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">กลับไปดูรายการสินค้า</a> &nbsp;
+ &nbsp;
+                        <a href="{{ url('/webshop') }}" class="btn btn-primary btn-lg">กลับไปดูรายการสินค้า</a> &nbsp; &nbsp;
                         @if($n==1)
                           สินค้ามีไม่เพียงพอตามที่คุณลูกค้าต้องการ กรุณาลดจำนวนลงค่ะ
                         @else
                         <a href="{{ url('/webshop/checkout') }}" class="btn btn-success btn-lg">ทำการสั่งซื้อ</a>
+                         &nbsp; &nbsp;
                       @endif
                         <div style="float:right">
                             <form action="{{ url('/webshop/emptyCart') }}" method="POST">

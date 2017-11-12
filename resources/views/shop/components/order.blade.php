@@ -1,7 +1,7 @@
 <style>
 
 </style>
-<div class="row mt-3">
+<div class="row mt-3 ft">
     <div class="col-md-12">
         <div class="card shop-listing">
             <div class="card-header">
@@ -29,7 +29,7 @@
            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
 
                   <td>{{$item->id}}</td>
-                  <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
+                  <td><a href="{{ url('productDetail',array($item->id))}}">{{ $item->name }}</a></td>
                    <td>
 
                         @if( $item->qty == 1 ? 'selected' : '' )    {{$item->qty}}

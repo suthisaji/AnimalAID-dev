@@ -4,7 +4,7 @@
        @include('shop.components.categoryMenu', ['categories' => $categories])
     </div>
 
-    <div class="row mt-3">
+    <div class="row mt-3 ">
         <div class="col-md-12">
             <div class="card shop-listing">
                 <div class="card-header" style="font-size: 16px;">
