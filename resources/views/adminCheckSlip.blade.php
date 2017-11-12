@@ -170,7 +170,7 @@
          <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
          <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
          <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
-         <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
+         <input type="hidden"class="form-control" name="status_slip"  value="Right" />
             <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
      </form><br>
 
@@ -187,7 +187,7 @@
        <input type="hidden"class="form-control" name="id"  value="{{$u->id}}" />
        <input type="hidden" class="form-control" name="status_check_yet" value="check"/>
        <input type="hidden"class="form-control" name="admin_id" value="{{Auth::user()->id}}" />
-       <input type="hidden"class="form-control" name="status_slip"  value="Rigth" />
+       <input type="hidden"class="form-control" name="status_slip"  value="Right" />
           <br><button class=" btn btn-sm btn-primary" onclick="return confirm('หลักฐานถูกต้อง ยืนยันการจัดส่งสินค้า')">ถูกต้อง</button>
    </form>
    @else

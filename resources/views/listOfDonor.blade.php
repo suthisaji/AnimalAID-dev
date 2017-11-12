@@ -243,12 +243,12 @@
        <div class="container">
      <div class="panel-heading">
 <br>
-       <h3><li style="color:darkorange;">มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง</li></h3>
-       <h3><li style="color:goldenrod;">จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
+
         <div class="panel-heading">
 
      <p class="lead"><center><h1><b>รายชื่อผู้บริจาค ผ่าน omise tester</b></h1></center></p>
-
+     <h3><li style="color:darkorange;">มีการบริจาคทั้งหมด {{$numOfList}} ครั้ง</li></h3>
+     <h3><li style="color:goldenrod;">จำนวนเงินที่ได้รับทั้งหมด {{$sumOfAmount}} บาท</li></h3>
         </div>
               <div class="panel-body">
                   <table class="table table-striped display" id="example">
@@ -286,7 +286,8 @@
 
 <br>
 <p class="lead"><center><h1><b>รายชื่อผู้บริจาค จากการตรวจสอบหลักฐานการโอน</b></h1></center></p>
-
+<h3><li style="color:darkorange;">มีการบริจาคทั้งหมด {{DB::table('userUpdateSlips')->where('status_slip','Right')->count()}} ครั้ง</li></h3>
+<h3><li style="color:goldenrod;">จำนวนเงินที่ได้รับทั้งหมด {{DB::table('userUpdateSlips')->where('status_slip','Right')->sum('amount')}}  บาท</li></h3>
 <div class="panel-body">
     <table class="table table-striped display" id="example">
          <thead>
@@ -299,7 +300,7 @@
          <tbody>
 
         @foreach($userUpdateSlip as $u2)
-          @if($u2->status_slip=='Rigth')
+          @if($u2->status_slip=='Right')
              <tr>
                 <td><center> {{ str_limit($u2->created_at, $limit = 10, $end = '') }} </center></td>
                <td>
@@ -320,8 +321,11 @@
 </div>
 
 
-
-
+@php($sum1=DB::table('userUpdateSlips')->where('status_slip','Right')->sum('amount'))
+@php($sum2=$sumOfAmount)
+@php($sumall=$sum1+$sum2)
+{{--<hr>
+<center><h3>ยอดรวมทั้งหมด{{$sumall}}</h3></center>--}}
 
 
 
