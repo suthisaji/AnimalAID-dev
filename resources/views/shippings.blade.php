@@ -213,9 +213,10 @@
 
 
           @if($s->shipping_status!='กำลังตรวจสอบ')
-          <td></td>
-          <td></td>
-          <td></td>
+
+          <td>{{$s->dateTimeShipping}}</td>
+          <td>{{$s->package_id}}</td>
+            <td></td>
           <td><center>@if($s->shipping_status=='cancel') <b style="color:red;">ยกเลิกการจัดส่ง</b> @elseif($s->shipping_status=='จัดส่งแล้ว')<b style="color:blue;">จัดส่งแล้ว</b> @endif<center></td>
           @else
             <td><center><input type="date" name="dateTimeShipping"required/><center></td>
