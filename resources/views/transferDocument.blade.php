@@ -141,7 +141,7 @@
                       <!-- ให้คุณดูตรง ปลายๆบรรทัดด้านล่างนี้ครับ ตรง zoomToggle น่ะ ตรงตัวเลข 2ตัวแรก คือขนาดของภาพก่อนที่จะ zoom (เลข 200px กับ 210px อ่ะ)  ส่วน 2 ตัวหลังเป็นขนาดของภาพขณะที่ zoom ครับ (เลข 300px กับ 320px อ่ะ)  -->
 
 
-                     <td><img src="{{url('/images/'.$t->picture_slip)}}"  style="cursor:pointer;" alt="" width="130" height="130" onclick="zoomToggle('130px','100px','200%','140%',this); "></td>
+                     <td><img src="{{url('/images/'.$t->picture_slip)}}"  style="cursor:pointer;" alt="" width="130" height="130" onclick="zoomToggle('130px','100px','110%','500px',this); "></td>
                      <td>{{$t->created_at}}</td>
                  <td>
                    <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
