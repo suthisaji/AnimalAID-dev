@@ -24,7 +24,7 @@
                    <input type="hidden" class="form-control" name=" order_number"  value="{{$t->order_number}}"/>
                   <input type="hidden" class="form-control" name="checking_status"  value="กำลังตรวจสอบหลักฐาน"/>
                  </tr>
-
+<br>
                  <div class="text-center">
                      <button class="btn btn-success" onclick="return confirm('แน่ใจว่าข้อมูลถูกต้อง  หากมีข้อผิดพลาดทางเราจะติดต่อกลับไปค่ะ')">ส่งหลักฐานการโอน</button>
                  </div>

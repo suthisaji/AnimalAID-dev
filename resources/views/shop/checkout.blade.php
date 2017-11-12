@@ -13,10 +13,11 @@
                         @if(DB::table('orderings')->where('pay_status','wait')->count()>0)
                                @if($o->join_TransferMoney->picture_slip==null)
 
-                                     @include('shop.components.updateSlip')
+                                     @include('shop.components.updateSlip') <br>
+                                       <center>    <a href="/deleteOrder/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger bu btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่งซื้อนี้</a></center>
                                      @include('shop.components.status')
                                      <br>
-                              <a href="/deleteOrder/{{ $o->ordering_id }}/{{$o->order_number}}" class="btn btn-danger btn-sm btn-delete " onclick="return confirm('ยกเลิกการสั่งสินค้า !!!')">ยกเลิกการสั่ง</a>
+
                               <br>
                                @elseif($o->join_TransferMoney->picture_slip!=null&&$o->pay_status!='paid'&&$o->join_TransferMoney->checking_status=='กำลังตรวจสอบหลักฐาน')
                                  <br><br>
