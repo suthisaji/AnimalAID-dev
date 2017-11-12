@@ -1,10 +1,11 @@
 @extends('shop.layouts.main')
 @section('content')
+
     <div class="row">
        {{--  @include('shop.components.categoryMenu', ['categories' => $categories])  --}}
     </div>
 
-
+<div class="container">
 
        @foreach($ordering as $o)
 
@@ -92,7 +93,7 @@
 
 
 
-
+</div>
 
 
 @section('embled_script')

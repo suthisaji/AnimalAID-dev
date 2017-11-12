@@ -50,7 +50,10 @@
         </div></center></td>
    <td><center>{{$s->package_id}}</center></td>
    <td><center>@if($s->shipping_status=='กำลังตรวจสอบ') กำลังเตรียมการจัดส่ง
-   @else {{$s->shipping_status}}
+   @else @if($s->shipping_status=='cancel')ถูกยกเลิก
+   @else
+     {{$s->shipping_status}}
+@endif
    @endif</center></td>
 <!-- ดึงข้อมูลจากดาต้าเบส -->
 @endif

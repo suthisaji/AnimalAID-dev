@@ -798,15 +798,18 @@ transform: skew(-135deg) translateX(0%);
 
    </div>
    <!-- /.container -->
-
+  @php($m=0)
    <div class="follow">
     <a  href="webshop"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\cl.png" alt="donateIcon" width="200" height="60"></a>
     <br>
     @foreach($ordering as $o)
        @if (Auth::guest())
-       @elseif($o->customer_id==Auth::user()->id)
+       @elseif($o->customer_id==Auth::user()->id&&$m==0)
+
     <a href="webshop/checkout"><img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="\images\order-.png" alt="OrderIcon" width="200" height="60"></a>
+  @php ($m++)
       @else
+
     @endif
 @endforeach
    </div>
