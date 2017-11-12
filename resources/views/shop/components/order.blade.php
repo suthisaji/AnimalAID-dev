@@ -133,7 +133,7 @@ function(){
     },success: function(data){
       // alert('สั่งซื้อสำเร็จ แจ้งหลักฐานการโอนต่อไป');
       swal("คุณได้สั่งซื้อแล้ว เรียบร้อย!", "ส่งหลักฐานถัดไป", "success")
-       setTimeout( "window.location.reload()", 3000);
+       setTimeout( "window.location.reload()", 2000);
 
      }
    });

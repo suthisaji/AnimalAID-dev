@@ -299,6 +299,7 @@
          <tbody>
 
         @foreach($userUpdateSlip as $u2)
+          @if($u2->status_slip=='Rigth')
              <tr>
                 <td><center> {{ str_limit($u2->created_at, $limit = 10, $end = '') }} </center></td>
                <td>
@@ -308,6 +309,8 @@
                    <em><center>{{$u2->amount}} บาท</center></em>
                </span></td>
              </tr>
+           @else
+           @endif
              @endforeach
 
          </tbody>
