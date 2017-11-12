@@ -141,7 +141,33 @@
                       <!-- ให้คุณดูตรง ปลายๆบรรทัดด้านล่างนี้ครับ ตรง zoomToggle น่ะ ตรงตัวเลข 2ตัวแรก คือขนาดของภาพก่อนที่จะ zoom (เลข 200px กับ 210px อ่ะ)  ส่วน 2 ตัวหลังเป็นขนาดของภาพขณะที่ zoom ครับ (เลข 300px กับ 320px อ่ะ)  -->
 
 
-                     <td><img src="{{url('/images/'.$t->picture_slip)}}"  style="cursor:pointer;" alt="" width="130" height="130" onclick="zoomToggle('130px','100px','110%','500px',this); "></td>
+                     <td>
+                       <!-- Trigger the modal with a button -->
+                       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">หลักฐานการโอน</button>
+
+                       <!-- Modal -->
+                       <div id="myModal" class="modal fade" role="dialog">
+                         <div class="modal-dialog">
+
+                           <!-- Modal content-->
+                           <div class="modal-content">
+                             <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                               <h4 class="modal-title">รูปภาพหลักฐานการโอน</h4>
+                             </div>
+                             <div class="modal-body">
+                              <img src="{{url('/images/'.$t->picture_slip)}}"  style="cursor:pointer;" alt="" width="100%" height="100%" onclick="zoomToggle('100%','100%','120%','120%',this); ">
+                             </div>
+                             <div class="modal-footer">
+                               <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                             </div>
+                           </div>
+
+                         </div>
+                       </div>
+
+
+                     </td>
                      <td>{{$t->created_at}}</td>
                  <td>
                    <form action="/confirm/{{$t->order_number}}" class="form" method="post" enctype="multipart/form-data">{{ Form::token() }}
