@@ -192,6 +192,13 @@ height:500px;
     padding-top: 10px;
     padding-bottom: 9px;
 }
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+    background-image: linear-gradient(to bottom, #ffd391 0, #ffd67b 100%);
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+
+    box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0);
+}
 hr.light {
     width:100%;
     margin:0 auto;
