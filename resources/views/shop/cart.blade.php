@@ -29,7 +29,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="table-image"></th>
+
                                     <th>สินค้า</th>
                                     <th>จำนวน</th>
 
@@ -43,7 +43,7 @@
                                 @foreach (Cart::content() as $item)
                                 <tr>
 
-                                    <td><a href="{{ url('webshop', [$item->model->slug]) }}">{{ $item->name }}</a></td>
+                                    <td><a href="{{ url('productDetail',array($item->id))}}">{{ $item->name }}</a></td>
                                     <td>
                                         <select class="quantity" data-id="{{ $item->rowId }}">
                                             <option {{ $item->qty == 1 ? 'selected' : '' }}>1 @php($i=1)</option>
@@ -52,12 +52,13 @@
                                             <option {{ $item->qty == 4 ? 'selected' : '' }}>4 @php($i=4)</option>
                                             <option {{ $item->qty == 5 ? 'selected' : '' }}>5 @php($i=5)</option>
                                         </select>
+
                                         @foreach($products as $p)
                                           @if($item->id==$p->product_id)
                                             @if(($p->number_product-$item->qty)>=0)
-                                            มีทั้งหมด  {{$p->number_product}} ชิ้น
+                                          &nbsp;   &nbsp;   &nbsp;  &nbsp; มีทั้งหมด  {{$p->number_product}} ชิ้น
                                           @else
-                                            สินค้าหมดแล้ว มี 0 ชิ้น @php($n=1)
+                                          &nbsp;   &nbsp;  &nbsp;    &nbsp; สินค้าหมดแล้ว มี 0 ชิ้น @php($n=1)
                                           @endif
                                         @endif
                                        @endforeach
@@ -69,7 +70,7 @@
                                         <form action="{{ url('webshop/cart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                             {!! csrf_field() !!}
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <input type="submit" class="btn btn-danger btn-sm" value="ลบ">
+                                            <input type="submit" class="btn btn-danger bu "  value="ลบ">
                                         </form>
                                     </td>
                                 </tr>
@@ -78,7 +79,7 @@
                                 <tr>
 
                                     <td></td>
-                                    <td class="small-caps table-bg" style="text-align: right">ราคา</td>
+                                    <td class="small-caps table-bg" style="text-align: right">รวม</td>
                                     <td>฿{{ Cart::instance('default')->subtotal() }}</td>
                                     <td></td>
                                     <td></td>
@@ -95,7 +96,7 @@
                                 <tr class="border-bottom">
                                     <td class="table-image"></td>
                                     <td style="padding: 40px;"></td>
-                                    <td class="small-caps table-bg" style="text-align: right">ยอดรวม</td>
+                                    <td class="small-caps table-bg" style="text-align: right">ยอดรวมทั้งหมด</td>
                                     <td class="table-bg">฿{{ Cart::total() }}</td>
                                     <td class="column-spacer"></td>
                                     <td></td>

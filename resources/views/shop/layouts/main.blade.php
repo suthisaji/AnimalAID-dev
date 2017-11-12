@@ -32,6 +32,9 @@
     background-color: rgba(255, 104, 0, 0.73);
     border-color: #f99d57;
 }
+.bu{
+   padding: 0.3rem 0.6rem;
+}
     </style>
   </head>
   <body>
