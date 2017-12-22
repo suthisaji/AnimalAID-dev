@@ -419,9 +419,7 @@ transform: skew(-135deg) translateX(0%);
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li class="navmain ">
-                       <a href="da">หาบ้านให้สัตว์</a>
-                   </li>
+                
                    <li class="navmain ">
                        <a href="newsAll">ข่าวสาร&กิจกรรม</a>
                    </li>
