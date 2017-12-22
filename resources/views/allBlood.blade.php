@@ -274,15 +274,11 @@
                    <li class="navmain">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li class="navmain ">
-                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
-                   </li>
+                  
                    <li class="navmain active">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li class="navmain">
-                       <a href="da">หาบ้านให้สัตว์</a>
-                   </li>
+
                    <li class="navmain">
                        <a href="newsAll">ข่าวสาร&กิจกรรม</a>
                    </li>

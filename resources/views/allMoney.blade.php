@@ -252,15 +252,11 @@
                    <li class="navmain active">
                        <a href="dm">การบริจาคเงิน</a>
                    </li>
-                   <li class="navmain ">
-                       <a href="webshop">สั่งซื้อของที่ระลึก</a>
-                   </li>
+
                    <li class="navmain ">
                        <a href="db">การบริจาคเลือด</a>
                    </li>
-                   <li class="navmain ">
-                       <a href="da">หาบ้านให้สัตว์</a>
-                   </li>
+
                    <li class="navmain ">
                        <a href="newsAll">ข่าวสาร&กิจกรรม</a>
                    </li>
@@ -338,133 +334,7 @@
 
                <div class="container">
                  <!-- Page Heading -->
-                 <div class="row">
-                     <div class="col-lg-12">
-                         <h1 class="page-header">ช่องทางการบริจาคเงิน</h1>
-                     </div>
-                 </div
-                 <!-- /.row -->
-
-                 <div class="row text-center">
-
-                     <div class="col-lg-12">
-                       <h2>บริจาคเงินผ่านทาง iBanking</h2>
-                       <h3>ชื่อบัญชี มูลนิธิเพื่อสัตว์ประสบภัยและเหตุฉุกเฉิน</h3>
-                       <h4>ผ่านบัญชีออมทรัพย์ ธนาคารกรุงไทย สาขามหาวิทยาลัยเกษตรศาสตร์ บางเขน</h4>
-                       <h3>บัญชีเลขที่ 986-4-399968-3</h3>
-                       <br>
-
-                     </div>
-                   </div>
-
-                   <div class="row">
-                     <!-- DONATE BOX -->
-                       <div class="col-md-6 col-md-offset-3">
-                         <div class="donate-box">
-                             <div class="donate-box-header">
-                               <div class="left-tab">
-                                 ธนาคารออนไลน์
-                               </div>
-                               <!-- <div class="right-tab">
-                                 บัตรเครดิต
-                               </div> -->
-                             </div>
-                             <div class="donate-box-content">
-                               <div class="selected-bank">
-                                 <input type="hidden" id="bankcode" value="">
-                                 <div class="row">
-                                   <div class="col-md-12 getBankSelected">
-                                     <h3></h3>
-                                     <img src="" alt="" />
-                                   </div>
-                                 </div>
-                                 <div class="row">
-                                   <div class="row">
-                                     @if (Auth::guest())
-                                       <div class="col-md-6">
-                                       <label for="">ชื่อ</label>
-                                       <input type="text" class="form-control" id="name" placeholder="ชื่อ"/>
-                                     </div>
-
-                                     <div class="col-md-6">
-                                       <label for="">นามสกุล</label>
-                                       <input type="text" class="form-control" id="sname" placeholder="นามสกุล" value=" "/>
-                                     </div>
-                                   </div>
-
-                                   <div class="row">
-                                     <div class="col-md-12">
-                                       <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
-                                       <input type="tel" class="form-control" id="tel" placeholder="โทรศัพท์" pattern="[0-9]{10}" required/>
-                                     </div>
-                                   </div>
-
-                                      @else
-                                    <div class="col-md-6">
-                                      <label for="">ชื่อ</label>
-                                      <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"/>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                      <label for="">นามสกุล</label>
-                                      <input type="text" class="form-control" id="sname" placeholder="นามสกุล"/>
-                                    </div>
-                                  </div>
-
-                                  <div class="row">
-                                    <div class="col-md-12">
-                                      <label for="">เบอร์โทรศัพท์ (กรอกตามความจริงเพื่อรับ SMS ยืนยันการบริจาคเงิน)</label>
-                                      <input type="tel" class="form-control" id="tel" value="{{ Auth::user()->tel }}" required/>
-                                    </div>
-                                  </div>
-
-                                  @endif
-                                   <div class="row">
-                                     <div class="col-md-12">
-                                       <label for="">จำนวนเงิน</label>
-                                       <input type="email" class="form-control" id="amount" placeholder="จำนวนเงินต้องมากกว่า 20 บาท"/>
-                                     </div>
-                                   </div>
-                                   <div class="row">
-                                     <div class="col-md-6 col-md-offset-3 text-center" style="padding: 1rem;">
-                                       <button id="submit-donate-btn" type="button" class="btn btn-success">ยืนยัน</button>
-                                       <button id="cancel-donate-btn" type="button" class="btn btn-danger">ยกเลิก</button>
-                                     </div>
-                                   </div>
-                                 </div>
-                               </div>
-
-                               <ul class="bank-list">
-                                 <li class="bank-list-item">
-                                   <div class="paytype">
-                                       <img src="{{url('/images/logos/ayud.png')}}" alt="" />
-                                   </div>
-                                   <div class="payname">ธนาคารกรุงศรี</div>
-                                 </li>
-                                 <li class="bank-list-item">
-                                   <div class="paytype">
-                                       <img src="{{url('/images/logos/bkk.png')}}" alt="" />
-                                   </div>
-                                   <div class="payname">ธนาคารกรุงเทพ</div>
-                                 </li>
-                                 <li class="bank-list-item">
-                                   <div class="paytype">
-                                       <img src="{{url('/images/logos/ktb.png')}}" alt="" />
-                                   </div>
-                                   <div class="payname">ธนาคารกรุงไทย</div>
-                                 </li>
-                                 <li class="bank-list-item">
-                                   <div class="paytype">
-                                       <img src="{{url('/images/logos/scb.png')}}" alt="" />
-                                   </div>
-                                   <div class="payname">ธนาคารไทยพาณิชย์</div>
-                                 </li>
-                               </ul>
-                             </div>
-                         </div>
-                       </div>
-                     <!-- DONATE BOX -->
-                   </div>
+              
                    {{--
                       <div class="col-lg-12" style="background-color: #EFFBFB;padding:30px 40px;">
                          <h3><b style="font-size: 32px;">Omise </b> &nbsp;เป็น Payment Gateway<h3>
