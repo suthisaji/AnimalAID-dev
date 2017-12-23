@@ -349,3 +349,11 @@ Route::post('/checkWrong/{id}','ProductController@checkWrongSlip')->middleware('
 Route::get('/deleteOrder/{ordering_id}/{order_number}', 'ProductController@deleteOrder')->middleware('auth');
 
 Route::get('/deleteSlipTimeOut/{ordering_id}/{order_number}', 'ProductController@deleteSlipTimeOut')->middleware('checkadmin');
+
+
+
+
+
+Route::get('/homeNow', function () {
+    return view('homeNow');
+});
